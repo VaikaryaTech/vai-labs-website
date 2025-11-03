@@ -20,7 +20,6 @@ export const Footer = () => {
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2">
               <li><Link to="/product" className="text-sm text-muted-foreground hover:text-foreground transition-colors">KOGNIX</Link></li>
-              <li><Link to="/product" className="text-sm text-muted-foreground hover:text-foreground transition-colors">GenAI Engine</Link></li>
               <li><Link to="/features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</Link></li>
               <li><Link to="/business-applications" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Business Applications</Link></li>
             </ul>
@@ -31,7 +30,6 @@ export const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/documentation" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Documentation</Link></li>
               <li><Link to="/documentation" className="text-sm text-muted-foreground hover:text-foreground transition-colors">API Reference</Link></li>
-              <li><Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Blog</Link></li>
             </ul>
           </div>
 

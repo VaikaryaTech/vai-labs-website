@@ -76,7 +76,7 @@ const Home = () => {
               <div className="inline-flex p-4 rounded-lg bg-gradient-to-br from-purple-500/20 to-purple-700/20 mb-6 group-hover:from-purple-500/30 group-hover:to-purple-700/30 transition-all">
                 <Server className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">On-Premises Power</h3>
+              <h3 className="text-2xl font-bold mb-4">Sovereign Infrastructure</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Deploy world-class AI that lives and breathes within your walls. Experience enterprise-grade intelligence with absolute data sovereignty—no external dependencies, no compromises, just pure computational power under your command.
               </p>

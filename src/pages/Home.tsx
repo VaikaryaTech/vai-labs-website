@@ -68,7 +68,7 @@ const Home = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Secure by Design</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Your data never leaves your infrastructure. Complete control and compliance with zero cloud dependency.
+                Fortress-grade security meets seamless innovation. Your data stays exactly where it belongs—within your four walls. No cloud vulnerabilities. No compliance headaches. Just pure, uncompromising control.
               </p>
             </div>
 
@@ -78,7 +78,7 @@ const Home = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">On-Premises Power</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Enterprise-grade AI that runs entirely within your infrastructure for maximum data sovereignty.
+                Unleash enterprise-scale AI without surrendering an inch of control. Deploy cutting-edge intelligence directly on your infrastructure—zero internet dependency, 100% data sovereignty, infinite possibilities.
               </p>
             </div>
 
@@ -88,7 +88,7 @@ const Home = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Intelligent Orchestration</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Accelerate decision intelligence and automate complex workflows with next-gen AI capabilities.
+                Transform decision-making from days to seconds. Automate the complex, orchestrate the impossible, and watch as AI turns your most ambitious workflows into competitive advantages.
               </p>
             </div>
           </div>

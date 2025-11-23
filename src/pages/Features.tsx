@@ -209,7 +209,7 @@ export default function Features() {
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-6">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-kognix bg-clip-text text-transparent">
             KOGNIX Platform Features
           </h1>
           <p className="text-xl text-muted-foreground">
@@ -264,7 +264,7 @@ export default function Features() {
               <LayoutDashboard className="h-8 w-8 text-foreground" />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2">KOGNIX Dashboard</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-2 bg-gradient-kognix bg-clip-text text-transparent">KOGNIX Dashboard</h2>
               <p className="text-lg text-muted-foreground">Your Command Center for Intelligent AI Operations</p>
             </div>
           </div>

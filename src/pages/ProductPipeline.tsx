@@ -133,7 +133,7 @@ const ProductPipeline = () => {
       ]
     },
     {
-      title: "KOGNIA AI Developer",
+      title: "KOGNIX AI Developer",
       subtitle: "From Prototype to Production. The Complete Development and Operation Platform for LLM Agents",
       badge: "LLMOps Platform",
       features: [
@@ -170,7 +170,7 @@ const ProductPipeline = () => {
         {
           icon: "🔗",
           title: "Backend-as-a-Service (BaaS)",
-          description: "All core features—including workflows, RAG, and agents—are available via robust APIs and SDKs. Effortlessly integrate KOGNIA AI Developer functionality into your existing business logic."
+          description: "All core features—including workflows, RAG, and agents—are available via robust APIs and SDKs. Effortlessly integrate KOGNIX AI Developer functionality into your existing business logic."
         }
       ]
     }
@@ -188,7 +188,7 @@ const ProductPipeline = () => {
             <Badge className="mb-6 px-4 py-2 text-sm font-semibold" variant="secondary">
               Coming Soon
             </Badge>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">
               Product Pipeline
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">

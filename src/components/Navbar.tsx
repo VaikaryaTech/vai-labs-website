@@ -14,6 +14,7 @@ export const Navbar = () => {
     { to: "/product", label: "GenAI Engine" },
     { to: "/workflow-automation", label: "Intelligent Workflows" },
     { to: "/business-applications", label: "Business Applications" },
+    { to: "/product-pipeline", label: "Product Pipeline" },
     { to: "/assessment", label: "AI Readiness" },
     { to: "/book-demo", label: "Book Demo" },
   ];

@@ -171,7 +171,7 @@ const Product = () => {
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl mx-auto text-center space-y-8 mb-16">
-            <h2 className="text-4xl font-bold mb-4">How KOGNIX Works</h2>
+            <h2 className="text-4xl font-bold mb-4">How <span className="bg-gradient-kognix bg-clip-text text-transparent">KOGNIX</span> Works</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
               KOGNIX leverages advanced deep learning models, including large language models (LLMs) and 
               diffusion models, to understand context, generate novel outputs, and continually refine its 
@@ -375,7 +375,7 @@ const Product = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">What Sets KOGNIX Apart</h2>
+            <h2 className="text-4xl font-bold mb-4">What Sets <span className="bg-gradient-kognix bg-clip-text text-transparent">KOGNIX</span> Apart</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">

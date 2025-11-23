@@ -60,7 +60,7 @@ const About = () => {
                 too expensive, or didn't adequately address security and privacy concerns.
               </p>
               <p>
-                Our team of AI researchers, engineers, and business experts came together to create KOGNIX - 
+                Our team of AI researchers, engineers, and business experts came together to create <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX</span> - 
                 a GenAI engine that combines cutting-edge technology with practical business applications. 
                 We believe that every organization should have access to powerful AI tools that enhance decision-making, 
                 improve efficiency, and drive innovation.

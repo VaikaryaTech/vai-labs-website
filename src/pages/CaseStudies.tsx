@@ -69,7 +69,7 @@ const CaseStudies = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              See how leading organizations are transforming their operations with KOGNIX
+              See how leading organizations are transforming their operations with <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX</span>
             </p>
           </div>
         </div>
@@ -120,7 +120,7 @@ const CaseStudies = () => {
             <Card className="p-12 border-border bg-gradient-card">
               <h2 className="text-3xl font-bold mb-4">Ready to Write Your Success Story?</h2>
               <p className="text-muted-foreground mb-8">
-                Join these industry leaders and transform your business with KOGNIX
+                Join these industry leaders and transform your business with <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX</span>
               </p>
               <Link to="/book-demo">
                 <Button size="lg" variant="hero">

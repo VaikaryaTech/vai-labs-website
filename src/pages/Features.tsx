@@ -349,7 +349,7 @@ export default function Features() {
               Ready to Experience These Features?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              See how KOGNIX's comprehensive capabilities can transform your enterprise AI applications
+              See how <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX</span>'s comprehensive capabilities can transform your enterprise AI applications
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
@@ -362,7 +362,7 @@ export default function Features() {
                 href="/product"
                 className="px-8 py-4 border border-border rounded-lg font-semibold hover:border-primary transition-colors"
               >
-                Explore KOGNIX
+                Explore <span className="bg-gradient-kognix bg-clip-text text-transparent">KOGNIX</span>
               </a>
             </div>
           </div>

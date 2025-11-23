@@ -67,7 +67,7 @@ const Documentation = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              Everything you need to know to get the most out of KOGNIX
+              Everything you need to know to get the most out of <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX</span>
             </p>
           </div>
         </div>

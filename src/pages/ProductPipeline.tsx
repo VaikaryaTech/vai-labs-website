@@ -209,7 +209,7 @@ const ProductPipeline = () => {
                     {product.badge}
                   </Badge>
                   <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                    {product.title}
+                    <span className="bg-gradient-kognix bg-clip-text text-transparent">{product.title}</span>
                   </h2>
                   <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                     {product.subtitle}

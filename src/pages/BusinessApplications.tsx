@@ -210,7 +210,7 @@ const BusinessApplications = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              Discover how KOGNIX AI ENGINE transforms operations across industries with secure, 
+              Discover how <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX AI ENGINE</span> transforms operations across industries with secure, 
               intelligent, and context-aware solutions tailored to your specific business needs.
             </p>
           </div>

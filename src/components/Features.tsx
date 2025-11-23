@@ -120,7 +120,7 @@ export const Features = () => {
                 <span className="bg-gradient-accent bg-clip-text text-transparent">Built-in Integrations</span>
               </h2>
               <p className="text-xl text-foreground/80 max-w-3xl">
-                KOGNIX is your universal adaptor, seamlessly integrating with over 80 essential services from day one
+                <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX</span> is your universal adaptor, seamlessly integrating with over 80 essential services from day one
               </p>
             </div>
           </div>

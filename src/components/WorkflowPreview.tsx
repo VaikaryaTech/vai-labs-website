@@ -18,7 +18,7 @@ export const WorkflowPreview = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-8">
             <h2 className="text-4xl font-bold mb-4 text-foreground">
-              The KOGNIX Engine: <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">How Innovation Takes Form</span>
+              The <span className="bg-gradient-kognix bg-clip-text text-transparent">KOGNIX</span> Engine: <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">How Innovation Takes Form</span>
             </h2>
             <p className="text-xl text-foreground/80">
               Our platform is engineered for speed, collaboration, and unmatched capability

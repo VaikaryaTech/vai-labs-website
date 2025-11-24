@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2 } from "lucide-react";
+import observabilityBg from "@/assets/observability-hero-background.jpg";
 
 const Observability = () => {
   const features = [
@@ -49,7 +50,10 @@ const Observability = () => {
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5" />
+        <div className="absolute inset-0">
+          <img src={observabilityBg} alt="" className="w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/90 to-background/80" />
+        </div>
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-6 px-4 py-2 text-sm font-semibold" variant="secondary">

@@ -44,11 +44,11 @@ const Product = () => {
             </h1>
             
             <p className="text-2xl lg:text-3xl font-semibold text-foreground">
-              Powered by KOGNIX - Your Secure and Flexible Generative AI Framework
+              Powered by <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span> - Your Secure and Flexible Generative AI Framework
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              Engineered with paramount focus on data security and flexibility, KOGNIX is a versatile solution 
+              Engineered with paramount focus on data security and flexibility, <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> is a versatile solution 
               designed for seamless integration across diverse business domains, empowering organizations to 
               leverage the transformative power of AI while retaining absolute control over their data.
             </p>
@@ -72,7 +72,7 @@ const Product = () => {
                 Unmatched Security and Integration
               </h2>
               <p className="text-xl text-foreground/80 max-w-3xl">
-                KOGNIX's unique architecture offers unparalleled deployment options with continuous innovation 
+                <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span>'s unique architecture offers unparalleled deployment options with continuous innovation 
                 and regular updates to keep your business at the forefront of AI advancements.
               </p>
             </div>
@@ -120,7 +120,7 @@ const Product = () => {
               <DollarSign className="h-12 w-12 text-primary mb-6" />
               <h3 className="text-2xl font-bold mb-4">Lower Implementation Costs</h3>
               <p className="text-muted-foreground leading-relaxed">
-                KOGNIX can be implemented at significantly lower costs compared to similar market solutions, 
+                <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> can be implemented at significantly lower costs compared to similar market solutions, 
                 making advanced AI accessible to organizations of all sizes.
               </p>
             </Card>
@@ -151,7 +151,7 @@ const Product = () => {
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
                 <h2 className="text-4xl font-bold mb-4 text-foreground">Explore Our Comprehensive Features</h2>
                 <p className="text-xl text-foreground/80 mb-8">
-                  Discover the full range of capabilities and features that power KOGNIX
+                  Discover the full range of capabilities and features that power <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span>
                 </p>
                 <Link to="/features">
                   <Button size="lg" className="group">
@@ -173,7 +173,7 @@ const Product = () => {
           <div className="max-w-5xl mx-auto text-center space-y-8 mb-16">
             <h2 className="text-4xl font-bold mb-4">How <span className="bg-gradient-kognix bg-clip-text text-transparent">KOGNIX</span> Works</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              KOGNIX leverages advanced deep learning models, including large language models (LLMs) and 
+              <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> leverages advanced deep learning models, including large language models (LLMs) and 
               diffusion models, to understand context, generate novel outputs, and continually refine its 
               capabilities. With its secure architecture and flexible deployment options, it&apos;s more than 
               just orchestration; it&apos;s intelligent creation with complete data sovereignty.

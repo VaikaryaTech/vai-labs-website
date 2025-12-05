@@ -12,6 +12,7 @@ const CaseStudies = () => {
       industry: "Healthcare",
       challenge: "Manual review of clinical trial protocols taking weeks, delaying patient enrollment",
       solution: "Implemented KOGNIX for automated protocol eligibility assessment and candidate screening",
+      hasKognix: true,
       results: [
         "Reduced review time from 2 weeks to 30 minutes",
         "45% increase in qualified candidate identification",
@@ -23,6 +24,7 @@ const CaseStudies = () => {
       industry: "Finance",
       challenge: "Compliance team struggling to keep up with changing AML and KYC regulations",
       solution: "Deployed KOGNIX regulatory compliance copilot to query and analyze regulatory documents",
+      hasKognix: true,
       results: [
         "70% reduction in compliance research time",
         "100% audit trail with source citations",
@@ -34,6 +36,7 @@ const CaseStudies = () => {
       industry: "Manufacturing",
       challenge: "Field technicians spending hours searching maintenance manuals for troubleshooting",
       solution: "Implemented KOGNIX real-time troubleshooting assistant for equipment maintenance",
+      hasKognix: true,
       results: [
         "85% reduction in equipment downtime",
         "3x faster repair completion",
@@ -45,6 +48,7 @@ const CaseStudies = () => {
       industry: "Retail",
       challenge: "Customer support team overwhelmed with product and order inquiries",
       solution: "Integrated KOGNIX intelligent chatbot with product catalog and order management system",
+      hasKognix: true,
       results: [
         "60% reduction in support ticket volume",
         "95% customer satisfaction score",
@@ -96,7 +100,16 @@ const CaseStudies = () => {
                     
                     <div>
                       <h4 className="font-semibold text-foreground mb-2">Solution</h4>
-                      <p className="text-muted-foreground">{study.solution}</p>
+                      <p className="text-muted-foreground">
+                        {study.solution.split('KOGNIX').map((part, i, arr) => (
+                          <span key={i}>
+                            {part}
+                            {i < arr.length - 1 && (
+                              <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span>
+                            )}
+                          </span>
+                        ))}
+                      </p>
                     </div>
                     
                     <div>

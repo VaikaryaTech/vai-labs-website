@@ -19,7 +19,7 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2">
-              <li><Link to="/product" className="text-sm text-muted-foreground hover:text-foreground transition-colors">KOGNIX</Link></li>
+              <li><Link to="/product" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span></Link></li>
               <li><Link to="/features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</Link></li>
               <li><Link to="/business-applications" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Business Applications</Link></li>
             </ul>

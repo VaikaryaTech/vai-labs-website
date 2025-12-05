@@ -40,7 +40,8 @@ const Observability = () => {
     {
       icon: "☁️",
       title: "Flexible Deployment",
-      description: "Easily run KOGNIX Analytics Cloud (managed) or Self-Host on your own infrastructure using Docker Compose, Kubernetes (Helm), or Terraform templates for various cloud providers."
+      description: "Easily run KOGNIX Analytics Cloud (managed) or Self-Host on your own infrastructure using Docker Compose, Kubernetes (Helm), or Terraform templates for various cloud providers.",
+      hasKognix: true
     }
   ];
 
@@ -94,7 +95,14 @@ const Observability = () => {
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-sm leading-relaxed">
-                      {feature.description}
+                      {feature.description.split('KOGNIX').map((part, i, arr) => (
+                        <span key={i}>
+                          {part}
+                          {i < arr.length - 1 && (
+                            <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span>
+                          )}
+                        </span>
+                      ))}
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -148,7 +156,7 @@ const Observability = () => {
             Ready to Gain Complete Visibility?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Start monitoring, evaluating, and optimizing your LLM applications with KOGNIX Analytics today.
+            Start monitoring, evaluating, and optimizing your LLM applications with <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> Analytics today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors">

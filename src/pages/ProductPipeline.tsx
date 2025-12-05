@@ -238,7 +238,14 @@ const ProductPipeline = () => {
                       </CardHeader>
                       <CardContent>
                         <CardDescription className="text-sm leading-relaxed">
-                          {feature.description}
+                          {feature.description.split('KOGNIX').map((part, i, arr) => (
+                            <span key={i}>
+                              {part}
+                              {i < arr.length - 1 && (
+                                <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span>
+                              )}
+                            </span>
+                          ))}
                         </CardDescription>
                       </CardContent>
                     </Card>

@@ -8,6 +8,7 @@ export default function Features() {
       icon: Network,
       title: "Core Intelligence & Retrieval Engine",
       description: "KOGNIX's Retrieval-Augmented Generation (RAG) engine powers precise, explainable, and context-aware intelligence.",
+      kognixInDesc: true,
       color: "from-blue-500/20 to-blue-600/20",
       features: [
         {
@@ -229,9 +230,18 @@ export default function Features() {
                   <div className={`p-4 rounded-xl bg-gradient-to-br ${category.color} backdrop-blur-sm`}>
                     <Icon className="h-8 w-8 text-foreground" />
                   </div>
-                  <div>
+                <div>
                     <h2 className="text-3xl md:text-4xl font-bold mb-2">{category.title}</h2>
-                    <p className="text-lg text-muted-foreground">{category.description}</p>
+                    <p className="text-lg text-muted-foreground">
+                      {category.description.split('KOGNIX').map((part, i, arr) => (
+                        <span key={i}>
+                          {part}
+                          {i < arr.length - 1 && (
+                            <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span>
+                          )}
+                        </span>
+                      ))}
+                    </p>
                   </div>
                 </div>
                 
@@ -242,10 +252,24 @@ export default function Features() {
                       className="group p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
                     >
                       <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-                        {feature.name}
+                        {feature.name.split('KOGNIX').map((part, i, arr) => (
+                          <span key={i}>
+                            {part}
+                            {i < arr.length - 1 && (
+                              <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>
+                            )}
+                          </span>
+                        ))}
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        {feature.description}
+                        {feature.description.split('KOGNIX').map((part, i, arr) => (
+                          <span key={i}>
+                            {part}
+                            {i < arr.length - 1 && (
+                              <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span>
+                            )}
+                          </span>
+                        ))}
                       </p>
                     </div>
                   ))}
@@ -272,7 +296,7 @@ export default function Features() {
           <div className="space-y-12">
             <div className="prose prose-lg max-w-none text-muted-foreground mb-8">
               <p className="text-foreground/90 leading-relaxed">
-                The KOGNIX Dashboard is a unified control center designed to give enterprises complete visibility into their AI ecosystem — from data ingestion to model orchestration. Every tile, chart, and insight is crafted for precision, speed, and transparency.
+                The <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> Dashboard is a unified control center designed to give enterprises complete visibility into their AI ecosystem — from data ingestion to model orchestration. Every tile, chart, and insight is crafted for precision, speed, and transparency.
               </p>
             </div>
 

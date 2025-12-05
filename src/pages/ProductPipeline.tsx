@@ -4,12 +4,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2 } from "lucide-react";
 import pipelineBg from "@/assets/product-pipeline-background.jpg";
+import bgIntelligence from "@/assets/bg-intelligence.jpg";
+import bgMobile from "@/assets/bg-mobile.jpg";
+import bgWorkflow from "@/assets/bg-workflow.jpg";
+import bgDeveloper from "@/assets/bg-developer.jpg";
 
 const ProductPipeline = () => {
   const products = [
     {
       title: "KOGNIX Intelligence",
       subtitle: "Swap for Any LLM. One Unified API. Enterprise Ready.",
+      background: bgIntelligence,
       badge: "AI Infrastructure",
       features: [
         {
@@ -52,6 +57,7 @@ const ProductPipeline = () => {
     {
       title: "KOGNIX Mobile",
       subtitle: "The Universal Desktop & Mobile Client",
+      background: bgMobile,
       badge: "User Interface",
       features: [
         {
@@ -94,6 +100,7 @@ const ProductPipeline = () => {
     {
       title: "KOGNIX Workflow",
       subtitle: "The Platform to Build and Deploy AI Agent Workflows",
+      background: bgWorkflow,
       badge: "Workflow Automation",
       features: [
         {
@@ -136,6 +143,7 @@ const ProductPipeline = () => {
     {
       title: "KOGNIX AI Developer",
       subtitle: "From Prototype to Production. The Complete Development and Operation Platform for LLM Agents",
+      background: bgDeveloper,
       badge: "LLMOps Platform",
       features: [
         {
@@ -207,20 +215,27 @@ const ProductPipeline = () => {
         <div className="container mx-auto">
           <div className="space-y-32">
             {products.map((product, idx) => (
-              <div key={idx} className="max-w-7xl mx-auto">
-                <div className="text-center mb-12">
-                  <Badge className="mb-4" variant="outline">
-                    {product.badge}
-                  </Badge>
-                  <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                    <span className="bg-gradient-kognix bg-clip-text text-transparent">{product.title}</span>
-                  </h2>
-                  <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                    {product.subtitle}
-                  </p>
+              <div key={idx} className="relative max-w-7xl mx-auto rounded-2xl overflow-hidden">
+                {/* Section Background */}
+                <div className="absolute inset-0">
+                  <img src={product.background} alt="" className="w-full h-full object-cover opacity-15" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background/70" />
                 </div>
+                
+                <div className="relative z-10 py-16 px-8">
+                  <div className="text-center mb-12">
+                    <Badge className="mb-4" variant="outline">
+                      {product.badge}
+                    </Badge>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                      <span className="bg-gradient-kognix bg-clip-text text-transparent">{product.title}</span>
+                    </h2>
+                    <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                      {product.subtitle}
+                    </p>
+                  </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {product.features.map((feature, featureIdx) => (
                     <Card key={featureIdx} className="group hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 border-border/50 hover:border-primary/30">
                       <CardHeader>
@@ -250,6 +265,7 @@ const ProductPipeline = () => {
                       </CardContent>
                     </Card>
                   ))}
+                  </div>
                 </div>
               </div>
             ))}

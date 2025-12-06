@@ -211,7 +211,7 @@ export default function Features() {
       <section className="pt-32 pb-16 px-6">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-kognix bg-clip-text text-transparent">
-            KOGNIX Platform Features
+            KOGNIX AI Engine Features
           </h1>
           <p className="text-xl text-muted-foreground">
             Enterprise-grade AI capabilities from intelligent retrieval to autonomous agents

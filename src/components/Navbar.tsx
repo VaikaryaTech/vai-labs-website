@@ -1,13 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
-import { Menu } from "lucide-react";
+import { Menu, Moon, Sun } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
+import { useTheme } from "@/components/ThemeProvider";
 
 export const Navbar = () => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
   
   const navLinks = [
     { to: "/", label: "Home" },
@@ -42,8 +44,34 @@ export const Navbar = () => {
                 {link.label}
               </Link>
             ))}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="ml-2"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </Button>
           </div>
 
+          <div className="flex items-center gap-2 md:hidden">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </Button>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon">
@@ -72,6 +100,7 @@ export const Navbar = () => {
               </nav>
             </SheetContent>
           </Sheet>
+          </div>
         </div>
       </div>
     </nav>

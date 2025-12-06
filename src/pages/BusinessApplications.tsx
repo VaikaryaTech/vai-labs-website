@@ -205,7 +205,7 @@ const BusinessApplications = () => {
           <div className="max-w-4xl mx-auto text-center space-y-6 animate-slide-in">
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
               <span className="bg-gradient-accent bg-clip-text text-transparent">
-                Business Applications
+                Enterprise Application Areas
               </span>
             </h1>
             

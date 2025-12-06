@@ -104,7 +104,7 @@ const HealthcarePharma = () => {
         <div className="container mx-auto px-6 relative z-10">
           <Link to="/business-applications" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8">
             <ArrowLeft className="h-4 w-4" />
-            Back to Business Applications
+            Back to Enterprise Application Areas
           </Link>
           
           <div className="max-w-4xl mx-auto text-center space-y-6 animate-slide-in">

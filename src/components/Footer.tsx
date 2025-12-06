@@ -21,7 +21,7 @@ export const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/product" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span></Link></li>
               <li><Link to="/features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</Link></li>
-              <li><Link to="/business-applications" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Business Applications</Link></li>
+              <li><Link to="/business-applications" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Enterprise Application Areas</Link></li>
             </ul>
           </div>
 

@@ -404,7 +404,7 @@ const Product = () => {
           <div className="text-center mt-12">
             <Link to="/business-applications">
               <Button variant="hero" size="lg">
-                Explore Business Applications
+                Explore Enterprise Application Areas
               </Button>
             </Link>
           </div>

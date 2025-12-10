@@ -10,7 +10,7 @@ const Blog = () => {
       title: "The Accelerated Trajectory of Enterprise AI",
       excerpt: "The notion of a future AI revolution is obsolete; the revolution is a present, unfolding reality. AI is transitioning from a human augmentation tool to a co-decision maker.",
       author: "VAI LABS Team",
-      date: "Jan 15, 2025",
+      date: "Dec 10, 2025",
       readTime: "12 min read",
       category: "AI Trends",
       slug: "/blog/enterprise-ai-trajectory",

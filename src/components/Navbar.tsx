@@ -17,6 +17,7 @@ export const Navbar = () => {
     { to: "/observability", label: "Observability" },
     { to: "/business-applications", label: "Enterprise Application Areas" },
     { to: "/product-pipeline", label: "Product Pipeline" },
+    { to: "/blog", label: "Blog" },
     { to: "/assessment", label: "AI Readiness" },
     { to: "/book-demo", label: "Book Demo" },
   ];

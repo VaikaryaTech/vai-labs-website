@@ -1,17 +1,20 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Card } from "@/components/ui/card";
-import { Calendar, Clock, User } from "lucide-react";
+import { Calendar, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   const posts = [
     {
-      title: "The Future of Enterprise AI: Trends to Watch in 2025",
-      excerpt: "Explore the key trends shaping enterprise AI adoption, from on-premises solutions to advanced RAG systems.",
+      title: "The Accelerated Trajectory of Enterprise AI",
+      excerpt: "The notion of a future AI revolution is obsolete; the revolution is a present, unfolding reality. AI is transitioning from a human augmentation tool to a co-decision maker.",
       author: "VAI LABS Team",
       date: "Jan 15, 2025",
-      readTime: "5 min read",
-      category: "AI Trends"
+      readTime: "12 min read",
+      category: "AI Trends",
+      slug: "/blog/enterprise-ai-trajectory",
+      featured: true
     },
     {
       title: "Implementing Secure GenAI: A Comprehensive Guide",
@@ -19,7 +22,8 @@ const Blog = () => {
       author: "Security Team",
       date: "Jan 10, 2025",
       readTime: "8 min read",
-      category: "Security"
+      category: "Security",
+      slug: null
     },
     {
       title: "How RAG Technology is Transforming Document Intelligence",
@@ -27,7 +31,8 @@ const Blog = () => {
       author: "AI Research Team",
       date: "Jan 5, 2025",
       readTime: "6 min read",
-      category: "Technology"
+      category: "Technology",
+      slug: null
     },
     {
       title: "Case Study: Reducing Compliance Time by 70% with AI",
@@ -35,7 +40,8 @@ const Blog = () => {
       author: "Product Team",
       date: "Dec 28, 2024",
       readTime: "7 min read",
-      category: "Case Study"
+      category: "Case Study",
+      slug: null
     },
     {
       title: "Building Trust in AI: The Importance of Grounded Responses",
@@ -43,7 +49,8 @@ const Blog = () => {
       author: "AI Research Team",
       date: "Dec 20, 2024",
       readTime: "5 min read",
-      category: "Best Practices"
+      category: "Best Practices",
+      slug: null
     },
     {
       title: "The ROI of Enterprise GenAI Implementation",
@@ -51,9 +58,13 @@ const Blog = () => {
       author: "Business Team",
       date: "Dec 15, 2024",
       readTime: "6 min read",
-      category: "Business"
+      category: "Business",
+      slug: null
     }
   ];
+
+  const featuredPost = posts.find(p => p.featured);
+  const otherPosts = posts.filter(p => !p.featured);
 
   return (
     <div className="min-h-screen bg-background">
@@ -77,10 +88,40 @@ const Blog = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-background">
+      {/* Featured Article */}
+      {featuredPost && (
+        <section className="py-12 bg-background">
+          <div className="container mx-auto px-6">
+            <div className="max-w-7xl mx-auto">
+              <Link to={featuredPost.slug || "#"}>
+                <Card className="p-8 md:p-12 border-primary/30 hover:border-primary/60 transition-all duration-300 hover:shadow-glow-primary bg-gradient-to-br from-card to-primary/5">
+                  <div className="inline-block px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full mb-4">
+                    Featured
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">{featuredPost.title}</h2>
+                  <p className="text-muted-foreground text-lg mb-6 max-w-3xl">{featuredPost.excerpt}</p>
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-1">
+                      <Calendar className="h-4 w-4" />
+                      {featuredPost.date}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Clock className="h-4 w-4" />
+                      {featuredPost.readTime}
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className="py-12 pb-24 bg-background">
         <div className="container mx-auto px-6">
+          <h2 className="text-2xl font-bold mb-8 max-w-7xl mx-auto">More Articles</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {posts.map((post, index) => (
+            {otherPosts.map((post, index) => (
               <Card key={index} className="p-6 border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-glow-primary cursor-pointer">
                 <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-4">
                   {post.category}

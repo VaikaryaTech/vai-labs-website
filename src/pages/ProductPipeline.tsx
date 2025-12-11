@@ -200,7 +200,7 @@ const ProductPipeline = () => {
             <Badge className="mb-6 px-4 py-2 text-sm font-semibold" variant="secondary">
               Coming Soon
             </Badge>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-orange-500">
               Product Pipeline
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">

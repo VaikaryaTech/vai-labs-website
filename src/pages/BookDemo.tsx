@@ -108,7 +108,7 @@ const onSubmit = async (data: z.infer<typeof formSchema>) => {
         <div className="container mx-auto px-6">
           {/* Hero Section */}
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-orange-500">
               Experience the Future
             </h1>
             <p className="text-lg text-muted-foreground">

@@ -1,6 +1,9 @@
 import { Database, FileText, Workflow, Settings, MessageSquare, Network, LayoutDashboard } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import genaiCapabilities from "@/assets/genai-capabilities.jpg";
+import platformIntegrations from "@/assets/platform-integrations.jpg";
+import workflowAutomation from "@/assets/workflow-automation.jpg";
 
 export default function Features() {
   const featureCategories = [
@@ -10,6 +13,7 @@ export default function Features() {
       description: "KOGNIX's Retrieval-Augmented Generation (RAG) engine powers precise, explainable, and context-aware intelligence.",
       kognixInDesc: true,
       color: "from-blue-500/20 to-blue-600/20",
+      bgImage: genaiCapabilities,
       features: [
         {
           name: "Deep AI Intelligence",
@@ -86,6 +90,7 @@ export default function Features() {
       title: "Agentic AI & Workflow Automation",
       description: "Transform business processes into self-operating intelligence with KOGNIX Agents.",
       color: "from-green-500/20 to-green-600/20",
+      bgImage: workflowAutomation,
       features: [
         {
           name: "Visual Agent Builder",
@@ -118,6 +123,7 @@ export default function Features() {
       title: "Model Ecosystem & Integrations",
       description: "Freedom to choose, integrate, and scale with your preferred AI stack.",
       color: "from-orange-500/20 to-orange-600/20",
+      bgImage: platformIntegrations,
       features: [
         {
           name: "Broad Model Support",
@@ -208,8 +214,13 @@ export default function Features() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6">
-        <div className="container mx-auto max-w-4xl text-center">
+      <section className="relative pt-32 pb-16 px-6 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${genaiCapabilities})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background" />
+        <div className="container mx-auto max-w-4xl text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-kognix bg-clip-text text-transparent">
             KOGNIX AI Engine Features
           </h1>
@@ -225,44 +236,27 @@ export default function Features() {
           {featureCategories.map((category, idx) => {
             const Icon = category.icon;
             return (
-              <div key={idx} className="space-y-8">
-                <div className="flex items-center gap-4">
-                  <div className={`p-4 rounded-xl bg-gradient-to-br ${category.color} backdrop-blur-sm`}>
-                    <Icon className="h-8 w-8 text-foreground" />
-                  </div>
-                <div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-2">{category.title}</h2>
-                    <p className="text-lg text-muted-foreground">
-                      {category.description.split('KOGNIX').map((part, i, arr) => (
-                        <span key={i}>
-                          {part}
-                          {i < arr.length - 1 && (
-                            <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span>
-                          )}
-                        </span>
-                      ))}
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-6">
-                  {category.features.map((feature, featureIdx) => (
+              <div key={idx} className="relative rounded-2xl overflow-hidden">
+                {/* Background image for categories that have one */}
+                {category.bgImage && (
+                  <>
                     <div 
-                      key={featureIdx}
-                      className="group p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
-                    >
-                      <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-                        {feature.name.split('KOGNIX').map((part, i, arr) => (
-                          <span key={i}>
-                            {part}
-                            {i < arr.length - 1 && (
-                              <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>
-                            )}
-                          </span>
-                        ))}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {feature.description.split('KOGNIX').map((part, i, arr) => (
+                      className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+                      style={{ backgroundImage: `url(${category.bgImage})` }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/80 to-background/90" />
+                  </>
+                )}
+                
+                <div className="relative z-10 p-8 space-y-8">
+                  <div className="flex items-center gap-4">
+                    <div className={`p-4 rounded-xl bg-gradient-to-br ${category.color} backdrop-blur-sm`}>
+                      <Icon className="h-8 w-8 text-foreground" />
+                    </div>
+                    <div>
+                      <h2 className="text-3xl md:text-4xl font-bold mb-2">{category.title}</h2>
+                      <p className="text-lg text-muted-foreground">
+                        {category.description.split('KOGNIX').map((part, i, arr) => (
                           <span key={i}>
                             {part}
                             {i < arr.length - 1 && (
@@ -272,7 +266,37 @@ export default function Features() {
                         ))}
                       </p>
                     </div>
-                  ))}
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {category.features.map((feature, featureIdx) => (
+                      <div 
+                        key={featureIdx}
+                        className="group p-6 rounded-xl border border-border bg-card/80 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
+                      >
+                        <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                          {feature.name.split('KOGNIX').map((part, i, arr) => (
+                            <span key={i}>
+                              {part}
+                              {i < arr.length - 1 && (
+                                <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>
+                              )}
+                            </span>
+                          ))}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {feature.description.split('KOGNIX').map((part, i, arr) => (
+                            <span key={i}>
+                              {part}
+                              {i < arr.length - 1 && (
+                                <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span>
+                              )}
+                            </span>
+                          ))}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             );

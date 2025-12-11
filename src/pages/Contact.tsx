@@ -75,11 +75,12 @@ const Contact = () => {
                   <div className="flex items-start gap-4">
                     <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="font-semibold mb-2">Location</h3>
+                      <h3 className="font-semibold mb-2">Registered Office</h3>
                       <p className="text-muted-foreground font-semibold">VAI LABS</p>
                       <p className="text-muted-foreground">
-                        Electronics City Ph2, Bengaluru<br />
-                        Karnataka, India - 560100
+                        B2 / L4-22 / KBEC, AnanthNagar Ph-2,<br />
+                        Electronics City Ph-2, Bangalore 560100,<br />
+                        Karnataka, INDIA
                       </p>
                     </div>
                   </div>

@@ -81,6 +81,8 @@ const BusinessApplications = () => {
       title: "Legal and Compliance",
       color: "text-purple-500",
       image: legalImg,
+      hasSubPage: true,
+      link: "/business-applications/legal",
       useCases: [
         {
           name: "Automated Legal Research",

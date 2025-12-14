@@ -9,6 +9,7 @@ import Product from "./pages/Product";
 import Features from "./pages/Features";
 import BusinessApplications from "./pages/BusinessApplications";
 import HealthcarePharma from "./pages/HealthcarePharma";
+import LegalCompliance from "./pages/LegalCompliance";
 import Assessment from "./pages/Assessment";
 import Index from "./pages/Index";
 import BookDemo from "./pages/BookDemo";
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/features" element={<Features />} />
             <Route path="/business-applications" element={<BusinessApplications />} />
             <Route path="/business-applications/healthcare" element={<HealthcarePharma />} />
+            <Route path="/business-applications/legal" element={<LegalCompliance />} />
             <Route path="/assessment" element={<Assessment />} />
             <Route path="/workflow-automation" element={<Index />} />
             <Route path="/book-demo" element={<BookDemo />} />

@@ -32,7 +32,7 @@ const Home = () => {
               </span>
             </h1>
             
-            <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+            <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-4xl mx-auto font-bold">
               VAI LABS delivers enterprise-grade Generative AI, built for your environment. Secure your innovation: Our engine runs entirely within your infrastructure—guaranteeing no cloud data leakage and zero internet dependency.
             </p>
 

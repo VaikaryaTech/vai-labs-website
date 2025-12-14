@@ -18,6 +18,7 @@ import Documentation from "./pages/Documentation";
 import CaseStudies from "./pages/CaseStudies";
 import Blog from "./pages/Blog";
 import BlogEnterpriseAI from "./pages/BlogEnterpriseAI";
+import BlogSecureGenAI from "./pages/BlogSecureGenAI";
 import About from "./pages/About";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
@@ -50,6 +51,7 @@ const App = () => (
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/enterprise-ai-trajectory" element={<BlogEnterpriseAI />} />
+            <Route path="/blog/secure-genai-guide" element={<BlogSecureGenAI />} />
             <Route path="/about" element={<About />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />

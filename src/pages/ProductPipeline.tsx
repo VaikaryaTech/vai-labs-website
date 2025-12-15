@@ -231,7 +231,8 @@ const ProductPipeline = () => {
                       </Badge>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mt-3">
-                      <span className="bg-gradient-kognix bg-clip-text text-transparent">{product.title}</span>
+                      <span className="bg-gradient-kognix bg-clip-text text-transparent">KOGNIX</span>{" "}
+                      <span className="text-cyan-accent">{product.title.replace("KOGNIX ", "")}</span>
                     </h2>
                     <p className="text-lg text-muted-foreground mt-2 max-w-3xl">
                       {product.subtitle}

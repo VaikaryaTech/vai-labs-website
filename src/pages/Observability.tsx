@@ -61,7 +61,8 @@ const Observability = () => {
               Analytics & Observability
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX Analytix</span>
+              <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>{" "}
+              <span className="text-cyan-accent">Analytix</span>
             </h1>
             <p className="text-2xl md:text-3xl font-semibold mb-6 text-foreground">
               The Platform for Observability, Evaluation, and Debugging
@@ -117,7 +118,8 @@ const Observability = () => {
         <div className="container mx-auto">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-              Why Choose <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX Analytix</span>?
+              Why Choose <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>{" "}
+              <span className="text-cyan-accent">Analytix</span>?
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-4">
@@ -156,7 +158,8 @@ const Observability = () => {
             Ready to Gain Complete Visibility?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Start monitoring, evaluating, and optimizing your LLM applications with <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> Analytix today.
+            Start monitoring, evaluating, and optimizing your LLM applications with <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span>{" "}
+            <span className="text-cyan-accent font-semibold">Analytix</span> today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors">

@@ -57,6 +57,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        cyan: {
+          accent: "hsl(var(--cyan-accent))",
+        },
       },
       backgroundImage: {
         "gradient-hero": "var(--gradient-hero)",

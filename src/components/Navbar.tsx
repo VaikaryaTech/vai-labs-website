@@ -18,9 +18,9 @@ export const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
 
   const enterpriseProducts = [
-    { to: "/product", label: "GenAI Engine" },
-    { to: "/observability", label: "KOGNIX Analytix" },
-    { to: "/product-pipeline", label: "Product Pipeline" },
+    { to: "/product", label: "KOGNIX", suffix: "GenAI Engine" },
+    { to: "/observability", label: "KOGNIX", suffix: "Analytix" },
+    { to: "/product-pipeline", label: "", suffix: "Product Pipeline" },
   ];
 
   const navLinks = [
@@ -75,11 +75,14 @@ export const Navbar = () => {
                       to={product.to}
                       className={`w-full cursor-pointer ${
                         location.pathname === product.to
-                          ? "text-foreground font-semibold"
-                          : "text-muted-foreground"
+                          ? "font-semibold"
+                          : ""
                       }`}
                     >
-                      {product.label}
+                      {product.label && (
+                        <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">{product.label}</span>
+                      )}{" "}
+                      <span className="text-cyan-accent">{product.suffix}</span>
                     </Link>
                   </DropdownMenuItem>
                 ))}
@@ -163,11 +166,14 @@ export const Navbar = () => {
                           }}
                           className={`text-base py-1 rounded-md transition-colors ${
                             location.pathname === product.to
-                              ? "text-primary font-semibold"
-                              : "text-muted-foreground hover:text-foreground"
+                              ? "font-semibold"
+                              : ""
                           }`}
                         >
-                          {product.label}
+                          {product.label && (
+                            <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">{product.label}</span>
+                          )}{" "}
+                          <span className="text-cyan-accent">{product.suffix}</span>
                         </Link>
                       ))}
                     </div>

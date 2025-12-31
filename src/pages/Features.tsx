@@ -10,7 +10,7 @@ export default function Features() {
     {
       icon: Network,
       title: "Core Intelligence & Retrieval Engine",
-      description: "KOGNIX's Retrieval-Augmented Generation (RAG) engine powers precise, explainable, and context-aware intelligence.",
+      description: "KOGNIX's Knowledge Augmention Engine powers precise, explainable, and context-aware intelligence.",
       kognixInDesc: true,
       color: "from-blue-500/20 to-blue-600/20",
       bgImage: genaiCapabilities,
@@ -48,7 +48,7 @@ export default function Features() {
     {
       icon: FileText,
       title: "Advanced Data Ingestion & Processing",
-      description: "KOGNIX transforms fragmented enterprise data into structured, searchable intelligence.",
+      description: "KOGNIX AI Engnine transforms fragmented enterprise data into structured, searchable intelligence.",
       color: "from-purple-500/20 to-purple-600/20",
       features: [
         {
@@ -105,7 +105,7 @@ export default function Features() {
           description: "Agents can execute external tools such as live web search, SQL querying, or content generation steps."
         },
         {
-          name: "Pre-Built Agent Templates",
+          name: "Pre-Built AI Agent Templates",
           description: "Ready-to-use agent blueprints for use cases like customer support, document summarization, SEO content, and translations."
         },
         {

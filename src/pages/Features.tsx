@@ -4,6 +4,9 @@ import { Footer } from "@/components/Footer";
 import genaiCapabilities from "@/assets/genai-capabilities.jpg";
 import platformIntegrations from "@/assets/platform-integrations.jpg";
 import workflowAutomation from "@/assets/workflow-automation.jpg";
+import bgDataIngestion from "@/assets/bg-data-ingestion.jpg";
+import bgDeployment from "@/assets/bg-deployment.jpg";
+import bgChatExperience from "@/assets/bg-chat-experience.jpg";
 
 export default function Features() {
   const featureCategories = [
@@ -50,6 +53,7 @@ export default function Features() {
       title: "Advanced Data Ingestion & Processing",
       description: "KOGNIX AI Engnine transforms fragmented enterprise data into structured, searchable intelligence.",
       color: "from-purple-500/20 to-purple-600/20",
+      bgImage: bgDataIngestion,
       features: [
         {
           name: "Universal Data Compatibility",
@@ -148,6 +152,7 @@ export default function Features() {
       title: "Deployment, Management & Scalability",
       description: "Enterprise-grade performance with simple deployment and full administrative control.",
       color: "from-cyan-500/20 to-cyan-600/20",
+      bgImage: bgDeployment,
       features: [
         {
           name: "Flexible Deployment",
@@ -176,6 +181,7 @@ export default function Features() {
       title: "Chat Experience & User Interaction",
       description: "Empower users with an intelligent, multilingual, and context-aware chat environment.",
       color: "from-pink-500/20 to-pink-600/20",
+      bgImage: bgChatExperience,
       features: [
         {
           name: "Custom AI Assistants",
@@ -399,20 +405,12 @@ export default function Features() {
             <p className="text-xl text-muted-foreground mb-8">
               See how <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX</span>'s comprehensive capabilities can transform your enterprise AI applications
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="/book-demo"
-                className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Book a Demo
-              </a>
-              <a 
-                href="/product"
-                className="px-8 py-4 border border-border rounded-lg font-semibold hover:border-primary transition-colors"
-              >
-                Explore <span className="bg-gradient-kognix bg-clip-text text-transparent">KOGNIX</span>
-              </a>
-            </div>
+            <a 
+              href="/book-demo"
+              className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+            >
+              Book a Demo
+            </a>
           </div>
         </div>
       </section>

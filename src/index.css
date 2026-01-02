@@ -2,107 +2,119 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Google AI inspired design system. All colors, gradients, fonts, etc defined here. 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 240 30% 15%;
+    --background: 0 0% 100%;
+    --foreground: 210 11% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 30% 15%;
+    --card-foreground: 210 11% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 30% 15%;
+    --popover-foreground: 210 11% 15%;
 
-    --primary: 12 100% 55%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 260 70% 55%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 210 11% 15%;
 
-    --muted: 240 10% 92%;
-    --muted-foreground: 240 10% 45%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 12 100% 55%;
+    --accent: 142 71% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 10% 85%;
-    --input: 240 10% 90%;
-    --ring: 12 100% 55%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
+    /* Google-inspired colors */
+    --google-blue: 217 91% 60%;
+    --google-red: 4 90% 58%;
+    --google-yellow: 45 100% 51%;
+    --google-green: 142 71% 45%;
+    
     /* Custom design tokens - Light */
-    --gradient-hero: linear-gradient(135deg, hsl(240 20% 96%), hsl(260 15% 92%));
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100% / 0.8), hsl(240 20% 98% / 0.8));
-    --gradient-accent: linear-gradient(135deg, hsl(12 100% 55%), hsl(25 100% 50%));
-    --gradient-kognix: linear-gradient(90deg, hsl(0 100% 50%), hsl(23 100% 55%));
-    --glow-primary: 0 0 40px hsl(12 100% 55% / 0.2);
-    --glow-secondary: 0 0 30px hsl(260 70% 55% / 0.3);
-    --cyan-accent: 185 100% 50%;
+    --gradient-hero: linear-gradient(180deg, hsl(210 40% 98%), hsl(0 0% 100%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%), hsl(199 89% 48%));
+    --gradient-kognix: linear-gradient(90deg, hsl(4 90% 58%), hsl(45 100% 51%));
+    --glow-primary: 0 8px 30px hsl(217 91% 60% / 0.15);
+    --glow-secondary: 0 8px 30px hsl(142 71% 45% / 0.15);
+    --cyan-accent: 199 89% 48%;
     
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 240 30% 15%;
-    --sidebar-primary: 12 100% 55%;
+    --sidebar-foreground: 210 11% 15%;
+    --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 10% 95%;
-    --sidebar-accent-foreground: 240 30% 15%;
-    --sidebar-border: 240 10% 85%;
-    --sidebar-ring: 12 100% 55%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 210 11% 15%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 217 91% 60%;
   }
 
   .dark {
-    --background: 240 40% 6%;
+    --background: 220 13% 10%;
     --foreground: 210 40% 98%;
 
-    --card: 240 35% 8%;
+    --card: 220 13% 13%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 240 35% 10%;
+    --popover: 220 13% 13%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 12 100% 67%;
+    --primary: 217 91% 65%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 260 80% 65%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 240 20% 20%;
+    --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 12 100% 67%;
+    --accent: 142 71% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 240 20% 15%;
-    --input: 240 20% 18%;
-    --ring: 12 100% 67%;
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 217 91% 65%;
+
+    /* Google-inspired colors - Dark */
+    --google-blue: 217 91% 65%;
+    --google-red: 4 90% 63%;
+    --google-yellow: 45 100% 56%;
+    --google-green: 142 71% 50%;
 
     /* Custom design tokens - Dark */
-    --gradient-hero: linear-gradient(135deg, hsl(260 60% 15%), hsl(240 50% 8%));
-    --gradient-card: linear-gradient(135deg, hsl(240 35% 10% / 0.5), hsl(260 40% 12% / 0.5));
-    --gradient-accent: linear-gradient(135deg, hsl(12 100% 67%), hsl(25 100% 60%));
-    --gradient-kognix: linear-gradient(90deg, hsl(0 100% 60%), hsl(23 100% 65%));
-    --glow-primary: 0 0 40px hsl(12 100% 67% / 0.3);
-    --glow-secondary: 0 0 30px hsl(260 80% 65% / 0.4);
-    --cyan-accent: 185 100% 55%;
+    --gradient-hero: linear-gradient(180deg, hsl(220 20% 12%), hsl(220 13% 10%));
+    --gradient-card: linear-gradient(135deg, hsl(220 13% 15%), hsl(220 13% 13%));
+    --gradient-accent: linear-gradient(135deg, hsl(217 91% 65%), hsl(199 89% 53%));
+    --gradient-kognix: linear-gradient(90deg, hsl(4 90% 63%), hsl(45 100% 56%));
+    --glow-primary: 0 8px 30px hsl(217 91% 65% / 0.25);
+    --glow-secondary: 0 8px 30px hsl(142 71% 50% / 0.25);
+    --cyan-accent: 199 89% 53%;
     
-    --sidebar-background: 240 35% 8%;
+    --sidebar-background: 220 13% 13%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 12 100% 67%;
+    --sidebar-primary: 217 91% 65%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 30% 12%;
+    --sidebar-accent: 217 33% 17%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 240 20% 15%;
-    --sidebar-ring: 12 100% 67%;
+    --sidebar-border: 217 33% 20%;
+    --sidebar-ring: 217 91% 65%;
   }
 }
 
@@ -112,6 +124,50 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Google Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+}
+
+/* Google-inspired utility classes */
+@layer utilities {
+  .google-card {
+    @apply rounded-2xl bg-card border border-border shadow-sm hover:shadow-lg transition-shadow duration-300;
+  }
+  
+  .google-card-colored {
+    @apply rounded-2xl p-6 transition-transform duration-300 hover:scale-[1.02];
+  }
+  
+  .text-google-blue {
+    color: hsl(var(--google-blue));
+  }
+  
+  .text-google-red {
+    color: hsl(var(--google-red));
+  }
+  
+  .text-google-yellow {
+    color: hsl(var(--google-yellow));
+  }
+  
+  .text-google-green {
+    color: hsl(var(--google-green));
+  }
+  
+  .bg-google-blue {
+    background-color: hsl(var(--google-blue));
+  }
+  
+  .bg-google-red {
+    background-color: hsl(var(--google-red));
+  }
+  
+  .bg-google-yellow {
+    background-color: hsl(var(--google-yellow));
+  }
+  
+  .bg-google-green {
+    background-color: hsl(var(--google-green));
   }
 }

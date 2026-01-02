@@ -60,6 +60,12 @@ export default {
         cyan: {
           accent: "hsl(var(--cyan-accent))",
         },
+        google: {
+          blue: "hsl(var(--google-blue))",
+          red: "hsl(var(--google-red))",
+          yellow: "hsl(var(--google-yellow))",
+          green: "hsl(var(--google-green))",
+        },
       },
       backgroundImage: {
         "gradient-hero": "var(--gradient-hero)",

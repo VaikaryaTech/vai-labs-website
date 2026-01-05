@@ -2,119 +2,133 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Google AI inspired design system. All colors, gradients, fonts, etc defined here. 
-All colors MUST be HSL.
-*/
+/* Orange theme with navy text - clean and readable design system. All colors MUST be HSL. */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 210 11% 15%;
+    --foreground: 220 50% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 11% 15%;
+    --card-foreground: 220 50% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 11% 15%;
+    --popover-foreground: 220 50% 15%;
 
-    --primary: 217 91% 60%;
+    /* Orange primary theme */
+    --primary: 24 95% 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 210 11% 15%;
+    --secondary: 30 30% 96%;
+    --secondary-foreground: 220 50% 15%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 30 20% 96%;
+    --muted-foreground: 220 30% 40%;
 
-    --accent: 142 71% 45%;
+    /* Teal accent for contrast */
+    --accent: 174 60% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 217 91% 60%;
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 24 95% 53%;
 
     --radius: 1rem;
 
-    /* Google-inspired colors */
-    --google-blue: 217 91% 60%;
-    --google-red: 4 90% 58%;
-    --google-yellow: 45 100% 51%;
-    --google-green: 142 71% 45%;
+    /* Navy blue for text emphasis */
+    --navy: 220 50% 25%;
+    --navy-light: 220 40% 35%;
+    
+    /* Orange palette */
+    --orange-light: 30 100% 65%;
+    --orange-dark: 20 90% 45%;
+    
+    /* Pleasant hover colors for dropdowns */
+    --dropdown-hover: 30 50% 95%;
+    --dropdown-hover-text: 220 50% 20%;
     
     /* Custom design tokens - Light */
-    --gradient-hero: linear-gradient(180deg, hsl(210 40% 98%), hsl(0 0% 100%));
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 40% 98%));
-    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%), hsl(199 89% 48%));
-    --gradient-kognix: linear-gradient(90deg, hsl(4 90% 58%), hsl(45 100% 51%));
-    --glow-primary: 0 8px 30px hsl(217 91% 60% / 0.15);
-    --glow-secondary: 0 8px 30px hsl(142 71% 45% / 0.15);
-    --cyan-accent: 199 89% 48%;
+    --gradient-hero: linear-gradient(180deg, hsl(30 30% 98%), hsl(0 0% 100%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(30 20% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(24 95% 53%), hsl(30 100% 60%));
+    --gradient-kognix: linear-gradient(90deg, hsl(4 90% 58%), hsl(30 100% 55%));
+    --glow-primary: 0 8px 30px hsl(24 95% 53% / 0.2);
+    --glow-secondary: 0 8px 30px hsl(174 60% 45% / 0.15);
+    --cyan-accent: 174 60% 45%;
     
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 210 11% 15%;
-    --sidebar-primary: 217 91% 60%;
+    --sidebar-foreground: 220 50% 15%;
+    --sidebar-primary: 24 95% 53%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 40% 96%;
-    --sidebar-accent-foreground: 210 11% 15%;
-    --sidebar-border: 214 32% 91%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-accent: 30 30% 96%;
+    --sidebar-accent-foreground: 220 50% 15%;
+    --sidebar-border: 30 20% 88%;
+    --sidebar-ring: 24 95% 53%;
   }
 
   .dark {
-    --background: 220 13% 10%;
-    --foreground: 210 40% 98%;
+    --background: 220 20% 10%;
+    --foreground: 30 20% 95%;
 
-    --card: 220 13% 13%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 18% 13%;
+    --card-foreground: 30 20% 95%;
 
-    --popover: 220 13% 13%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 18% 13%;
+    --popover-foreground: 30 20% 95%;
 
-    --primary: 217 91% 65%;
-    --primary-foreground: 0 0% 100%;
+    /* Orange primary theme - brighter for dark mode */
+    --primary: 24 95% 58%;
+    --primary-foreground: 220 50% 10%;
 
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 18% 18%;
+    --secondary-foreground: 30 20% 95%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 220 18% 18%;
+    --muted-foreground: 30 15% 65%;
 
-    --accent: 142 71% 50%;
-    --accent-foreground: 0 0% 100%;
+    /* Teal accent for contrast */
+    --accent: 174 60% 50%;
+    --accent-foreground: 220 50% 10%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 30 20% 95%;
 
-    --border: 217 33% 20%;
-    --input: 217 33% 20%;
-    --ring: 217 91% 65%;
+    --border: 220 18% 22%;
+    --input: 220 18% 22%;
+    --ring: 24 95% 58%;
 
-    /* Google-inspired colors - Dark */
-    --google-blue: 217 91% 65%;
-    --google-red: 4 90% 63%;
-    --google-yellow: 45 100% 56%;
-    --google-green: 142 71% 50%;
+    /* Navy blue for text emphasis - lighter for dark mode */
+    --navy: 210 40% 75%;
+    --navy-light: 210 35% 85%;
+    
+    /* Orange palette - Dark */
+    --orange-light: 30 100% 70%;
+    --orange-dark: 20 90% 50%;
+    
+    /* Pleasant hover colors for dropdowns - Dark mode */
+    --dropdown-hover: 24 40% 20%;
+    --dropdown-hover-text: 30 20% 95%;
 
     /* Custom design tokens - Dark */
-    --gradient-hero: linear-gradient(180deg, hsl(220 20% 12%), hsl(220 13% 10%));
-    --gradient-card: linear-gradient(135deg, hsl(220 13% 15%), hsl(220 13% 13%));
-    --gradient-accent: linear-gradient(135deg, hsl(217 91% 65%), hsl(199 89% 53%));
-    --gradient-kognix: linear-gradient(90deg, hsl(4 90% 63%), hsl(45 100% 56%));
-    --glow-primary: 0 8px 30px hsl(217 91% 65% / 0.25);
-    --glow-secondary: 0 8px 30px hsl(142 71% 50% / 0.25);
-    --cyan-accent: 199 89% 53%;
+    --gradient-hero: linear-gradient(180deg, hsl(220 25% 12%), hsl(220 20% 10%));
+    --gradient-card: linear-gradient(135deg, hsl(220 18% 16%), hsl(220 18% 13%));
+    --gradient-accent: linear-gradient(135deg, hsl(24 95% 58%), hsl(30 100% 65%));
+    --gradient-kognix: linear-gradient(90deg, hsl(4 90% 63%), hsl(30 100% 60%));
+    --glow-primary: 0 8px 30px hsl(24 95% 58% / 0.3);
+    --glow-secondary: 0 8px 30px hsl(174 60% 50% / 0.25);
+    --cyan-accent: 174 60% 55%;
     
-    --sidebar-background: 220 13% 13%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 217 91% 65%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 217 33% 17%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217 33% 20%;
-    --sidebar-ring: 217 91% 65%;
+    --sidebar-background: 220 18% 13%;
+    --sidebar-foreground: 30 20% 95%;
+    --sidebar-primary: 24 95% 58%;
+    --sidebar-primary-foreground: 220 50% 10%;
+    --sidebar-accent: 220 18% 18%;
+    --sidebar-accent-foreground: 30 20% 95%;
+    --sidebar-border: 220 18% 22%;
+    --sidebar-ring: 24 95% 58%;
   }
 }
 
@@ -129,7 +143,7 @@ All colors MUST be HSL.
   }
 }
 
-/* Google-inspired utility classes */
+/* Utility classes */
 @layer utilities {
   .google-card {
     @apply rounded-2xl bg-card border border-border shadow-sm hover:shadow-lg transition-shadow duration-300;
@@ -139,35 +153,51 @@ All colors MUST be HSL.
     @apply rounded-2xl p-6 transition-transform duration-300 hover:scale-[1.02];
   }
   
+  .text-navy {
+    color: hsl(var(--navy));
+  }
+  
+  .text-navy-light {
+    color: hsl(var(--navy-light));
+  }
+  
+  .text-orange-accent {
+    color: hsl(var(--primary));
+  }
+  
+  .bg-orange-accent {
+    background-color: hsl(var(--primary));
+  }
+  
   .text-google-blue {
-    color: hsl(var(--google-blue));
+    color: hsl(var(--navy));
   }
   
   .text-google-red {
-    color: hsl(var(--google-red));
+    color: hsl(var(--destructive));
   }
   
   .text-google-yellow {
-    color: hsl(var(--google-yellow));
+    color: hsl(30 100% 50%);
   }
   
   .text-google-green {
-    color: hsl(var(--google-green));
+    color: hsl(var(--accent));
   }
   
   .bg-google-blue {
-    background-color: hsl(var(--google-blue));
+    background-color: hsl(var(--navy));
   }
   
   .bg-google-red {
-    background-color: hsl(var(--google-red));
+    background-color: hsl(var(--destructive));
   }
   
   .bg-google-yellow {
-    background-color: hsl(var(--google-yellow));
+    background-color: hsl(30 100% 50%);
   }
   
   .bg-google-green {
-    background-color: hsl(var(--google-green));
+    background-color: hsl(var(--accent));
   }
 }

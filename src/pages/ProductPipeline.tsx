@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import pipelineBg from "@/assets/product-pipeline-background.jpg";
 import bgIntelligence from "@/assets/bg-intelligence.jpg";
 import bgMobile from "@/assets/bg-mobile.jpg";
@@ -287,12 +288,12 @@ const ProductPipeline = () => {
             Stay informed about our product releases and be among the first to gain access to these transformative AI solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors">
+            <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors">
               Request Early Access
-            </a>
-            <a href="/book-demo" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-border bg-card text-foreground font-semibold hover:bg-card/70 transition-colors">
+            </Link>
+            <Link to="/book-demo" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-border bg-card text-foreground font-semibold hover:bg-card/70 transition-colors">
               Schedule a Demo
-            </a>
+            </Link>
           </div>
         </div>
       </section>

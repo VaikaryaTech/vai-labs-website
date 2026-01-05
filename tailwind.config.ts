@@ -60,11 +60,17 @@ export default {
         cyan: {
           accent: "hsl(var(--cyan-accent))",
         },
-        google: {
-          blue: "hsl(var(--google-blue))",
-          red: "hsl(var(--google-red))",
-          yellow: "hsl(var(--google-yellow))",
-          green: "hsl(var(--google-green))",
+        navy: {
+          DEFAULT: "hsl(var(--navy))",
+          light: "hsl(var(--navy-light))",
+        },
+        orange: {
+          light: "hsl(var(--orange-light))",
+          dark: "hsl(var(--orange-dark))",
+        },
+        dropdown: {
+          hover: "hsl(var(--dropdown-hover))",
+          "hover-text": "hsl(var(--dropdown-hover-text))",
         },
       },
       backgroundImage: {

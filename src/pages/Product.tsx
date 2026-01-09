@@ -2,7 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Footer } from "@/components/Footer";
-import { Shield, Link2, Boxes, DollarSign, TrendingDown, Upload, Brain, Sparkles, Download, RefreshCw, ArrowRight } from "lucide-react";
+import { Shield, Link2, Boxes, DollarSign, TrendingDown, Upload, Brain, Sparkles, Download, RefreshCw, ArrowRight, FileText, Beaker, Pill, Factory, Package, Settings, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import securityImg from "@/assets/genai-security.jpg";
 import capabilitiesImg from "@/assets/genai-capabilities.jpg";
@@ -371,29 +371,103 @@ const Product = () => {
         </div>
       </section>
 
-      {/* What Sets Apart */}
+      {/* Pharmaceutical Brochure Section */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">
+              <span className="bg-gradient-kognix bg-clip-text text-transparent">KOGNIX</span> for Pharmaceuticals
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              The definitive GenAI solution for highly regulated pharmaceutical and life sciences sectors
+            </p>
+          </div>
+
+          {/* Pharma Value Chain Grid */}
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
+            {[
+              { icon: Beaker, title: "APIs / Generics", desc: "Paragraph IV filing analysis and patent comparison" },
+              { icon: Pill, title: "Finished Dosage Forms", desc: "Intelligent FDF dossier assembly with CMC narratives" },
+              { icon: Factory, title: "Fine Chemicals", desc: "Retrieval of synthetic protocols from batch records" },
+              { icon: Package, title: "Packaging & Delivery", desc: "Material compatibility and regulatory guidelines" },
+              { icon: Settings, title: "Process Automation", desc: "Dynamic SOP generation linked to control systems" },
+              { icon: CheckCircle, title: "GxP Validation", desc: "AI-assisted IQ/OQ/PQ protocol generation" },
+            ].map((item, index) => (
+              <Card 
+                key={index}
+                className="p-6 bg-gradient-card backdrop-blur-sm border-border hover:scale-105 transition-all duration-300 hover:shadow-glow-primary"
+              >
+                <item.icon className="h-10 w-10 text-primary mb-4" />
+                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {item.desc}
+                </p>
+              </Card>
+            ))}
+          </div>
+
+          {/* Impact Metrics */}
+          <div className="bg-gradient-hero rounded-2xl p-8 md:p-12 mb-12">
+            <h3 className="text-2xl font-bold text-center mb-8">Measured Business Results</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                { value: "75%", label: "Faster Regulatory Reviews" },
+                { value: "20%", label: "Boost in First Call Success" },
+                { value: "40%", label: "Faster Batch Record Review" },
+                { value: "60%", label: "Reduction in Protocol Deviations" },
+              ].map((metric, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-4xl md:text-5xl font-bold bg-gradient-kognix bg-clip-text text-transparent mb-2">
+                    {metric.value}
+                  </div>
+                  <p className="text-sm text-muted-foreground">{metric.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Download Brochure CTA */}
+          <div className="text-center">
+            <a 
+              href="/brochures/KOGNIX_CPHI_FLYER.pdf" 
+              download="KOGNIX_Pharmaceutical_Brochure.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button size="lg" className="group">
+                <FileText className="mr-2 h-5 w-5" />
+                Download Pharmaceutical Brochure
+                <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* What Sets Apart */}
+      <section className="py-24 bg-gradient-hero relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(12_100%_50%/0.15),transparent_70%)]" />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">What Sets <span className="bg-gradient-kognix bg-clip-text text-transparent">KOGNIX</span> Apart</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="p-8 bg-gradient-card backdrop-blur-sm border-border text-center hover:scale-105 transition-all duration-300">
+            <Card className="p-8 bg-card/50 backdrop-blur-sm border-border text-center hover:scale-105 transition-all duration-300">
               <h3 className="text-2xl font-bold mb-4 text-primary">Security by Design</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Built with robust safeguards and isolation capabilities to ensure complete data protection.
               </p>
             </Card>
 
-            <Card className="p-8 bg-gradient-card backdrop-blur-sm border-border text-center hover:scale-105 transition-all duration-300">
+            <Card className="p-8 bg-card/50 backdrop-blur-sm border-border text-center hover:scale-105 transition-all duration-300">
               <h3 className="text-2xl font-bold mb-4 text-secondary">Cost-Effective Solution</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Significantly lower implementation and maintenance costs compared to market alternatives.
               </p>
             </Card>
 
-            <Card className="p-8 bg-gradient-card backdrop-blur-sm border-border text-center hover:scale-105 transition-all duration-300">
+            <Card className="p-8 bg-card/50 backdrop-blur-sm border-border text-center hover:scale-105 transition-all duration-300">
               <h3 className="text-2xl font-bold mb-4 text-cyan-500">Rapid ROI</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Quick return on investment with lower total cost of ownership for sustainable growth.

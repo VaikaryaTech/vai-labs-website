@@ -20,7 +20,9 @@ export const Navbar = () => {
   const enterpriseProducts = [
     { to: "/product", label: "KOGNIX", suffix: "GenAI Engine" },
     { to: "/observability", label: "KOGNIX", suffix: "Analytix" },
-    { to: "/product-pipeline", label: "", suffix: "Product Pipeline" },
+    { to: "/kognix-intelligence", label: "KOGNIX", suffix: "Intelligence" },
+    { to: "/kognix-mobile", label: "KOGNIX", suffix: "Mobile" },
+    { to: "/kognix-ai-studio", label: "KOGNIX", suffix: "AI Studio" },
   ];
 
   const enterpriseApplicationAreas = [

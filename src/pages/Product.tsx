@@ -1,93 +1,192 @@
 import { Navbar } from "@/components/Navbar";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Footer } from "@/components/Footer";
-import { Shield, Link2, Boxes, DollarSign, TrendingDown, Upload, Brain, Sparkles, Download, RefreshCw, ArrowRight, FileText, Beaker, Pill, Factory, Package, Settings, CheckCircle } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { 
+  Shield, 
+  Link2, 
+  Boxes, 
+  DollarSign, 
+  TrendingDown, 
+  Upload, 
+  Brain, 
+  Sparkles, 
+  Download, 
+  RefreshCw, 
+  ArrowRight, 
+  FileText, 
+  Beaker, 
+  Pill, 
+  Factory, 
+  Package, 
+  Settings, 
+  CheckCircle,
+  Cloud,
+  Server,
+  Lock
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import securityImg from "@/assets/genai-security.jpg";
-import capabilitiesImg from "@/assets/genai-capabilities.jpg";
-import costRoiImg from "@/assets/genai-cost-roi.jpg";
 
 const Product = () => {
-  const features = [
+  const coreCapabilities = [
     {
       icon: Shield,
       title: "Isolated Environments",
-      description: "Deploy in completely isolated environments for maximum data security and compliance."
+      description: "Deploy in completely isolated environments for maximum data security and compliance"
     },
     {
       icon: Link2,
       title: "Secure Connectivity",
-      description: "Optional secure connectivity to external systems when required, with full control."
+      description: "Optional secure connectivity to external systems when required, with full control"
     },
     {
       icon: Boxes,
       title: "Native API Gateway",
-      description: "Seamless integration with existing business applications through our secure API gateway."
+      description: "Seamless integration with existing business applications through our secure API gateway"
+    },
+    {
+      icon: DollarSign,
+      title: "Lower Implementation Costs",
+      description: "Significantly lower costs compared to similar market solutions, making AI accessible to all"
+    },
+    {
+      icon: TrendingDown,
+      title: "Reduced Maintenance",
+      description: "Lower maintenance costs reduce total cost of ownership for sustainable growth"
+    },
+    {
+      icon: Lock,
+      title: "Data Sovereignty",
+      description: "Complete control over your data with zero internet dependency requirements"
     }
+  ];
+
+  const deploymentOptions = [
+    {
+      icon: Cloud,
+      title: "Cloud Managed",
+      description: "Zero infrastructure management with enterprise-grade reliability",
+      tag: "Fastest Setup"
+    },
+    {
+      icon: Server,
+      title: "On-Premise",
+      description: "Deploy on your infrastructure with complete data isolation",
+      tag: "Most Popular"
+    },
+    {
+      icon: Shield,
+      title: "Air-Gapped",
+      description: "Complete network isolation for regulated industries",
+      tag: "Maximum Security"
+    }
+  ];
+
+  const pharmaUseCases = [
+    { icon: Beaker, title: "APIs / Generics", desc: "Paragraph IV filing analysis and patent comparison" },
+    { icon: Pill, title: "Finished Dosage Forms", desc: "Intelligent FDF dossier assembly with CMC narratives" },
+    { icon: Factory, title: "Fine Chemicals", desc: "Retrieval of synthetic protocols from batch records" },
+    { icon: Package, title: "Packaging & Delivery", desc: "Material compatibility and regulatory guidelines" },
+    { icon: Settings, title: "Process Automation", desc: "Dynamic SOP generation linked to control systems" },
+    { icon: CheckCircle, title: "GxP Validation", desc: "AI-assisted IQ/OQ/PQ protocol generation" },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-hero">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(260_60%_25%/0.2),transparent_70%)]" />
+      {/* Hero Section - Brochure Style */}
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={securityImg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70" />
+        </div>
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-6 animate-slide-in">
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-              <span className="bg-gradient-accent bg-clip-text text-transparent">
-                GenAI Engine
-              </span>
+          <div className="max-w-3xl">
+            <Badge className="mb-6 px-4 py-2" variant="secondary">
+              Core Platform
+            </Badge>
+            
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>{" "}
+              <span className="text-cyan-accent">GenAI Engine</span>
             </h1>
             
-            <p className="text-2xl lg:text-3xl font-semibold text-foreground">
-              Powered by <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span> - Your Secure and Flexible Generative AI Framework
+            <p className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
+              Your Secure and Flexible Generative AI Framework
+            </p>
+            
+            <p className="text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl">
+              Engineered with paramount focus on data security and flexibility. 
+              A versatile solution for seamless integration across diverse business domains 
+              while retaining absolute control over your data.
             </p>
 
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              Engineered with paramount focus on data security and flexibility, <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> is a versatile solution 
-              designed for seamless integration across diverse business domains, empowering organizations to 
-              leverage the transformative power of AI while retaining absolute control over their data.
-            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to="/book-demo">
+                <Button size="lg" className="group w-full sm:w-auto">
+                  Schedule Demo
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                  Contact Sales
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Security & Integration */}
+      {/* Impact Metrics Banner */}
+      <section className="py-12 bg-gradient-hero border-y border-border">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { value: "100%", label: "Data Sovereignty" },
+              { value: "Zero", label: "Internet Dependency" },
+              { value: "50%", label: "Cost Reduction" },
+              { value: "10x", label: "Faster Deployment" },
+            ].map((metric, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-cyan-accent mb-2">
+                  {metric.value}
+                </div>
+                <p className="text-sm text-muted-foreground font-medium">{metric.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Core Capabilities */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
-          {/* Image Header */}
-          <div className="relative h-80 rounded-2xl overflow-hidden mb-12 group">
-            <img 
-              src={securityImg} 
-              alt="Secure AI infrastructure with advanced data protection"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8">
-              <h2 className="text-4xl font-bold mb-4 text-foreground">
-                Unmatched Security and Integration
-              </h2>
-              <p className="text-xl text-foreground/80 max-w-3xl">
-                <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span>'s unique architecture offers unparalleled deployment options with continuous innovation 
-                and regular updates to keep your business at the forefront of AI advancements.
-              </p>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Core Capabilities
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Unmatched security, integration, and cost-effectiveness for enterprise AI
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {features.map((feature, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {coreCapabilities.map((capability, index) => (
               <Card 
                 key={index}
-                className="p-8 bg-gradient-card backdrop-blur-sm border-border hover:scale-105 transition-all duration-300 hover:shadow-glow-primary"
+                className="p-8 bg-gradient-card backdrop-blur-sm border-border hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] transition-all duration-300 group"
               >
-                <feature.icon className="h-12 w-12 text-primary mb-6" />
-                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
+                <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <capability.icon className="h-7 w-7 text-cyan-500" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">{capability.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
+                  {capability.description}
                 </p>
               </Card>
             ))}
@@ -95,319 +194,77 @@ const Product = () => {
         </div>
       </section>
 
-      {/* Cost-Effectiveness */}
+      {/* How It Works - Visual Flow */}
       <section className="py-24 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(260_60%_25%/0.3),transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,hsl(185_80%_40%/0.15),transparent_60%)]" />
         
         <div className="container mx-auto px-6 relative z-10">
-          {/* Image Header */}
-          <div className="relative h-80 rounded-2xl overflow-hidden mb-12 group">
-            <img 
-              src={costRoiImg} 
-              alt="Cost-effective AI solution with rapid ROI visualization"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8">
-              <h2 className="text-4xl font-bold mb-4 text-foreground">
-                Cost-Effectiveness and Rapid ROI
-              </h2>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              How <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>{" "}
+              <span className="text-cyan-accent">GenAI Engine</span> Works
+            </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <Card className="p-8 bg-card/50 backdrop-blur-sm border-border">
-              <DollarSign className="h-12 w-12 text-primary mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Lower Implementation Costs</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> can be implemented at significantly lower costs compared to similar market solutions, 
-                making advanced AI accessible to organizations of all sizes.
-              </p>
-            </Card>
-
-            <Card className="p-8 bg-card/50 backdrop-blur-sm border-border">
-              <TrendingDown className="h-12 w-12 text-secondary mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Reduced Maintenance</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Lower maintenance costs reduce the total cost of ownership, enabling businesses to allocate 
-                resources more efficiently while driving innovation.
-              </p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Link Section */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <div className="relative h-80 rounded-2xl overflow-hidden mb-12 group">
-              <img 
-                src={capabilitiesImg} 
-                alt="AI neural network showcasing advanced GenAI capabilities"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                <h2 className="text-4xl font-bold mb-4 text-foreground">Explore Our Comprehensive Features</h2>
-                <p className="text-xl text-foreground/80 mb-8">
-                  Discover the full range of capabilities and features that power <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span>
-                </p>
-                <Link to="/features">
-                  <Button size="lg" className="group">
-                    View All Features
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-              </div>
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-5 gap-4">
+              {[
+                { step: "01", title: "Data Input", desc: "Your data stays secure within your infrastructure", icon: Upload },
+                { step: "02", title: "AI Processing", desc: "Advanced LLMs analyze and understand context", icon: Brain },
+                { step: "03", title: "Generation", desc: "Create novel outputs and intelligent insights", icon: Sparkles },
+                { step: "04", title: "Output", desc: "Deliver actionable results and solutions", icon: Download },
+                { step: "05", title: "Learning", desc: "Continuous refinement and improvement", icon: RefreshCw },
+              ].map((item, index) => (
+                <div key={index} className="relative">
+                  <Card className="p-4 bg-card/50 backdrop-blur-sm border-border h-full">
+                    <div className="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-3 mx-auto">
+                      <item.icon className="h-6 w-6 text-cyan-500" />
+                    </div>
+                    <div className="text-3xl font-bold text-cyan-500/20 mb-2 text-center">{item.step}</div>
+                    <h3 className="text-lg font-bold mb-1 text-center">{item.title}</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed text-center">{item.desc}</p>
+                  </Card>
+                  {index < 4 && (
+                    <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2 z-10">
+                      <ArrowRight className="h-5 w-5 text-cyan-500/50" />
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-24 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,hsl(12_100%_50%/0.2),transparent_70%)]" />
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-5xl mx-auto text-center space-y-8 mb-16">
-            <h2 className="text-4xl font-bold mb-4">How <span className="bg-gradient-kognix bg-clip-text text-transparent">KOGNIX</span> Works</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> leverages advanced deep learning models, including large language models (LLMs) and 
-              diffusion models, to understand context, generate novel outputs, and continually refine its 
-              capabilities. With its secure architecture and flexible deployment options, it&apos;s more than 
-              just orchestration; it&apos;s intelligent creation with complete data sovereignty.
-            </p>
-          </div>
-
-          {/* Flow Diagram */}
-          <div className="max-w-6xl mx-auto">
-            {/* Desktop Flow - Horizontal */}
-            <div className="hidden lg:flex items-center justify-between gap-4">
-              {/* Step 1 */}
-              <div className="flex-1">
-                <Card className="p-6 bg-gradient-card backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 h-full">
-                  <div className="flex flex-col items-center text-center space-y-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500/20 to-orange-700/20 flex items-center justify-center">
-                      <Upload className="h-8 w-8 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-bold">1. Data Input</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Your data stays secure within your infrastructure
-                    </p>
-                  </div>
-                </Card>
-              </div>
-
-              <ArrowRight className="h-8 w-8 text-primary flex-shrink-0" />
-
-              {/* Step 2 */}
-              <div className="flex-1">
-                <Card className="p-6 bg-gradient-card backdrop-blur-sm border-border hover:border-secondary/50 transition-all duration-300 h-full">
-                  <div className="flex flex-col items-center text-center space-y-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-700/20 flex items-center justify-center">
-                      <Brain className="h-8 w-8 text-secondary" />
-                    </div>
-                    <h3 className="text-xl font-bold">2. AI Processing</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Advanced LLMs analyze and understand context
-                    </p>
-                  </div>
-                </Card>
-              </div>
-
-              <ArrowRight className="h-8 w-8 text-secondary flex-shrink-0" />
-
-              {/* Step 3 */}
-              <div className="flex-1">
-                <Card className="p-6 bg-gradient-card backdrop-blur-sm border-border hover:border-cyan-500/50 transition-all duration-300 h-full">
-                  <div className="flex flex-col items-center text-center space-y-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500/20 to-cyan-700/20 flex items-center justify-center">
-                      <Sparkles className="h-8 w-8 text-cyan-500" />
-                    </div>
-                    <h3 className="text-xl font-bold">3. Generation</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Create novel outputs and intelligent insights
-                    </p>
-                  </div>
-                </Card>
-              </div>
-
-              <ArrowRight className="h-8 w-8 text-cyan-500 flex-shrink-0" />
-
-              {/* Step 4 */}
-              <div className="flex-1">
-                <Card className="p-6 bg-gradient-card backdrop-blur-sm border-border hover:border-green-500/50 transition-all duration-300 h-full">
-                  <div className="flex flex-col items-center text-center space-y-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-500/20 to-green-700/20 flex items-center justify-center">
-                      <Download className="h-8 w-8 text-green-500" />
-                    </div>
-                    <h3 className="text-xl font-bold">4. Output</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Deliver actionable results and solutions
-                    </p>
-                  </div>
-                </Card>
-              </div>
-
-              <ArrowRight className="h-8 w-8 text-green-500 flex-shrink-0" />
-
-              {/* Step 5 */}
-              <div className="flex-1">
-                <Card className="p-6 bg-gradient-card backdrop-blur-sm border-border hover:border-pink-500/50 transition-all duration-300 h-full">
-                  <div className="flex flex-col items-center text-center space-y-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-500/20 to-pink-700/20 flex items-center justify-center">
-                      <RefreshCw className="h-8 w-8 text-pink-500" />
-                    </div>
-                    <h3 className="text-xl font-bold">5. Learning</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Continuous refinement and improvement
-                    </p>
-                  </div>
-                </Card>
-              </div>
-            </div>
-
-            {/* Mobile/Tablet Flow - Vertical */}
-            <div className="lg:hidden space-y-6">
-              {/* Step 1 */}
-              <div>
-                <Card className="p-6 bg-gradient-card backdrop-blur-sm border-border">
-                  <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500/20 to-orange-700/20 flex items-center justify-center flex-shrink-0">
-                      <Upload className="h-8 w-8 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2">1. Data Input</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Your data stays secure within your infrastructure
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-                <div className="flex justify-center py-3">
-                  <ArrowRight className="h-8 w-8 text-primary rotate-90" />
-                </div>
-              </div>
-
-              {/* Step 2 */}
-              <div>
-                <Card className="p-6 bg-gradient-card backdrop-blur-sm border-border">
-                  <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-700/20 flex items-center justify-center flex-shrink-0">
-                      <Brain className="h-8 w-8 text-secondary" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2">2. AI Processing</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Advanced LLMs analyze and understand context
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-                <div className="flex justify-center py-3">
-                  <ArrowRight className="h-8 w-8 text-secondary rotate-90" />
-                </div>
-              </div>
-
-              {/* Step 3 */}
-              <div>
-                <Card className="p-6 bg-gradient-card backdrop-blur-sm border-border">
-                  <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500/20 to-cyan-700/20 flex items-center justify-center flex-shrink-0">
-                      <Sparkles className="h-8 w-8 text-cyan-500" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2">3. Generation</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Create novel outputs and intelligent insights
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-                <div className="flex justify-center py-3">
-                  <ArrowRight className="h-8 w-8 text-cyan-500 rotate-90" />
-                </div>
-              </div>
-
-              {/* Step 4 */}
-              <div>
-                <Card className="p-6 bg-gradient-card backdrop-blur-sm border-border">
-                  <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-500/20 to-green-700/20 flex items-center justify-center flex-shrink-0">
-                      <Download className="h-8 w-8 text-green-500" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2">4. Output</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Deliver actionable results and solutions
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-                <div className="flex justify-center py-3">
-                  <ArrowRight className="h-8 w-8 text-green-500 rotate-90" />
-                </div>
-              </div>
-
-              {/* Step 5 */}
-              <div>
-                <Card className="p-6 bg-gradient-card backdrop-blur-sm border-border">
-                  <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-500/20 to-pink-700/20 flex items-center justify-center flex-shrink-0">
-                      <RefreshCw className="h-8 w-8 text-pink-500" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2">5. Learning</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Continuous refinement and improvement
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pharmaceutical Brochure Section */}
+      {/* Pharmaceutical Use Cases */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
-              <span className="bg-gradient-kognix bg-clip-text text-transparent">KOGNIX</span> for Pharmaceuticals
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span> for Pharmaceuticals
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               The definitive GenAI solution for highly regulated pharmaceutical and life sciences sectors
             </p>
           </div>
 
-          {/* Pharma Value Chain Grid */}
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
-            {[
-              { icon: Beaker, title: "APIs / Generics", desc: "Paragraph IV filing analysis and patent comparison" },
-              { icon: Pill, title: "Finished Dosage Forms", desc: "Intelligent FDF dossier assembly with CMC narratives" },
-              { icon: Factory, title: "Fine Chemicals", desc: "Retrieval of synthetic protocols from batch records" },
-              { icon: Package, title: "Packaging & Delivery", desc: "Material compatibility and regulatory guidelines" },
-              { icon: Settings, title: "Process Automation", desc: "Dynamic SOP generation linked to control systems" },
-              { icon: CheckCircle, title: "GxP Validation", desc: "AI-assisted IQ/OQ/PQ protocol generation" },
-            ].map((item, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
+            {pharmaUseCases.map((item, index) => (
               <Card 
                 key={index}
-                className="p-6 bg-gradient-card backdrop-blur-sm border-border hover:scale-105 transition-all duration-300 hover:shadow-glow-primary"
+                className="p-6 bg-gradient-card backdrop-blur-sm border-border hover:border-primary/50 hover:shadow-glow-primary transition-all duration-300 group"
               >
-                <item.icon className="h-10 w-10 text-primary mb-4" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <item.icon className="h-6 w-6 text-primary" />
+                </div>
                 <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {item.desc}
-                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
               </Card>
             ))}
           </div>
 
-          {/* Impact Metrics */}
-          <div className="bg-gradient-hero rounded-2xl p-8 md:p-12 mb-12">
+          {/* Pharma Impact Metrics */}
+          <div className="bg-gradient-hero rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h3 className="text-2xl font-bold text-center mb-8">Measured Business Results</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
@@ -417,68 +274,117 @@ const Product = () => {
                 { value: "60%", label: "Reduction in Protocol Deviations" },
               ].map((metric, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold bg-gradient-kognix bg-clip-text text-transparent mb-2">
+                  <div className="text-3xl md:text-4xl font-bold bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent mb-2">
                     {metric.value}
                   </div>
-                  <p className="text-sm text-muted-foreground">{metric.label}</p>
+                  <p className="text-xs text-muted-foreground">{metric.label}</p>
                 </div>
               ))}
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Download Brochure CTA */}
-          <div className="text-center">
-            <a 
-              href="/brochures/KOGNIX_CPHI_FLYER.pdf" 
-              download="KOGNIX_Pharmaceutical_Brochure.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button size="lg" className="group">
-                <FileText className="mr-2 h-5 w-5" />
-                Download Pharmaceutical Brochure
-                <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
-              </Button>
-            </a>
+      {/* Deployment Options */}
+      <section className="py-24 bg-gradient-hero relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,hsl(12_100%_50%/0.1),transparent_60%)]" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Deploy Your Way
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Cloud-managed or self-hosted — choose the deployment that fits your security requirements
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {deploymentOptions.map((option, index) => (
+              <Card 
+                key={index}
+                className="p-8 bg-card/50 backdrop-blur-sm border-border text-center hover:scale-105 transition-all duration-300 relative overflow-hidden"
+              >
+                <div className="absolute top-4 right-4">
+                  <span className="text-xs font-medium px-3 py-1 rounded-full bg-primary/10 text-primary">
+                    {option.tag}
+                  </span>
+                </div>
+                <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center mx-auto mb-6">
+                  <option.icon className="h-8 w-8 text-cyan-500" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">{option.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {option.description}
+                </p>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* What Sets Apart */}
+      {/* Brochure Download CTA */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <Card className="p-8 md:p-12 bg-gradient-to-br from-cyan-500/10 via-background to-primary/5 border-cyan-500/20">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="w-20 h-20 rounded-2xl bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
+                  <FileText className="h-10 w-10 text-cyan-500" />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-2xl font-bold mb-2">
+                    <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>{" "}
+                    <span className="text-cyan-accent">GenAI Engine</span> Pharmaceutical Brochure
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Download our comprehensive pharmaceutical brochure with use cases, 
+                    technical specifications, and implementation guides.
+                  </p>
+                </div>
+                <a 
+                  href="/brochures/KOGNIX_CPHI_FLYER.pdf" 
+                  download="KOGNIX_Pharmaceutical_Brochure.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button size="lg" className="group flex-shrink-0">
+                    <FileText className="mr-2 h-5 w-5" />
+                    Download Brochure
+                    <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+                  </Button>
+                </a>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
       <section className="py-24 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(12_100%_50%/0.15),transparent_70%)]" />
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">What Sets <span className="bg-gradient-kognix bg-clip-text text-transparent">KOGNIX</span> Apart</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="p-8 bg-card/50 backdrop-blur-sm border-border text-center hover:scale-105 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-4 text-primary">Security by Design</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Built with robust safeguards and isolation capabilities to ensure complete data protection.
-              </p>
-            </Card>
-
-            <Card className="p-8 bg-card/50 backdrop-blur-sm border-border text-center hover:scale-105 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-4 text-secondary">Cost-Effective Solution</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Significantly lower implementation and maintenance costs compared to market alternatives.
-              </p>
-            </Card>
-
-            <Card className="p-8 bg-card/50 backdrop-blur-sm border-border text-center hover:scale-105 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-4 text-cyan-500">Rapid ROI</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Quick return on investment with lower total cost of ownership for sustainable growth.
-              </p>
-            </Card>
-          </div>
-
-          <div className="text-center mt-12">
-            <Link to="/business-applications">
-              <Button variant="hero" size="lg">
-                Explore Enterprise Application Areas
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(185_80%_40%/0.2),transparent_70%)]" />
+        
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Ready to Transform Your Business with AI?
+          </h2>
+          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+            Join leading enterprises using{" "}
+            <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span>{" "}
+            <span className="text-cyan-accent font-semibold">GenAI Engine</span>{" "}
+            to unlock AI with complete data sovereignty.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/book-demo">
+              <Button size="lg" variant="hero" className="group w-full sm:w-auto">
+                Schedule a Demo
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+            <Link to="/features">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                Explore Features
               </Button>
             </Link>
           </div>

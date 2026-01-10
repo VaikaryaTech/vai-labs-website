@@ -24,8 +24,10 @@ import About from "./pages/About";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
-import ProductPipeline from "./pages/ProductPipeline";
 import Observability from "./pages/Observability";
+import KognixIntelligence from "./pages/KognixIntelligence";
+import KognixMobile from "./pages/KognixMobile";
+import KognixAIStudio from "./pages/KognixAIStudio";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -57,8 +59,10 @@ const App = () => (
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
-            <Route path="/product-pipeline" element={<ProductPipeline />} />
             <Route path="/observability" element={<Observability />} />
+            <Route path="/kognix-intelligence" element={<KognixIntelligence />} />
+            <Route path="/kognix-mobile" element={<KognixMobile />} />
+            <Route path="/kognix-ai-studio" element={<KognixAIStudio />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

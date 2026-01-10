@@ -55,18 +55,18 @@ const About = () => {
             <h2 className="text-3xl font-bold mb-6">Our Story</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                VAI LABS was founded with a vision to transform how businesses interact with their data and knowledge. 
+                VAI LABS was founded in 2023 with a vision to transform how businesses interact with their data and knowledge. 
                 We recognized that while AI technology was advancing rapidly, most solutions were either too complex, 
                 too expensive, or didn't adequately address security and privacy concerns.
               </p>
               <p>
                 Our team of AI researchers, engineers, and business experts came together to create <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX</span> - 
-                a GenAI engine that combines cutting-edge technology with practical business applications. 
+                a suite of Generative Artificial Intelligence, Enterprise products that combines cutting-edge technology with practical business applications. 
                 We believe that every organization should have access to powerful AI tools that enhance decision-making, 
                 improve efficiency, and drive innovation.
               </p>
               <p>
-                Today, we serve businesses across healthcare, finance, manufacturing, and many other industries, 
+                Today, we serve businesses across Healthcare, Finance, Manufacturing, Legal & General and many other industries, 
                 helping them unlock the full potential of their data while maintaining complete control over their information.
               </p>
             </div>

@@ -4,56 +4,43 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { 
-  Scale, 
-  FileSearch, 
-  Shield, 
-  Server,
+  Wifi, 
+  Wrench, 
+  CreditCard,
   Download,
   ArrowRight,
   CheckCircle
 } from "lucide-react";
-import legalImg from "@/assets/business-legal.jpg";
+import telecomImg from "@/assets/business-telecom.jpg";
 
-const LegalCompliance = () => {
+const TelecomUtilities = () => {
   const impactMetrics = [
-    { value: "50%", label: "Faster Document Review" },
-    { value: "40%", label: "Reduced Discovery Costs" },
-    { value: "80%", label: "Policy Query Automation" },
-    { value: "3x", label: "Research Speed" },
+    { value: "55%", label: "Faster Issue Resolution" },
+    { value: "40%", label: "Reduced Service Outages" },
+    { value: "60%", label: "Customer Retention Boost" },
+    { value: "35%", label: "Support Cost Savings" },
   ];
 
   const capabilities = [
     {
-      icon: FileSearch,
-      title: "Automated Legal Research",
-      description: "Answer specific legal questions by searching across massive repositories of case law, statutes, regulations, and firm-specific documents with semantic understanding.",
-      benefit: "Drastically reduced manual research time with quick access to relevant precedents and verifiable sources."
+      icon: Wrench,
+      title: "Technical Support for Field Engineers",
+      description: "Answer complex technical questions about network configurations, fiber-optic splicing procedures, and equipment specifications by retrieving from internal engineering documents.",
+      benefit: "Faster problem resolution in the field, reducing service outages and increasing technician efficiency."
     },
     {
-      icon: Scale,
-      title: "Contract Analysis & Review",
-      description: "Review large contracts, highlight risky clauses, identify inconsistencies against industry standards, or compare drafts against firm-approved templates.",
-      benefit: "Accelerated due diligence, lowered risk, and ensured compliance with internal and external standards."
-    },
-    {
-      icon: Shield,
-      title: "E-Discovery Optimization",
-      description: "Automate retrieval, summarization, and analysis of vast document troves (emails, chats, reports) relevant to lawsuits or investigations.",
-      benefit: "Dramatically faster discovery phase with reduced cost and time of human review."
-    },
-    {
-      icon: Server,
-      title: "Compliance & Policy Management",
-      description: "Answer employee and management questions about company policies with context-specific responses grounded in official documentation.",
-      benefit: "Consistent, accurate policy interpretation that mitigates internal compliance risk."
+      icon: CreditCard,
+      title: "Billing & Service Inquiry Chatbot",
+      description: "Provide precise, personalized answers to customers' billing questions, plan details, or service outage updates by connecting to live account and service data.",
+      benefit: "Improved customer retention and reduced high-cost human support volume."
     },
   ];
 
   const workflowSteps = [
-    { step: "01", title: "Ingest", description: "Connect contracts, case law, and policy documents" },
-    { step: "02", title: "Index", description: "Semantic indexing with legal context understanding" },
-    { step: "03", title: "Query", description: "Natural language legal research with citations" },
-    { step: "04", title: "Verify", description: "Auditable outputs with source grounding" },
+    { step: "01", title: "Integrate", description: "Connect engineering docs and customer systems" },
+    { step: "02", title: "Index", description: "Semantic processing of technical specifications" },
+    { step: "03", title: "Deploy", description: "Field access for technicians and customer support" },
+    { step: "04", title: "Resolve", description: "Instant answers with source citations" },
   ];
 
   return (
@@ -64,8 +51,8 @@ const LegalCompliance = () => {
       <section className="relative pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src={legalImg} 
-            alt="Legal and Compliance AI solutions"
+            src={telecomImg} 
+            alt="Telecommunications and Utilities AI solutions"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background" />
@@ -75,7 +62,7 @@ const LegalCompliance = () => {
           <div className="max-w-4xl space-y-6 animate-slide-in">
             <div className="flex items-center gap-4">
               <div className="p-4 bg-primary/10 rounded-2xl">
-                <Scale className="h-12 w-12 text-primary" />
+                <Wifi className="h-12 w-12 text-primary" />
               </div>
               <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">
                 Enterprise Application Area
@@ -84,13 +71,13 @@ const LegalCompliance = () => {
             
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
               <span className="bg-gradient-accent bg-clip-text text-transparent">
-                Legal & Compliance
+                Telecom & Utilities
               </span>
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-              Transform legal operations with <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX AI ENGINE</span>—from 
-              accelerating e-discovery and contract review to ensuring regulatory compliance with auditable, source-grounded intelligence.
+              Empower field operations and customer service with <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX AI ENGINE</span>—delivering 
+              instant technical knowledge and personalized support at scale.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -134,14 +121,14 @@ const LegalCompliance = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
-              AI-Powered Legal Intelligence
+              AI-Powered Network Intelligence
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Purpose-built capabilities for legal and compliance excellence
+              Purpose-built capabilities for telecommunications and utilities
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {capabilities.map((capability, index) => (
               <Card 
                 key={index}
@@ -171,7 +158,7 @@ const LegalCompliance = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">How It Works</h2>
-            <p className="text-xl text-muted-foreground">From legal documents to actionable intelligence</p>
+            <p className="text-xl text-muted-foreground">From technical documentation to field resolution</p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
@@ -193,10 +180,10 @@ const LegalCompliance = () => {
       <section className="py-24 bg-gradient-hero">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-foreground mb-6">
-            Ready to Transform Your Legal Operations?
+            Ready to Transform Your Network Operations?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join leading law firms and legal departments leveraging KOGNIX for secure, compliant AI.
+            Join leading telecom providers leveraging KOGNIX for intelligent field support.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/book-demo">
@@ -219,4 +206,4 @@ const LegalCompliance = () => {
   );
 };
 
-export default LegalCompliance;
+export default TelecomUtilities;

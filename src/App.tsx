@@ -8,9 +8,13 @@ import { CookieConsent } from "@/components/CookieConsent";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Features from "./pages/Features";
-import BusinessApplications from "./pages/BusinessApplications";
+import FinanceBanking from "./pages/FinanceBanking";
 import HealthcarePharma from "./pages/HealthcarePharma";
 import LegalCompliance from "./pages/LegalCompliance";
+import RetailEcommerce from "./pages/RetailEcommerce";
+import ManufacturingEngineering from "./pages/ManufacturingEngineering";
+import TelecomUtilities from "./pages/TelecomUtilities";
+import EducationAcademia from "./pages/EducationAcademia";
 import Assessment from "./pages/Assessment";
 import Index from "./pages/Index";
 import BookDemo from "./pages/BookDemo";
@@ -43,9 +47,13 @@ const App = () => (
             <Route path="/" element={<Home />} />
             <Route path="/product" element={<Product />} />
             <Route path="/features" element={<Features />} />
-            <Route path="/business-applications" element={<BusinessApplications />} />
-            <Route path="/business-applications/healthcare" element={<HealthcarePharma />} />
-            <Route path="/business-applications/legal" element={<LegalCompliance />} />
+            <Route path="/industries/finance" element={<FinanceBanking />} />
+            <Route path="/industries/healthcare" element={<HealthcarePharma />} />
+            <Route path="/industries/legal" element={<LegalCompliance />} />
+            <Route path="/industries/retail" element={<RetailEcommerce />} />
+            <Route path="/industries/manufacturing" element={<ManufacturingEngineering />} />
+            <Route path="/industries/telecom" element={<TelecomUtilities />} />
+            <Route path="/industries/education" element={<EducationAcademia />} />
             <Route path="/assessment" element={<Assessment />} />
             <Route path="/workflow-automation" element={<Index />} />
             <Route path="/book-demo" element={<BookDemo />} />

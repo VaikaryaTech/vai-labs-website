@@ -26,9 +26,13 @@ export const Navbar = () => {
   ];
 
   const enterpriseApplicationAreas = [
-    { to: "/business-applications", label: "All Industries" },
-    { to: "/business-applications/healthcare", label: "Healthcare & Pharmaceuticals" },
-    { to: "/business-applications/legal", label: "Legal & Compliance" },
+    { to: "/industries/finance", label: "Finance & Banking" },
+    { to: "/industries/healthcare", label: "Healthcare & Pharma" },
+    { to: "/industries/legal", label: "Legal & Compliance" },
+    { to: "/industries/retail", label: "Retail & E-commerce" },
+    { to: "/industries/manufacturing", label: "Manufacturing & Engineering" },
+    { to: "/industries/telecom", label: "Telecom & Utilities" },
+    { to: "/industries/education", label: "Education & Academia" },
   ];
 
   const navLinks = [
@@ -42,7 +46,7 @@ export const Navbar = () => {
   );
 
   const isEnterpriseAppActive = enterpriseApplicationAreas.some(
-    (p) => location.pathname === p.to || location.pathname.startsWith("/business-applications")
+    (p) => location.pathname === p.to || location.pathname.startsWith("/industries")
   );
 
   return (

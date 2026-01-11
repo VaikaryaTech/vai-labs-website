@@ -4,56 +4,64 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { 
-  Scale, 
-  FileSearch, 
+  Building2, 
   Shield, 
-  Server,
+  TrendingUp, 
+  Users, 
+  FileCheck, 
+  AlertTriangle,
   Download,
   ArrowRight,
   CheckCircle
 } from "lucide-react";
-import legalImg from "@/assets/business-legal.jpg";
+import financeImg from "@/assets/business-finance.jpg";
 
-const LegalCompliance = () => {
+const FinanceBanking = () => {
   const impactMetrics = [
-    { value: "50%", label: "Faster Document Review" },
-    { value: "40%", label: "Reduced Discovery Costs" },
-    { value: "80%", label: "Policy Query Automation" },
-    { value: "3x", label: "Research Speed" },
+    { value: "60%", label: "Faster Compliance Research" },
+    { value: "45%", label: "Reduced False Positives" },
+    { value: "80%", label: "First-Call Resolution" },
+    { value: "3x", label: "Analyst Productivity" },
   ];
 
   const capabilities = [
     {
-      icon: FileSearch,
-      title: "Automated Legal Research",
-      description: "Answer specific legal questions by searching across massive repositories of case law, statutes, regulations, and firm-specific documents with semantic understanding.",
-      benefit: "Drastically reduced manual research time with quick access to relevant precedents and verifiable sources."
-    },
-    {
-      icon: Scale,
-      title: "Contract Analysis & Review",
-      description: "Review large contracts, highlight risky clauses, identify inconsistencies against industry standards, or compare drafts against firm-approved templates.",
-      benefit: "Accelerated due diligence, lowered risk, and ensured compliance with internal and external standards."
-    },
-    {
       icon: Shield,
-      title: "E-Discovery Optimization",
-      description: "Automate retrieval, summarization, and analysis of vast document troves (emails, chats, reports) relevant to lawsuits or investigations.",
-      benefit: "Dramatically faster discovery phase with reduced cost and time of human review."
+      title: "Regulatory Compliance Copilot",
+      description: "Answer complex, jurisdiction-specific questions on AML, KYC, Basel, or tax laws by referencing thousands of constantly changing regulatory documents, internal policies, and circulars.",
+      benefit: "Faster compliance research, reduced risk of fines, and up-to-date, auditable answers with source citations."
     },
     {
-      icon: Server,
-      title: "Compliance & Policy Management",
-      description: "Answer employee and management questions about company policies with context-specific responses grounded in official documentation.",
-      benefit: "Consistent, accurate policy interpretation that mitigates internal compliance risk."
+      icon: TrendingUp,
+      title: "Investment Research Assistant",
+      description: "Summarize extensive financial documents like earnings reports, market analyses, and SEC filings; identify key risks and opportunities based on real-time data feeds.",
+      benefit: "Improved analyst efficiency and decision-making with real-time, grounded insights from current financial data."
+    },
+    {
+      icon: Users,
+      title: "Internal Knowledge Base",
+      description: "A chatbot that answers staff questions on HR policies, IT procedures, product specifications, and mortgage processes with instant accuracy.",
+      benefit: "Reduced employee time wasted on searching, faster onboarding, and consistent internal communication."
+    },
+    {
+      icon: FileCheck,
+      title: "Intelligent Customer Support",
+      description: "Handle complex customer inquiries about card decline reasons, loan application status, or product features by accessing account data and operational manuals.",
+      benefit: "Higher first-call resolution rate, personalized support, and reduced reliance on human agents."
+    },
+    {
+      icon: AlertTriangle,
+      title: "Fraud and Risk Detection",
+      description: "Analyze transaction data and cross-reference with internal fraud reports and external blacklists to detect anomalies and flag suspicious activities.",
+      benefit: "Enhanced ability to detect new fraud schemes with reduced false positives compared to rule-based systems."
     },
   ];
 
   const workflowSteps = [
-    { step: "01", title: "Ingest", description: "Connect contracts, case law, and policy documents" },
-    { step: "02", title: "Index", description: "Semantic indexing with legal context understanding" },
-    { step: "03", title: "Query", description: "Natural language legal research with citations" },
-    { step: "04", title: "Verify", description: "Auditable outputs with source grounding" },
+    { step: "01", title: "Ingest", description: "Connect regulatory documents, internal policies, and transaction data" },
+    { step: "02", title: "Index", description: "Semantic indexing with jurisdiction and compliance tagging" },
+    { step: "03", title: "Query", description: "Natural language queries with source-cited responses" },
+    { step: "04", title: "Act", description: "Automated alerts, reports, and compliance workflows" },
   ];
 
   return (
@@ -64,8 +72,8 @@ const LegalCompliance = () => {
       <section className="relative pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src={legalImg} 
-            alt="Legal and Compliance AI solutions"
+            src={financeImg} 
+            alt="Finance and Banking AI solutions"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background" />
@@ -75,7 +83,7 @@ const LegalCompliance = () => {
           <div className="max-w-4xl space-y-6 animate-slide-in">
             <div className="flex items-center gap-4">
               <div className="p-4 bg-primary/10 rounded-2xl">
-                <Scale className="h-12 w-12 text-primary" />
+                <Building2 className="h-12 w-12 text-primary" />
               </div>
               <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">
                 Enterprise Application Area
@@ -84,13 +92,13 @@ const LegalCompliance = () => {
             
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
               <span className="bg-gradient-accent bg-clip-text text-transparent">
-                Legal & Compliance
+                Finance & Banking
               </span>
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-              Transform legal operations with <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX AI ENGINE</span>—from 
-              accelerating e-discovery and contract review to ensuring regulatory compliance with auditable, source-grounded intelligence.
+              Transform financial operations with <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX AI ENGINE</span>—from 
+              regulatory compliance and fraud detection to investment research with auditable, source-grounded intelligence.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -134,14 +142,14 @@ const LegalCompliance = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
-              AI-Powered Legal Intelligence
+              AI-Powered Financial Intelligence
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Purpose-built capabilities for legal and compliance excellence
+              Purpose-built capabilities for the unique challenges of financial services
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {capabilities.map((capability, index) => (
               <Card 
                 key={index}
@@ -171,7 +179,7 @@ const LegalCompliance = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">How It Works</h2>
-            <p className="text-xl text-muted-foreground">From legal documents to actionable intelligence</p>
+            <p className="text-xl text-muted-foreground">From data ingestion to actionable intelligence</p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
@@ -193,10 +201,10 @@ const LegalCompliance = () => {
       <section className="py-24 bg-gradient-hero">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-foreground mb-6">
-            Ready to Transform Your Legal Operations?
+            Ready to Transform Your Financial Operations?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join leading law firms and legal departments leveraging KOGNIX for secure, compliant AI.
+            Join leading financial institutions leveraging KOGNIX for secure, compliant AI.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/book-demo">
@@ -219,4 +227,4 @@ const LegalCompliance = () => {
   );
 };
 
-export default LegalCompliance;
+export default FinanceBanking;

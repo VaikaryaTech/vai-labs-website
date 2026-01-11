@@ -15,13 +15,7 @@ import {
   Download, 
   RefreshCw, 
   ArrowRight, 
-  FileText, 
-  Beaker, 
-  Pill, 
-  Factory, 
-  Package, 
-  Settings, 
-  CheckCircle,
+  FileText,
   Cloud,
   Server,
   Lock
@@ -84,14 +78,6 @@ const Product = () => {
     }
   ];
 
-  const pharmaUseCases = [
-    { icon: Beaker, title: "APIs / Generics", desc: "Paragraph IV filing analysis and patent comparison" },
-    { icon: Pill, title: "Finished Dosage Forms", desc: "Intelligent FDF dossier assembly with CMC narratives" },
-    { icon: Factory, title: "Fine Chemicals", desc: "Retrieval of synthetic protocols from batch records" },
-    { icon: Package, title: "Packaging & Delivery", desc: "Material compatibility and regulatory guidelines" },
-    { icon: Settings, title: "Process Automation", desc: "Dynamic SOP generation linked to control systems" },
-    { icon: CheckCircle, title: "GxP Validation", desc: "AI-assisted IQ/OQ/PQ protocol generation" },
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -236,54 +222,6 @@ const Product = () => {
         </div>
       </section>
 
-      {/* Pharmaceutical Use Cases */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span> for Pharmaceuticals
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              The definitive GenAI solution for highly regulated pharmaceutical and life sciences sectors
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
-            {pharmaUseCases.map((item, index) => (
-              <Card 
-                key={index}
-                className="p-6 bg-gradient-card backdrop-blur-sm border-border hover:border-primary/50 hover:shadow-glow-primary transition-all duration-300 group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <item.icon className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-              </Card>
-            ))}
-          </div>
-
-          {/* Pharma Impact Metrics */}
-          <div className="bg-gradient-hero rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h3 className="text-2xl font-bold text-center mb-8">Measured Business Results</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                { value: "75%", label: "Faster Regulatory Reviews" },
-                { value: "20%", label: "Boost in First Call Success" },
-                { value: "40%", label: "Faster Batch Record Review" },
-                { value: "60%", label: "Reduction in Protocol Deviations" },
-              ].map((metric, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent mb-2">
-                    {metric.value}
-                  </div>
-                  <p className="text-xs text-muted-foreground">{metric.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Deployment Options */}
       <section className="py-24 bg-gradient-hero relative overflow-hidden">
@@ -335,16 +273,16 @@ const Product = () => {
                 <div className="flex-1 text-center md:text-left">
                   <h3 className="text-2xl font-bold mb-2">
                     <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>{" "}
-                    <span className="text-cyan-accent">GenAI Engine</span> Pharmaceutical Brochure
+                    <span className="text-cyan-accent">GenAI Engine</span> Product Brief
                   </h3>
                   <p className="text-muted-foreground">
-                    Download our comprehensive pharmaceutical brochure with use cases, 
-                    technical specifications, and implementation guides.
+                    Download our comprehensive product brief with technical specifications, 
+                    deployment options, and implementation guides.
                   </p>
                 </div>
                 <a 
                   href="/brochures/KOGNIX_CPHI_FLYER.pdf" 
-                  download="KOGNIX_Pharmaceutical_Brochure.pdf"
+                  download="KOGNIX_GenAI_Engine_Brochure.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

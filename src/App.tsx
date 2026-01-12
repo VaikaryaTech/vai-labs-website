@@ -19,7 +19,7 @@ import Assessment from "./pages/Assessment";
 import Index from "./pages/Index";
 import BookDemo from "./pages/BookDemo";
 import Pricing from "./pages/Pricing";
-import Documentation from "./pages/Documentation";
+
 import CaseStudies from "./pages/CaseStudies";
 import Blog from "./pages/Blog";
 import BlogEnterpriseAI from "./pages/BlogEnterpriseAI";
@@ -58,7 +58,7 @@ const App = () => (
             <Route path="/workflow-automation" element={<Index />} />
             <Route path="/book-demo" element={<BookDemo />} />
             <Route path="/pricing" element={<Pricing />} />
-            <Route path="/documentation" element={<Documentation />} />
+            
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/enterprise-ai-trajectory" element={<BlogEnterpriseAI />} />

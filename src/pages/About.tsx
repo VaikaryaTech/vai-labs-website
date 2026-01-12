@@ -84,6 +84,22 @@ const About = () => {
         </div>
       </section>
 
+      <section className="py-24 bg-gradient-hero">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h2 className="text-4xl lg:text-5xl font-bold">
+              <span className="bg-gradient-accent bg-clip-text text-transparent">
+                Join the Future of Intelligence
+              </span>
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              VAI LABS is more than a technology provider; we are a partner in your digital transformation. 
+              We are committed to a future where technology and humanity advance together—safely, locally, and intelligently.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

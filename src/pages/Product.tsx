@@ -281,7 +281,7 @@ const Product = () => {
                   </p>
                 </div>
                 <a 
-                  href="/brochures/KOGNIX_CPHI_FLYER.pdf" 
+                  href="/brochures/KOGNIX_GenAI_Engine_Brochure.pdf" 
                   download="KOGNIX_GenAI_Engine_Brochure.pdf"
                   target="_blank"
                   rel="noopener noreferrer"

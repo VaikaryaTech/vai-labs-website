@@ -47,11 +47,6 @@ const Home = () => {
                   → Request a Demo
                 </Button>
               </Link>
-              <Link to="/product">
-                <Button variant="glass" size="lg">
-                  → Explore the GenAI Engine
-                </Button>
-              </Link>
             </div>
           </div>
         </div>

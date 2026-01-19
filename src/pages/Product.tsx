@@ -280,18 +280,32 @@ const Product = () => {
                     deployment options, and implementation guides.
                   </p>
                 </div>
-                <a 
-                  href="/brochures/KOGNIX_GenAI_Engine_Brochure.pdf" 
-                  download="KOGNIX_GenAI_Engine_Brochure.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button size="lg" className="group flex-shrink-0">
-                    <FileText className="mr-2 h-5 w-5" />
-                    Download Brochure
-                    <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
-                  </Button>
-                </a>
+                <div className="flex flex-col gap-3 flex-shrink-0">
+                  <a 
+                    href="/brochures/KOGNIX_GenAI_Engine_Brochure.pdf" 
+                    download="KOGNIX_GenAI_Engine_Brochure.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button size="lg" className="group w-full">
+                      <FileText className="mr-2 h-5 w-5" />
+                      Download Brochure
+                      <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+                    </Button>
+                  </a>
+                  <a 
+                    href="/brochures/KOGNIX_GenAI_Engine_Handbook.pdf" 
+                    download="KOGNIX_GenAI_Engine_Handbook.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button size="lg" variant="outline" className="group w-full">
+                      <FileText className="mr-2 h-5 w-5" />
+                      Download Handbook
+                      <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+                    </Button>
+                  </a>
+                </div>
               </div>
             </Card>
           </div>

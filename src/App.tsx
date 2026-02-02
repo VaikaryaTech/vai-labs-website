@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CookieConsent } from "@/components/CookieConsent";
 import Home from "./pages/Home";
-import Product from "./pages/kaie";
+import Product from "./pages/KAIE";
 import Features from "./pages/Features";
 import FinanceBanking from "./pages/FinanceBanking";
 import HealthcarePharma from "./pages/HealthcarePharma";

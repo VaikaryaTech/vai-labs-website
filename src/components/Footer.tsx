@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logoNetwork from "@/assets/logo.gif";
+import makeInIndia from "@/assets/make-in-india.png";
 
 export const Footer = () => {
   return (
@@ -58,10 +59,13 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border text-center">
+        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-sm text-muted-foreground">
             © 2025 Vaikarya Technologies. All rights reserved.
           </p>
+          <div className="flex items-center gap-2">
+            <img src={makeInIndia} alt="Make in India" className="h-14 w-auto" />
+          </div>
         </div>
       </div>
     </footer>

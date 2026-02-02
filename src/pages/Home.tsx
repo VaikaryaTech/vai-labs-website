@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Shield, Server, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import homeHeroBackground from "@/assets/home-hero-background.jpg";
+import indiaFlag from "@/assets/india-flag.svg";
 
 const Home = () => {
   return (
@@ -47,6 +48,11 @@ const Home = () => {
                   → Request a Demo
                 </Button>
               </Link>
+            </div>
+
+            <div className="flex items-center justify-center gap-3 pt-6">
+              <img src={indiaFlag} alt="India Flag" className="h-8 w-auto rounded shadow-md" />
+              <span className="text-lg font-semibold text-muted-foreground">Proudly Made in India</span>
             </div>
           </div>
         </div>

@@ -22,6 +22,12 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import securityImg from "@/assets/genai-security.jpg";
+ import { CoreIntelligenceSection } from "@/components/kaie/CoreIntelligenceSection";
+ import { DataIngestionSection } from "@/components/kaie/DataIngestionSection";
+ import { AgenticAISection } from "@/components/kaie/AgenticAISection";
+ import { ModelEcosystemSection } from "@/components/kaie/ModelEcosystemSection";
+ import { ChatExperienceSection } from "@/components/kaie/ChatExperienceSection";
+ import { DashboardSection } from "@/components/kaie/DashboardSection";
 
 const Product = () => {
   const coreCapabilities = [
@@ -150,8 +156,9 @@ const Product = () => {
       </section>
 
       {/* Core Capabilities */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
+      <section className="py-24 bg-gradient-hero relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(260_60%_25%/0.1),transparent_70%)]" />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Core Capabilities
@@ -179,6 +186,24 @@ const Product = () => {
           </div>
         </div>
       </section>
+
+      {/* Core Intelligence & Retrieval Engine */}
+      <CoreIntelligenceSection />
+
+      {/* Advanced Data Ingestion & Processing */}
+      <DataIngestionSection />
+
+      {/* Agentic AI & Workflow Automation */}
+      <AgenticAISection />
+
+      {/* Model Ecosystem & Integrations */}
+      <ModelEcosystemSection />
+
+      {/* Chat Experience & User Interaction */}
+      <ChatExperienceSection />
+
+      {/* KOGNIX Dashboard */}
+      <DashboardSection />
 
       {/* How It Works - Visual Flow */}
       <section className="py-24 bg-gradient-hero relative overflow-hidden">

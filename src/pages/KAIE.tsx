@@ -28,6 +28,7 @@ import securityImg from "@/assets/genai-security.jpg";
  import { ModelEcosystemSection } from "@/components/kaie/ModelEcosystemSection";
  import { ChatExperienceSection } from "@/components/kaie/ChatExperienceSection";
  import { DashboardSection } from "@/components/kaie/DashboardSection";
+ import { IntegrationsMarquee } from "@/components/kaie/IntegrationsMarquee";
 
 const Product = () => {
   const coreCapabilities = [
@@ -198,6 +199,9 @@ const Product = () => {
 
       {/* Model Ecosystem & Integrations */}
       <ModelEcosystemSection />
+
+      {/* Supported AI Providers Marquee */}
+      <IntegrationsMarquee />
 
       {/* Chat Experience & User Interaction */}
       <ChatExperienceSection />

@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import bgDeveloper from "@/assets/bg-developer.jpg";
+import { StudioIntegrationsMarquee } from "@/components/kaie/StudioIntegrationsMarquee";
 
 const KognixAIStudio = () => {
   const coreCapabilities = [
@@ -261,6 +262,9 @@ const KognixAIStudio = () => {
           </div>
         </div>
       </section>
+
+      {/* Plugins & Integrations Marquee */}
+      <StudioIntegrationsMarquee />
 
       {/* Deployment Options */}
       <section className="py-24 bg-gradient-hero relative overflow-hidden">

@@ -55,4 +55,4 @@ Demo Requests: Book a Demo
 
 Email: sales@vailabs.in
 
-© 2026 Vaikarya Technologies. All rights reserved.
+© 2026 Vaikarya Technologies (OPC) Pvt Ltd. All rights reserved.

@@ -14,6 +14,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import healthcareImg from "@/assets/business-healthcare.jpg";
+import { BioPharmaUseCases } from "@/components/healthcare/BioPharmaUseCases";
 
 const HealthcarePharma = () => {
   const impactMetrics = [
@@ -166,6 +167,9 @@ const HealthcarePharma = () => {
           </div>
         </div>
       </section>
+
+      {/* Biopharmaceutical Use Cases */}
+      <BioPharmaUseCases />
 
       {/* How It Works */}
       <section className="py-24 bg-muted/30">

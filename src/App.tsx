@@ -32,6 +32,7 @@ import Observability from "./pages/Observability";
 import KognixIntelligence from "./pages/KognixIntelligence";
 import KognixMobile from "./pages/KognixMobile";
 import KognixAIStudio from "./pages/KognixAIStudio";
+import TechHealthAssessment from "./pages/TechHealthAssessment";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -71,6 +72,7 @@ const App = () => (
             <Route path="/kognix-intelligence" element={<KognixIntelligence />} />
             <Route path="/kognix-mobile" element={<KognixMobile />} />
             <Route path="/kognix-ai-studio" element={<KognixAIStudio />} />
+            <Route path="/services/tech-health-assessment" element={<TechHealthAssessment />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

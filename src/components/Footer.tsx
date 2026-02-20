@@ -32,7 +32,7 @@ export const Footer = () => {
             <h4 className="font-semibold mb-4">Application Areas</h4>
             <ul className="space-y-2">
               <li><Link to="/industries/finance" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Finance & Banking</Link></li>
-              <li><Link to="/industries/healthcare" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Healthcare & Pharma</Link></li>
+              <li><Link to="/industries/healthcare" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Biopharmaceutical (BioPharma)</Link></li>
               <li><Link to="/industries/legal" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Legal & Compliance</Link></li>
               <li><Link to="/industries/retail" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Retail & E-commerce</Link></li>
               <li><Link to="/industries/manufacturing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Manufacturing & Engineering</Link></li>

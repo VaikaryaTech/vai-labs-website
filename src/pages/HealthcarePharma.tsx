@@ -86,7 +86,7 @@ const HealthcarePharma = () => {
             
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
               <span className="bg-gradient-accent bg-clip-text text-transparent">
-                Healthcare & Pharma
+                Biopharmaceutical (BioPharma) Industry
               </span>
             </h1>
             

@@ -27,7 +27,7 @@ export const Navbar = () => {
 
   const enterpriseApplicationAreas = [
     { to: "/industries/finance", label: "Finance & Banking" },
-    { to: "/industries/healthcare", label: "Healthcare & Pharma" },
+    { to: "/industries/healthcare", label: "Biopharmaceutical (BioPharma)" },
     { to: "/industries/legal", label: "Legal & Compliance" },
     { to: "/industries/retail", label: "Retail & E-commerce" },
     { to: "/industries/manufacturing", label: "Manufacturing & Engineering" },

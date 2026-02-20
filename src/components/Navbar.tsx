@@ -25,6 +25,10 @@ export const Navbar = () => {
     { to: "/kognix-ai-studio", label: "KOGNIX", suffix: "AI Studio" },
   ];
 
+  const enterpriseServices = [
+    { to: "/services/tech-health-assessment", label: "Enterprise Technology Health Assessments" },
+  ];
+
   const enterpriseApplicationAreas = [
     { to: "/industries/finance", label: "Finance & Banking" },
     { to: "/industries/healthcare", label: "Biopharmaceutical (BioPharma)" },
@@ -43,6 +47,10 @@ export const Navbar = () => {
 
   const isEnterpriseProductActive = enterpriseProducts.some(
     (p) => location.pathname === p.to
+  );
+
+  const isEnterpriseServiceActive = enterpriseServices.some(
+    (s) => location.pathname === s.to || location.pathname.startsWith("/services")
   );
 
   const isEnterpriseAppActive = enterpriseApplicationAreas.some(
@@ -98,6 +106,35 @@ export const Navbar = () => {
                         <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">{product.label}</span>
                       )}{" "}
                       {product.suffix && <span className="text-cyan-accent">{product.suffix}</span>}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  className={`text-sm transition-colors flex items-center gap-1 ${
+                    isEnterpriseServiceActive
+                      ? "text-foreground font-semibold"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  Enterprise Services
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="bg-background border border-border z-50">
+                {enterpriseServices.map((service) => (
+                  <DropdownMenuItem key={service.to} asChild>
+                    <Link
+                      to={service.to}
+                      className={`w-full cursor-pointer ${
+                        location.pathname === service.to ? "font-semibold" : ""
+                      }`}
+                    >
+                      {service.label}
                     </Link>
                   </DropdownMenuItem>
                 ))}
@@ -226,7 +263,26 @@ export const Navbar = () => {
                   </div>
 
                   <div className="px-4 py-2">
-                    <span className="text-sm font-semibold text-foreground">Enterprise Application Areas</span>
+                    <span className="text-sm font-semibold text-foreground">Enterprise Services</span>
+                    <div className="flex flex-col gap-2 mt-2 pl-4">
+                      {enterpriseServices.map((service) => (
+                        <Link
+                          key={service.to}
+                          to={service.to}
+                          onClick={() => { setOpen(false); window.scrollTo(0, 0); }}
+                          className={`text-base py-1 rounded-md transition-colors ${
+                            location.pathname === service.to
+                              ? "font-semibold text-foreground"
+                              : "text-muted-foreground hover:text-foreground"
+                          }`}
+                        >
+                          {service.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="px-4 py-2">
                     <div className="flex flex-col gap-2 mt-2 pl-4">
                       {enterpriseApplicationAreas.map((area) => (
                         <Link

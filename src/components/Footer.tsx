@@ -29,6 +29,13 @@ export const Footer = () => {
           </div>
 
           <div>
+            <h4 className="font-semibold mb-4">Enterprise Services</h4>
+            <ul className="space-y-2">
+              <li><Link to="/services/tech-health-assessment" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Tech Health Assessments</Link></li>
+            </ul>
+          </div>
+
+          <div>
             <h4 className="font-semibold mb-4">Application Areas</h4>
             <ul className="space-y-2">
               <li><Link to="/industries/finance" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Finance & Banking</Link></li>

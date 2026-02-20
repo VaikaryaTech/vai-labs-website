@@ -116,35 +116,6 @@ export const Navbar = () => {
               <DropdownMenuTrigger asChild>
                 <button
                   className={`text-sm transition-colors flex items-center gap-1 ${
-                    isEnterpriseServiceActive
-                      ? "text-foreground font-semibold"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  Enterprise Services
-                  <ChevronDown className="h-4 w-4" />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="bg-background border border-border z-50">
-                {enterpriseServices.map((service) => (
-                  <DropdownMenuItem key={service.to} asChild>
-                    <Link
-                      to={service.to}
-                      className={`w-full cursor-pointer ${
-                        location.pathname === service.to ? "font-semibold" : ""
-                      }`}
-                    >
-                      {service.label}
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button
-                  className={`text-sm transition-colors flex items-center gap-1 ${
                     isEnterpriseAppActive
                       ? "text-foreground font-semibold"
                       : "text-muted-foreground hover:text-foreground"
@@ -166,6 +137,35 @@ export const Navbar = () => {
                       }`}
                     >
                       {area.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  className={`text-sm transition-colors flex items-center gap-1 ${
+                    isEnterpriseServiceActive
+                      ? "text-foreground font-semibold"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  Enterprise Services
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="bg-background border border-border z-50">
+                {enterpriseServices.map((service) => (
+                  <DropdownMenuItem key={service.to} asChild>
+                    <Link
+                      to={service.to}
+                      className={`w-full cursor-pointer ${
+                        location.pathname === service.to ? "font-semibold" : ""
+                      }`}
+                    >
+                      {service.label}
                     </Link>
                   </DropdownMenuItem>
                 ))}
@@ -263,26 +263,7 @@ export const Navbar = () => {
                   </div>
 
                   <div className="px-4 py-2">
-                    <span className="text-sm font-semibold text-foreground">Enterprise Services</span>
-                    <div className="flex flex-col gap-2 mt-2 pl-4">
-                      {enterpriseServices.map((service) => (
-                        <Link
-                          key={service.to}
-                          to={service.to}
-                          onClick={() => { setOpen(false); window.scrollTo(0, 0); }}
-                          className={`text-base py-1 rounded-md transition-colors ${
-                            location.pathname === service.to
-                              ? "font-semibold text-foreground"
-                              : "text-muted-foreground hover:text-foreground"
-                          }`}
-                        >
-                          {service.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="px-4 py-2">
+                    <span className="text-sm font-semibold text-foreground">Enterprise Application Areas</span>
                     <div className="flex flex-col gap-2 mt-2 pl-4">
                       {enterpriseApplicationAreas.map((area) => (
                         <Link
@@ -299,6 +280,26 @@ export const Navbar = () => {
                           }`}
                         >
                           {area.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="px-4 py-2">
+                    <span className="text-sm font-semibold text-foreground">Enterprise Services</span>
+                    <div className="flex flex-col gap-2 mt-2 pl-4">
+                      {enterpriseServices.map((service) => (
+                        <Link
+                          key={service.to}
+                          to={service.to}
+                          onClick={() => { setOpen(false); window.scrollTo(0, 0); }}
+                          className={`text-base py-1 rounded-md transition-colors ${
+                            location.pathname === service.to
+                              ? "font-semibold text-foreground"
+                              : "text-muted-foreground hover:text-foreground"
+                          }`}
+                        >
+                          {service.label}
                         </Link>
                       ))}
                     </div>

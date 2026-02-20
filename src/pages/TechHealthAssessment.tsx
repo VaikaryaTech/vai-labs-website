@@ -223,7 +223,7 @@ const TechHealthAssessment = () => {
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
-              Is your technology stack a foundation for growth or a bottleneck for innovation? Our specialized team conducts deep-tier Health Assessments across your entire ecosystem—from the OS kernel to the container orchestration layer. We ensure your Windows, Linux, Oracle, and Middleware environments are optimized, secure, and ready for the future.
+              Is your technology stack a foundation for growth or a bottleneck for innovation? Our specialized team conducts deep-tier Health Assessments across your entire ecosystem—from the OS kernel to the container orchestration layer. We ensure your Architecture, Application, Sybsystems & Middleware environments, Platform and Hosting are optimized, secure to the industry standards and ready for the future.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">

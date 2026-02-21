@@ -20,7 +20,7 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Enterprise Products</h4>
             <ul className="space-y-2">
-              <li><Link to="/product" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> <span className="text-cyan-accent">GenAI Engine</span></Link></li>
+              <li><Link to="/kaie" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> <span className="text-cyan-accent">GenAI Engine</span></Link></li>
               <li><Link to="/observability" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> <span className="text-cyan-accent">Analytix</span></Link></li>
               <li><Link to="/kognix-intelligence" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> <span className="text-cyan-accent">Intelligence</span></Link></li>
               <li><Link to="/kognix-mobile" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> <span className="text-cyan-accent">Mobile</span></Link></li>

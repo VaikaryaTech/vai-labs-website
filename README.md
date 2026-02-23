@@ -11,7 +11,7 @@ Our flagship suite of products, KOGNIX, is designed to handle every facet of ent
 
 KOGNIX GenAI Engine: The core powerhouse for secure, local generative tasks.
 
-KOGNIX Analytix: Advanced data intelligence and predictive insights.
+KOGNIX Analytics: Advanced data intelligence and predictive insights.
 
 KOGNIX Intelligence: Decision-making orchestration for complex enterprise logic.
 

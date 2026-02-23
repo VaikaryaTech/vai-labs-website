@@ -104,8 +104,9 @@ const Observability = () => {
             </p>
             
             <p className="text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl">
-              Monitor, debug, and optimize your AI applications with enterprise-grade tracing, 
-              prompt versioning, and evaluation pipelines.
+              Monitor, debug, and optimize your AI applications with enterprise-grade tracing — 
+              track latency of LLM calls and full traces, token usage and associated costs, 
+              error rates and system performance.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

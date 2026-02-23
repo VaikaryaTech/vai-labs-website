@@ -20,6 +20,9 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import observabilityBg from "@/assets/observability-hero-background.jpg";
+import deployCloud from "@/assets/deploy-cloud.png";
+import deployKubernetes from "@/assets/deploy-kubernetes.png";
+import deployAirgapped from "@/assets/deploy-airgapped.png";
 
 const Observability = () => {
   const coreCapabilities = [
@@ -58,18 +61,21 @@ const Observability = () => {
   const deploymentOptions = [
     {
       icon: Cloud,
+      image: deployCloud,
       title: "Cloud Managed",
       description: "Zero infrastructure management with enterprise-grade reliability",
       tag: "Fastest Setup"
     },
     {
       icon: Layers,
+      image: deployKubernetes,
       title: "Docker / Kubernetes",
       description: "Self-host with Docker Compose or Helm charts for full control",
       tag: "Most Popular"
     },
     {
       icon: Shield,
+      image: deployAirgapped,
       title: "Air-Gapped",
       description: "Complete isolation for regulated industries and sensitive data",
       tag: "Maximum Security"
@@ -281,15 +287,15 @@ const Observability = () => {
             {deploymentOptions.map((option, index) => (
               <Card 
                 key={index}
-                className="p-8 bg-card/50 backdrop-blur-sm border-border text-center hover:scale-105 transition-all duration-300 relative overflow-hidden"
+                className="p-6 bg-card/50 backdrop-blur-sm border-border text-center hover:scale-105 transition-all duration-300 relative overflow-hidden"
               >
                 <div className="absolute top-4 right-4">
                   <span className="text-xs font-medium px-3 py-1 rounded-full bg-primary/10 text-primary">
                     {option.tag}
                   </span>
                 </div>
-                <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center mx-auto mb-6">
-                  <option.icon className="h-8 w-8 text-cyan-500" />
+                <div className="w-48 h-48 rounded-2xl overflow-hidden mx-auto mb-6 mt-4">
+                  <img src={option.image} alt={option.title} className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-2xl font-bold mb-3">{option.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">

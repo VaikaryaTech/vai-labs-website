@@ -96,7 +96,7 @@ const Observability = () => {
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>{" "}
-              <span className="text-cyan-accent">Analytix</span>
+              <span className="text-cyan-accent">Analytics</span>
             </h1>
             
             <p className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
@@ -185,7 +185,7 @@ const Observability = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               How <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>{" "}
-              <span className="text-cyan-accent">Analytix</span> Works
+              <span className="text-cyan-accent">Analytics</span> Works
             </h2>
           </div>
 
@@ -312,7 +312,7 @@ const Observability = () => {
                 <div className="flex-1 text-center md:text-left">
                   <h3 className="text-2xl font-bold mb-2">
                     <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>{" "}
-                    <span className="text-cyan-accent">Analytix</span> Product Brief
+                    <span className="text-cyan-accent">Analytics</span> Product Brief
                   </h3>
                   <p className="text-muted-foreground">
                     Download our comprehensive product brief with technical specifications, 
@@ -341,7 +341,7 @@ const Observability = () => {
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
             Join leading enterprises using{" "}
             <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span>{" "}
-            <span className="text-cyan-accent font-semibold">Analytix</span>{" "}
+            <span className="text-cyan-accent font-semibold">Analytics</span>{" "}
             to build reliable, high-performance AI applications.
           </p>
           

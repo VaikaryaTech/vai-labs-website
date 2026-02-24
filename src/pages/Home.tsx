@@ -5,6 +5,7 @@ import { Shield, Server, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import homeHeroBackground from "@/assets/home-hero-background.jpg";
 import indiaFlag from "@/assets/india-flag.svg";
+import { ParticleNetwork } from "@/components/ParticleNetwork";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
         </div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(260_60%_25%/0.3),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,hsl(12_100%_50%/0.2),transparent_50%)]" />
+        <ParticleNetwork />
         
         <div className="container mx-auto px-6 py-32 relative z-10">
           <div className="max-w-5xl mx-auto text-center space-y-8 animate-slide-in">

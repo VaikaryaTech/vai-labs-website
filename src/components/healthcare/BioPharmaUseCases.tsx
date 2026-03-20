@@ -325,6 +325,12 @@ const departmentSections: DepartmentSection[] = [
         solution: "Retrieval and summarization of policy usage logs and semantic search trends data, indicating knowledge gaps and areas of high policy complexity.",
         value: "Provides data-driven insights for policy refinement and targeted communication planning.",
       },
+      {
+        title: "GxP Training Compliance and Policy Knowledge Dissemination",
+        friction: "Mandated verifiable records of staff qualifications and GxP training. Employees struggle to interpret complex and voluminous HR policies, impacting consistent application.",
+        solution: "Deploys as a personalized internal policy concierge. Answers natural language queries on HR policies, linking to the official document. For GxP, it provides immediate confirmation of required training status based on role and location.",
+        value: "Improved Employee Compliance and Knowledge Retention: Provides instant, context-aware access to critical GxP training requirements. Streamlines access to HR information, supporting a positive Employee Value Proposition (EVP).",
+      },
     ],
   },
   {

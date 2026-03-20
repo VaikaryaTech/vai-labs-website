@@ -114,10 +114,19 @@ const departmentSections: DepartmentSection[] = [
         solution: "Interactive training tool built upon QMS manuals, process flowcharts, and historical audit findings. New hires can query scenarios and receive cited answers.",
         value: "Accelerates QC staff proficiency and knowledge retention, reducing dependency on senior staff for basic training queries.",
       },
+      {
+        title: "Proactive Audit Preparation and CAPA/Deviation Investigation",
+        friction: "Rapid assembly of complex, interconnected GxP records (SOPs, deviation reports, raw data, training sign-offs) for audits and CAPA investigations. Manual retrieval is error-prone and causes delays.",
+        solution: "Establishes a centralized QA query layer. Executes natural language searches (e.g., \"Provide all documentation... for personnel involved in the specific deviation...\"). Rapidly synthesizes cross-functional data, linking directly to every validated source document (enforcing ALCOA+ principles).",
+        value: "Accelerated Deviation Closure and Enhanced Audit Readiness: Significantly reduces Mean Time to Resolution (TTR) for quality issues and markedly improves performance during regulatory inspections via immediate, auditable, and traceable GxP document access.",
+      },
+      {
+        title: "Global GxP Standard Comparison and SOP Harmonization",
+        friction: "Continuous monitoring and comparison of region-specific guidelines (e.g., FDA vs. EudraLex) against internal Quality System Documents (QSDs) and SOPs across multiple international markets.",
+        solution: "Ingests and semantically maps global GxP guidance documents against the internal controlled document library. Provides an instant gap analysis, highlighting precisely where current internal SOPs fall short of the most stringent global regulatory benchmark.",
+        value: "Enhanced Regulatory Consistency and Risk Reduction: Proactively minimizes the risk of critical quality deficiencies being cited during international regulatory audits by ensuring internal operational procedures are consistently harmonized with the current and most demanding global GxP standards.",
+      },
     ],
-  },
-  {
-    department: "Regulatory Affairs and Compliance",
     icon: FileSearch,
     color: "text-blue-400",
     useCases: [

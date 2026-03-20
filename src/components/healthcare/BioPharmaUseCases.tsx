@@ -160,6 +160,18 @@ const departmentSections: DepartmentSection[] = [
         solution: "Generative responses synthesized strictly from retrieved legal texts, official guidance, and internal compliance documents with citations back to the regulatory document version.",
         value: "Ensures internal stakeholders receive accurate, verifiable compliance information, preventing the circulation of misinformation.",
       },
+      {
+        title: "Regulatory Submission Data Integrity Verification",
+        friction: "Inconsistent or incomplete data synchronization between R&D, Clinical, and Quality teams, delaying submission compilation and compromising integrity. Manual verification is time-consuming and error-prone.",
+        solution: "Executes an automated, semantic integrity check prior to submission. Queries draft filing documents (e.g., CTD sections) against validated source records (e.g., batch records) to confirm consistency. Generates a traceable report flagging discrepancies.",
+        value: "Reduced Submission Deficiencies and Accelerated Approval: Decreases the probability of regulatory agencies issuing Request for Information (RFI) letters related to internal data conflicts, thereby accelerating the overall Time to Approval.",
+      },
+      {
+        title: "Retrieval and Audit of the Electronic Trial Master File (eTMF)",
+        friction: "Audit staff struggle to rapidly locate specific, cross-functional document sets within the eTMF structure during monitoring visits or inspections to verify compliance.",
+        solution: "Allows regulatory personnel to utilize conversational, contextual queries that span the TMF index (e.g., \"Retrieve all investigator meeting minutes...\"). Instantly retrieves required documents, demonstrating GCP compliance.",
+        value: "Optimized Regulatory Access: Ensures the eTMF is continuously \"inspection-ready\" by reducing the time needed for complex document retrieval from hours to mere seconds, enabling efficient evaluation of trial conduct and data quality.",
+      },
     ],
   },
   {

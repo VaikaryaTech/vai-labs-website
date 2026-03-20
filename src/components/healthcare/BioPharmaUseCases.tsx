@@ -21,7 +21,6 @@ import {
 } from "lucide-react";
 
 interface UseCase {
-  id?: string;
   title: string;
   friction: string;
   solution: string;

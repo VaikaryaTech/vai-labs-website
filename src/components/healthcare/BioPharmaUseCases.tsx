@@ -426,29 +426,6 @@ export const BioPharmaUseCases = () => {
           </p>
         </div>
 
-        {/* Pipeline Use Cases */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-foreground mb-2 flex items-center gap-3">
-            <FlaskConical className="h-6 w-6 text-primary" />
-            Biopharmaceutical Pipeline Use Cases
-          </h3>
-          <p className="text-muted-foreground mb-6">
-            Cross-functional use cases spanning IP clearance, GxP compliance, regulatory submissions, manufacturing, and supply chain.
-          </p>
-          <Accordion type="multiple" className="space-y-3">
-            {pipelineUseCases.map((uc, i) => (
-              <AccordionItem key={i} value={`pipeline-${i}`} className="border border-border rounded-xl px-1 bg-card/20">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <span className="font-medium text-sm text-left">{uc.title}</span>
-                </AccordionTrigger>
-                <AccordionContent className="px-4 pb-4">
-                  <UseCaseCard useCase={uc} />
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-
         {/* Department Use Cases */}
         <div>
           <h3 className="text-2xl font-bold text-foreground mb-2">

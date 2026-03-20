@@ -380,6 +380,12 @@ const departmentSections: DepartmentSection[] = [
         solution: "Semantic search across all archived commercial contracts, pricing agreements, and legal addenda for rapid retrieval of applicable terms.",
         value: "Ensures sales quotes adhere to current financial and legal terms, preventing revenue leakage or contractual disputes.",
       },
+      {
+        title: "Compliant Technical Data Provisioning for Strategic Partners",
+        friction: "Sales representatives require rapid access to specific API specifications, regulatory filing status, and quality summaries for customer due diligence. Sharing must be secure, timely, and compliant with internal data governance.",
+        solution: "Implements a Regulatory Shielding function. Sales teams query controlled documents to generate verified, synthesized, compliant summary statements (e.g., shelf life statement) suitable for external sharing, without granting access to internal source documents.",
+        value: "Accelerated Sales Cycle and Enhanced Partner Trust: Transforms highly regulated technical knowledge into a competitive differentiator by enabling fast, accurate, and compliant technical communication.",
+      },
     ],
   },
   {

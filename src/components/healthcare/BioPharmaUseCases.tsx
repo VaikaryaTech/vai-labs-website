@@ -127,6 +127,9 @@ const departmentSections: DepartmentSection[] = [
         value: "Enhanced Regulatory Consistency and Risk Reduction: Proactively minimizes the risk of critical quality deficiencies being cited during international regulatory audits by ensuring internal operational procedures are consistently harmonized with the current and most demanding global GxP standards.",
       },
     ],
+  },
+  {
+    department: "Regulatory Affairs and Compliance",
     icon: FileSearch,
     color: "text-blue-400",
     useCases: [

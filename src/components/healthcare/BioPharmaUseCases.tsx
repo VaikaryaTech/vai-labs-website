@@ -209,6 +209,24 @@ const departmentSections: DepartmentSection[] = [
         solution: "Conversational training interface built on indexed training manuals, safety policy transcripts, and digital SOPs. New hires simulate complex process questions.",
         value: "Accelerates onboarding time by an estimated 30%, facilitating quicker proficiency in standardized procedures.",
       },
+      {
+        title: "Real-Time Batch Record and SOP Verification",
+        friction: "GMP operators need immediate, unambiguous access to the current, correct version of SOPs and contextual historical batch record information on the shop floor to prevent operational errors. Delays introduce non-compliance risks.",
+        solution: "Deployed as a secure, validated interface accessible on the shop floor. Operators can verbally or textually query highly specific technical instructions (e.g., \"What is the acceptable temperature range...?\") and receive a source-grounded answer from the current Master Batch Record and version-controlled SOP.",
+        value: "Increased Operational Compliance and Reduction in Errors: Provides accurate, GxP-validated information precisely at the point of action, significantly enhancing adherence to mandatory procedures and securing the integrity of the digital batch audit trail.",
+      },
+      {
+        title: "Automated Material Traceability and Auditable Chain-of-Custody",
+        friction: "Linking disparate information—from raw material receipt to final product packaging—across systems (LIMS, ERP, MES) to verify the chain-of-custody for regulatory bodies.",
+        solution: "Indexes all documentation containing unique material identifiers (COAs, receiving logs, production records). The system semantically connects these documents, enabling a synthesized, auditable reconstruction of a lot number's entire history and chain-of-custody.",
+        value: "Enhanced Product Integrity and Rapid Recall Capability: Streamlines complex documentation, reducing the time required for root cause analysis and mass serialization/traceability checks, reinforcing compliance with global drug security acts.",
+      },
+      {
+        title: "Global Distribution Documentation and Customs Compliance",
+        friction: "Supply Chain (SC) teams need rapid, accurate access to country-specific regulatory certificates, market authorization data, and precise shipping documentation. Managing version control across divergent international markets creates significant friction.",
+        solution: "Creates a centralized SC knowledge hub, indexed by product, destination, and regulatory status. Synthesizes current regional importation requirements and instantly retrieves the necessary, verified Certificate of Analysis (CoA) or customs documentation.",
+        value: "Reduced Logistics and Customs Friction: Minimizes the risk of critical API shipments being delayed or detained due to reliance on outdated, incorrect, or missing documentation, thus ensuring smooth, compliant global supply.",
+      },
     ],
   },
   {

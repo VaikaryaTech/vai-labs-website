@@ -378,12 +378,7 @@ const departmentSections: DepartmentSection[] = [
 
 const UseCaseCard = ({ useCase }: { useCase: UseCase }) => (
   <div className="p-5 rounded-xl border border-border bg-card/30 hover:bg-card/60 transition-colors">
-    <div className="flex items-start gap-3 mb-3">
-      {useCase.id && (
-        <Badge variant="secondary" className="shrink-0 font-mono text-xs">
-          {useCase.id}
-        </Badge>
-      )}
+    <div className="mb-3">
       <h4 className="font-semibold text-foreground text-sm leading-snug">{useCase.title}</h4>
     </div>
 

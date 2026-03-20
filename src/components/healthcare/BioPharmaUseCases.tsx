@@ -5,7 +5,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
 import {
   FlaskConical,
   ShieldCheck,
@@ -21,7 +20,6 @@ import {
 } from "lucide-react";
 
 interface UseCase {
-  id?: string;
   title: string;
   friction: string;
   solution: string;
@@ -35,80 +33,6 @@ interface DepartmentSection {
   useCases: UseCase[];
 }
 
-const pipelineUseCases: UseCase[] = [
-  {
-    title: "Intellectual Property (IP) Clearance and Patent Landscape Navigation",
-    friction: "Meticulous, time-consuming cross-referencing of internal data against constantly evolving global patent claims to ensure freedom-to-operate. High risk of IP infringement.",
-    solution: "Functions as an IP Risk Mitigator. Indexes internal project documentation and external patent databases. Instantly highlights relevant patent claims, providing concise summaries of conflicts and citing the exact relevant claim text.",
-    value: "Proactive Mitigation of IP Risk: Drastically reduces labor and potential legal exposure associated with IP clearance, securing the commercial and regulatory pathway for new API candidates.",
-  },
-  {
-    title: "Proactive Audit Preparation and CAPA/Deviation Investigation",
-    friction: "Rapid assembly of complex, interconnected GxP records (SOPs, deviation reports, raw data, training sign-offs) for audits and CAPA investigations. Manual retrieval is error-prone and causes delays.",
-    solution: "Establishes a centralized QA query layer. Executes natural language searches (e.g., \"Provide all documentation... for personnel involved in the specific deviation...\"). Rapidly synthesizes cross-functional data, linking directly to every validated source document (enforcing ALCOA+ principles).",
-    value: "Accelerated Deviation Closure and Enhanced Audit Readiness: Significantly reduces Mean Time to Resolution (TTR) for quality issues and markedly improves performance during regulatory inspections via immediate, auditable, and traceable GxP document access.",
-  },
-  {
-    title: "Global GxP Standard Comparison and SOP Harmonization",
-    friction: "Continuous monitoring and comparison of region-specific guidelines (e.g., FDA vs. EudraLex) against internal Quality System Documents (QSDs) and SOPs across multiple international markets.",
-    solution: "Ingests and semantically maps global GxP guidance documents against the internal controlled document library. Provides an instant gap analysis, highlighting precisely where current internal SOPs fall short of the most stringent global regulatory benchmark.",
-    value: "Enhanced Regulatory Consistency and Risk Reduction: Proactively minimizes the risk of critical quality deficiencies being cited during international regulatory audits by ensuring internal operational procedures are consistently harmonized with the current and most demanding global GxP standards.",
-  },
-  {
-    title: "Regulatory Submission Data Integrity Verification",
-    friction: "Inconsistent or incomplete data synchronization between R&D, Clinical, and Quality teams, delaying submission compilation and compromising integrity. Manual verification is time-consuming and error-prone.",
-    solution: "Executes an automated, semantic integrity check prior to submission. Queries draft filing documents (e.g., CTD sections) against validated source records (e.g., batch records) to confirm consistency. Generates a traceable report flagging discrepancies.",
-    value: "Reduced Submission Deficiencies and Accelerated Approval: Decreases the probability of regulatory agencies issuing Request for Information (RFI) letters related to internal data conflicts, thereby accelerating the overall Time to Approval.",
-  },
-  {
-    title: "Retrieval and Audit of the Electronic Trial Master File (eTMF)",
-    friction: "Audit staff struggle to rapidly locate specific, cross-functional document sets within the eTMF structure during monitoring visits or inspections to verify compliance.",
-    solution: "Allows regulatory personnel to utilize conversational, contextual queries that span the TMF index (e.g., \"Retrieve all investigator meeting minutes...\"). Instantly retrieves required documents, demonstrating GCP compliance.",
-    value: "Optimized Regulatory Access: Ensures the eTMF is continuously \"inspection-ready\" by reducing the time needed for complex document retrieval from hours to mere seconds, enabling efficient evaluation of trial conduct and data quality.",
-  },
-  {
-    title: "Real-Time Batch Record and SOP Verification",
-    friction: "GMP operators need immediate, unambiguous access to the current, correct version of SOPs and contextual historical batch record information on the shop floor to prevent operational errors. Delays introduce non-compliance risks.",
-    solution: "Deployed as a secure, validated interface accessible on the shop floor. Operators can verbally or textually query highly specific technical instructions (e.g., \"What is the acceptable temperature range...?\") and receive a source-grounded answer from the current Master Batch Record and version-controlled SOP.",
-    value: "Increased Operational Compliance and Reduction in Errors: Provides accurate, GxP-validated information precisely at the point of action, significantly enhancing adherence to mandatory procedures and securing the integrity of the digital batch audit trail.",
-  },
-  {
-    title: "Automated Material Traceability and Auditable Chain-of-Custody",
-    friction: "Linking disparate information—from raw material receipt to final product packaging—across systems (LIMS, ERP, MES) to verify the chain-of-custody for regulatory bodies.",
-    solution: "Indexes all documentation containing unique material identifiers (COAs, receiving logs, production records). The system semantically connects these documents, enabling a synthesized, auditable reconstruction of a lot number's entire history and chain-of-custody.",
-    value: "Enhanced Product Integrity and Rapid Recall Capability: Streamlines complex documentation, reducing the time required for root cause analysis and mass serialization/traceability checks, reinforcing compliance with global drug security acts.",
-  },
-  {
-    title: "Global Distribution Documentation and Customs Compliance",
-    friction: "Supply Chain (SC) teams need rapid, accurate access to country-specific regulatory certificates, market authorization data, and precise shipping documentation. Managing version control across divergent international markets creates significant friction.",
-    solution: "Creates a centralized SC knowledge hub, indexed by product, destination, and regulatory status. Synthesizes current regional importation requirements and instantly retrieves the necessary, verified Certificate of Analysis (CoA) or customs documentation.",
-    value: "Reduced Logistics and Customs Friction: Minimizes the risk of critical API shipments being delayed or detained due to reliance on outdated, incorrect, or missing documentation, thus ensuring smooth, compliant global supply.",
-  },
-  {
-    title: "GxP System Troubleshooting and Knowledge Management",
-    friction: "IT support personnel spend excessive time navigating and synthesizing information across vast libraries of detailed validation reports (IQ/OQ/PQ), system architecture guides, and application SOPs when responding to a technical incident.",
-    solution: "Integrated as the primary knowledge engine for the IT Service Desk. Grounds all troubleshooting guidance in controlled, validated GxP system documentation. Answers queries like: \"What are the approved recovery steps for a failure...?\"",
-    value: "Accelerated Mean Time to Resolution (MTTR): Reduces system downtime for business-critical validated systems by providing immediate, technically accurate solutions based on verified documentation, maintaining the qualified status of the GxP infrastructure.",
-  },
-  {
-    title: "GxP Training Compliance and Policy Knowledge Dissemination",
-    friction: "Mandated verifiable records of staff qualifications and GxP training. Employees struggle to interpret complex and voluminous HR policies, impacting consistent application.",
-    solution: "Deploys as a personalized internal policy concierge. Answers natural language queries on HR policies, linking to the official document. For GxP, it provides immediate confirmation of required training status based on role and location.",
-    value: "Improved Employee Compliance and Knowledge Retention: Provides instant, context-aware access to critical GxP training requirements. Streamlines access to HR information, supporting a positive Employee Value Proposition (EVP).",
-  },
-  {
-    title: "Compliant Technical Data Provisioning for Strategic Partners",
-    friction: "Sales representatives require rapid access to specific API specifications, regulatory filing status, and quality summaries for customer due diligence. Sharing must be secure, timely, and compliant with internal data governance.",
-    solution: "Implements a Regulatory Shielding function. Sales teams query controlled documents to generate verified, synthesized, compliant summary statements (e.g., shelf life statement) suitable for external sharing, without granting access to internal source documents.",
-    value: "Accelerated Sales Cycle and Enhanced Partner Trust: Transforms highly regulated technical knowledge into a competitive differentiator by enabling fast, accurate, and compliant technical communication.",
-  },
-  {
-    title: "Technical Inquiry Resolution and Service Excellence",
-    friction: "Customer Support fields complex, highly technical inquiries requiring access to siloed information across R&D, QA, and Regulatory dossiers, leading to long resolution times and high escalation rates.",
-    solution: "Centralizes the entire technical knowledge base (R&D reports, COAs, stability data, market authorization documents). Agents receive instant, contextual answers rigorously grounded in validated technical sources, resolving complex queries without escalation.",
-    value: "Increased First-Call Resolution (FCR) and Customer Satisfaction: Significantly reduces the organizational burden of escalating technical queries, delivering a superior, faster, and more professional technical service to global partners.",
-  },
-];
 
 const departmentSections: DepartmentSection[] = [
   {
@@ -152,6 +76,12 @@ const departmentSections: DepartmentSection[] = [
         solution: "Controlled document generation where the KOGNIX AI Engine synthesizes factual product summaries grounded strictly in official R&D test reports and technical specifications.",
         value: "Reduces internal communication ambiguity and ensures external marketing claims are verifiable and accurately aligned with R&D findings.",
       },
+      {
+        title: "IP Clearance and Patent Landscape Navigation",
+        friction: "Meticulous, time-consuming cross-referencing of internal data against constantly evolving global patent claims to ensure freedom-to-operate. High risk of IP infringement.",
+        solution: "Functions as an IP Risk Mitigator. Indexes internal project documentation and external patent databases. Instantly highlights relevant patent claims, providing concise summaries of conflicts and citing the exact relevant claim text.",
+        value: "Proactive Mitigation of IP Risk: Drastically reduces labor and potential legal exposure associated with IP clearance, securing the commercial and regulatory pathway for new API candidates.",
+      },
     ],
   },
   {
@@ -182,6 +112,18 @@ const departmentSections: DepartmentSection[] = [
         friction: "Training new QA personnel on chemical documentation complexity, version tracking protocols, and QMS procedures is extensive, leading to slow ramp-up times.",
         solution: "Interactive training tool built upon QMS manuals, process flowcharts, and historical audit findings. New hires can query scenarios and receive cited answers.",
         value: "Accelerates QC staff proficiency and knowledge retention, reducing dependency on senior staff for basic training queries.",
+      },
+      {
+        title: "Proactive Audit Preparation and CAPA/Deviation Investigation",
+        friction: "Rapid assembly of complex, interconnected GxP records (SOPs, deviation reports, raw data, training sign-offs) for audits and CAPA investigations. Manual retrieval is error-prone and causes delays.",
+        solution: "Establishes a centralized QA query layer. Executes natural language searches (e.g., \"Provide all documentation... for personnel involved in the specific deviation...\"). Rapidly synthesizes cross-functional data, linking directly to every validated source document (enforcing ALCOA+ principles).",
+        value: "Accelerated Deviation Closure and Enhanced Audit Readiness: Significantly reduces Mean Time to Resolution (TTR) for quality issues and markedly improves performance during regulatory inspections via immediate, auditable, and traceable GxP document access.",
+      },
+      {
+        title: "Global GxP Standard Comparison and SOP Harmonization",
+        friction: "Continuous monitoring and comparison of region-specific guidelines (e.g., FDA vs. EudraLex) against internal Quality System Documents (QSDs) and SOPs across multiple international markets.",
+        solution: "Ingests and semantically maps global GxP guidance documents against the internal controlled document library. Provides an instant gap analysis, highlighting precisely where current internal SOPs fall short of the most stringent global regulatory benchmark.",
+        value: "Enhanced Regulatory Consistency and Risk Reduction: Proactively minimizes the risk of critical quality deficiencies being cited during international regulatory audits by ensuring internal operational procedures are consistently harmonized with the current and most demanding global GxP standards.",
       },
     ],
   },
@@ -220,6 +162,18 @@ const departmentSections: DepartmentSection[] = [
         solution: "Generative responses synthesized strictly from retrieved legal texts, official guidance, and internal compliance documents with citations back to the regulatory document version.",
         value: "Ensures internal stakeholders receive accurate, verifiable compliance information, preventing the circulation of misinformation.",
       },
+      {
+        title: "Regulatory Submission Data Integrity Verification",
+        friction: "Inconsistent or incomplete data synchronization between R&D, Clinical, and Quality teams, delaying submission compilation and compromising integrity. Manual verification is time-consuming and error-prone.",
+        solution: "Executes an automated, semantic integrity check prior to submission. Queries draft filing documents (e.g., CTD sections) against validated source records (e.g., batch records) to confirm consistency. Generates a traceable report flagging discrepancies.",
+        value: "Reduced Submission Deficiencies and Accelerated Approval: Decreases the probability of regulatory agencies issuing Request for Information (RFI) letters related to internal data conflicts, thereby accelerating the overall Time to Approval.",
+      },
+      {
+        title: "Retrieval and Audit of the Electronic Trial Master File (eTMF)",
+        friction: "Audit staff struggle to rapidly locate specific, cross-functional document sets within the eTMF structure during monitoring visits or inspections to verify compliance.",
+        solution: "Allows regulatory personnel to utilize conversational, contextual queries that span the TMF index (e.g., \"Retrieve all investigator meeting minutes...\"). Instantly retrieves required documents, demonstrating GCP compliance.",
+        value: "Optimized Regulatory Access: Ensures the eTMF is continuously \"inspection-ready\" by reducing the time needed for complex document retrieval from hours to mere seconds, enabling efficient evaluation of trial conduct and data quality.",
+      },
     ],
   },
   {
@@ -256,6 +210,24 @@ const departmentSections: DepartmentSection[] = [
         friction: "Training new factory personnel takes significant time due to the technical complexity of process controls, hazard analysis, and specialized equipment operation.",
         solution: "Conversational training interface built on indexed training manuals, safety policy transcripts, and digital SOPs. New hires simulate complex process questions.",
         value: "Accelerates onboarding time by an estimated 30%, facilitating quicker proficiency in standardized procedures.",
+      },
+      {
+        title: "Real-Time Batch Record and SOP Verification",
+        friction: "GMP operators need immediate, unambiguous access to the current, correct version of SOPs and contextual historical batch record information on the shop floor to prevent operational errors. Delays introduce non-compliance risks.",
+        solution: "Deployed as a secure, validated interface accessible on the shop floor. Operators can verbally or textually query highly specific technical instructions (e.g., \"What is the acceptable temperature range...?\") and receive a source-grounded answer from the current Master Batch Record and version-controlled SOP.",
+        value: "Increased Operational Compliance and Reduction in Errors: Provides accurate, GxP-validated information precisely at the point of action, significantly enhancing adherence to mandatory procedures and securing the integrity of the digital batch audit trail.",
+      },
+      {
+        title: "Automated Material Traceability and Auditable Chain-of-Custody",
+        friction: "Linking disparate information—from raw material receipt to final product packaging—across systems (LIMS, ERP, MES) to verify the chain-of-custody for regulatory bodies.",
+        solution: "Indexes all documentation containing unique material identifiers (COAs, receiving logs, production records). The system semantically connects these documents, enabling a synthesized, auditable reconstruction of a lot number's entire history and chain-of-custody.",
+        value: "Enhanced Product Integrity and Rapid Recall Capability: Streamlines complex documentation, reducing the time required for root cause analysis and mass serialization/traceability checks, reinforcing compliance with global drug security acts.",
+      },
+      {
+        title: "Global Distribution Documentation and Customs Compliance",
+        friction: "Supply Chain (SC) teams need rapid, accurate access to country-specific regulatory certificates, market authorization data, and precise shipping documentation. Managing version control across divergent international markets creates significant friction.",
+        solution: "Creates a centralized SC knowledge hub, indexed by product, destination, and regulatory status. Synthesizes current regional importation requirements and instantly retrieves the necessary, verified Certificate of Analysis (CoA) or customs documentation.",
+        value: "Reduced Logistics and Customs Friction: Minimizes the risk of critical API shipments being delayed or detained due to reliance on outdated, incorrect, or missing documentation, thus ensuring smooth, compliant global supply.",
       },
     ],
   },
@@ -306,6 +278,12 @@ const departmentSections: DepartmentSection[] = [
         solution: "Instant, permissioned retrieval of version-controlled system validation reports, change request documentation, and security policy manuals.",
         value: "Improves transparency and speed during external IT compliance reviews.",
       },
+      {
+        title: "GxP System Troubleshooting and Knowledge Management",
+        friction: "IT support personnel spend excessive time navigating and synthesizing information across vast libraries of detailed validation reports (IQ/OQ/PQ), system architecture guides, and application SOPs when responding to a technical incident.",
+        solution: "Integrated as the primary knowledge engine for the IT Service Desk. Grounds all troubleshooting guidance in controlled, validated GxP system documentation. Answers queries like: \"What are the approved recovery steps for a failure...?\"",
+        value: "Accelerated Mean Time to Resolution (MTTR): Reduces system downtime for business-critical validated systems by providing immediate, technically accurate solutions based on verified documentation, maintaining the qualified status of the GxP infrastructure.",
+      },
     ],
   },
   {
@@ -348,6 +326,12 @@ const departmentSections: DepartmentSection[] = [
         friction: "HR management lacks data on which policies are most frequently accessed or confusing, making it difficult to prioritize refinement or communication efforts.",
         solution: "Retrieval and summarization of policy usage logs and semantic search trends data, indicating knowledge gaps and areas of high policy complexity.",
         value: "Provides data-driven insights for policy refinement and targeted communication planning.",
+      },
+      {
+        title: "GxP Training Compliance and Policy Knowledge Dissemination",
+        friction: "Mandated verifiable records of staff qualifications and GxP training. Employees struggle to interpret complex and voluminous HR policies, impacting consistent application.",
+        solution: "Deploys as a personalized internal policy concierge. Answers natural language queries on HR policies, linking to the official document. For GxP, it provides immediate confirmation of required training status based on role and location.",
+        value: "Improved Employee Compliance and Knowledge Retention: Provides instant, context-aware access to critical GxP training requirements. Streamlines access to HR information, supporting a positive Employee Value Proposition (EVP).",
       },
     ],
   },
@@ -398,6 +382,12 @@ const departmentSections: DepartmentSection[] = [
         solution: "Semantic search across all archived commercial contracts, pricing agreements, and legal addenda for rapid retrieval of applicable terms.",
         value: "Ensures sales quotes adhere to current financial and legal terms, preventing revenue leakage or contractual disputes.",
       },
+      {
+        title: "Compliant Technical Data Provisioning for Strategic Partners",
+        friction: "Sales representatives require rapid access to specific API specifications, regulatory filing status, and quality summaries for customer due diligence. Sharing must be secure, timely, and compliant with internal data governance.",
+        solution: "Implements a Regulatory Shielding function. Sales teams query controlled documents to generate verified, synthesized, compliant summary statements (e.g., shelf life statement) suitable for external sharing, without granting access to internal source documents.",
+        value: "Accelerated Sales Cycle and Enhanced Partner Trust: Transforms highly regulated technical knowledge into a competitive differentiator by enabling fast, accurate, and compliant technical communication.",
+      },
     ],
   },
   {
@@ -447,18 +437,19 @@ const departmentSections: DepartmentSection[] = [
         solution: "Semantic search across archived customer contracts, legal agreements, and general terms and conditions with permissioned retrieval.",
         value: "Ensures claims are processed accurately according to contractual terms, maintaining legal compliance.",
       },
+      {
+        title: "Technical Inquiry Resolution and Service Excellence",
+        friction: "Customer Support fields complex, highly technical inquiries requiring access to siloed information across R&D, QA, and Regulatory dossiers, leading to long resolution times and high escalation rates.",
+        solution: "Centralizes the entire technical knowledge base (R&D reports, COAs, stability data, market authorization documents). Agents receive instant, contextual answers rigorously grounded in validated technical sources, resolving complex queries without escalation.",
+        value: "Increased First-Call Resolution (FCR) and Customer Satisfaction: Significantly reduces the organizational burden of escalating technical queries, delivering a superior, faster, and more professional technical service to global partners.",
+      },
     ],
   },
 ];
 
 const UseCaseCard = ({ useCase }: { useCase: UseCase }) => (
   <div className="p-5 rounded-xl border border-border bg-card/30 hover:bg-card/60 transition-colors">
-    <div className="flex items-start gap-3 mb-3">
-      {useCase.id && (
-        <Badge variant="secondary" className="shrink-0 font-mono text-xs">
-          {useCase.id}
-        </Badge>
-      )}
+    <div className="mb-3">
       <h4 className="font-semibold text-foreground text-sm leading-snug">{useCase.title}</h4>
     </div>
 
@@ -506,37 +497,7 @@ export const BioPharmaUseCases = () => {
           </p>
         </div>
 
-        {/* Pipeline Use Cases */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-foreground mb-2 flex items-center gap-3">
-            <FlaskConical className="h-6 w-6 text-primary" />
-            Biopharmaceutical Pipeline Use Cases
-          </h3>
-          <p className="text-muted-foreground mb-6">
-            Cross-functional use cases spanning IP clearance, GxP compliance, regulatory submissions, manufacturing, and supply chain.
-          </p>
-          <Accordion type="multiple" className="space-y-3">
-            {pipelineUseCases.map((uc, i) => (
-              <AccordionItem key={i} value={`pipeline-${i}`} className="border border-border rounded-xl px-1 bg-card/20">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <span className="font-medium text-sm text-left">{uc.title}</span>
-                </AccordionTrigger>
-                <AccordionContent className="px-4 pb-4">
-                  <UseCaseCard useCase={uc} />
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-
-        {/* Department Use Cases */}
         <div>
-          <h3 className="text-2xl font-bold text-foreground mb-2">
-            Enterprise Department Use Cases
-          </h3>
-          <p className="text-muted-foreground mb-6">
-            Organized by department with specific friction points and measurable value delivered.
-          </p>
           <Accordion type="multiple" className="space-y-4">
             {departmentSections.map((dept, i) => (
               <AccordionItem key={i} value={`dept-${i}`} className="border border-border rounded-xl px-1 bg-card/20">

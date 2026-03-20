@@ -519,12 +519,7 @@ export const BioPharmaUseCases = () => {
             {pipelineUseCases.map((uc, i) => (
               <AccordionItem key={i} value={`pipeline-${i}`} className="border border-border rounded-xl px-1 bg-card/20">
                 <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3 text-left">
-                    <Badge variant="outline" className="shrink-0 font-mono text-xs border-primary/30 text-primary">
-                      {uc.id}
-                    </Badge>
-                    <span className="font-medium text-sm">{uc.title}</span>
-                  </div>
+                  <span className="font-medium text-sm text-left">{uc.title}</span>
                 </AccordionTrigger>
                 <AccordionContent className="px-4 pb-4">
                   <UseCaseCard useCase={uc} />

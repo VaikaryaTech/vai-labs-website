@@ -276,6 +276,12 @@ const departmentSections: DepartmentSection[] = [
         solution: "Instant, permissioned retrieval of version-controlled system validation reports, change request documentation, and security policy manuals.",
         value: "Improves transparency and speed during external IT compliance reviews.",
       },
+      {
+        title: "GxP System Troubleshooting and Knowledge Management",
+        friction: "IT support personnel spend excessive time navigating and synthesizing information across vast libraries of detailed validation reports (IQ/OQ/PQ), system architecture guides, and application SOPs when responding to a technical incident.",
+        solution: "Integrated as the primary knowledge engine for the IT Service Desk. Grounds all troubleshooting guidance in controlled, validated GxP system documentation. Answers queries like: \"What are the approved recovery steps for a failure...?\"",
+        value: "Accelerated Mean Time to Resolution (MTTR): Reduces system downtime for business-critical validated systems by providing immediate, technically accurate solutions based on verified documentation, maintaining the qualified status of the GxP infrastructure.",
+      },
     ],
   },
   {

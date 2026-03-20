@@ -498,14 +498,7 @@ export const BioPharmaUseCases = () => {
           </p>
         </div>
 
-        {/* Department Use Cases */}
         <div>
-          <h3 className="text-2xl font-bold text-foreground mb-2">
-            Enterprise Department Use Cases
-          </h3>
-          <p className="text-muted-foreground mb-6">
-            Organized by department with specific friction points and measurable value delivered.
-          </p>
           <Accordion type="multiple" className="space-y-4">
             {departmentSections.map((dept, i) => (
               <AccordionItem key={i} value={`dept-${i}`} className="border border-border rounded-xl px-1 bg-card/20">

@@ -435,6 +435,12 @@ const departmentSections: DepartmentSection[] = [
         solution: "Semantic search across archived customer contracts, legal agreements, and general terms and conditions with permissioned retrieval.",
         value: "Ensures claims are processed accurately according to contractual terms, maintaining legal compliance.",
       },
+      {
+        title: "Technical Inquiry Resolution and Service Excellence",
+        friction: "Customer Support fields complex, highly technical inquiries requiring access to siloed information across R&D, QA, and Regulatory dossiers, leading to long resolution times and high escalation rates.",
+        solution: "Centralizes the entire technical knowledge base (R&D reports, COAs, stability data, market authorization documents). Agents receive instant, contextual answers rigorously grounded in validated technical sources, resolving complex queries without escalation.",
+        value: "Increased First-Call Resolution (FCR) and Customer Satisfaction: Significantly reduces the organizational burden of escalating technical queries, delivering a superior, faster, and more professional technical service to global partners.",
+      },
     ],
   },
 ];

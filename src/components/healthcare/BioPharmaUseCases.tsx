@@ -77,6 +77,12 @@ const departmentSections: DepartmentSection[] = [
         solution: "Controlled document generation where the KOGNIX AI Engine synthesizes factual product summaries grounded strictly in official R&D test reports and technical specifications.",
         value: "Reduces internal communication ambiguity and ensures external marketing claims are verifiable and accurately aligned with R&D findings.",
       },
+      {
+        title: "IP Clearance and Patent Landscape Navigation",
+        friction: "Meticulous, time-consuming cross-referencing of internal data against constantly evolving global patent claims to ensure freedom-to-operate. High risk of IP infringement.",
+        solution: "Functions as an IP Risk Mitigator. Indexes internal project documentation and external patent databases. Instantly highlights relevant patent claims, providing concise summaries of conflicts and citing the exact relevant claim text.",
+        value: "Proactive Mitigation of IP Risk: Drastically reduces labor and potential legal exposure associated with IP clearance, securing the commercial and regulatory pathway for new API candidates.",
+      },
     ],
   },
   {

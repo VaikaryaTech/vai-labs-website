@@ -12,6 +12,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import telecomImg from "@/assets/business-telecom.jpg";
+import { TelecomUseCases } from "@/components/usecases/TelecomUseCases";
 
 const TelecomUtilities = () => {
   const impactMetrics = [
@@ -152,6 +153,9 @@ const TelecomUtilities = () => {
           </div>
         </div>
       </section>
+
+      {/* Department Use Cases */}
+      <TelecomUseCases />
 
       {/* How It Works */}
       <section className="py-24 bg-muted/30">

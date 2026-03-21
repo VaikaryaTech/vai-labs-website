@@ -12,6 +12,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import educationImg from "@/assets/business-education.jpg";
+import { EducationUseCases } from "@/components/usecases/EducationUseCases";
 
 const EducationAcademia = () => {
   const impactMetrics = [
@@ -152,6 +153,9 @@ const EducationAcademia = () => {
           </div>
         </div>
       </section>
+
+      {/* Department Use Cases */}
+      <EducationUseCases />
 
       {/* How It Works */}
       <section className="py-24 bg-muted/30">

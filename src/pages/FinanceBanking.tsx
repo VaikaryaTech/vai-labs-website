@@ -15,6 +15,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import financeImg from "@/assets/business-finance.jpg";
+import { FinanceUseCases } from "@/components/usecases/FinanceUseCases";
 
 const FinanceBanking = () => {
   const impactMetrics = [
@@ -173,6 +174,9 @@ const FinanceBanking = () => {
           </div>
         </div>
       </section>
+
+      {/* Department Use Cases */}
+      <FinanceUseCases />
 
       {/* How It Works */}
       <section className="py-24 bg-muted/30">

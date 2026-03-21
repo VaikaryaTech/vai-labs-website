@@ -13,6 +13,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import legalImg from "@/assets/business-legal.jpg";
+import { LegalUseCases } from "@/components/usecases/LegalUseCases";
 
 const LegalCompliance = () => {
   const impactMetrics = [
@@ -165,6 +166,9 @@ const LegalCompliance = () => {
           </div>
         </div>
       </section>
+
+      {/* Department Use Cases */}
+      <LegalUseCases />
 
       {/* How It Works */}
       <section className="py-24 bg-muted/30">

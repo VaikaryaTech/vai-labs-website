@@ -13,6 +13,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import retailImg from "@/assets/business-retail.jpg";
+import { RetailUseCases } from "@/components/usecases/RetailUseCases";
 
 const RetailEcommerce = () => {
   const impactMetrics = [
@@ -159,6 +160,9 @@ const RetailEcommerce = () => {
           </div>
         </div>
       </section>
+
+      {/* Department Use Cases */}
+      <RetailUseCases />
 
       {/* How It Works */}
       <section className="py-24 bg-muted/30">

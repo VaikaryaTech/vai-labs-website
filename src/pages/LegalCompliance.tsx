@@ -13,6 +13,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import legalImg from "@/assets/business-legal.jpg";
+import { LegalUseCases } from "@/components/usecases/LegalUseCases";
 
 const LegalCompliance = () => {
   const impactMetrics = [

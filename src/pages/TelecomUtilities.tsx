@@ -12,6 +12,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import telecomImg from "@/assets/business-telecom.jpg";
+import { TelecomUseCases } from "@/components/usecases/TelecomUseCases";
 
 const TelecomUtilities = () => {
   const impactMetrics = [

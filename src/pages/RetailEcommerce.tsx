@@ -13,6 +13,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import retailImg from "@/assets/business-retail.jpg";
+import { RetailUseCases } from "@/components/usecases/RetailUseCases";
 
 const RetailEcommerce = () => {
   const impactMetrics = [

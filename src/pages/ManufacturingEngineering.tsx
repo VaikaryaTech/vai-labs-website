@@ -14,6 +14,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import manufacturingImg from "@/assets/business-manufacturing.jpg";
+import { ManufacturingUseCases } from "@/components/usecases/ManufacturingUseCases";
 
 const ManufacturingEngineering = () => {
   const impactMetrics = [

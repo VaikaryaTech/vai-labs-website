@@ -154,6 +154,9 @@ const TelecomUtilities = () => {
         </div>
       </section>
 
+      {/* Department Use Cases */}
+      <TelecomUseCases />
+
       {/* How It Works */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-6">

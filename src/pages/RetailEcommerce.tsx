@@ -161,6 +161,9 @@ const RetailEcommerce = () => {
         </div>
       </section>
 
+      {/* Department Use Cases */}
+      <RetailUseCases />
+
       {/* How It Works */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-6">

@@ -167,6 +167,9 @@ const LegalCompliance = () => {
         </div>
       </section>
 
+      {/* Department Use Cases */}
+      <LegalUseCases />
+
       {/* How It Works */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-6">

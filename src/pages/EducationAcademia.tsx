@@ -12,6 +12,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import educationImg from "@/assets/business-education.jpg";
+import { EducationUseCases } from "@/components/usecases/EducationUseCases";
 
 const EducationAcademia = () => {
   const impactMetrics = [

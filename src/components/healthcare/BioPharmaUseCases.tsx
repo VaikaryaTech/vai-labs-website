@@ -67,13 +67,13 @@ const departmentSections: DepartmentSection[] = [
       {
         title: "Compliance — Regulatory Change Synchronization",
         friction: "Interpreting how numerous, highly technical guidance documents affect ongoing research protocols and formulation choices requires significant manual legal review.",
-        solution: "Ingestion of external regulatory documents. The KOGNIX AI Engine offers auditable summarization and Q&A to provide researchers with concise, cited answers regarding specific restrictions or testing requirements.",
+        solution: "Ingestion of external regulatory documents. The KOGNIX AI offers auditable summarization and Q&A to provide researchers with concise, cited answers regarding specific restrictions or testing requirements.",
         value: "Reduces the regulatory risk exposure early in the R&D pipeline, improving the agility of regulatory response.",
       },
       {
         title: "Compliance — R&D-to-Marketing Communication",
         friction: "Communication between R&D (technical nomenclature) and Marketing/Sales (accessible descriptions) can lead to ambiguity or misrepresentation of product properties.",
-        solution: "Controlled document generation where the KOGNIX AI Engine synthesizes factual product summaries grounded strictly in official R&D test reports and technical specifications.",
+        solution: "Controlled document generation where the KOGNIX AI synthesizes factual product summaries grounded strictly in official R&D test reports and technical specifications.",
         value: "Reduces internal communication ambiguity and ensures external marketing claims are verifiable and accurately aligned with R&D findings.",
       },
       {
@@ -300,7 +300,7 @@ const departmentSections: DepartmentSection[] = [
       {
         title: "Safety — Policy Attestation and Compliance",
         friction: "HR must maintain an auditable trail proving employees and contractors have reviewed, understood, and acknowledged critical safety, ethical, or compliance policies.",
-        solution: "Mandatory retrieval and interaction with critical documents through the KOGNIX AI Engine, generating auditable records of user engagement.",
+        solution: "Mandatory retrieval and interaction with critical documents through the KOGNIX AI, generating auditable records of user engagement.",
         value: "Facilitates compliance attestation during audits by providing clear evidence of policy distribution and engagement.",
       },
       {
@@ -465,7 +465,7 @@ const UseCaseCard = ({ useCase }: { useCase: UseCase }) => (
       <div>
         <div className="flex items-center gap-1.5 mb-1">
           <Lightbulb className="h-3.5 w-3.5 text-cyan-400 shrink-0" />
-          <span className="font-medium text-cyan-400/90 text-xs uppercase tracking-wide">KOGNIX AI Engine</span>
+          <span className="font-medium text-cyan-400/90 text-xs uppercase tracking-wide">KOGNIX AI</span>
         </div>
         <p className="text-muted-foreground leading-relaxed pl-5">{useCase.solution}</p>
       </div>
@@ -490,7 +490,7 @@ export const BioPharmaUseCases = () => {
             Comprehensive Use Cases
           </Badge>
           <h2 className="text-4xl font-bold text-foreground mb-4">
-            KOGNIX AI Engine for <span className="bg-gradient-accent bg-clip-text text-transparent">Biopharmaceutical</span> Industry
+            KOGNIX AI for <span className="bg-gradient-accent bg-clip-text text-transparent">Biopharmaceutical</span> Industry
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             End-to-end AI-powered intelligence across every critical department—from R&D through manufacturing, quality, and customer service.

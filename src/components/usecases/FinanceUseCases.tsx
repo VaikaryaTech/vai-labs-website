@@ -159,7 +159,7 @@ const departments: DepartmentSection[] = [
 
 export const FinanceUseCases = () => (
   <DepartmentUseCases
-    title="KOGNIX AI Engine for"
+    title="KOGNIX AI for"
     highlightWord="Finance & Banking"
     subtitle="End-to-end AI-powered intelligence across every critical department—from regulatory compliance and investment research through fraud detection, customer service, and operations."
     departments={departments}

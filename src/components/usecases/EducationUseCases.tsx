@@ -153,7 +153,7 @@ const departments: DepartmentSection[] = [
 
 export const EducationUseCases = () => (
   <DepartmentUseCases
-    title="KOGNIX AI Engine for"
+    title="KOGNIX AI for"
     highlightWord="Education & Academia"
     subtitle="End-to-end AI-powered intelligence across every critical department—from academic affairs and research through library services, student administration, and educational technology."
     departments={departments}

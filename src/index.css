@@ -143,6 +143,14 @@
   }
 }
 
+.text-glow-cyan {
+  color: hsl(var(--cyan-accent));
+  text-shadow: 
+    0 0 10px hsl(var(--cyan-accent) / 0.6),
+    0 0 30px hsl(var(--cyan-accent) / 0.3),
+    0 0 60px hsl(var(--cyan-accent) / 0.15);
+}
+
 /* Utility classes */
 @layer utilities {
   .google-card {

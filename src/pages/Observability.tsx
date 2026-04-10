@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { LiveBackground } from "@/components/LiveBackground";
 import { Footer } from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -92,6 +93,7 @@ const Observability = () => {
           <img src={observabilityBg} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70" />
         </div>
+        <LiveBackground variant="flow" />
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl">

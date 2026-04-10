@@ -107,7 +107,7 @@ const Product = () => {
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>{" "}
-              <span className="text-cyan-accent">GenAI Engine</span>
+              <span className="text-glow-cyan">GenAI Engine</span>
             </h1>
             
             <p className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
@@ -148,7 +148,7 @@ const Product = () => {
               { value: "10x", label: "Faster Deployment" },
             ].map((metric, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-cyan-accent mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-glow-cyan mb-2">
                   {metric.value}
                 </div>
                 <p className="text-sm text-muted-foreground font-medium">{metric.label}</p>
@@ -219,7 +219,7 @@ const Product = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               How <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>{" "}
-              <span className="text-cyan-accent">GenAI Engine</span> Works
+              <span className="text-glow-cyan">GenAI Engine</span> Works
             </h2>
           </div>
 
@@ -304,7 +304,7 @@ const Product = () => {
                 <div className="flex-1 text-center md:text-left">
                   <h3 className="text-2xl font-bold mb-2">
                     <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>{" "}
-                    <span className="text-cyan-accent">GenAI Engine</span> Product Brief
+                    <span className="text-glow-cyan">GenAI Engine</span> Product Brief
                   </h3>
                   <p className="text-muted-foreground">
                     Download our comprehensive product brief with technical specifications, 
@@ -354,7 +354,7 @@ const Product = () => {
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
             Join leading enterprises using{" "}
             <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span>{" "}
-            <span className="text-cyan-accent font-semibold">GenAI Engine</span>{" "}
+            <span className="text-glow-cyan font-semibold">GenAI Engine</span>{" "}
             to unlock AI with complete data sovereignty.
           </p>
           

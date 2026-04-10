@@ -30,7 +30,7 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Observability from "./pages/Observability";
 import KognixIntelligence from "./pages/KognixIntelligence";
-import KognixMobile from "./pages/KognixMobile";
+
 import KognixAIStudio from "./pages/KognixAIStudio";
 import TechHealthAssessment from "./pages/TechHealthAssessment";
 import NotFound from "./pages/NotFound";
@@ -70,7 +70,7 @@ const App = () => (
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/observability" element={<Observability />} />
             <Route path="/kognix-intelligence" element={<KognixIntelligence />} />
-            <Route path="/kognix-mobile" element={<KognixMobile />} />
+            
             <Route path="/kognix-ai-studio" element={<KognixAIStudio />} />
             <Route path="/services/tech-health-assessment" element={<TechHealthAssessment />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

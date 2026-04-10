@@ -24,7 +24,6 @@ export const Footer = () => {
               <li><Link to="/kaie" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> <span className="text-cyan-accent">GenAI Engine</span></Link></li>
               <li><Link to="/observability" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> <span className="text-cyan-accent">Analytics</span></Link></li>
               <li><Link to="/kognix-intelligence" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> <span className="text-cyan-accent">Intelligence</span></Link></li>
-              <li><Link to="/kognix-mobile" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent font-semibold">KOGNIX</span> <span className="text-cyan-accent">Mobile</span></Link></li>
             </ul>
           </div>
 

@@ -12,3 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://vai-labs.lovable.app/sitemap.xml
+

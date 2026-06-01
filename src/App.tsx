@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CookieConsent } from "@/components/CookieConsent";
+import { BackgroundMusic } from "@/components/BackgroundMusic";
 import Home from "./pages/Home";
 import Product from "./pages/KAIE";
 import Features from "./pages/Features";
@@ -77,6 +78,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
           <CookieConsent />
+          <BackgroundMusic />
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>

@@ -63,6 +63,7 @@ const Home = () => {
       {/* Key Features */}
       <section className="py-24 bg-background relative overflow-hidden">
         <div className="container mx-auto px-6">
+          <h2 className="sr-only">Key Features</h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="group p-8 bg-gradient-card backdrop-blur-sm border border-border rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-glow-primary hover:border-primary/50">
               <div className="inline-flex p-4 rounded-lg bg-gradient-to-br from-orange-500/20 to-orange-700/20 mb-6 group-hover:from-orange-500/30 group-hover:to-orange-700/30 transition-all">

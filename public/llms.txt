@@ -1,0 +1,41 @@
+# KOGNIX
+
+> Enterprise Generative AI by VAIKARYA AI LABs — secure, on-premise, fully integrated. Transformative AI with absolute data security and flexible integration.
+
+## Products
+
+- [KOGNIX AI Studio](/kognix-ai-studio): No-code studio to build, customize, and deploy enterprise AI assistants.
+- [KOGNIX GenAI Engine (KAIE)](/kaie): Core generative AI engine that runs entirely within your infrastructure.
+- [KOGNIX Analytics (Observability)](/observability): Monitoring, evaluation, and observability for AI workloads.
+- [KOGNIX Intelligence](/kognix-intelligence): Decision intelligence and agentic workflows across the enterprise.
+
+## Solutions
+
+- [Finance & Banking](/industries/finance)
+- [Healthcare & Pharma](/industries/healthcare)
+- [Legal & Compliance](/industries/legal)
+- [Retail & E-commerce](/industries/retail)
+- [Manufacturing & Engineering](/industries/manufacturing)
+- [Telecom & Utilities](/industries/telecom)
+- [Education & Academia](/industries/education)
+
+## Company
+
+- [About](/about): Mission, team, and approach behind KOGNIX.
+- [Careers](/careers): Open roles at VAIKARYA AI LABs.
+- [Contact](/contact): Get in touch with the team.
+- [Case Studies](/case-studies): Customer outcomes with KOGNIX.
+
+## Resources
+
+- [Features](/features): Platform capabilities overview.
+- [Pricing](/pricing): Plan options and how to get started.
+- [Blog](/blog): Insights on secure, enterprise-grade Generative AI.
+- [Enterprise AI Trajectory](/blog/enterprise-ai-trajectory)
+- [Secure GenAI Guide](/blog/secure-genai-guide)
+- [Tech Health Assessment](/services/tech-health-assessment)
+- [Book a Demo](/book-demo)
+
+## Optional
+
+- [Privacy Policy](/privacy)

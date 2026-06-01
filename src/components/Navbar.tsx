@@ -214,7 +214,7 @@ export const Navbar = () => {
             </Button>
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild className="md:hidden">
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" aria-label="Open navigation menu">
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>

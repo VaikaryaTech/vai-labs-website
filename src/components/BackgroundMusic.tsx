@@ -4,14 +4,15 @@ import musicAsset from "@/assets/background-music.mp3.asset.json";
 
 const STORAGE_KEY = "vai-bg-music-muted";
 const DEFAULT_VOLUME = 0.12;
+const MUSIC_SRC = `https://id-preview--45e7cdcb-ec4a-4532-9e54-30a521cfc568.lovable.app${musicAsset.url}`;
 
 export const BackgroundMusic = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [muted, setMuted] = useState<boolean>(() => {
     if (typeof window === "undefined") return true;
     const stored = localStorage.getItem(STORAGE_KEY);
-    // Default to muted on first visit to satisfy autoplay policies.
-    return stored === null ? true : stored === "true";
+    // Default to audible at a low volume; playback starts only after a real user gesture.
+    return stored === null ? false : stored === "true";
   });
 
   // Try to (re)start playback. Safe to call multiple times.
@@ -34,10 +35,10 @@ export const BackgroundMusic = () => {
     if (!audio) return;
     audio.volume = DEFAULT_VOLUME;
     audio.muted = muted;
-    tryPlay();
+    if (!muted) tryPlay();
 
     const onInteract = () => {
-      tryPlay();
+      if (!audio.muted) tryPlay();
     };
     const events: Array<keyof WindowEventMap> = [
       "pointerdown",
@@ -81,11 +82,11 @@ export const BackgroundMusic = () => {
     <>
       <audio
         ref={audioRef}
-        src={musicAsset.url}
+        src={MUSIC_SRC}
         loop
         preload="auto"
-        autoPlay
         playsInline
+        crossOrigin="anonymous"
       />
       <button
         type="button"

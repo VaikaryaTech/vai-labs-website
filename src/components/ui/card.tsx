@@ -1,10 +1,35 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
-const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("rounded-lg border bg-card text-card-foreground shadow-sm", className)} {...props} />
-));
+const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+  ({ className, ...props }, ref) => {
+    const { ref: revealRef, isVisible } = useScrollReveal<HTMLDivElement>();
+
+    // Merge forwarded ref with our internal ref
+    const setRefs = React.useCallback(
+      (node: HTMLDivElement | null) => {
+        revealRef.current = node;
+        if (typeof ref === "function") ref(node);
+        else if (ref) (ref as React.MutableRefObject<HTMLDivElement | null>).current = node;
+      },
+      [ref, revealRef],
+    );
+
+    return (
+      <div
+        ref={setRefs}
+        className={cn(
+          "rounded-lg border bg-card text-card-foreground shadow-sm reveal",
+          isVisible && "reveal-visible",
+          className,
+        )}
+        {...props}
+      />
+    );
+  },
+);
 Card.displayName = "Card";
 
 const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(

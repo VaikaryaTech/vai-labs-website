@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+
 import { 
   ArrowRight,
   Palette,
@@ -92,9 +93,7 @@ const KognixAIStudio = () => {
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
-            <Badge className="mb-6 px-4 py-2" variant="secondary">
-              LLMOps Platform
-            </Badge>
+            
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>{" "}
@@ -153,7 +152,7 @@ const KognixAIStudio = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Complete LLMOps Platform
+              Core Capabilities
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Everything you need from prototype to production AI applications

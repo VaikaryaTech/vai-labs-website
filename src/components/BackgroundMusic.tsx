@@ -4,26 +4,31 @@ import musicAsset from "@/assets/background-music.mp3.asset.json";
 
 const STORAGE_KEY = "vai-bg-music-muted";
 const DEFAULT_VOLUME = 0.12;
+const MUSIC_SRC = `https://id-preview--45e7cdcb-ec4a-4532-9e54-30a521cfc568.lovable.app${musicAsset.url}`;
 
 export const BackgroundMusic = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [muted, setMuted] = useState<boolean>(() => {
     if (typeof window === "undefined") return true;
     const stored = localStorage.getItem(STORAGE_KEY);
-    // Default to muted on first visit to satisfy autoplay policies.
-    return stored === null ? true : stored === "true";
+    // Default to audible at a low volume; playback starts only after a real user gesture.
+    return stored === null ? false : stored === "true";
   });
 
   // Try to (re)start playback. Safe to call multiple times.
   const tryPlay = useCallback(() => {
     const audio = audioRef.current;
-    if (!audio) return;
+    if (!audio || audio.muted) return;
     audio.volume = DEFAULT_VOLUME;
     const p = audio.play();
     if (p && typeof p.catch === "function") {
-      p.catch(() => {
+      p.then(() => setIsPlaying(true)).catch(() => {
+        setIsPlaying(false);
         /* Autoplay blocked — will retry on next user gesture. */
       });
+    } else {
+      setIsPlaying(!audio.paused);
     }
   }, []);
 
@@ -34,10 +39,10 @@ export const BackgroundMusic = () => {
     if (!audio) return;
     audio.volume = DEFAULT_VOLUME;
     audio.muted = muted;
-    tryPlay();
+    if (!muted) tryPlay();
 
     const onInteract = () => {
-      tryPlay();
+      if (!audio.muted) tryPlay();
     };
     const events: Array<keyof WindowEventMap> = [
       "pointerdown",
@@ -61,40 +66,59 @@ export const BackgroundMusic = () => {
     const audio = audioRef.current;
     if (!audio) return;
     audio.muted = muted;
+    if (muted) {
+      audio.pause();
+      setIsPlaying(false);
+    }
     localStorage.setItem(STORAGE_KEY, String(muted));
   }, [muted]);
 
   const handleToggle = () => {
     const audio = audioRef.current;
-    const next = !muted;
-    setMuted(next);
     if (!audio) return;
-    // Apply + play synchronously inside the click gesture so browsers
-    // accept the play() promise even when audio was never started.
-    audio.muted = next;
+
     audio.volume = DEFAULT_VOLUME;
-    const p = audio.play();
-    if (p && typeof p.catch === "function") p.catch(() => {});
+
+    if (muted || audio.paused || !isPlaying) {
+      setMuted(false);
+      audio.muted = false;
+      const p = audio.play();
+      if (p && typeof p.catch === "function") {
+        p.then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
+      } else {
+        setIsPlaying(!audio.paused);
+      }
+      return;
+    }
+
+    setMuted(true);
+    audio.muted = true;
+    audio.pause();
+    setIsPlaying(false);
   };
+
+  const isMuted = muted || !isPlaying;
 
   return (
     <>
       <audio
         ref={audioRef}
-        src={musicAsset.url}
+        src={MUSIC_SRC}
         loop
         preload="auto"
-        autoPlay
         playsInline
+        crossOrigin="anonymous"
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
       />
       <button
         type="button"
         onClick={handleToggle}
-        aria-label={muted ? "Unmute background music" : "Mute background music"}
-        title={muted ? "Unmute background music" : "Mute background music"}
+        aria-label={isMuted ? "Unmute background music" : "Mute background music"}
+        title={isMuted ? "Unmute background music" : "Mute background music"}
         className="fixed bottom-5 right-5 z-[60] h-11 w-11 rounded-full border border-border bg-background/70 backdrop-blur-md flex items-center justify-center text-foreground/80 hover:text-foreground hover:bg-background/90 shadow-md transition-colors"
       >
-        {muted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
+        {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
       </button>
     </>
   );

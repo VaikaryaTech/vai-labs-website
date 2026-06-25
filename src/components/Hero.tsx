@@ -56,7 +56,7 @@ export const Hero = () => {
               >
                 <div className="rounded-xl overflow-hidden bg-black ring-1 ring-white/10">
                   <img
-                    src={showcaseAsset.url}
+                    src={`https://id-preview--45e7cdcb-ec4a-4532-9e54-30a521cfc568.lovable.app${showcaseAsset.url}`}
                     alt="KOGNIX AI Studio — Regulatory Shield workflow"
                     className="w-full h-auto block"
                     loading="eager"

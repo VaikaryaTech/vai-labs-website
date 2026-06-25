@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import healthcareImg from "@/assets/business-healthcare.jpg";
 import { BioPharmaUseCases } from "@/components/healthcare/BioPharmaUseCases";
+import { ProductShowcase3D } from "@/components/ProductShowcase3D";
 
 const HealthcarePharma = () => {
   const impactMetrics = [
@@ -170,6 +171,13 @@ const HealthcarePharma = () => {
 
       {/* Biopharmaceutical Use Cases */}
       <BioPharmaUseCases />
+
+      {/* 3D BioPharma Showcase */}
+      <ProductShowcase3D
+        title="BioPharma Intelligence, Live"
+        subtitle="Auditable, source-grounded AI workspaces purpose-built for regulated life sciences."
+        only={["Regulatory Shield", "Bio-Peptide Patent Shield", "Biosimilarity De-Risking", "DeepResearch"]}
+      />
 
       {/* How It Works */}
       <section className="py-24 bg-muted/30">

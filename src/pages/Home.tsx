@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import homeHeroBackground from "@/assets/home-hero-background.jpg";
 import indiaFlag from "@/assets/india-flag.svg";
 import { ParticleNetwork } from "@/components/ParticleNetwork";
+import { ProductShowcase3D } from "@/components/ProductShowcase3D";
 
 const Home = () => {
   return (
@@ -97,6 +98,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <ProductShowcase3D />
 
       <Footer />
     </div>

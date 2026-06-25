@@ -23,6 +23,7 @@ import {
 import { Link } from "react-router-dom";
 import bgDeveloper from "@/assets/bg-developer.jpg";
 import { StudioIntegrationsMarquee } from "@/components/kaie/StudioIntegrationsMarquee";
+import { ProductShowcase3D } from "@/components/ProductShowcase3D";
 
 const KognixAIStudio = () => {
   const coreCapabilities = [
@@ -177,6 +178,12 @@ const KognixAIStudio = () => {
           </div>
         </div>
       </section>
+
+      {/* 3D Product Showcase */}
+      <ProductShowcase3D
+        title="Built in KOGNIX AI Studio"
+        subtitle="Real workspaces composed visually — from regulatory automation to patent intelligence."
+      />
 
       {/* How It Works - Visual Flow */}
       <section className="py-24 bg-gradient-hero relative overflow-hidden">

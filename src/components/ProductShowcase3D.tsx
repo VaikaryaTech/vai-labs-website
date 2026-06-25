@@ -18,28 +18,28 @@ type Mockup = {
 
 const ALL: Mockup[] = [
   {
-    src: regulatory.url,
+    src: cdn(regulatory.url),
     alt: "Regulatory Shield — SOP Change Control Auditor",
     title: "Regulatory Shield",
     caption: "SOP Change Control Auditor",
     tilt: "md:[transform:rotateY(-18deg)_rotateX(8deg)_rotateZ(-2deg)]",
   },
   {
-    src: patent.url,
+    src: cdn(patent.url),
     alt: "GPL-1 Patent Infringement Detector — USPTO Live Search",
     title: "Bio-Peptide Patent Shield",
     caption: "GPL-1 Patent Infringement Detector",
     tilt: "md:[transform:rotateY(16deg)_rotateX(8deg)_rotateZ(2deg)]",
   },
   {
-    src: biosim.url,
+    src: cdn(biosim.url),
     alt: "Computational Biosimilarity Target De-Risking",
     title: "Biosimilarity De-Risking",
     caption: "Computational Target Analysis",
     tilt: "md:[transform:rotateY(-14deg)_rotateX(10deg)_rotateZ(-1deg)]",
   },
   {
-    src: deepresearch.url,
+    src: cdn(deepresearch.url),
     alt: "KOGNIX DeepResearch workspace",
     title: "DeepResearch",
     caption: "Multi-source Evidence Synthesis",

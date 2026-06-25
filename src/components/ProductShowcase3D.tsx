@@ -3,6 +3,11 @@ import patent from "@/assets/patent-shield-showcase.png.asset.json";
 import biosim from "@/assets/biosimilarity-showcase.png.asset.json";
 import deepresearch from "@/assets/deepresearch-showcase.png.asset.json";
 
+// Lovable CDN assets are served from this origin; using an absolute URL
+// ensures images resolve on custom domains (e.g. vailabs.in) as well.
+const ASSET_BASE = "https://id-preview--45e7cdcb-ec4a-4532-9e54-30a521cfc568.lovable.app";
+const cdn = (u: string) => (u.startsWith("http") ? u : `${ASSET_BASE}${u}`);
+
 type Mockup = {
   src: string;
   alt: string;

@@ -340,6 +340,12 @@ const Observability = () => {
         </div>
       </section>
 
+      <ProductShowcase3D
+        set="analytics"
+        title="See KOGNIX Analytics in Action"
+        subtitle="Full-stack LLM observability — from individual trace inspection to enterprise-wide usage analytics."
+      />
+
       {/* Final CTA */}
       <section className="py-24 bg-gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(185_80%_40%/0.2),transparent_70%)]" />

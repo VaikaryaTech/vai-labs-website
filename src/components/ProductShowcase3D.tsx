@@ -71,6 +71,8 @@ interface Props {
   subtitle?: string;
   /** Filter to a subset of mockups by title */
   only?: string[];
+  /** Which preset set of mockups to render */
+  set?: "default" | "analytics";
   className?: string;
 }
 
@@ -78,9 +80,11 @@ export const ProductShowcase3D = ({
   title = "See KOGNIX in Action",
   subtitle = "Production-grade AI workspaces engineered for regulated enterprises.",
   only,
+  set = "default",
   className = "",
 }: Props) => {
-  const items = only ? ALL.filter((m) => only.includes(m.title)) : ALL;
+  const source = set === "analytics" ? ANALYTICS : ALL;
+  const items = only ? source.filter((m) => only.includes(m.title)) : source;
 
   return (
     <section className={`relative py-24 overflow-hidden bg-background ${className}`}>

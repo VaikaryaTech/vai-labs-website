@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { LiveBackground } from "@/components/LiveBackground";
 import { Footer } from "@/components/Footer";
+import { ProductShowcase3D } from "@/components/ProductShowcase3D";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
@@ -338,6 +339,12 @@ const Observability = () => {
           </div>
         </div>
       </section>
+
+      <ProductShowcase3D
+        set="analytics"
+        title="See KOGNIX Analytics in Action"
+        subtitle="Full-stack LLM observability — from individual trace inspection to enterprise-wide usage analytics."
+      />
 
       {/* Final CTA */}
       <section className="py-24 bg-gradient-hero relative overflow-hidden">

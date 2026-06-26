@@ -2,6 +2,8 @@ import regulatory from "@/assets/regulatory-shield-showcase.png.asset.json";
 import patent from "@/assets/patent-shield-showcase.png.asset.json";
 import biosim from "@/assets/biosimilarity-showcase.png.asset.json";
 import deepresearch from "@/assets/deepresearch-showcase.png.asset.json";
+import analyticsTracing from "@/assets/analytics-tracing.png.asset.json";
+import analyticsUsage from "@/assets/analytics-usage-dashboard.png.asset.json";
 
 // Lovable CDN assets are served from this origin; using an absolute URL
 // ensures images resolve on custom domains (e.g. vailabs.in) as well.
@@ -47,11 +49,30 @@ const ALL: Mockup[] = [
   },
 ];
 
+const ANALYTICS: Mockup[] = [
+  {
+    src: cdn(analyticsTracing.url),
+    alt: "KOGNIX Analytics — LLM Tracing workspace",
+    title: "LLM Tracing",
+    caption: "End-to-end trace visibility for every LLM call, retrieval & agent step",
+    tilt: "md:[transform:rotateY(-16deg)_rotateX(8deg)_rotateZ(-2deg)]",
+  },
+  {
+    src: cdn(analyticsUsage.url),
+    alt: "KOGNIX AI Usage Dashboard",
+    title: "Usage Dashboard",
+    caption: "Real-time traces, observations & score analytics across environments",
+    tilt: "md:[transform:rotateY(16deg)_rotateX(8deg)_rotateZ(2deg)]",
+  },
+];
+
 interface Props {
   title?: string;
   subtitle?: string;
   /** Filter to a subset of mockups by title */
   only?: string[];
+  /** Which preset set of mockups to render */
+  set?: "default" | "analytics";
   className?: string;
 }
 
@@ -59,9 +80,11 @@ export const ProductShowcase3D = ({
   title = "See KOGNIX in Action",
   subtitle = "Production-grade AI workspaces engineered for regulated enterprises.",
   only,
+  set = "default",
   className = "",
 }: Props) => {
-  const items = only ? ALL.filter((m) => only.includes(m.title)) : ALL;
+  const source = set === "analytics" ? ANALYTICS : ALL;
+  const items = only ? source.filter((m) => only.includes(m.title)) : source;
 
   return (
     <section className={`relative py-24 overflow-hidden bg-background ${className}`}>

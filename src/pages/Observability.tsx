@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { LiveBackground } from "@/components/LiveBackground";
 import { Footer } from "@/components/Footer";
+import { ProductShowcase3D } from "@/components/ProductShowcase3D";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 

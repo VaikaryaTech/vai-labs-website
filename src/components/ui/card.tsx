@@ -21,7 +21,7 @@ const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElemen
       <div
         ref={setRefs}
         className={cn(
-          "rounded-lg border bg-card text-card-foreground shadow-sm reveal",
+          "glass rounded-lg text-card-foreground reveal",
           isVisible && "reveal-visible",
           className,
         )}

@@ -4,6 +4,8 @@ import biosim from "@/assets/biosimilarity-showcase.png.asset.json";
 import deepresearch from "@/assets/deepresearch-showcase.png.asset.json";
 import analyticsTracing from "@/assets/analytics-tracing.png.asset.json";
 import analyticsUsage from "@/assets/analytics-usage-dashboard.png.asset.json";
+import studioDashboard from "@/assets/studio-dashboard.png.asset.json";
+import studioOrchestrator from "@/assets/studio-orchestrator.png.asset.json";
 
 // Lovable CDN assets are served from this origin; using an absolute URL
 // ensures images resolve on custom domains (e.g. vailabs.in) as well.
@@ -47,6 +49,20 @@ const ALL: Mockup[] = [
     caption: "Multi-source Evidence Synthesis",
     tilt: "md:[transform:rotateY(14deg)_rotateX(10deg)_rotateZ(1deg)]",
   },
+  {
+    src: cdn(studioDashboard.url),
+    alt: "KOGNIX AI Studio — Workspace Dashboard",
+    title: "Studio Dashboard",
+    caption: "Unified workspace analytics — apps, datasets, plugins & usage at a glance",
+    tilt: "md:[transform:rotateY(-16deg)_rotateX(8deg)_rotateZ(-2deg)]",
+  },
+  {
+    src: cdn(studioOrchestrator.url),
+    alt: "KOGNIX AI Studio — AI Orchestrator",
+    title: "AI Orchestrator",
+    caption: "Organize agents, workflows & chatflows across R&D, Commercial and Regulatory",
+    tilt: "md:[transform:rotateY(16deg)_rotateX(8deg)_rotateZ(2deg)]",
+  },
 ];
 
 const ANALYTICS: Mockup[] = [
@@ -77,7 +93,7 @@ interface Props {
 }
 
 export const ProductShowcase3D = ({
-  title = "See KOGNIX in Action",
+  title = "See KOGNIX Intelligence, in Action",
   subtitle = "Production-grade AI workspaces engineered for regulated enterprises.",
   only,
   set = "default",

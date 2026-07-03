@@ -195,19 +195,19 @@ const scopeLevels = [
 
 const TechHealthAssessment = () => {
   return (
-    <div className="min-h-screen bg-background relative">
+    <div className="min-h-screen relative">
       {/* Page background */}
       <div
         aria-hidden
         className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${bgAsset.url})` }}
       />
-      <div aria-hidden className="fixed inset-0 -z-10 bg-background/80 backdrop-blur-sm" />
+      <div aria-hidden className="fixed inset-0 -z-10 bg-background/60 backdrop-blur-sm" />
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-hero">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
+      <section className="relative pt-32 pb-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl space-y-6 animate-slide-in">
             <div className="flex items-center gap-4">
@@ -252,7 +252,7 @@ const TechHealthAssessment = () => {
       </section>
 
       {/* Technical Deep-Dive Areas */}
-      <section className="py-24 bg-background">
+      <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -300,7 +300,7 @@ const TechHealthAssessment = () => {
       </section>
 
       {/* Benchmark Alignment */}
-      <section className="py-24 bg-muted/30 border-y border-border">
+      <section className="py-24 bg-muted/20 border-y border-border">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -312,7 +312,7 @@ const TechHealthAssessment = () => {
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {benchmarks.map((b, i) => (
-              <div key={i} className="flex items-start gap-4 p-6 bg-background rounded-xl border border-border">
+              <div key={i} className="flex items-start gap-4 p-6 bg-card/60 backdrop-blur-md rounded-xl border border-border">
                 <div className="p-2 bg-primary/10 rounded-lg shrink-0">
                   <ShieldCheck className="h-5 w-5 text-primary" />
                 </div>
@@ -327,7 +327,7 @@ const TechHealthAssessment = () => {
       </section>
 
       {/* Integrated Stack Scorecard */}
-      <section className="py-24 bg-background">
+      <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -367,7 +367,7 @@ const TechHealthAssessment = () => {
       </section>
 
       {/* Assessment Journey / Phases */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24 bg-muted/20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -406,7 +406,7 @@ const TechHealthAssessment = () => {
       </section>
 
       {/* Engagement Timeline */}
-      <section className="py-24 bg-background">
+      <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -444,7 +444,7 @@ const TechHealthAssessment = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-hero">
+      <section className="py-24">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-foreground mb-6">
             Ready to Assess Your Technology Health?

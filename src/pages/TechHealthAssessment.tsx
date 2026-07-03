@@ -195,7 +195,14 @@ const scopeLevels = [
 
 const TechHealthAssessment = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Page background */}
+      <div
+        aria-hidden
+        className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${bgAsset.url})` }}
+      />
+      <div aria-hidden className="fixed inset-0 -z-10 bg-background/80 backdrop-blur-sm" />
       <Navbar />
 
       {/* Hero Section */}

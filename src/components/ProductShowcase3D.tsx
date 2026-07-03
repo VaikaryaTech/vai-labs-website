@@ -116,8 +116,8 @@ export const ProductShowcase3D = ({
         {/* Stacked iPhone-like deck */}
         <div className="relative flex-1 flex items-center justify-center px-6 z-10">
           <div
-            className="relative w-full max-w-3xl"
-            style={{ perspective: "2000px", height: "min(62vh, 560px)" }}
+            className="relative w-full max-w-6xl aspect-[16/9]"
+            style={{ perspective: "2000px", maxHeight: "70vh" }}
           >
             {items.map((m, i) => {
               const offset = i - progress; // negative => already passed, positive => upcoming

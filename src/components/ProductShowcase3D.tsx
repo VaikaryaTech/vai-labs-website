@@ -33,15 +33,25 @@ const ANALYTICS: Mockup[] = [
 ];
 
 interface Props {
-  title?: string;
+  title?: React.ReactNode;
   subtitle?: string;
   only?: string[];
   set?: "default" | "analytics";
   className?: string;
 }
 
+const DEFAULT_TITLE = (
+  <>
+    See{" "}
+    <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">
+      KOGNIX
+    </span>{" "}
+    <span className="text-glow-cyan">AI Ecosystem</span>, in Action
+  </>
+);
+
 export const ProductShowcase3D = ({
-  title = "See KOGNIX Intelligence, in Action",
+  title = DEFAULT_TITLE,
   subtitle = "Production-grade AI workspaces engineered for regulated enterprises.",
   only,
   set = "default",

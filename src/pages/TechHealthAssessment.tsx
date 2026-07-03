@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import bgAsset from "@/assets/tech-health-bg.jpg.asset.json";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";

@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import bgAsset from "@/assets/tech-health-bg.jpg.asset.json";
 import { Footer } from "@/components/Footer";
+import { PhaseStack } from "@/components/assessment/PhaseStack";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";

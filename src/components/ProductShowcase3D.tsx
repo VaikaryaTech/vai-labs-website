@@ -165,12 +165,20 @@ export const ProductShowcase3D = ({
                     }}
                   >
                     <div className="h-full w-full rounded-[1.6rem] overflow-hidden bg-black ring-1 ring-white/10 flex items-center justify-center">
-                      <img
-                        src={m.src}
-                        alt={m.alt}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
+                      <a
+                        href={m.src}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${m.title} full image`}
+                        className="block h-full w-full cursor-zoom-in"
+                      >
+                        <img
+                          src={m.src}
+                          alt={m.alt}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>

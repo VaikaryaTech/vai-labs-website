@@ -33,15 +33,25 @@ const ANALYTICS: Mockup[] = [
 ];
 
 interface Props {
-  title?: string;
+  title?: React.ReactNode;
   subtitle?: string;
   only?: string[];
   set?: "default" | "analytics";
   className?: string;
 }
 
+const DEFAULT_TITLE = (
+  <>
+    See{" "}
+    <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">
+      KOGNIX
+    </span>{" "}
+    <span className="text-glow-cyan">AI Ecosystem</span>, in Action
+  </>
+);
+
 export const ProductShowcase3D = ({
-  title = "See KOGNIX Intelligence, in Action",
+  title = DEFAULT_TITLE,
   subtitle = "Production-grade AI workspaces engineered for regulated enterprises.",
   only,
   set = "default",
@@ -106,8 +116,8 @@ export const ProductShowcase3D = ({
         {/* Stacked iPhone-like deck */}
         <div className="relative flex-1 flex items-center justify-center px-6 z-10">
           <div
-            className="relative w-full max-w-3xl"
-            style={{ perspective: "2000px", height: "min(62vh, 560px)" }}
+            className="relative w-full max-w-6xl aspect-[16/9]"
+            style={{ perspective: "2000px", maxHeight: "70vh" }}
           >
             {items.map((m, i) => {
               const offset = i - progress; // negative => already passed, positive => upcoming
@@ -155,12 +165,20 @@ export const ProductShowcase3D = ({
                     }}
                   >
                     <div className="h-full w-full rounded-[1.6rem] overflow-hidden bg-black ring-1 ring-white/10 flex items-center justify-center">
-                      <img
-                        src={m.src}
-                        alt={m.alt}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
+                      <a
+                        href={m.src}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${m.title} full image`}
+                        className="block h-full w-full cursor-zoom-in"
+                      >
+                        <img
+                          src={m.src}
+                          alt={m.alt}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>

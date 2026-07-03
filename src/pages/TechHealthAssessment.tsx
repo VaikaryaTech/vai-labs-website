@@ -367,9 +367,9 @@ const TechHealthAssessment = () => {
       </section>
 
       {/* Assessment Journey / Phases */}
-      <section className="py-24 bg-muted/20">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+      <section className="bg-muted/20">
+        <div className="container mx-auto px-6 pt-24 pb-8">
+          <div className="text-center">
             <h2 className="text-4xl font-bold text-foreground mb-4">
               Our Assessment Journey
             </h2>
@@ -377,32 +377,8 @@ const TechHealthAssessment = () => {
               From Kick-off to Strategy. Engagements typically span <span className="text-primary font-semibold">8 to 16 weeks</span> depending on the complexity of your environment.
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {phases.map((phase, index) => (
-              <Card key={index} className="p-8 bg-gradient-card border-border hover:border-primary/50 transition-all duration-300 group">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="text-5xl font-bold text-primary/20">{phase.number}</div>
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      {phase.title}
-                    </h3>
-                    <span className="text-sm text-primary font-semibold">Duration: {phase.duration}</span>
-                  </div>
-                </div>
-                <p className="text-muted-foreground mb-4 leading-relaxed">{phase.description}</p>
-                <div className="space-y-2 pt-4 border-t border-border">
-                  {phase.points.map((point, i) => (
-                    <div key={i} className="flex items-start gap-2">
-                      <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                      <p className="text-sm text-muted-foreground">{point}</p>
-                    </div>
-                  ))}
-                </div>
-              </Card>
-            ))}
-          </div>
         </div>
+        <PhaseStack phases={phases} />
       </section>
 
       {/* Engagement Timeline */}

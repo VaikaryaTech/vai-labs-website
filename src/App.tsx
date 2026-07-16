@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CookieConsent } from "@/components/CookieConsent";
 import { BackgroundMusic } from "@/components/BackgroundMusic";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import Home from "./pages/Home";
 import Product from "./pages/KAIE";
 import Features from "./pages/Features";
@@ -45,6 +46,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/kaie" element={<Product />} />

@@ -61,8 +61,8 @@ export const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="VAIKARYA AI LABs" className="h-10 w-10" />
-            <span className="text-xl font-bold text-primary">VAIKARYA AI LABs</span>
+            <img src={logo} alt="VAI LABs" className="h-10 w-10" />
+            <span className="text-xl font-bold text-orange-light">VAI LABs</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">

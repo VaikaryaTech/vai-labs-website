@@ -1,6 +1,6 @@
 # KOGNIX
 
-> Enterprise Generative AI by VAIKARYA AI LABs — secure, on-premise, fully integrated. Transformative AI with absolute data security and flexible integration.
+> Enterprise Generative AI by VAI LABs — secure, on-premise, fully integrated. Transformative AI with absolute data security and flexible integration.
 
 ## Products
 
@@ -22,7 +22,7 @@
 ## Company
 
 - [About](/about): Mission, team, and approach behind KOGNIX.
-- [Careers](/careers): Open roles at VAIKARYA AI LABs.
+- [Careers](/careers): Open roles at VAI LABs.
 - [Contact](/contact): Get in touch with the team.
 - [Case Studies](/case-studies): Customer outcomes with KOGNIX.
 

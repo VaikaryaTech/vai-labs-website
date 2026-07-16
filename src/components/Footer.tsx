@@ -9,8 +9,8 @@ export const Footer = () => {
         <div className="grid md:grid-cols-5 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={logoNetwork} alt="VAIKARYA AI LABs" className="h-10 w-10" />
-              <span className="text-xl font-bold text-primary">VAIKARYA AI LABs</span>
+              <img src={logoNetwork} alt="VAI LABs" className="h-10 w-10" />
+              <span className="text-xl font-bold text-orange-light">VAI LABs</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Enterprise-grade Generative AI for secure, on-premises deployment

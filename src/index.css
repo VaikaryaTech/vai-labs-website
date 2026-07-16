@@ -46,6 +46,9 @@
     --orange-light: 30 100% 65%;
     --orange-dark: 20 90% 45%;
     
+    /* Gold brand color to match the VAI LABs logo */
+    --gold: 45 100% 55%;
+    
     /* Pleasant hover colors for dropdowns */
     --dropdown-hover: 30 50% 95%;
     --dropdown-hover-text: 220 50% 20%;
@@ -108,6 +111,9 @@
     --orange-light: 30 100% 70%;
     --orange-dark: 20 90% 50%;
     
+    /* Gold brand color - brighter in dark mode */
+    --gold: 45 100% 60%;
+    
     /* Pleasant hover colors for dropdowns - Dark mode */
     --dropdown-hover: 24 40% 20%;
     --dropdown-hover-text: 30 20% 95%;
@@ -169,12 +175,12 @@
 }
 
 .text-glow-sun {
-  color: hsl(var(--orange-light));
+  color: hsl(var(--gold));
   text-shadow: 
-    0 0 8px hsl(var(--orange-light) / 0.9),
-    0 0 16px hsl(var(--orange-light) / 0.7),
-    0 0 32px hsl(var(--orange-light) / 0.5),
-    0 0 64px hsl(var(--orange-light) / 0.3);
+    0 0 8px hsl(var(--gold) / 0.9),
+    0 0 16px hsl(var(--gold) / 0.7),
+    0 0 32px hsl(var(--gold) / 0.5),
+    0 0 64px hsl(var(--gold) / 0.3);
 }
 
 /* Utility classes */

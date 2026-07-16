@@ -62,7 +62,7 @@ export const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <img src={logo} alt="VAI LABs" className="h-10 w-10" />
-            <span className="text-xl font-bold text-orange-light">VAI LABs</span>
+            <span className="text-xl font-bold text-glow-sun">VAI LABs</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">

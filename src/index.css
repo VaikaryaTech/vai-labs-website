@@ -46,6 +46,9 @@
     --orange-light: 30 100% 65%;
     --orange-dark: 20 90% 45%;
     
+    /* Gold brand color to match the VAI LABs logo */
+    --gold: 45 100% 55%;
+    
     /* Pleasant hover colors for dropdowns */
     --dropdown-hover: 30 50% 95%;
     --dropdown-hover-text: 220 50% 20%;
@@ -107,6 +110,9 @@
     /* Orange palette - Dark */
     --orange-light: 30 100% 70%;
     --orange-dark: 20 90% 50%;
+    
+    /* Gold brand color - brighter in dark mode */
+    --gold: 45 100% 60%;
     
     /* Pleasant hover colors for dropdowns - Dark mode */
     --dropdown-hover: 24 40% 20%;

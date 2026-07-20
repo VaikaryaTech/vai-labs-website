@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.gif";
 import { ChevronDown, Menu, Moon, Sun } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "@/components/ThemeProvider";
 import {
   DropdownMenu,
@@ -15,7 +15,17 @@ import {
 export const Navbar = () => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+
 
   const enterpriseProducts = [
     { to: "/kognix-ai-studio", label: "KOGNIX", suffix: "AI Studio" },
@@ -57,7 +67,7 @@ export const Navbar = () => {
   );
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
+    <nav className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${scrolled ? "border-border/60 bg-background/70 backdrop-blur-xl shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)]" : "border-transparent bg-background/40 backdrop-blur-md"}`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">

@@ -6,9 +6,13 @@ import { Link } from "react-router-dom";
 import homeHeroBackground from "@/assets/home-hero-background.jpg";
 import indiaFlag from "@/assets/india-flag.svg";
 import { ParticleNetwork } from "@/components/ParticleNetwork";
-import { ProductShowcase3D } from "@/components/ProductShowcase3D";
+import { EcosystemShowcase } from "@/components/EcosystemShowcase";
+import { IndustryGrid } from "@/components/IndustryGrid";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const Home = () => {
+  const features = useScrollReveal<HTMLDivElement>();
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -23,12 +27,36 @@ const Home = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/80 to-background/95" />
         </div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(260_60%_25%/0.3),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,hsl(12_100%_50%/0.2),transparent_50%)]" />
+        {/* Ambient dark-mode mesh glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(260_60%_25%/0.3),transparent_50%)] animate-pulse [animation-duration:6s]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,hsl(12_100%_50%/0.2),transparent_50%)] animate-pulse [animation-duration:8s]" />
+        <div
+          className="absolute inset-0 opacity-30 pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(hsl(var(--cyan-accent) / 0.18) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--cyan-accent) / 0.18) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+            maskImage:
+              "radial-gradient(circle at 50% 40%, black 0%, transparent 70%)",
+            WebkitMaskImage:
+              "radial-gradient(circle at 50% 40%, black 0%, transparent 70%)",
+          }}
+        />
         <ParticleNetwork />
         
         <div className="container mx-auto px-6 py-32 relative z-10">
           <div className="max-w-5xl mx-auto text-center space-y-8 animate-slide-in">
+            {/* Air-Gapped Status Badge */}
+            <div className="flex justify-center">
+              <div className="glass inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-emerald-400/30 text-sm font-medium text-foreground/90">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500 shadow-[0_0_10px_rgba(52,211,153,0.9)]"></span>
+                </span>
+                Air-Gapped Protection Active
+              </div>
+            </div>
+
             <h1 className="text-6xl lg:text-8xl font-bold leading-tight">
               Unlock Tomorrow's Potential
               <br />
@@ -65,8 +93,11 @@ const Home = () => {
       <section className="py-24 bg-background relative overflow-hidden">
         <div className="container mx-auto px-6">
           <h2 className="sr-only">Key Features</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="group p-8 glass rounded-2xl hover:scale-105 transition-all duration-300 hover:shadow-glow-primary hover:border-primary/50">
+          <div
+            ref={features.ref}
+            className={`stagger-reveal grid md:grid-cols-3 gap-8 max-w-6xl mx-auto ${features.isVisible ? "is-visible" : ""}`}
+          >
+            <div className="group p-8 glass rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-primary hover:border-primary/50">
               <div className="inline-flex p-4 rounded-lg bg-gradient-to-br from-orange-500/30 to-orange-700/20 mb-6 backdrop-blur-sm group-hover:from-orange-500/40 group-hover:to-orange-700/30 transition-all">
                 <Shield className="h-8 w-8 text-primary" />
               </div>
@@ -76,7 +107,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="group p-8 glass rounded-2xl hover:scale-105 transition-all duration-300 hover:shadow-glow-secondary hover:border-secondary/50">
+            <div className="group p-8 glass rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-secondary hover:border-secondary/50">
               <div className="inline-flex p-4 rounded-lg bg-gradient-to-br from-purple-500/30 to-purple-700/20 mb-6 backdrop-blur-sm group-hover:from-purple-500/40 group-hover:to-purple-700/30 transition-all">
                 <Server className="h-8 w-8 text-secondary" />
               </div>
@@ -86,7 +117,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="group p-8 glass rounded-2xl hover:scale-105 transition-all duration-300 hover:shadow-glow-primary hover:border-cyan-500/50">
+            <div className="group p-8 glass rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-primary hover:border-cyan-500/50">
               <div className="inline-flex p-4 rounded-lg bg-gradient-to-br from-cyan-500/30 to-cyan-700/20 mb-6 backdrop-blur-sm group-hover:from-cyan-500/40 group-hover:to-cyan-700/30 transition-all">
                 <Zap className="h-8 w-8 text-cyan-500" />
               </div>
@@ -98,7 +129,9 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <ProductShowcase3D />
+
+      <IndustryGrid />
+      <EcosystemShowcase />
 
       <Footer />
     </div>

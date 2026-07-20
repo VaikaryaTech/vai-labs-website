@@ -15,7 +15,13 @@ import {
 export const Navbar = () => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
+
+  useState(() => {
+    // noop placeholder — replaced by effect below
+  });
+
 
   const enterpriseProducts = [
     { to: "/kognix-ai-studio", label: "KOGNIX", suffix: "AI Studio" },

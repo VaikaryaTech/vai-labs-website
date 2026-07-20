@@ -61,26 +61,30 @@ export const EcosystemShowcase = ({
 
         {/* Tab bar */}
         <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-10">
-          {ITEMS.map((it, i) => (
-            <button
-              key={it.title}
-              onClick={() => setActive(i)}
-              className={`px-4 py-2 rounded-full text-sm md:text-base font-medium transition-all duration-300 border ${
-                i === active
-                  ? "bg-primary text-primary-foreground border-primary shadow-glow-primary"
-                  : "glass border-white/10 text-muted-foreground hover:text-foreground hover:border-primary/40"
-              }`}
-            >
-              {it.title}
-            </button>
-          ))}
+          {ITEMS.map((it, i) => {
+            const isActive = i === active;
+            return (
+              <button
+                key={it.title}
+                onClick={() => setActive(i)}
+                aria-pressed={isActive}
+                className={`relative px-4 py-2 rounded-full text-sm md:text-base font-medium transition-all duration-300 border-l-4 ${
+                  isActive
+                    ? "bg-primary/15 text-foreground border-l-[hsl(var(--cyan-accent))] border-y border-r border-y-[hsl(var(--cyan-accent))]/50 border-r-[hsl(var(--cyan-accent))]/50 shadow-[0_0_18px_hsl(var(--cyan-accent)/0.5)]"
+                    : "glass border-l-transparent border-y-white/10 border-r-white/10 text-muted-foreground hover:text-foreground hover:border-l-primary/60"
+                }`}
+              >
+                {it.title}
+              </button>
+            );
+          })}
         </div>
 
         {/* Preview */}
         <div className="max-w-6xl mx-auto">
           <div
             key={active}
-            className="relative rounded-[1.75rem] p-[6px] bg-gradient-to-br from-white/60 via-white/20 to-white/5 ring-1 ring-white/20 animate-[ecosystem-in_500ms_ease-out_both]"
+            className="relative rounded-[1.75rem] p-[6px] bg-gradient-to-br from-white/60 via-white/20 to-white/5 ring-1 ring-white/20 animate-[ecosystem-fade_300ms_ease-in_both]"
             style={{
               boxShadow:
                 "0 0 0 1px hsl(var(--cyan-accent) / 0.35), 0 30px 80px -20px rgba(99,102,241,0.45), 0 20px 50px -15px rgba(0,0,0,0.55)",
@@ -92,19 +96,20 @@ export const EcosystemShowcase = ({
               </a>
             </div>
           </div>
-          <div className="text-center mt-6">
-            <h3 className="text-xl md:text-2xl font-bold">{current.title}</h3>
-            <p className="text-sm md:text-base text-muted-foreground mt-1">{current.caption}</p>
+          <div className="text-center mt-6" key={`cap-${active}`}>
+            <h3 className="text-xl md:text-2xl font-bold animate-[ecosystem-fade_300ms_ease-in_both]">{current.title}</h3>
+            <p className="text-sm md:text-base text-muted-foreground mt-1 animate-[ecosystem-fade_300ms_ease-in_both]">{current.caption}</p>
           </div>
         </div>
       </div>
 
       <style>{`
-        @keyframes ecosystem-in {
+        @keyframes ecosystem-fade {
           0% { opacity: 0; transform: scale(0.98); }
           100% { opacity: 1; transform: scale(1); }
         }
       `}</style>
+
     </section>
   );
 };

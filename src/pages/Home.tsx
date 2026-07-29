@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import homeHeroBackground from "@/assets/home-hero-background.jpg";
 import indiaFlag from "@/assets/india-flag.svg";
 import { ParticleNetwork } from "@/components/ParticleNetwork";
+import { CyberGrid } from "@/components/CyberGrid";
 import { EcosystemShowcase } from "@/components/EcosystemShowcase";
 import { IndustryGrid } from "@/components/IndustryGrid";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
@@ -30,32 +31,22 @@ const Home = () => {
         {/* Ambient dark-mode mesh glow */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(260_60%_25%/0.3),transparent_50%)] animate-pulse [animation-duration:6s]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,hsl(12_100%_50%/0.2),transparent_50%)] animate-pulse [animation-duration:8s]" />
-        <div
-          className="absolute inset-0 opacity-30 pointer-events-none"
-          style={{
-            backgroundImage:
-              "linear-gradient(hsl(var(--cyan-accent) / 0.18) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--cyan-accent) / 0.18) 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
-            maskImage:
-              "radial-gradient(circle at 50% 40%, black 0%, transparent 70%)",
-            WebkitMaskImage:
-              "radial-gradient(circle at 50% 40%, black 0%, transparent 70%)",
-          }}
-        />
+        <CyberGrid />
         <ParticleNetwork />
         
         <div className="container mx-auto px-6 py-32 relative z-10">
           <div className="max-w-5xl mx-auto text-center space-y-8 animate-slide-in">
             {/* Air-Gapped Status Badge */}
             <div className="flex justify-center">
-              <div className="glass inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-emerald-400/30 text-sm font-medium text-foreground/90">
+              <div className="glass inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-emerald-400/40 text-sm font-semibold tracking-[0.18em] text-foreground/90 shadow-[0_0_30px_hsl(152_80%_50%/0.25)] animate-float">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500 shadow-[0_0_10px_rgba(52,211,153,0.9)]"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500 shadow-[0_0_12px_rgba(52,211,153,1)]"></span>
                 </span>
-                Air-Gapped Protection Active
+                AIR-GAPPED AI ACTIVE
               </div>
             </div>
+
 
             <h1 className="text-6xl lg:text-8xl font-bold leading-tight">
               Unlock Tomorrow's Potential

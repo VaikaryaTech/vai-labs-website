@@ -18,7 +18,12 @@ import {
   Download,
   Cloud,
   Server,
-  Shield
+  Shield,
+  Atom,
+  Network,
+  Globe,
+  Cpu,
+  Search
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import bgDeveloper from "@/assets/bg-developer.jpg";

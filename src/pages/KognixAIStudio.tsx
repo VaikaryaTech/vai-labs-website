@@ -85,6 +85,34 @@ const KognixAIStudio = () => {
     }
   ];
 
+  const architectureHighlights = [
+    {
+      icon: Atom,
+      title: "Production-Ready Agentic Framework",
+      description: "Built on a production-ready, globally adopted agentic framework."
+    },
+    {
+      icon: Settings,
+      title: "Model-Agnostic LLMOps Architecture",
+      description: "Leverages an enterprise-tested, model-agnostic LLMOps architecture."
+    },
+    {
+      icon: Globe,
+      title: "Fortune 500 Deployed Core",
+      description: "Powered by a core architecture deployed across Fortune 500 environments."
+    },
+    {
+      icon: Network,
+      title: "Asynchronous Microservice Orchestration",
+      description: "Engineered with an asynchronous, microservice-based orchestration engine."
+    },
+    {
+      icon: Search,
+      title: "Hybrid Search RAG Pipelines",
+      description: "Employs high-precision Hybrid Search RAG pipelines trusted at global scale."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />

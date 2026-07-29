@@ -181,6 +181,40 @@ const KognixAIStudio = () => {
         </div>
       </section>
 
+      {/* Architecture Highlights */}
+      <section className="py-24 bg-gradient-hero relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(12_100%_50%/0.08),transparent_60%)]" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Enterprise-Grade{" "}
+              <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">KOGNIX</span>{" "}
+              <span className="text-glow-cyan">Foundations</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Battle-tested architecture trusted by global enterprises
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {architectureHighlights.map((item, index) => (
+              <Card
+                key={index}
+                className="p-8 bg-gradient-card backdrop-blur-sm border-border hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] transition-all duration-300 group"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <item.icon className="h-7 w-7 text-cyan-500" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Core Capabilities */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">

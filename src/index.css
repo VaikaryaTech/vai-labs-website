@@ -324,3 +324,46 @@
     }
   }
 }
+@layer utilities {
+  /* Section reveal: upward slide + quick neon scan-line sweep */
+  .section-reveal {
+    position: relative;
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: opacity, transform;
+  }
+  .section-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .section-reveal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 40;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      hsl(var(--cyan-accent) / 0.14) 46%,
+      hsl(var(--cyan-accent) / 0.55) 50%,
+      hsl(var(--cyan-accent) / 0.14) 54%,
+      transparent 100%
+    );
+    mix-blend-mode: screen;
+  }
+  .section-revealed::before {
+    animation: neon-scan 0.7s ease-out 1 both;
+  }
+  @keyframes neon-scan {
+    0% { opacity: 0; transform: translateY(-100%); }
+    15% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(100%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .section-reveal { opacity: 1; transform: none; transition: none; }
+    .section-reveal::before { display: none; }
+  }
+}

@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CookieConsent } from "@/components/CookieConsent";
 import { BackgroundMusic } from "@/components/BackgroundMusic";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { GlowCursor } from "@/components/GlowCursor";
+import { SectionReveal } from "@/components/SectionReveal";
 import Home from "./pages/Home";
 import Product from "./pages/KAIE";
 import Features from "./pages/Features";
@@ -47,6 +49,8 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <SectionReveal />
+          <GlowCursor />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/kaie" element={<Product />} />

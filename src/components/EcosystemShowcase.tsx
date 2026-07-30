@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import regulatory from "@/assets/regulatory-shield-showcase.png.asset.json";
 import patent from "@/assets/patent-shield-showcase.png.asset.json";
 import biosim from "@/assets/biosimilarity-showcase.png.asset.json";

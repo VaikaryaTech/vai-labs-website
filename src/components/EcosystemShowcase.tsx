@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import regulatory from "@/assets/regulatory-shield-showcase.png.asset.json";
 import patent from "@/assets/patent-shield-showcase.png.asset.json";
 import biosim from "@/assets/biosimilarity-showcase.png.asset.json";
@@ -43,6 +43,17 @@ export const EcosystemShowcase = ({
 }: Props) => {
   const [active, setActive] = useState(0);
   const current = ITEMS[active];
+  const frameRef = useRef<HTMLDivElement>(null);
+  const [tilt, setTilt] = useState({ x: 4, y: 0 });
+
+  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = frameRef.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    setTilt({ x: 4 - py * 8, y: px * 10 });
+  };
 
   return (
     <section className={`relative bg-background py-24 overflow-hidden ${className}`}>
@@ -81,21 +92,39 @@ export const EcosystemShowcase = ({
         </div>
 
         {/* Preview */}
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto [perspective:1000px]">
           <div
-            key={active}
-            className="relative rounded-[1.75rem] p-[6px] bg-gradient-to-br from-white/60 via-white/20 to-white/5 ring-1 ring-white/20 animate-[ecosystem-fade_300ms_ease-in_both]"
-            style={{
-              boxShadow:
-                "0 0 0 1px hsl(var(--cyan-accent) / 0.35), 0 30px 80px -20px rgba(99,102,241,0.45), 0 20px 50px -15px rgba(0,0,0,0.55)",
-            }}
+            ref={frameRef}
+            onMouseMove={handleMove}
+            onMouseLeave={() => setTilt({ x: 4, y: 0 })}
+            className="relative"
           >
-            <div className="rounded-[1.4rem] overflow-hidden bg-black ring-1 ring-white/10 aspect-[16/9]">
-              <a href={current.src} target="_blank" rel="noopener noreferrer" className="block w-full h-full cursor-zoom-in">
-                <img src={current.src} alt={current.alt} className="w-full h-full object-cover" loading="lazy" />
-              </a>
+            <div
+              key={active}
+              className="relative rounded-[1.75rem] p-[6px] bg-gradient-to-br from-white/60 via-white/20 to-white/5 ring-1 ring-white/20 animate-[ecosystem-fade_300ms_ease-in_both] transition-transform duration-200 ease-out will-change-transform motion-reduce:!transform-none"
+              style={{
+                transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+                boxShadow:
+                  "0 0 0 1px hsl(var(--cyan-accent) / 0.35), 0 30px 80px -20px rgba(99,102,241,0.45), 0 20px 50px -15px rgba(0,0,0,0.55)",
+              }}
+            >
+              <div className="rounded-[1.4rem] overflow-hidden bg-black ring-1 ring-white/10 aspect-[16/9]">
+                <a href={current.src} target="_blank" rel="noopener noreferrer" className="block w-full h-full cursor-zoom-in">
+                  <img src={current.src} alt={current.alt} className="w-full h-full object-cover" loading="lazy" />
+                </a>
+              </div>
             </div>
+            {/* Soft glow beneath the frame */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute left-[8%] right-[8%] -bottom-8 h-16 blur-2xl opacity-70"
+              style={{
+                background:
+                  "radial-gradient(ellipse at center, hsl(var(--cyan-accent) / 0.5), rgba(99,102,241,0.25) 45%, transparent 75%)",
+              }}
+            />
           </div>
+
           <div className="text-center mt-6" key={`cap-${active}`}>
             <h3 className="text-xl md:text-2xl font-bold animate-[ecosystem-fade_300ms_ease-in_both]">{current.title}</h3>
             <p className="text-sm md:text-base text-muted-foreground mt-1 animate-[ecosystem-fade_300ms_ease-in_both]">{current.caption}</p>

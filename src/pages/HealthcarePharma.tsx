@@ -87,7 +87,7 @@ const HealthcarePharma = () => {
             
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
               <span className="bg-gradient-accent bg-clip-text text-transparent">
-                Biopharmaceutical (BioPharma) Industry
+                Pharma & Life Sciences
               </span>
             </h1>
             
@@ -174,7 +174,7 @@ const HealthcarePharma = () => {
 
       {/* 3D BioPharma Showcase */}
       <ProductShowcase3D
-        title="BioPharma Intelligence, Live"
+        title="Pharma & Life Sciences Intelligence, Live"
         subtitle="Auditable, source-grounded AI workspaces purpose-built for regulated life sciences."
         only={["Regulatory Shield", "Bio-Peptide Patent Shield", "Biosimilarity De-Risking", "DeepResearch"]}
       />

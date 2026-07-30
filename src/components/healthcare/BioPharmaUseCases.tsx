@@ -490,7 +490,7 @@ export const BioPharmaUseCases = () => {
             Comprehensive Use Cases
           </Badge>
           <h2 className="text-4xl font-bold text-foreground mb-4">
-            KOGNIX AI for <span className="bg-gradient-accent bg-clip-text text-transparent">Biopharmaceutical</span> Industry
+            KOGNIX AI for <span className="bg-gradient-accent bg-clip-text text-transparent">Pharma &amp; Life Sciences</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             End-to-end AI-powered intelligence across every critical department—from R&D through manufacturing, quality, and customer service.

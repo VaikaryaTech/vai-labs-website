@@ -10,6 +10,8 @@ import { CyberGrid } from "@/components/CyberGrid";
 import { EcosystemShowcase } from "@/components/EcosystemShowcase";
 import { IndustryGrid } from "@/components/IndustryGrid";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { StatsCounter } from "@/components/StatsCounter";
+
 
 const Home = () => {
   const features = useScrollReveal<HTMLDivElement>();

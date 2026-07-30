@@ -114,7 +114,7 @@ export const Navbar = () => {
                       {product.label && (
                         <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">{product.label}</span>
                       )}{" "}
-                      {product.suffix && <span className="text-cyan-accent">{product.suffix}</span>}
+                      {product.suffix && <span className="text-cyan-accent ml-1">{product.suffix}</span>}
                     </Link>
                   </DropdownMenuItem>
                 ))}
@@ -265,7 +265,7 @@ export const Navbar = () => {
                           {product.label && (
                             <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">{product.label}</span>
                           )}{" "}
-                          {product.suffix && <span className="text-cyan-accent">{product.suffix}</span>}
+                          {product.suffix && <span className="text-cyan-accent ml-1">{product.suffix}</span>}
                         </Link>
                       ))}
                     </div>

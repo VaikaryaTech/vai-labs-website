@@ -43,6 +43,17 @@ export const EcosystemShowcase = ({
 }: Props) => {
   const [active, setActive] = useState(0);
   const current = ITEMS[active];
+  const frameRef = useRef<HTMLDivElement>(null);
+  const [tilt, setTilt] = useState({ x: 4, y: 0 });
+
+  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = frameRef.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    setTilt({ x: 4 - py * 8, y: px * 10 });
+  };
 
   return (
     <section className={`relative bg-background py-24 overflow-hidden ${className}`}>

@@ -121,8 +121,11 @@ const Home = () => {
         </div>
       </section>
 
+      <StatsCounter />
+
       <IndustryGrid />
       <EcosystemShowcase />
+
 
       <Footer />
     </div>

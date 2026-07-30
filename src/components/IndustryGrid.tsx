@@ -11,7 +11,7 @@ import {
 
 const industries = [
   { to: "/industries/finance", label: "Finance & Banking", Icon: Landmark, tint: "from-emerald-500/30 to-emerald-700/10" },
-  { to: "/industries/healthcare", label: "Biopharmaceutical (BioPharma)", Icon: FlaskConical, tint: "from-cyan-500/30 to-cyan-700/10" },
+  { to: "/industries/healthcare", label: "Pharma & Life Sciences", Icon: FlaskConical, tint: "from-cyan-500/30 to-cyan-700/10" },
   { to: "/industries/legal", label: "Legal & Compliance", Icon: Scale, tint: "from-amber-500/30 to-amber-700/10" },
   { to: "/industries/retail", label: "Retail & E-commerce", Icon: ShoppingBag, tint: "from-pink-500/30 to-pink-700/10" },
   { to: "/industries/manufacturing", label: "Manufacturing & Engineering", Icon: Factory, tint: "from-orange-500/30 to-orange-700/10" },

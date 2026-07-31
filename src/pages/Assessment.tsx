@@ -26,6 +26,8 @@ interface Section {
 
 const Assessment = () => {
   const { toast } = useToast();
+  const [showReport, setShowReport] = useState(false);
+
   const [sections, setSections] = useState<Section[]>([
     {
       id: 1,

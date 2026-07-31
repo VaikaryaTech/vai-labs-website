@@ -9,6 +9,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
 import { Download, FileText } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { ReadinessReport } from "@/components/assessment/ReadinessReport";
+
 
 interface Question {
   id: number;

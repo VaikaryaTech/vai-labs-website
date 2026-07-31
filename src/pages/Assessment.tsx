@@ -299,6 +299,25 @@ const Assessment = () => {
         </div>
       </section>
 
+      {/* Generated Report */}
+      {showReport && (
+        <section id="readiness-report" className="py-12 bg-background">
+          <div className="container mx-auto px-6">
+            <div className="max-w-5xl mx-auto">
+              <ReadinessReport
+                sections={sections}
+                onDownload={handleDownloadReport}
+                onReset={() => {
+                  setShowReport(false);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              />
+            </div>
+          </div>
+        </section>
+      )}
+
+
       {/* Assessment Sections */}
       <section className="py-12 bg-background">
         <div className="container mx-auto px-6">

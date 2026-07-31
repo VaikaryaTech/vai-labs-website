@@ -9,6 +9,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
 import { Download, FileText } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { ReadinessReport } from "@/components/assessment/ReadinessReport";
+
 
 interface Question {
   id: number;
@@ -26,6 +28,8 @@ interface Section {
 
 const Assessment = () => {
   const { toast } = useToast();
+  const [showReport, setShowReport] = useState(false);
+
   const [sections, setSections] = useState<Section[]>([
     {
       id: 1,
@@ -177,32 +181,44 @@ const Assessment = () => {
   };
 
   const handleGenerateReport = () => {
-    const overallProgress = calculateOverallProgress();
-    if (overallProgress < 100) {
+    const answered = sections.reduce(
+      (acc, s) => acc + s.questions.filter((q) => q.answer).length,
+      0
+    );
+    if (answered === 0) {
       toast({
-        title: "Assessment Incomplete",
-        description: "Please answer all questions before generating the report.",
+        title: "No answers yet",
+        description: "Answer at least a few questions to generate your readiness report.",
         variant: "destructive"
       });
       return;
     }
-    
+
+    setShowReport(true);
     toast({
       title: "Report Generated",
-      description: "Your AI Readiness Assessment report has been compiled."
+      description: "Your AI Readiness Assessment report is ready below."
+    });
+    requestAnimationFrame(() => {
+      document.getElementById("readiness-report")?.scrollIntoView({ behavior: "smooth" });
     });
   };
 
+
   const handleDownloadReport = () => {
-    const overallProgress = calculateOverallProgress();
-    if (overallProgress < 100) {
+    const answered = sections.reduce(
+      (acc, s) => acc + s.questions.filter((q) => q.answer).length,
+      0
+    );
+    if (answered === 0) {
       toast({
-        title: "Assessment Incomplete",
-        description: "Please complete all sections before downloading the report.",
+        title: "No answers yet",
+        description: "Answer at least a few questions before downloading the report.",
         variant: "destructive"
       });
       return;
     }
+
 
     // Generate report content
     let reportContent = "GENERATIVE AI READINESS ASSESSMENT REPORT\n\n";
@@ -284,6 +300,25 @@ const Assessment = () => {
           </div>
         </div>
       </section>
+
+      {/* Generated Report */}
+      {showReport && (
+        <section id="readiness-report" className="py-12 bg-background">
+          <div className="container mx-auto px-6">
+            <div className="max-w-5xl mx-auto">
+              <ReadinessReport
+                sections={sections}
+                onDownload={handleDownloadReport}
+                onReset={() => {
+                  setShowReport(false);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              />
+            </div>
+          </div>
+        </section>
+      )}
+
 
       {/* Assessment Sections */}
       <section className="py-12 bg-background">

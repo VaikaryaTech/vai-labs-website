@@ -177,21 +177,29 @@ const Assessment = () => {
   };
 
   const handleGenerateReport = () => {
-    const overallProgress = calculateOverallProgress();
-    if (overallProgress < 100) {
+    const answered = sections.reduce(
+      (acc, s) => acc + s.questions.filter((q) => q.answer).length,
+      0
+    );
+    if (answered === 0) {
       toast({
-        title: "Assessment Incomplete",
-        description: "Please answer all questions before generating the report.",
+        title: "No answers yet",
+        description: "Answer at least a few questions to generate your readiness report.",
         variant: "destructive"
       });
       return;
     }
-    
+
+    setShowReport(true);
     toast({
       title: "Report Generated",
-      description: "Your AI Readiness Assessment report has been compiled."
+      description: "Your AI Readiness Assessment report is ready below."
+    });
+    requestAnimationFrame(() => {
+      document.getElementById("readiness-report")?.scrollIntoView({ behavior: "smooth" });
     });
   };
+
 
   const handleDownloadReport = () => {
     const overallProgress = calculateOverallProgress();

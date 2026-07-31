@@ -204,15 +204,19 @@ const Assessment = () => {
 
 
   const handleDownloadReport = () => {
-    const overallProgress = calculateOverallProgress();
-    if (overallProgress < 100) {
+    const answered = sections.reduce(
+      (acc, s) => acc + s.questions.filter((q) => q.answer).length,
+      0
+    );
+    if (answered === 0) {
       toast({
-        title: "Assessment Incomplete",
-        description: "Please complete all sections before downloading the report.",
+        title: "No answers yet",
+        description: "Answer at least a few questions before downloading the report.",
         variant: "destructive"
       });
       return;
     }
+
 
     // Generate report content
     let reportContent = "GENERATIVE AI READINESS ASSESSMENT REPORT\n\n";

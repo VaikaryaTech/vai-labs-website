@@ -18,7 +18,9 @@ export const SectionReveal = () => {
           if (entry.isIntersecting) el.classList.add("section-revealed");
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      // threshold 0 so very tall sections (which can never show 12% of their
+      // height at once) still reveal as soon as they enter the viewport
+      { threshold: 0, rootMargin: "0px 0px -5% 0px" }
     );
 
     const attach = () => {

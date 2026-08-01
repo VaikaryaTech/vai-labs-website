@@ -64,35 +64,20 @@ const ReferenceArchitecture = () => {
                 AIR-GAPPED / SOVEREIGN ENTERPRISE ENVIRONMENT
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-9 gap-4 items-stretch pt-4">
+              <div className="flex flex-col md:flex-row items-stretch gap-3 pt-4">
                 {flow.map((node, i) => (
-                  <div key={node.label} className="md:col-span-1 contents md:contents">
-                    <div className="md:col-span-1 hidden" />
-                  </div>
-                ))}
-
-                {flow.map((node, i) => (
-                  <>
-                    <div
-                      key={node.label}
-                      className="md:col-span-[1] col-span-1 md:col-auto glass rounded-2xl p-5 flex flex-col items-center text-center gap-3 transition-transform duration-300 hover:-translate-y-1"
-                      style={{ gridColumn: "span 1 / span 1" }}
-                    >
+                  <div key={node.label} className="flex flex-col md:flex-row items-center gap-3 flex-1">
+                    <div className="glass rounded-2xl p-5 w-full flex flex-col items-center text-center gap-3 transition-transform duration-300 hover:-translate-y-1">
                       <node.icon className="h-7 w-7 text-primary" />
                       <span className={`text-sm font-semibold leading-snug ${node.accent}`}>{node.label}</span>
                     </div>
                     {i < flow.length - 1 && (
-                      <div
-                        key={`${node.label}-arrow`}
-                        className="flex items-center justify-center text-primary/70"
-                        style={{ gridColumn: "span 1 / span 1" }}
-                      >
-                        <ArrowRight className="h-5 w-5 rotate-90 md:rotate-0" />
-                      </div>
+                      <ArrowRight className="h-5 w-5 shrink-0 text-primary/70 rotate-90 md:rotate-0" />
                     )}
-                  </>
+                  </div>
                 ))}
               </div>
+
 
               <div className="mt-8 flex flex-wrap justify-center gap-4 text-xs md:text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-2"><WifiOff className="h-4 w-4 text-primary" /> No internet dependency</span>

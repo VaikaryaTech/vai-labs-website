@@ -417,3 +417,53 @@
     .section-reveal::before { display: none; }
   }
 }
+
+/* ── KOGNIX product wordmark (text-based brand treatment) ────────────── */
+@layer utilities {
+  .kognix-brand {
+    display: inline-block;
+    font-family: 'Space Grotesk', 'Google Sans', 'Segoe UI', system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background-image: var(--gradient-kognix);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    filter: drop-shadow(0 0 12px hsl(var(--kognix-indigo) / 0.28));
+  }
+
+  /* Distinctive circular / AI-inspired O */
+  .kognix-o {
+    position: relative;
+    display: inline-block;
+  }
+  .kognix-o::before {
+    content: "";
+    position: absolute;
+    inset: 16% 4%;
+    border-radius: 9999px;
+    border: 0.09em solid hsl(var(--kognix-purple) / 0.85);
+    box-shadow:
+      0 0 8px hsl(var(--kognix-cyan) / 0.5),
+      inset 0 0 6px hsl(var(--kognix-indigo) / 0.45);
+    pointer-events: none;
+  }
+  .kognix-o::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0.16em;
+    height: 0.16em;
+    transform: translate(-50%, -50%);
+    border-radius: 9999px;
+    background: hsl(var(--kognix-cyan));
+    box-shadow: 0 0 8px hsl(var(--kognix-cyan) / 0.9);
+    pointer-events: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .kognix-brand { filter: none; }
+  }
+}

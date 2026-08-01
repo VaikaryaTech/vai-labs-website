@@ -77,7 +77,7 @@ const TelecomUtilities = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-              Empower field operations and customer service with <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX AI ENGINE</span>—delivering 
+              Empower field operations and customer service with <span className="kognix-brand font-semibold">KOGNIX AI ENGINE</span>—delivering 
               instant technical knowledge and personalized support at scale.
             </p>
 

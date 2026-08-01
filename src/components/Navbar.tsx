@@ -112,7 +112,7 @@ export const Navbar = () => {
                       }`}
                     >
                       {product.label && (
-                        <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">{product.label}</span>
+                        <span className="kognix-brand font-semibold">{product.label}</span>
                       )}{" "}
                       {product.suffix && <span className="text-cyan-accent ml-1">{product.suffix}</span>}
                     </Link>
@@ -263,7 +263,7 @@ export const Navbar = () => {
                           }`}
                         >
                           {product.label && (
-                            <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">{product.label}</span>
+                            <span className="kognix-brand font-semibold">{product.label}</span>
                           )}{" "}
                           {product.suffix && <span className="text-cyan-accent ml-1">{product.suffix}</span>}
                         </Link>

@@ -91,7 +91,7 @@ const ManufacturingEngineering = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-              Optimize industrial operations with <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX AI ENGINE</span>—from 
+              Optimize industrial operations with <span className="kognix-brand font-semibold">KOGNIX AI ENGINE</span>—from 
               predictive maintenance to engineering knowledge management with secure, on-premise intelligence.
             </p>
 

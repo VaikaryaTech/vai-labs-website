@@ -57,7 +57,13 @@
     --gradient-hero: linear-gradient(180deg, hsl(30 30% 98%), hsl(0 0% 100%));
     --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(30 20% 98%));
     --gradient-accent: linear-gradient(135deg, hsl(24 95% 53%), hsl(30 100% 60%));
-    --gradient-kognix: linear-gradient(90deg, hsl(4 90% 58%), hsl(30 100% 55%));
+    /* KOGNIX product brand palette (distinct from VAI LABs orange/gold) */
+    --kognix-navy: 230 60% 22%;
+    --kognix-indigo: 250 75% 52%;
+    --kognix-purple: 275 80% 60%;
+    --kognix-cyan: 195 95% 55%;
+    --gradient-kognix: linear-gradient(100deg, hsl(var(--kognix-navy)), hsl(var(--kognix-indigo)) 45%, hsl(var(--kognix-purple)) 70%, hsl(var(--kognix-cyan)));
+
     --glow-primary: 0 8px 30px hsl(24 95% 53% / 0.2);
     --glow-secondary: 0 8px 30px hsl(174 60% 45% / 0.15);
     --cyan-accent: 174 60% 45%;
@@ -122,7 +128,12 @@
     --gradient-hero: linear-gradient(180deg, hsl(220 25% 12%), hsl(220 20% 10%));
     --gradient-card: linear-gradient(135deg, hsl(220 18% 16%), hsl(220 18% 13%));
     --gradient-accent: linear-gradient(135deg, hsl(24 95% 58%), hsl(30 100% 65%));
-    --gradient-kognix: linear-gradient(90deg, hsl(4 90% 63%), hsl(30 100% 60%));
+    --kognix-navy: 230 55% 60%;
+    --kognix-indigo: 250 90% 72%;
+    --kognix-purple: 275 90% 75%;
+    --kognix-cyan: 195 100% 68%;
+    --gradient-kognix: linear-gradient(100deg, hsl(var(--kognix-navy)), hsl(var(--kognix-indigo)) 45%, hsl(var(--kognix-purple)) 70%, hsl(var(--kognix-cyan)));
+
     --glow-primary: 0 8px 30px hsl(24 95% 58% / 0.3);
     --glow-secondary: 0 8px 30px hsl(174 60% 50% / 0.25);
     --cyan-accent: 174 60% 55%;
@@ -404,5 +415,55 @@
   @media (prefers-reduced-motion: reduce) {
     .section-reveal { opacity: 1; transform: none; transition: none; }
     .section-reveal::before { display: none; }
+  }
+}
+
+/* ── KOGNIX product wordmark (text-based brand treatment) ────────────── */
+@layer utilities {
+  .kognix-brand {
+    display: inline-block;
+    font-family: 'Space Grotesk', 'Google Sans', 'Segoe UI', system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background-image: var(--gradient-kognix);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    filter: drop-shadow(0 0 12px hsl(var(--kognix-indigo) / 0.28));
+  }
+
+  /* Distinctive circular / AI-inspired O */
+  .kognix-o {
+    position: relative;
+    display: inline-block;
+  }
+  .kognix-o::before {
+    content: "";
+    position: absolute;
+    inset: 16% 4%;
+    border-radius: 9999px;
+    border: 0.09em solid hsl(var(--kognix-purple) / 0.85);
+    box-shadow:
+      0 0 8px hsl(var(--kognix-cyan) / 0.5),
+      inset 0 0 6px hsl(var(--kognix-indigo) / 0.45);
+    pointer-events: none;
+  }
+  .kognix-o::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0.16em;
+    height: 0.16em;
+    transform: translate(-50%, -50%);
+    border-radius: 9999px;
+    background: hsl(var(--kognix-cyan));
+    box-shadow: 0 0 8px hsl(var(--kognix-cyan) / 0.9);
+    pointer-events: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .kognix-brand { filter: none; }
   }
 }

@@ -4,7 +4,7 @@ import { LiveBackground } from "@/components/LiveBackground";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ShieldOff, WifiOff, Lock, AppWindow, Layers, Cpu, Database, BarChart3, ArrowRight, Download } from "lucide-react";
-import kognixLogo from "@/assets/kognix-logo.png.asset.json";
+import { KognixWordmark } from "@/components/KognixWordmark";
 import dockerArch from "@/assets/kognix-docker-arch.png.asset.json";
 import k8sArch from "@/assets/kognix-k8s-arch.png.asset.json";
 import dockerPdf from "@/assets/kognix-docker-ra.pdf.asset.json";
@@ -50,28 +50,16 @@ const ReferenceArchitecture = () => {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <img
-              src={kognixLogo.url}
-              alt="KOGNIX platform logo"
-              className="mx-auto h-14 md:h-20 w-auto object-contain mix-blend-screen"
-              loading="lazy"
-            />
-
             <div className="glass inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.2em] text-foreground/90">
               <Lock className="h-3.5 w-3.5 text-primary" />
               SOVEREIGN BY ARCHITECTURE
             </div>
 
-
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              <span
-                className="bg-clip-text text-transparent"
-                style={{ backgroundImage: "var(--gradient-kognix)" }}
-              >
-                KOGNIX
-              </span>{" "}
+              <KognixWordmark size="hero" />{" "}
               <span className="text-glow-cyan">Reference Architecture</span>
             </h1>
+
 
             <p className="text-xl md:text-2xl font-semibold text-foreground/80">
               Sovereign Enterprise AI. Engineered for Cloud, Private Cloud and Air-Gapped Environments.
@@ -126,7 +114,7 @@ const ReferenceArchitecture = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">
-              <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-kognix)" }}>
+              <span className="kognix-brand">
                 KOGNIX
               </span>{" "}
               <span className="text-glow-cyan">Deployment Blueprints</span>

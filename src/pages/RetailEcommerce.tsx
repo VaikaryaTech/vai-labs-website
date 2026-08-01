@@ -84,7 +84,7 @@ const RetailEcommerce = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-              Revolutionize retail experiences with <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX AI ENGINE</span>—from 
+              Revolutionize retail experiences with <span className="kognix-brand font-semibold">KOGNIX AI ENGINE</span>—from 
               intelligent product discovery to personalized customer service at scale.
             </p>
 

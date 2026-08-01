@@ -98,7 +98,7 @@ const FinanceBanking = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-              Transform financial operations with <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX AI ENGINE</span>—from 
+              Transform financial operations with <span className="kognix-brand font-semibold">KOGNIX AI ENGINE</span>—from 
               regulatory compliance and fraud detection to investment research with auditable, source-grounded intelligence.
             </p>
 

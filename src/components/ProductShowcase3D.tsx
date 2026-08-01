@@ -43,7 +43,7 @@ interface Props {
 const DEFAULT_TITLE = (
   <>
     See{" "}
-    <span className="bg-[image:var(--gradient-kognix)] bg-clip-text text-transparent">
+    <span className="kognix-brand">
       KOGNIX
     </span>{" "}
     <span className="text-glow-cyan">AI Ecosystem</span>, in Action

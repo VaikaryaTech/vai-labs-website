@@ -92,7 +92,7 @@ const HealthcarePharma = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-              Transform healthcare operations with <span className="bg-gradient-kognix bg-clip-text text-transparent font-semibold">KOGNIX AI ENGINE</span>—from 
+              Transform healthcare operations with <span className="kognix-brand font-semibold">KOGNIX AI ENGINE</span>—from 
               clinical decision support to GxP compliance with auditable, source-grounded intelligence for highly regulated environments.
             </p>
 

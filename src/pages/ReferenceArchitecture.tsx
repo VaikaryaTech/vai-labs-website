@@ -65,8 +65,7 @@ const ReferenceArchitecture = () => {
 
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
               <span
-                className="bg-clip-text text-transparent"
-                style={{ backgroundImage: "var(--gradient-kognix)" }}
+                className="kognix-brand"
               >
                 KOGNIX
               </span>{" "}
@@ -126,7 +125,7 @@ const ReferenceArchitecture = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">
-              <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-kognix)" }}>
+              <span className="kognix-brand">
                 KOGNIX
               </span>{" "}
               <span className="text-glow-cyan">Deployment Blueprints</span>

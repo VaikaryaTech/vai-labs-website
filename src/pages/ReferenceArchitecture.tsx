@@ -3,7 +3,31 @@ import { Footer } from "@/components/Footer";
 import { LiveBackground } from "@/components/LiveBackground";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ShieldOff, WifiOff, Lock, AppWindow, Layers, Cpu, Database, BarChart3, ArrowRight } from "lucide-react";
+import { ShieldOff, WifiOff, Lock, AppWindow, Layers, Cpu, Database, BarChart3, ArrowRight, Download } from "lucide-react";
+import kognixLogo from "@/assets/kognix-logo.png.asset.json";
+import dockerArch from "@/assets/kognix-docker-arch.png.asset.json";
+import k8sArch from "@/assets/kognix-k8s-arch.png.asset.json";
+import dockerPdf from "@/assets/kognix-docker-ra.pdf.asset.json";
+import k8sPdf from "@/assets/kognix-k8s-ra.pdf.asset.json";
+
+const diagrams = [
+  {
+    title: "Docker Reference Architecture",
+    description:
+      "Single-host to multi-host Docker deployment: KOGNIX AI Studio, Intelligence and Analytics stacks with shared networks, persistent volumes and air-gapped operations.",
+    image: dockerArch.url,
+    pdf: dockerPdf.url,
+    pdfName: "KOGNIX-Docker-Reference-Architecture.pdf",
+  },
+  {
+    title: "Kubernetes Reference Architecture",
+    description:
+      "Namespace-isolated Kubernetes topology with ingress, GPU inference pods, data and security namespaces, plus the offline update flow for sovereign clusters.",
+    image: k8sArch.url,
+    pdf: k8sPdf.url,
+    pdfName: "KOGNIX-Kubernetes-Reference-Architecture.pdf",
+  },
+];
 
 const flow = [
   { label: "Enterprise Applications", icon: AppWindow, accent: "text-foreground" },
@@ -12,6 +36,7 @@ const flow = [
   { label: "Enterprise Data", icon: Database, accent: "text-foreground" },
   { label: "KOGNIX Analytics", icon: BarChart3, accent: "text-glow-cyan" },
 ];
+
 
 const ReferenceArchitecture = () => {
   return (

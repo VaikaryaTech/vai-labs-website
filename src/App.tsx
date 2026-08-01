@@ -81,6 +81,7 @@ const App = () => (
             
             <Route path="/kognix-ai-studio" element={<KognixAIStudio />} />
             <Route path="/services/tech-health-assessment" element={<TechHealthAssessment />} />
+            <Route path="/reference-architecture" element={<ReferenceArchitecture />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

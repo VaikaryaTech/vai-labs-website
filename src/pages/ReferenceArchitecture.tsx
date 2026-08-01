@@ -122,6 +122,51 @@ const ReferenceArchitecture = () => {
         </div>
       </section>
 
+      <section className="py-20 relative">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold">
+              <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-kognix)" }}>
+                KOGNIX
+              </span>{" "}
+              <span className="text-glow-cyan">Deployment Blueprints</span>
+            </h2>
+            <p className="text-muted-foreground">
+              Detailed reference architectures for Docker and Kubernetes. Click a diagram to open the full-resolution
+              image, or download the printable PDF.
+            </p>
+          </div>
+
+          <div className="space-y-12 max-w-6xl mx-auto">
+            {diagrams.map((d) => (
+              <div key={d.title} className="glass rounded-3xl p-5 md:p-8 space-y-5">
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                  <div className="space-y-2">
+                    <h3 className="text-xl md:text-2xl font-semibold text-glow-cyan">{d.title}</h3>
+                    <p className="text-sm text-muted-foreground max-w-2xl">{d.description}</p>
+                  </div>
+                  <a href={d.pdf} download={d.pdfName} target="_blank" rel="noopener noreferrer">
+                    <Button variant="hero" className="whitespace-nowrap">
+                      <Download className="h-4 w-4" /> Download PDF
+                    </Button>
+                  </a>
+                </div>
+
+                <a href={d.image} target="_blank" rel="noopener noreferrer" className="block group">
+                  <img
+                    src={d.image}
+                    alt={`KOGNIX ${d.title} diagram`}
+                    loading="lazy"
+                    className="w-full rounded-2xl border border-border/60 bg-white transition-transform duration-300 group-hover:scale-[1.01]"
+                  />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       <Footer />
     </div>
   );

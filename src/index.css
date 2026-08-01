@@ -57,7 +57,13 @@
     --gradient-hero: linear-gradient(180deg, hsl(30 30% 98%), hsl(0 0% 100%));
     --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(30 20% 98%));
     --gradient-accent: linear-gradient(135deg, hsl(24 95% 53%), hsl(30 100% 60%));
-    --gradient-kognix: linear-gradient(90deg, hsl(4 90% 58%), hsl(30 100% 55%));
+    /* KOGNIX product brand palette (distinct from VAI LABs orange/gold) */
+    --kognix-navy: 230 60% 22%;
+    --kognix-indigo: 250 75% 52%;
+    --kognix-purple: 275 80% 60%;
+    --kognix-cyan: 195 95% 55%;
+    --gradient-kognix: linear-gradient(100deg, hsl(var(--kognix-navy)), hsl(var(--kognix-indigo)) 45%, hsl(var(--kognix-purple)) 70%, hsl(var(--kognix-cyan)));
+
     --glow-primary: 0 8px 30px hsl(24 95% 53% / 0.2);
     --glow-secondary: 0 8px 30px hsl(174 60% 45% / 0.15);
     --cyan-accent: 174 60% 45%;

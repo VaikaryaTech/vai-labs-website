@@ -228,8 +228,8 @@ export default function Features() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background" />
         <div className="container mx-auto max-w-4xl text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-kognix bg-clip-text text-transparent">
-            KOGNIX AI Engine Features
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="kognix-brand">KOGNIX</span> AI Features
           </h1>
           <p className="text-xl text-muted-foreground">
             Enterprise-grade AI capabilities from intelligent retrieval to autonomous agents
@@ -319,7 +319,7 @@ export default function Features() {
               <LayoutDashboard className="h-8 w-8 text-foreground" />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2 bg-gradient-kognix bg-clip-text text-transparent">KOGNIX Dashboard</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-2"><span className="kognix-brand">KOGNIX</span> Dashboard</h2>
               <p className="text-lg text-muted-foreground">Your Command Center for Intelligent AI Operations</p>
             </div>
           </div>

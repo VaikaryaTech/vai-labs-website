@@ -4,7 +4,7 @@ import { LiveBackground } from "@/components/LiveBackground";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ShieldOff, WifiOff, Lock, AppWindow, Layers, Cpu, Database, BarChart3, ArrowRight, Download } from "lucide-react";
-import kognixLogo from "@/assets/kognix-logo.png.asset.json";
+import { KognixWordmark } from "@/components/KognixWordmark";
 import dockerArch from "@/assets/kognix-docker-arch.png.asset.json";
 import k8sArch from "@/assets/kognix-k8s-arch.png.asset.json";
 import dockerPdf from "@/assets/kognix-docker-ra.pdf.asset.json";

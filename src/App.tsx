@@ -37,6 +37,7 @@ import KognixIntelligence from "./pages/KognixIntelligence";
 
 import KognixAIStudio from "./pages/KognixAIStudio";
 import TechHealthAssessment from "./pages/TechHealthAssessment";
+import ReferenceArchitecture from "./pages/ReferenceArchitecture";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

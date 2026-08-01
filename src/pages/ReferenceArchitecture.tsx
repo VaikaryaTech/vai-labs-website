@@ -3,7 +3,31 @@ import { Footer } from "@/components/Footer";
 import { LiveBackground } from "@/components/LiveBackground";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ShieldOff, WifiOff, Lock, AppWindow, Layers, Cpu, Database, BarChart3, ArrowRight } from "lucide-react";
+import { ShieldOff, WifiOff, Lock, AppWindow, Layers, Cpu, Database, BarChart3, ArrowRight, Download } from "lucide-react";
+import kognixLogo from "@/assets/kognix-logo.png.asset.json";
+import dockerArch from "@/assets/kognix-docker-arch.png.asset.json";
+import k8sArch from "@/assets/kognix-k8s-arch.png.asset.json";
+import dockerPdf from "@/assets/kognix-docker-ra.pdf.asset.json";
+import k8sPdf from "@/assets/kognix-k8s-ra.pdf.asset.json";
+
+const diagrams = [
+  {
+    title: "Docker Reference Architecture",
+    description:
+      "Single-host to multi-host Docker deployment: KOGNIX AI Studio, Intelligence and Analytics stacks with shared networks, persistent volumes and air-gapped operations.",
+    image: dockerArch.url,
+    pdf: dockerPdf.url,
+    pdfName: "KOGNIX-Docker-Reference-Architecture.pdf",
+  },
+  {
+    title: "Kubernetes Reference Architecture",
+    description:
+      "Namespace-isolated Kubernetes topology with ingress, GPU inference pods, data and security namespaces, plus the offline update flow for sovereign clusters.",
+    image: k8sArch.url,
+    pdf: k8sPdf.url,
+    pdfName: "KOGNIX-Kubernetes-Reference-Architecture.pdf",
+  },
+];
 
 const flow = [
   { label: "Enterprise Applications", icon: AppWindow, accent: "text-foreground" },
@@ -12,6 +36,7 @@ const flow = [
   { label: "Enterprise Data", icon: Database, accent: "text-foreground" },
   { label: "KOGNIX Analytics", icon: BarChart3, accent: "text-glow-cyan" },
 ];
+
 
 const ReferenceArchitecture = () => {
   return (
@@ -25,10 +50,18 @@ const ReferenceArchitecture = () => {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
+            <img
+              src={kognixLogo.url}
+              alt="KOGNIX platform logo"
+              className="mx-auto h-14 md:h-20 w-auto object-contain mix-blend-screen"
+              loading="lazy"
+            />
+
             <div className="glass inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.2em] text-foreground/90">
               <Lock className="h-3.5 w-3.5 text-primary" />
               SOVEREIGN BY ARCHITECTURE
             </div>
+
 
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
               <span
@@ -88,6 +121,51 @@ const ReferenceArchitecture = () => {
           </div>
         </div>
       </section>
+
+      <section className="py-20 relative">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold">
+              <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-kognix)" }}>
+                KOGNIX
+              </span>{" "}
+              <span className="text-glow-cyan">Deployment Blueprints</span>
+            </h2>
+            <p className="text-muted-foreground">
+              Detailed reference architectures for Docker and Kubernetes. Click a diagram to open the full-resolution
+              image, or download the printable PDF.
+            </p>
+          </div>
+
+          <div className="space-y-12 max-w-6xl mx-auto">
+            {diagrams.map((d) => (
+              <div key={d.title} className="glass rounded-3xl p-5 md:p-8 space-y-5">
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                  <div className="space-y-2">
+                    <h3 className="text-xl md:text-2xl font-semibold text-glow-cyan">{d.title}</h3>
+                    <p className="text-sm text-muted-foreground max-w-2xl">{d.description}</p>
+                  </div>
+                  <a href={d.pdf} download={d.pdfName} target="_blank" rel="noopener noreferrer">
+                    <Button variant="hero" className="whitespace-nowrap">
+                      <Download className="h-4 w-4" /> Download PDF
+                    </Button>
+                  </a>
+                </div>
+
+                <a href={d.image} target="_blank" rel="noopener noreferrer" className="block group">
+                  <img
+                    src={d.image}
+                    alt={`KOGNIX ${d.title} diagram`}
+                    loading="lazy"
+                    className="w-full rounded-2xl border border-border/60 bg-white transition-transform duration-300 group-hover:scale-[1.01]"
+                  />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       <Footer />
     </div>

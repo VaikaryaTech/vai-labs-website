@@ -50,10 +50,18 @@ const ReferenceArchitecture = () => {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
+            <img
+              src={kognixLogo.url}
+              alt="KOGNIX platform logo"
+              className="mx-auto h-14 md:h-20 w-auto object-contain mix-blend-screen"
+              loading="lazy"
+            />
+
             <div className="glass inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.2em] text-foreground/90">
               <Lock className="h-3.5 w-3.5 text-primary" />
               SOVEREIGN BY ARCHITECTURE
             </div>
+
 
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
               <span

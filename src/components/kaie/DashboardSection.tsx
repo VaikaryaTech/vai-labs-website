@@ -1,5 +1,6 @@
  import { Card } from "@/components/ui/card";
  import { 
+import { KognixWordmark } from "@/components/KognixWordmark";
    LayoutDashboard, 
    Eye, 
    Activity, 
@@ -49,7 +50,7 @@
        <div className="container mx-auto px-6 relative z-10">
          <div className="text-center mb-16">
            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-             <span className="kognix-brand">KOGNIX</span>{" "}
+             <KognixWordmark size="hero" />{" "}
              Dashboard
            </h2>
            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

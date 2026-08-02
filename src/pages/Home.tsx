@@ -7,8 +7,6 @@ import homeHeroBackground from "@/assets/home-hero-background.jpg";
 import indiaFlag from "@/assets/india-flag.svg";
 import { ParticleNetwork } from "@/components/ParticleNetwork";
 import { CyberGrid } from "@/components/CyberGrid";
-import { EcosystemShowcase } from "@/components/EcosystemShowcase";
-import { IndustryGrid } from "@/components/IndustryGrid";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { StatsCounter } from "@/components/StatsCounter";
 
@@ -151,8 +149,6 @@ const Home = () => {
 
       <StatsCounter />
 
-      <IndustryGrid />
-      <EcosystemShowcase />
 
 
       <Footer />

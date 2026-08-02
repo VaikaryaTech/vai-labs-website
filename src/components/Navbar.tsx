@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { KognixWordmark } from "@/components/KognixWordmark";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.gif";
 import { ChevronDown, Menu, Moon, Sun } from "lucide-react";
@@ -112,7 +113,7 @@ export const Navbar = () => {
                       }`}
                     >
                       {product.label && (
-                        <span className="kognix-brand font-semibold">{product.label}</span>
+                        <KognixWordmark size="sm" />
                       )}{" "}
                       {product.suffix && <span className="text-cyan-accent ml-1">{product.suffix}</span>}
                     </Link>
@@ -263,7 +264,7 @@ export const Navbar = () => {
                           }`}
                         >
                           {product.label && (
-                            <span className="kognix-brand font-semibold">{product.label}</span>
+                            <KognixWordmark size="sm" />
                           )}{" "}
                           {product.suffix && <span className="text-cyan-accent ml-1">{product.suffix}</span>}
                         </Link>

@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Layers, Box, Zap, Users, Brain, MessageSquare, Mail, FileText, Calendar, Github } from "lucide-react";
 import integrationsImg from "@/assets/platform-integrations.jpg";
+import { KognixWordmark } from "@/components/KognixWordmark";
 
 const platformFeatures = [
   {
@@ -120,7 +121,7 @@ export const Features = () => {
                 <span className="bg-gradient-accent bg-clip-text text-transparent">Built-in Integrations</span>
               </h2>
               <p className="text-xl text-foreground/80 max-w-3xl">
-                <span className="kognix-brand font-semibold">KOGNIX</span> is your universal adaptor, seamlessly integrating with over 80 essential services from day one
+                <KognixWordmark size="hero" /> is your universal adaptor, seamlessly integrating with over 80 essential services from day one
               </p>
             </div>
           </div>

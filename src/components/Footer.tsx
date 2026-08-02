@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logoNetwork from "@/assets/logo.gif";
 import makeInIndia from "@/assets/make-in-india.png";
+import { KognixWordmark } from "@/components/KognixWordmark";
 
 export const Footer = () => {
   return (
@@ -20,10 +21,10 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Enterprise Products</h4>
             <ul className="space-y-2">
-              <li><Link to="/kognix-ai-studio" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><span className="kognix-brand font-semibold">KOGNIX</span> <span className="text-cyan-accent">AI Studio</span></Link></li>
-              <li><Link to="/kaie" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><span className="kognix-brand font-semibold">KOGNIX</span> <span className="text-cyan-accent">GenAI Engine</span></Link></li>
-              <li><Link to="/observability" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><span className="kognix-brand font-semibold">KOGNIX</span> <span className="text-cyan-accent">Analytics</span></Link></li>
-              <li><Link to="/kognix-intelligence" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><span className="kognix-brand font-semibold">KOGNIX</span> <span className="text-cyan-accent">Intelligence</span></Link></li>
+              <li><Link to="/kognix-ai-studio" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><KognixWordmark size="hero" /> <span className="text-cyan-accent">AI Studio</span></Link></li>
+              <li><Link to="/kaie" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><KognixWordmark size="hero" /> <span className="text-cyan-accent">GenAI Engine</span></Link></li>
+              <li><Link to="/observability" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><KognixWordmark size="hero" /> <span className="text-cyan-accent">Analytics</span></Link></li>
+              <li><Link to="/kognix-intelligence" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><KognixWordmark size="hero" /> <span className="text-cyan-accent">Intelligence</span></Link></li>
             </ul>
           </div>
 

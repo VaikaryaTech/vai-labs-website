@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { KognixWordmark } from "@/components/KognixWordmark";
 
 const CaseStudies = () => {
   const caseStudies = [
@@ -73,7 +74,7 @@ const CaseStudies = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              See how leading organizations are transforming their operations with <span className="kognix-brand font-semibold">KOGNIX</span>
+              See how leading organizations are transforming their operations with <KognixWordmark size="hero" />
             </p>
           </div>
         </div>
@@ -105,7 +106,7 @@ const CaseStudies = () => {
                           <span key={i}>
                             {part}
                             {i < arr.length - 1 && (
-                              <span className="kognix-brand font-semibold">KOGNIX</span>
+                              <KognixWordmark size="hero" />
                             )}
                           </span>
                         ))}
@@ -133,7 +134,7 @@ const CaseStudies = () => {
             <Card className="p-12 border-border bg-gradient-card">
               <h2 className="text-3xl font-bold mb-4">Ready to Write Your Success Story?</h2>
               <p className="text-muted-foreground mb-8">
-                Join these industry leaders and transform your business with <span className="kognix-brand font-semibold">KOGNIX</span>
+                Join these industry leaders and transform your business with <KognixWordmark size="hero" />
               </p>
               <Link to="/book-demo">
                 <Button size="lg" variant="hero">

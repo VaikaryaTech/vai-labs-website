@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import manufacturingImg from "@/assets/business-manufacturing.jpg";
 import { ManufacturingUseCases } from "@/components/usecases/ManufacturingUseCases";
+import { KognixWordmark } from "@/components/KognixWordmark";
 
 const ManufacturingEngineering = () => {
   const impactMetrics = [
@@ -91,7 +92,7 @@ const ManufacturingEngineering = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-              Optimize industrial operations with <span className="kognix-brand font-semibold">KOGNIX AI ENGINE</span>—from 
+              Optimize industrial operations with <KognixWordmark size="hero" suffix="AI" suffixClassName="font-semibold text-glow-cyan" />—from 
               predictive maintenance to engineering knowledge management with secure, on-premise intelligence.
             </p>
 

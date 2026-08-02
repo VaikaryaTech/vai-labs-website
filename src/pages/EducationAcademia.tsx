@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import educationImg from "@/assets/business-education.jpg";
 import { EducationUseCases } from "@/components/usecases/EducationUseCases";
+import { KognixWordmark } from "@/components/KognixWordmark";
 
 const EducationAcademia = () => {
   const impactMetrics = [
@@ -77,7 +78,7 @@ const EducationAcademia = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-              Transform learning and research with <span className="kognix-brand font-semibold">KOGNIX AI ENGINE</span>—delivering 
+              Transform learning and research with <KognixWordmark size="hero" suffix="AI" suffixClassName="font-semibold text-glow-cyan" />—delivering 
               personalized tutoring and accelerated research synthesis with curriculum-grounded intelligence.
             </p>
 

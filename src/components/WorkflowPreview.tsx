@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { GitBranch, Zap, MessageSquare, Database } from "lucide-react";
 import workflowImg from "@/assets/workflow-automation.jpg";
+import { KognixWordmark } from "@/components/KognixWordmark";
 
 export const WorkflowPreview = () => {
   return (
@@ -18,7 +19,7 @@ export const WorkflowPreview = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-8">
             <h2 className="text-4xl font-bold mb-4 text-foreground">
-              The <span className="kognix-brand">KOGNIX</span> Engine: <span className="kognix-brand">How Innovation Takes Form</span>
+              The <KognixWordmark size="hero" /> Engine: <span className="text-glow-cyan">How Innovation Takes Form</span>
             </h2>
             <p className="text-xl text-foreground/80">
               Our platform is engineered for speed, collaboration, and unmatched capability

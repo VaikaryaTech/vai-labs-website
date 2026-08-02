@@ -112,9 +112,7 @@ const ReferenceArchitecture = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">
-              <span className="kognix-brand">
-                KOGNIX
-              </span>{" "}
+              <KognixWordmark size="hero" />{" "}
               <span className="text-glow-cyan">Deployment Blueprints</span>
             </h2>
             <p className="text-muted-foreground">

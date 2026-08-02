@@ -5,6 +5,7 @@ import biosim from "@/assets/biosimilarity-showcase.png.asset.json";
 import deepresearch from "@/assets/deepresearch-showcase.png.asset.json";
 import studioDashboard from "@/assets/studio-dashboard.png.asset.json";
 import studioOrchestrator from "@/assets/studio-orchestrator.png.asset.json";
+import { KognixWordmark } from "@/components/KognixWordmark";
 
 const ASSET_BASE = "https://id-preview--45e7cdcb-ec4a-4532-9e54-30a521cfc568.lovable.app";
 const cdn = (u: string) => (u.startsWith("http") ? u : `${ASSET_BASE}${u}`);
@@ -29,9 +30,7 @@ interface Props {
 const DEFAULT_TITLE = (
   <>
     See{" "}
-    <span className="kognix-brand">
-      KOGNIX
-    </span>{" "}
+    <KognixWordmark size="hero" />{" "}
     <span className="text-glow-cyan">AI Ecosystem</span>, in Action
   </>
 );

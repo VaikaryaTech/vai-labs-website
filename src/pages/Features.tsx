@@ -8,6 +8,7 @@ import workflowAutomation from "@/assets/workflow-automation.jpg";
 import bgDataIngestion from "@/assets/bg-data-ingestion.jpg";
 import bgDeployment from "@/assets/bg-deployment.jpg";
 import bgChatExperience from "@/assets/bg-chat-experience.jpg";
+import { KognixWordmark } from "@/components/KognixWordmark";
 
 export default function Features() {
   const featureCategories = [
@@ -229,7 +230,7 @@ export default function Features() {
         <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background" />
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="kognix-brand">KOGNIX</span> AI Features
+            <KognixWordmark size="hero" /> AI Features
           </h1>
           <p className="text-xl text-muted-foreground">
             Enterprise-grade AI capabilities from intelligent retrieval to autonomous agents
@@ -267,7 +268,7 @@ export default function Features() {
                           <span key={i}>
                             {part}
                             {i < arr.length - 1 && (
-                              <span className="kognix-brand font-semibold">KOGNIX</span>
+                              <KognixWordmark size="hero" />
                             )}
                           </span>
                         ))}
@@ -286,7 +287,7 @@ export default function Features() {
                             <span key={i}>
                               {part}
                               {i < arr.length - 1 && (
-                                <span className="kognix-brand">KOGNIX</span>
+                                <KognixWordmark size="hero" />
                               )}
                             </span>
                           ))}
@@ -296,7 +297,7 @@ export default function Features() {
                             <span key={i}>
                               {part}
                               {i < arr.length - 1 && (
-                                <span className="kognix-brand font-semibold">KOGNIX</span>
+                                <KognixWordmark size="hero" />
                               )}
                             </span>
                           ))}
@@ -319,7 +320,7 @@ export default function Features() {
               <LayoutDashboard className="h-8 w-8 text-foreground" />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2"><span className="kognix-brand">KOGNIX</span> Dashboard</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-2"><KognixWordmark size="hero" /> Dashboard</h2>
               <p className="text-lg text-muted-foreground">Your Command Center for Intelligent AI Operations</p>
             </div>
           </div>
@@ -327,7 +328,7 @@ export default function Features() {
           <div className="space-y-12">
             <div className="prose prose-lg max-w-none text-muted-foreground mb-8">
               <p className="text-foreground/90 leading-relaxed">
-                The <span className="kognix-brand font-semibold">KOGNIX</span> Dashboard is a unified control center designed to give enterprises complete visibility into their AI ecosystem — from data ingestion to model orchestration. Every tile, chart, and insight is crafted for precision, speed, and transparency.
+                The <KognixWordmark size="hero" /> Dashboard is a unified control center designed to give enterprises complete visibility into their AI ecosystem — from data ingestion to model orchestration. Every tile, chart, and insight is crafted for precision, speed, and transparency.
               </p>
             </div>
 
@@ -404,7 +405,7 @@ export default function Features() {
               Ready to Experience These Features?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              See how <span className="kognix-brand font-semibold">KOGNIX</span>'s comprehensive capabilities can transform your enterprise AI applications
+              See how <KognixWordmark size="hero" />'s comprehensive capabilities can transform your enterprise AI applications
             </p>
             <Link 
               to="/book-demo"

@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import telecomImg from "@/assets/business-telecom.jpg";
 import { TelecomUseCases } from "@/components/usecases/TelecomUseCases";
+import { KognixWordmark } from "@/components/KognixWordmark";
 
 const TelecomUtilities = () => {
   const impactMetrics = [
@@ -77,7 +78,7 @@ const TelecomUtilities = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-              Empower field operations and customer service with <span className="kognix-brand font-semibold">KOGNIX AI ENGINE</span>—delivering 
+              Empower field operations and customer service with <KognixWordmark size="hero" suffix="AI" suffixClassName="font-semibold text-glow-cyan" />—delivering 
               instant technical knowledge and personalized support at scale.
             </p>
 

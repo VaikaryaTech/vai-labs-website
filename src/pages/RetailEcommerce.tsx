@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import retailImg from "@/assets/business-retail.jpg";
 import { RetailUseCases } from "@/components/usecases/RetailUseCases";
+import { KognixWordmark } from "@/components/KognixWordmark";
 
 const RetailEcommerce = () => {
   const impactMetrics = [
@@ -84,7 +85,7 @@ const RetailEcommerce = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-              Revolutionize retail experiences with <span className="kognix-brand font-semibold">KOGNIX AI ENGINE</span>—from 
+              Revolutionize retail experiences with <KognixWordmark size="hero" suffix="AI" suffixClassName="font-semibold text-glow-cyan" />—from 
               intelligent product discovery to personalized customer service at scale.
             </p>
 

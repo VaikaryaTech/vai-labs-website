@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import financeImg from "@/assets/business-finance.jpg";
 import { FinanceUseCases } from "@/components/usecases/FinanceUseCases";
+import { KognixWordmark } from "@/components/KognixWordmark";
 
 const FinanceBanking = () => {
   const impactMetrics = [
@@ -98,7 +99,7 @@ const FinanceBanking = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-              Transform financial operations with <span className="kognix-brand font-semibold">KOGNIX AI ENGINE</span>—from 
+              Transform financial operations with <KognixWordmark size="hero" suffix="AI" suffixClassName="font-semibold text-glow-cyan" />—from 
               regulatory compliance and fraud detection to investment research with auditable, source-grounded intelligence.
             </p>
 

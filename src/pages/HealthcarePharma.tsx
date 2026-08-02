@@ -16,6 +16,7 @@ import {
 import healthcareImg from "@/assets/business-healthcare.jpg";
 import { BioPharmaUseCases } from "@/components/healthcare/BioPharmaUseCases";
 import { ProductShowcase3D } from "@/components/ProductShowcase3D";
+import { KognixWordmark } from "@/components/KognixWordmark";
 
 const HealthcarePharma = () => {
   const impactMetrics = [
@@ -92,7 +93,7 @@ const HealthcarePharma = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-              Transform healthcare operations with <span className="kognix-brand font-semibold">KOGNIX AI ENGINE</span>—from 
+              Transform healthcare operations with <KognixWordmark size="hero" suffix="AI" suffixClassName="font-semibold text-glow-cyan" />—from 
               clinical decision support to GxP compliance with auditable, source-grounded intelligence for highly regulated environments.
             </p>
 

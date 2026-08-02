@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import legalImg from "@/assets/business-legal.jpg";
 import { LegalUseCases } from "@/components/usecases/LegalUseCases";
+import { KognixWordmark } from "@/components/KognixWordmark";
 
 const LegalCompliance = () => {
   const impactMetrics = [
@@ -90,7 +91,7 @@ const LegalCompliance = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-              Transform legal operations with <span className="kognix-brand font-semibold">KOGNIX AI ENGINE</span>—from 
+              Transform legal operations with <KognixWordmark size="hero" suffix="AI" suffixClassName="font-semibold text-glow-cyan" />—from 
               accelerating e-discovery and contract review to ensuring regulatory compliance with auditable, source-grounded intelligence.
             </p>
 

@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import bgIntelligence from "@/assets/bg-intelligence.jpg";
+import { KognixWordmark } from "@/components/KognixWordmark";
 
 const KognixIntelligence = () => {
   const coreCapabilities = [
@@ -96,7 +97,7 @@ const KognixIntelligence = () => {
             </Badge>
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              <span className="kognix-brand">KOGNIX</span>{" "}
+              <KognixWordmark size="hero" />{" "}
               <span className="text-glow-cyan">Intelligence</span>
             </h1>
             
@@ -185,7 +186,7 @@ const KognixIntelligence = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              How <span className="kognix-brand">KOGNIX</span>{" "}
+              How <KognixWordmark size="hero" />{" "}
               <span className="text-glow-cyan">Intelligence</span> Works
             </h2>
           </div>
@@ -312,7 +313,7 @@ const KognixIntelligence = () => {
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <h3 className="text-2xl font-bold mb-2">
-                    <span className="kognix-brand">KOGNIX</span>{" "}
+                    <KognixWordmark size="hero" />{" "}
                     <span className="text-glow-cyan">Intelligence</span> Product Brief
                   </h3>
                   <p className="text-muted-foreground">
@@ -341,7 +342,7 @@ const KognixIntelligence = () => {
           </h2>
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
             Join leading enterprises using{" "}
-            <span className="kognix-brand font-semibold">KOGNIX</span>{" "}
+            <KognixWordmark size="hero" />{" "}
             <span className="text-glow-cyan font-semibold">Intelligence</span>{" "}
             to deploy and scale AI with confidence.
           </p>

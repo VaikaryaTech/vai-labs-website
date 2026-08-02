@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Target, Users, Shield, Zap } from "lucide-react";
+import { KognixWordmark } from "@/components/KognixWordmark";
 
 const About = () => {
   const values = [
@@ -60,7 +61,7 @@ const About = () => {
                 too expensive, or didn't adequately address security and privacy concerns.
               </p>
               <p>
-                Our team of AI researchers, engineers, and business experts came together to create <span className="kognix-brand font-semibold">KOGNIX</span> - 
+                Our team of AI researchers, engineers, and business experts came together to create <KognixWordmark size="hero" /> - 
                 a suite of Generative Artificial Intelligence, Enterprise products that combines cutting-edge technology with practical business applications. 
                 We believe that every organization should have access to powerful AI tools that enhance decision-making, 
                 improve efficiency, and drive innovation.

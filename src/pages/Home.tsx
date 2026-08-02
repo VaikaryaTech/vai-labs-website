@@ -50,20 +50,46 @@ const Home = () => {
             </div>
 
 
-            <h1 className="text-6xl lg:text-8xl font-bold leading-tight">
-              Unlock Tomorrow's Potential
-              <br />
-              <span className="bg-gradient-accent bg-clip-text text-transparent">
-                Securely, Locally, Intelligently
-              </span>
+            <h1 className="text-5xl lg:text-8xl font-bold leading-tight">
+              AI Without Compromise
             </h1>
+            <p className="text-2xl lg:text-4xl font-bold text-glow-cyan tracking-wide">
+              Intelligence. Sovereignty. Control.
+            </p>
             
-            <p className="text-xl lg:text-2xl text-foreground/70 leading-relaxed max-w-4xl mx-auto font-bold">
-              VAI LABS delivers enterprise-grade Generative AI, built for your environment. Secure your innovation: Our engine runs entirely within your infrastructure—guaranteeing no cloud data leakage and zero internet dependency.
+            <p className="text-xl lg:text-2xl text-foreground/70 leading-relaxed max-w-4xl mx-auto">
+              VAI Labs builds enterprise-grade Generative AI for organizations where data, intellectual property, security, and control are non-negotiable.
             </p>
 
             <p className="text-lg text-foreground/70 leading-relaxed max-w-3xl mx-auto">
-              Embrace the next generation of AI that is secure, compliant, and fully scalable. Enhance innovation, automate complex workflows, and accelerate decision intelligence—all strictly within your trusted environment.
+              Deploy advanced AI entirely within your own infrastructure—without cloud dependency, without internet access, and without exposing your most valuable data to external AI platforms. From intelligent knowledge systems to complex workflow automation and decision intelligence, VAI Labs enables enterprises to operationalize AI at scale while maintaining complete control over their data and environment.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto pt-4">
+              <div className="glass p-6 rounded-xl text-left">
+                <h3 className="text-lg font-bold text-primary mb-2">100% Data Sovereignty</h3>
+                <p className="text-sm text-muted-foreground">Your data stays within your infrastructure. Your intellectual property remains yours.</p>
+              </div>
+              <div className="glass p-6 rounded-xl text-left">
+                <h3 className="text-lg font-bold text-emerald-400 mb-2">Air-Gapped by Design</h3>
+                <p className="text-sm text-muted-foreground">Run enterprise AI in isolated, high-security environments with zero internet dependency.</p>
+              </div>
+              <div className="glass p-6 rounded-xl text-left">
+                <h3 className="text-lg font-bold text-cyan-400 mb-2">Enterprise-Grade Intelligence</h3>
+                <p className="text-sm text-muted-foreground">Transform proprietary data into actionable intelligence, automate complex processes, and accelerate innovation.</p>
+              </div>
+              <div className="glass p-6 rounded-xl text-left">
+                <h3 className="text-lg font-bold text-secondary mb-2">Built to Scale</h3>
+                <p className="text-sm text-muted-foreground">From focused AI applications to enterprise-wide deployments, scale intelligence across your organization without compromising control.</p>
+              </div>
+            </div>
+
+            <p className="text-xl lg:text-2xl text-foreground/80 leading-relaxed max-w-4xl mx-auto pt-4">
+              <span className="font-bold">The Future of Enterprise AI Is Private.</span>
+            </p>
+
+            <p className="text-lg text-foreground/70 leading-relaxed max-w-3xl mx-auto">
+              Organizations should not have to choose between AI innovation and data sovereignty. VAI Labs brings the power of Generative AI into the environments where your most critical work happens—securely, privately, and under your complete control. Welcome to AI on your terms.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center pt-8">

@@ -1,6 +1,6 @@
  import { Card } from "@/components/ui/card";
+ import { KognixWordmark } from "@/components/KognixWordmark";
  import { 
-import { KognixWordmark } from "@/components/KognixWordmark";
    LayoutDashboard, 
    Eye, 
    Activity, 

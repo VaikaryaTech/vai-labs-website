@@ -153,6 +153,8 @@ const Home = () => {
 
 
       <Footer />
+      <KognixOrbAssistant />
+
     </div>
   );
 };

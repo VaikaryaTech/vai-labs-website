@@ -116,7 +116,7 @@ export const BackgroundMusic = () => {
         onClick={handleToggle}
         aria-label={isMuted ? "Unmute background music" : "Mute background music"}
         title={isMuted ? "Unmute background music" : "Mute background music"}
-        className="fixed bottom-5 right-5 z-[60] h-11 w-11 rounded-full border border-border bg-background/70 backdrop-blur-md flex items-center justify-center text-foreground/80 hover:text-foreground hover:bg-background/90 shadow-md transition-colors"
+        className="fixed bottom-5 left-5 z-[60] h-11 w-11 rounded-full border border-border bg-background/70 backdrop-blur-md flex items-center justify-center text-foreground/80 hover:text-foreground hover:bg-background/90 shadow-md transition-colors"
       >
         {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
       </button>

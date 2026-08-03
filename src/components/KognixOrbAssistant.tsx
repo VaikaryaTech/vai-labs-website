@@ -110,7 +110,7 @@ export const KognixOrbAssistant = () => {
     <>
       {/* Orb */}
       <div
-        className={`fixed z-50 right-4 md:right-6 transition-all duration-700 ease-out ${
+        className={`fixed z-[70] right-4 md:right-6 transition-all duration-700 ease-out ${
           docked ? "bottom-4 md:bottom-6" : "bottom-16 md:bottom-24"
         } ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6 pointer-events-none"}`}
       >
@@ -144,7 +144,7 @@ export const KognixOrbAssistant = () => {
         <div
           role="dialog"
           aria-label="KOGNIX Assistant"
-          className="fixed z-50 bottom-0 right-0 w-full h-[80vh] sm:bottom-6 sm:right-6 sm:h-[32rem] sm:w-[24rem] glass rounded-t-2xl sm:rounded-2xl flex flex-col overflow-hidden animate-scale-in"
+          className="fixed z-[70] bottom-0 right-0 w-full h-[80vh] sm:bottom-6 sm:right-6 sm:h-[32rem] sm:w-[24rem] glass rounded-t-2xl sm:rounded-2xl flex flex-col overflow-hidden animate-scale-in"
         >
           <header className="flex items-center justify-between gap-2 px-4 py-3 border-b border-white/10">
             <div className="flex items-center gap-2">

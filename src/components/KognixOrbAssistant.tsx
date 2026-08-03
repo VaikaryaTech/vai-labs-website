@@ -144,7 +144,8 @@ export const KognixOrbAssistant = () => {
         <div
           role="dialog"
           aria-label="KOGNIX Assistant"
-          className="fixed z-[70] bottom-0 right-0 w-full h-[80vh] sm:bottom-6 sm:right-6 sm:h-[32rem] sm:w-[24rem] glass rounded-t-2xl sm:rounded-2xl flex flex-col overflow-hidden animate-scale-in"
+          style={{ position: "fixed" }}
+          className="z-[70] bottom-0 left-0 right-0 w-full h-[80vh] sm:left-auto sm:bottom-6 sm:right-6 sm:h-[32rem] sm:w-[24rem] glass rounded-t-2xl sm:rounded-2xl flex flex-col overflow-hidden animate-scale-in"
         >
           <header className="flex items-center justify-between gap-2 px-4 py-3 border-b border-white/10">
             <div className="flex items-center gap-2">

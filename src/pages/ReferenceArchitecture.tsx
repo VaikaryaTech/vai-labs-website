@@ -5,8 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ShieldOff, WifiOff, Lock, AppWindow, Layers, Cpu, Database, BarChart3, ArrowRight, Download } from "lucide-react";
 import { KognixWordmark } from "@/components/KognixWordmark";
-import dockerPdf from "@/assets/kognix-docker-ra.pdf.asset.json";
-import k8sPdf from "@/assets/kognix-k8s-ra.pdf.asset.json";
 
 const diagrams = [
   {
@@ -14,7 +12,7 @@ const diagrams = [
     description:
       "Single-host to multi-host Docker deployment: KOGNIX AI Studio, Intelligence and Analytics stacks with shared networks, persistent volumes and air-gapped operations.",
     image: "/architecture/kognix-docker-architecture.png",
-    pdf: dockerPdf.url,
+    pdf: "/architecture/kognix-docker-reference-architecture.pdf",
     pdfName: "KOGNIX-Docker-Reference-Architecture.pdf",
   },
   {
@@ -22,7 +20,7 @@ const diagrams = [
     description:
       "Namespace-isolated Kubernetes topology with ingress, GPU inference pods, data and security namespaces, plus the offline update flow for sovereign clusters.",
     image: "/architecture/kognix-kubernetes-architecture.png",
-    pdf: k8sPdf.url,
+    pdf: "/architecture/kognix-kubernetes-reference-architecture.pdf",
     pdfName: "KOGNIX-Kubernetes-Reference-Architecture.pdf",
   },
 ];

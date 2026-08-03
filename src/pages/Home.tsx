@@ -9,6 +9,7 @@ import { ParticleNetwork } from "@/components/ParticleNetwork";
 import { CyberGrid } from "@/components/CyberGrid";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { StatsCounter } from "@/components/StatsCounter";
+import { KognixOrbAssistant } from "@/components/KognixOrbAssistant";
 
 
 const Home = () => {
@@ -152,6 +153,8 @@ const Home = () => {
 
 
       <Footer />
+      <KognixOrbAssistant />
+
     </div>
   );
 };

@@ -70,15 +70,15 @@ const Home = () => {
                 <p className="text-sm text-muted-foreground">Your data stays within your infrastructure. Your intellectual property remains yours.</p>
               </div>
               <div className="glass p-6 rounded-xl text-left">
-                <h3 className="text-lg font-bold text-emerald-400 mb-2">Air-Gapped by Design</h3>
+                <h3 className="text-lg font-bold text-accent mb-2">Air-Gapped by Design</h3>
                 <p className="text-sm text-muted-foreground">Run enterprise AI in isolated, high-security environments with zero internet dependency.</p>
               </div>
               <div className="glass p-6 rounded-xl text-left">
-                <h3 className="text-lg font-bold text-cyan-400 mb-2">Enterprise-Grade Intelligence</h3>
+                <h3 className="text-lg font-bold text-glow-cyan mb-2">Enterprise-Grade Intelligence</h3>
                 <p className="text-sm text-muted-foreground">Transform proprietary data into actionable intelligence, automate complex processes, and accelerate innovation.</p>
               </div>
               <div className="glass p-6 rounded-xl text-left">
-                <h3 className="text-lg font-bold text-secondary mb-2">Built to Scale</h3>
+                <h3 className="text-lg font-bold text-navy mb-2">Built to Scale</h3>
                 <p className="text-sm text-muted-foreground">From focused AI applications to enterprise-wide deployments, scale intelligence across your organization without compromising control.</p>
               </div>
             </div>

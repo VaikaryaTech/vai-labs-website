@@ -9,7 +9,7 @@ import { ParticleNetwork } from "@/components/ParticleNetwork";
 import { CyberGrid } from "@/components/CyberGrid";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { StatsCounter } from "@/components/StatsCounter";
-import { KognixOrbAssistant } from "@/components/KognixOrbAssistant";
+import { HeroOrb } from "@/components/HeroOrb";
 
 
 const Home = () => {
@@ -103,6 +103,11 @@ const Home = () => {
               <img src={indiaFlag} alt="India Flag" className="h-8 w-auto rounded shadow-md" />
               <span className="text-lg font-semibold text-muted-foreground">Proudly Made in India</span>
             </div>
+
+            <div className="flex justify-center pt-4">
+              <HeroOrb />
+            </div>
+
           </div>
         </div>
       </section>
@@ -153,7 +158,8 @@ const Home = () => {
 
 
       <Footer />
-      <KognixOrbAssistant />
+
+
 
     </div>
   );

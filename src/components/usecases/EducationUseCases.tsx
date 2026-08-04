@@ -14,7 +14,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Academic Affairs and Teaching",
     icon: GraduationCap,
-    color: "text-purple-400",
+    color: "text-purple-700 dark:text-purple-400",
     useCases: [
       {
         title: "Personalized Tutoring and Study Aid",
@@ -39,7 +39,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Research and Innovation",
     icon: FlaskConical,
-    color: "text-blue-400",
+    color: "text-blue-700 dark:text-blue-400",
     useCases: [
       {
         title: "Research Data Summarization and Literature Review",
@@ -64,7 +64,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Library and Information Services",
     icon: BookOpen,
-    color: "text-green-400",
+    color: "text-green-700 dark:text-green-400",
     useCases: [
       {
         title: "Intelligent Library Search and Discovery",
@@ -114,7 +114,7 @@ const departments: DepartmentSection[] = [
   {
     department: "IT and Educational Technology",
     icon: Monitor,
-    color: "text-cyan-400",
+    color: "text-cyan-700 dark:text-cyan-400",
     useCases: [
       {
         title: "Learning Management System (LMS) Support",

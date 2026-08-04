@@ -14,7 +14,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Regulatory and Compliance",
     icon: Shield,
-    color: "text-green-400",
+    color: "text-green-700 dark:text-green-400",
     useCases: [
       {
         title: "Regulatory Compliance Copilot",
@@ -45,7 +45,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Investment and Research",
     icon: TrendingUp,
-    color: "text-blue-400",
+    color: "text-blue-700 dark:text-blue-400",
     useCases: [
       {
         title: "Investment Research Assistant",
@@ -120,7 +120,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Internal Knowledge and HR",
     icon: Users,
-    color: "text-purple-400",
+    color: "text-purple-700 dark:text-purple-400",
     useCases: [
       {
         title: "Internal Knowledge Base for Staff",
@@ -139,7 +139,7 @@ const departments: DepartmentSection[] = [
   {
     department: "IT and Technology",
     icon: Monitor,
-    color: "text-cyan-400",
+    color: "text-cyan-700 dark:text-cyan-400",
     useCases: [
       {
         title: "Core Banking System Troubleshooting",

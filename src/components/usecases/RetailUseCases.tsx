@@ -14,7 +14,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Merchandising and Product Management",
     icon: ShoppingCart,
-    color: "text-purple-400",
+    color: "text-purple-700 dark:text-purple-400",
     useCases: [
       {
         title: "Intelligent Product Discovery and Search",
@@ -39,7 +39,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Customer Service and Experience",
     icon: Headphones,
-    color: "text-blue-400",
+    color: "text-blue-700 dark:text-blue-400",
     useCases: [
       {
         title: "Contextual Customer Support Agent",
@@ -64,7 +64,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Supply Chain and Logistics",
     icon: Truck,
-    color: "text-green-400",
+    color: "text-green-700 dark:text-green-400",
     useCases: [
       {
         title: "Supplier Documentation and Compliance Verification",
@@ -108,7 +108,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Marketing and Analytics",
     icon: TrendingUp,
-    color: "text-cyan-400",
+    color: "text-cyan-700 dark:text-cyan-400",
     useCases: [
       {
         title: "Customer Insights and Behavior Analysis",

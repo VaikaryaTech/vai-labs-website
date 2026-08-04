@@ -117,7 +117,7 @@ export const HeroOrb = () => {
           }}
           className={`kognix-orb relative shrink-0 rounded-full h-11 w-11 ${
             speaking ? "kognix-orb-speaking" : ""
-          } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
+          } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
         >
           <span className="sr-only">KOGNIX Assistant</span>
           <span className="kognix-orb-core" aria-hidden="true" />
@@ -136,7 +136,7 @@ export const HeroOrb = () => {
           aria-label="KOGNIX Assistant"
           className="absolute top-14 left-0 z-50 w-[19rem] sm:w-[22rem] max-h-[22rem] glass rounded-2xl flex flex-col overflow-hidden animate-scale-in text-left"
         >
-          <header className="flex items-center justify-between gap-2 px-3 py-2 border-b border-white/10">
+          <header className="flex items-center justify-between gap-2 px-3 py-2 border-b border-current/10">
             <span className="text-sm font-semibold">
               <KognixWordmark size="sm" suffix="Assistant" />
             </span>
@@ -144,7 +144,7 @@ export const HeroOrb = () => {
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Close KOGNIX Assistant"
-              className="rounded-md p-1 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+              className="rounded-md p-1 hover:bg-current/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
               <X className="h-4 w-4" />
             </button>
@@ -167,7 +167,7 @@ export const HeroOrb = () => {
             )}
           </div>
 
-          <div className="border-t border-white/10 p-2 space-y-1.5">
+          <div className="border-t border-current/10 p-2 space-y-1.5">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -183,13 +183,13 @@ export const HeroOrb = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about products…"
-                className="h-8 text-xs bg-white/5 border-white/15 text-current placeholder:text-current/50"
+                className="h-8 text-xs bg-current/5 border-current/20 text-current placeholder:text-current/50"
               />
               <Button type="submit" size="icon" className="h-8 w-8" aria-label="Send message" disabled={!input.trim()}>
                 <Send className="h-3.5 w-3.5" />
               </Button>
             </form>
-            <Link to="/book-demo" className="block text-center text-[0.7rem] text-cyan-300 hover:underline">
+            <Link to="/book-demo" className="block text-center text-[0.7rem] text-accent hover:underline">
               Schedule a demo →
             </Link>
           </div>

@@ -38,7 +38,7 @@ const departmentSections: DepartmentSection[] = [
   {
     department: "R&D and Innovation",
     icon: FlaskConical,
-    color: "text-purple-400",
+    color: "text-purple-700 dark:text-purple-400",
     useCases: [
       {
         title: "Research Efficiency — Semantic Archive Search",
@@ -87,7 +87,7 @@ const departmentSections: DepartmentSection[] = [
   {
     department: "Quality Assurance and Control",
     icon: ShieldCheck,
-    color: "text-green-400",
+    color: "text-green-700 dark:text-green-400",
     useCases: [
       {
         title: "Audit — Equipment Calibration Verification",
@@ -130,7 +130,7 @@ const departmentSections: DepartmentSection[] = [
   {
     department: "Regulatory Affairs and Compliance",
     icon: FileSearch,
-    color: "text-blue-400",
+    color: "text-blue-700 dark:text-blue-400",
     useCases: [
       {
         title: "Hazard — SDS Data Extraction and Indexing",
@@ -234,7 +234,7 @@ const departmentSections: DepartmentSection[] = [
   {
     department: "IT and Global Business Services (GBS)",
     icon: Monitor,
-    color: "text-cyan-400",
+    color: "text-cyan-700 dark:text-cyan-400",
     useCases: [
       {
         title: "Policy — Region-Specific Policy Access",
@@ -289,7 +289,7 @@ const departmentSections: DepartmentSection[] = [
   {
     department: "Human Resources (HR)",
     icon: Users,
-    color: "text-pink-400",
+    color: "text-pink-700 dark:text-pink-400",
     useCases: [
       {
         title: "Safety — Chemical Safety Policy Access",
@@ -338,7 +338,7 @@ const departmentSections: DepartmentSection[] = [
   {
     department: "Sales and Market Development",
     icon: TrendingUp,
-    color: "text-amber-400",
+    color: "text-amber-700 dark:text-amber-400",
     useCases: [
       {
         title: "Technical Knowledge — Instant Product Consultation",
@@ -393,7 +393,7 @@ const departmentSections: DepartmentSection[] = [
   {
     department: "Customer Support and Technical Service",
     icon: Headphones,
-    color: "text-teal-400",
+    color: "text-teal-700 dark:text-teal-400",
     useCases: [
       {
         title: "Troubleshooting — Technical Inquiry Resolution",
@@ -464,16 +464,16 @@ const UseCaseCard = ({ useCase }: { useCase: UseCase }) => (
 
       <div>
         <div className="flex items-center gap-1.5 mb-1">
-          <Lightbulb className="h-3.5 w-3.5 text-cyan-400 shrink-0" />
-          <span className="font-medium text-cyan-400/90 text-xs uppercase tracking-wide">KOGNIX AI</span>
+          <Lightbulb className="h-3.5 w-3.5 text-cyan-700 dark:text-cyan-400 shrink-0" />
+          <span className="font-medium text-cyan-700/90 dark:text-cyan-400/90 text-xs uppercase tracking-wide">KOGNIX AI</span>
         </div>
         <p className="text-muted-foreground leading-relaxed pl-5">{useCase.solution}</p>
       </div>
 
       <div>
         <div className="flex items-center gap-1.5 mb-1">
-          <CheckCircle className="h-3.5 w-3.5 text-green-400 shrink-0" />
-          <span className="font-medium text-green-400/90 text-xs uppercase tracking-wide">Value Delivered</span>
+          <CheckCircle className="h-3.5 w-3.5 text-green-700 dark:text-green-400 shrink-0" />
+          <span className="font-medium text-green-700/90 dark:text-green-400/90 text-xs uppercase tracking-wide">Value Delivered</span>
         </div>
         <p className="text-muted-foreground leading-relaxed pl-5">{useCase.value}</p>
       </div>

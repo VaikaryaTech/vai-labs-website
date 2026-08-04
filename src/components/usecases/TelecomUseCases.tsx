@@ -14,7 +14,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Network Engineering and Operations",
     icon: Radio,
-    color: "text-blue-400",
+    color: "text-blue-700 dark:text-blue-400",
     useCases: [
       {
         title: "Network Configuration and Troubleshooting Support",
@@ -39,7 +39,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Customer Service and Support",
     icon: Headphones,
-    color: "text-green-400",
+    color: "text-green-700 dark:text-green-400",
     useCases: [
       {
         title: "Billing and Service Inquiry Resolution",
@@ -64,7 +64,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Regulatory and Compliance",
     icon: Shield,
-    color: "text-purple-400",
+    color: "text-purple-700 dark:text-purple-400",
     useCases: [
       {
         title: "Spectrum Licensing and Regulatory Compliance",
@@ -108,7 +108,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Enterprise and B2B Sales",
     icon: CreditCard,
-    color: "text-cyan-400",
+    color: "text-cyan-700 dark:text-cyan-400",
     useCases: [
       {
         title: "Enterprise Solution Design and Proposal Support",

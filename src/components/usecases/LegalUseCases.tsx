@@ -12,7 +12,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Litigation and Dispute Resolution",
     icon: Scale,
-    color: "text-purple-400",
+    color: "text-purple-700 dark:text-purple-400",
     useCases: [
       {
         title: "Case Law Research and Precedent Discovery",
@@ -37,7 +37,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Corporate and Transactional Law",
     icon: Briefcase,
-    color: "text-blue-400",
+    color: "text-blue-700 dark:text-blue-400",
     useCases: [
       {
         title: "Contract Drafting and Clause Analysis",
@@ -62,7 +62,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Compliance and Regulatory Affairs",
     icon: Shield,
-    color: "text-green-400",
+    color: "text-green-700 dark:text-green-400",
     useCases: [
       {
         title: "Regulatory Change Monitoring and Impact Assessment",
@@ -93,7 +93,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Knowledge Management and Legal Operations",
     icon: FileSearch,
-    color: "text-cyan-400",
+    color: "text-cyan-700 dark:text-cyan-400",
     useCases: [
       {
         title: "Institutional Knowledge Preservation",

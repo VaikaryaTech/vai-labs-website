@@ -147,7 +147,7 @@ export const ReadinessReport = ({ sections, onDownload, onReset }: Props) => {
             </p>
             <div className="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
               {[
-                { label: "In place", value: yesCount, icon: CheckCircle2, cls: "text-emerald-400" },
+                { label: "In place", value: yesCount, icon: CheckCircle2, cls: "text-emerald-700 dark:text-emerald-400" },
                 { label: "Gaps", value: noCount, icon: AlertTriangle, cls: "text-orange-400" },
                 { label: "Open", value: unanswered, icon: CircleDashed, cls: "text-muted-foreground" },
               ].map((m) => (
@@ -219,11 +219,11 @@ export const ReadinessReport = ({ sections, onDownload, onReset }: Props) => {
       {/* Strengths & gaps */}
       <div className="grid md:grid-cols-2 gap-8">
         <Card className="p-6">
-          <h3 className="text-xl font-bold mb-4 text-emerald-400">Top Strengths</h3>
+          <h3 className="text-xl font-bold mb-4 text-emerald-700 dark:text-emerald-400">Top Strengths</h3>
           <ul className="space-y-3">
             {strengths.map((s) => (
               <li key={s.id} className="flex items-start gap-3">
-                <CheckCircle2 className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="h-5 w-5 text-emerald-700 dark:text-emerald-400 shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold">{s.title}</p>
                   <p className="text-sm text-muted-foreground">{s.score}% of controls in place</p>
@@ -322,7 +322,7 @@ export const ReadinessReport = ({ sections, onDownload, onReset }: Props) => {
                 {s.questions.map((q) => (
                   <li key={q.id} className="flex items-start gap-3 text-sm">
                     {q.answer === "yes" ? (
-                      <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-emerald-700 dark:text-emerald-400 shrink-0 mt-0.5" />
                     ) : q.answer === "no" ? (
                       <AlertTriangle className="h-4 w-4 text-orange-400 shrink-0 mt-0.5" />
                     ) : (

@@ -39,7 +39,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Maintenance and Engineering",
     icon: Wrench,
-    color: "text-blue-400",
+    color: "text-blue-700 dark:text-blue-400",
     useCases: [
       {
         title: "Equipment Troubleshooting and Diagnostic Support",
@@ -64,7 +64,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Quality Assurance and Control",
     icon: Shield,
-    color: "text-green-400",
+    color: "text-green-700 dark:text-green-400",
     useCases: [
       {
         title: "Quality Standard and Specification Compliance",
@@ -89,7 +89,7 @@ const departments: DepartmentSection[] = [
   {
     department: "R&D and Design Engineering",
     icon: FlaskConical,
-    color: "text-purple-400",
+    color: "text-purple-700 dark:text-purple-400",
     useCases: [
       {
         title: "Engineering Knowledge Portal and Design Reuse",
@@ -114,7 +114,7 @@ const departments: DepartmentSection[] = [
   {
     department: "Supply Chain and Procurement",
     icon: Truck,
-    color: "text-cyan-400",
+    color: "text-cyan-700 dark:text-cyan-400",
     useCases: [
       {
         title: "Supplier Contract and Terms Management",

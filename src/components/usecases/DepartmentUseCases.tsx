@@ -42,16 +42,16 @@ const UseCaseCard = ({ useCase }: { useCase: UseCase }) => (
 
       <div>
         <div className="flex items-center gap-1.5 mb-1">
-          <Lightbulb className="h-3.5 w-3.5 text-cyan-400 shrink-0" />
-          <span className="font-medium text-cyan-400/90 text-xs uppercase tracking-wide">KOGNIX AI</span>
+          <Lightbulb className="h-3.5 w-3.5 text-cyan-700 dark:text-cyan-400 shrink-0" />
+          <span className="font-medium text-cyan-700/90 dark:text-cyan-400/90 text-xs uppercase tracking-wide">KOGNIX AI</span>
         </div>
         <p className="text-muted-foreground leading-relaxed pl-5">{useCase.solution}</p>
       </div>
 
       <div>
         <div className="flex items-center gap-1.5 mb-1">
-          <CheckCircle className="h-3.5 w-3.5 text-green-400 shrink-0" />
-          <span className="font-medium text-green-400/90 text-xs uppercase tracking-wide">Value Delivered</span>
+          <CheckCircle className="h-3.5 w-3.5 text-green-700 dark:text-green-400 shrink-0" />
+          <span className="font-medium text-green-700/90 dark:text-green-400/90 text-xs uppercase tracking-wide">Value Delivered</span>
         </div>
         <p className="text-muted-foreground leading-relaxed pl-5">{useCase.value}</p>
       </div>

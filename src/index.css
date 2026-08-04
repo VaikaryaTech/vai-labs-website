@@ -67,6 +67,13 @@
     --glow-primary: 0 8px 30px hsl(24 95% 53% / 0.2);
     --glow-secondary: 0 8px 30px hsl(174 60% 45% / 0.15);
     --cyan-accent: 174 60% 45%;
+    /* Readable "glow" ink colors for light mode (AA on white) */
+    --glow-cyan-ink: 186 75% 27%;
+    --glow-sun-ink: 32 95% 40%;
+    --neon-1: 186 75% 30%;
+    --neon-2: 160 70% 30%;
+    --neon-3: 200 80% 34%;
+
     
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 220 50% 15%;

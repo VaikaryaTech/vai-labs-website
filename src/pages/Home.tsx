@@ -10,6 +10,8 @@ import { CyberGrid } from "@/components/CyberGrid";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { StatsCounter } from "@/components/StatsCounter";
 import { HeroOrb } from "@/components/HeroOrb";
+import { HeroHUD } from "@/components/HeroHUD";
+
 
 
 const Home = () => {

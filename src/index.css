@@ -582,9 +582,97 @@
     50% { height: 100%; opacity: 1; }
   }
 
+  /* ---------- Hero HUD / hologram layer ---------- */
+  .hero-hud { color: hsl(190 90% 45%); opacity: 0.5; }
+  .dark .hero-hud { color: hsl(190 100% 70%); opacity: 0.42; }
+
+  .hero-hud-grid {
+    background-image:
+      linear-gradient(to right, currentColor 1px, transparent 1px),
+      linear-gradient(to bottom, currentColor 1px, transparent 1px);
+    background-size: 72px 72px;
+    opacity: 0.1;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 78%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 78%);
+    animation: hero-hud-pan 40s linear infinite;
+  }
+  @keyframes hero-hud-pan {
+    from { background-position: 0 0; }
+    to { background-position: 72px 72px; }
+  }
+
+  .hero-hud-sweep {
+    background: linear-gradient(90deg, transparent, currentColor, transparent);
+    opacity: 0.05;
+    animation: hero-hud-sweep 14s ease-in-out infinite;
+  }
+  @keyframes hero-hud-sweep {
+    0% { transform: translateX(-120%); }
+    50% { transform: translateX(320%); }
+    100% { transform: translateX(-120%); }
+  }
+
+  .hero-hud-bracket {
+    border-color: currentColor;
+    opacity: 0.28;
+    animation: hero-hud-fade 6s ease-in-out infinite;
+  }
+  @keyframes hero-hud-fade {
+    0%, 100% { opacity: 0.14; }
+    50% { opacity: 0.34; }
+  }
+
+  .hero-hud-net line {
+    stroke: currentColor;
+    stroke-width: 1;
+    opacity: 0.16;
+    animation: hero-hud-fade 9s ease-in-out infinite;
+  }
+  .hero-hud-nodes circle {
+    fill: currentColor;
+    opacity: 0.5;
+    animation: hero-hud-node 4.5s ease-in-out infinite;
+  }
+  @keyframes hero-hud-node {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.75; }
+  }
+
+  .hero-hud-orbit {
+    border: 1px dashed currentColor;
+    opacity: 0.1;
+    animation: hero-hud-spin 90s linear infinite;
+  }
+  .hero-hud-orbit-slow { animation: hero-hud-spin 140s linear infinite reverse; }
+  @keyframes hero-hud-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .hero-hud-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    animation: hero-hud-fade 7s ease-in-out infinite;
+  }
+  .hero-hud-tick {
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.7;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .kognix-orb, .kognix-orb-core, .kognix-orb-speaking, .kognix-orb-speaking .kognix-orb-core,
-    .kognix-orb-ring, .kognix-wave-bar { animation: none; }
+    .kognix-orb-ring, .kognix-wave-bar,
+    .hero-hud-grid, .hero-hud-sweep, .hero-hud-bracket, .hero-hud-net line,
+    .hero-hud-nodes circle, .hero-hud-orbit, .hero-hud-label { animation: none; }
   }
 }
+
 

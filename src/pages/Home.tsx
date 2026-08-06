@@ -34,6 +34,8 @@ const Home = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,hsl(12_100%_50%/0.2),transparent_50%)] animate-pulse [animation-duration:8s]" />
         <CyberGrid />
         <ParticleNetwork />
+        <HeroHUD />
+
         
         <div className="container mx-auto px-6 py-32 relative z-10">
           <div className="max-w-5xl mx-auto text-center space-y-8 animate-slide-in">

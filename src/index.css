@@ -554,7 +554,37 @@
     0%, 100% { opacity: 0.75; transform: scale(0.92); }
     50% { opacity: 1; transform: scale(1.12); }
   }
+  .kognix-orb-ring {
+    position: absolute;
+    inset: -14%;
+    border-radius: 9999px;
+    border: 1px solid hsl(190 100% 70% / 0.45);
+    animation: kognix-ring-expand 3.4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .kognix-orb-ring-2 { animation-delay: 1.1s; }
+  .kognix-orb-ring-3 { animation-delay: 2.2s; }
+  .kognix-orb-active .kognix-orb-ring { animation-duration: 1.4s; }
+
+  @keyframes kognix-ring-expand {
+    0% { transform: scale(0.9); opacity: 0.7; }
+    100% { transform: scale(1.55); opacity: 0; }
+  }
+
+  .kognix-wave-bar {
+    width: 2px;
+    border-radius: 9999px;
+    background: linear-gradient(to top, hsl(200 95% 55% / 0.2), hsl(185 100% 72%));
+    animation: kognix-wave 1.2s ease-in-out infinite;
+  }
+  @keyframes kognix-wave {
+    0%, 100% { height: 18%; opacity: 0.5; }
+    50% { height: 100%; opacity: 1; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .kognix-orb, .kognix-orb-core, .kognix-orb-speaking, .kognix-orb-speaking .kognix-orb-core { animation: none; }
+    .kognix-orb, .kognix-orb-core, .kognix-orb-speaking, .kognix-orb-speaking .kognix-orb-core,
+    .kognix-orb-ring, .kognix-wave-bar { animation: none; }
   }
 }
+

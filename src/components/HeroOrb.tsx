@@ -126,6 +126,7 @@ export const HeroOrb = () => {
   const [notice, setNotice] = useState<string | null>(null);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Msg[]>([]);
+  const lastTopicRef = useRef<Topic>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

@@ -283,18 +283,39 @@ export const HeroOrb = () => {
               </label>
               <Input
                 id="hero-orb-input"
-                value={input}
+                value={speech.listening && speech.interim ? speech.interim : input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="What is KOGNIX AI Studio?"
+                placeholder={speech.listening ? "Listening…" : "What is KOGNIX AI Studio?"}
                 className="h-8 text-xs bg-current/5 border-current/20 text-current placeholder:text-current/50"
               />
-              <Button type="submit" size="icon" className="h-8 w-8" aria-label="Send message" disabled={!input.trim()}>
+              <button
+                type="button"
+                onClick={onMic}
+                disabled={!speech.supported}
+                aria-pressed={speech.listening}
+                title={speech.supported ? (speech.listening ? "Stop listening" : "Speak your question") : "Voice input not supported in this browser."}
+                aria-label={speech.listening ? "Stop voice input" : "Start voice input"}
+                className={`flex h-9 w-9 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-md border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:opacity-40 disabled:cursor-not-allowed ${
+                  speech.listening
+                    ? "border-accent text-accent bg-accent/10 animate-pulse shadow-[0_0_14px_hsl(var(--accent)/0.7)]"
+                    : "border-current/20 hover:bg-current/10"
+                }`}
+              >
+                <Mic className="h-4 w-4 sm:h-3.5 sm:w-3.5" />
+              </button>
+              <Button type="submit" size="icon" className="h-9 w-9 sm:h-8 sm:w-8 shrink-0" aria-label="Send message" disabled={!input.trim()}>
                 <Send className="h-3.5 w-3.5" />
               </Button>
             </form>
+            {(speech.listening || speech.error) && (
+              <p className="text-center text-[0.7rem] text-accent" role="status">
+                {speech.listening ? "Listening…" : speech.error}
+              </p>
+            )}
             <Link to="/book-demo" className="block text-center text-[0.7rem] text-accent hover:underline">
               Schedule a demo →
             </Link>
+
           </div>
         </div>
       )}

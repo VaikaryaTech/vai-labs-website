@@ -9,28 +9,39 @@ const GREETING =
   "Hi, I'm KOGNIX. I’m the AI behind VAI LABS’ on-premises platform. Ask me about our products or air-gapped deployment.";
 
 const FALLBACK =
-  "Great question. Our team can walk you through architecture options — would you like to schedule a demo?";
+  "I might not have a perfect answer for that yet. I’m optimized to talk about KOGNIX products, deployment options, and security. If you'd like deeper architecture guidance, our human team can walk you through it.";
+
+const GREETING_REPLY =
+  "Hi, I'm KOGNIX — the AI behind VAI LABS' on-premises platform. I can walk you through our products, how deployment works, or how we handle security. What would you like to know first?";
+
+const GREETING_PATTERN =
+  /\b(hello+|hi+|hey+|yo|hiya|howdy|greetings|namaste|good\s*(morning|afternoon|evening|day)|how\s*are\s*you|what'?s\s*up|sup)\b/i;
 
 const KNOWLEDGE: { keywords: string[]; answer: string }[] = [
   {
-    keywords: ["studio", "ai studio", "build", "workspace"],
+    keywords: ["studio", "ai studio", "build", "workspace", "orchestrat"],
     answer:
       "KOGNIX AI Studio is the build-and-orchestrate workspace: assemble assistants, connect enterprise data, chain tools and agents — all inside your own infrastructure.",
   },
   {
-    keywords: ["genai", "engine", "gen ai"],
+    keywords: ["genai", "engine", "gen ai", "llm", "model"],
     answer:
       "The KOGNIX GenAI Engine is the core runtime: private model serving, retrieval over your documents, and agentic execution with zero external calls.",
   },
   {
-    keywords: ["intelligence", "decision", "insight"],
+    keywords: ["intelligence", "decision", "insight", "research"],
     answer:
       "KOGNIX Intelligence turns proprietary data into decision intelligence — deep research, document reasoning and domain-specific analysis.",
   },
   {
-    keywords: ["analytics", "observability", "tracing", "usage", "monitor"],
+    keywords: ["analytics", "observability", "tracing", "usage", "monitor", "cost"],
     answer:
       "KOGNIX Analytics gives you full observability: request tracing, usage dashboards, cost and quality metrics across every on-prem AI workload.",
+  },
+  {
+    keywords: ["product", "portfolio", "offer", "what do you do", "platform"],
+    answer:
+      "Our portfolio has four products: KOGNIX AI Studio (build and orchestrate), KOGNIX GenAI Engine (private runtime), KOGNIX Analytics (observability) and KOGNIX Intelligence (decision intelligence). Which one should I expand on?",
   },
   {
     keywords: ["air-gapped", "air gapped", "airgap", "offline", "isolated"],
@@ -38,24 +49,27 @@ const KNOWLEDGE: { keywords: string[]; answer: string }[] = [
       "Air-gapped deployment means no internet dependency: models, vector stores and orchestration are packaged for isolated networks and updated via controlled offline bundles.",
   },
   {
-    keywords: ["saas", "on-prem", "on prem", "private cloud", "deploy", "kubernetes", "docker", "install"],
+    keywords: ["saas", "on-prem", "on prem", "onprem", "private cloud", "deploy", "kubernetes", "docker", "install", "architecture", "infrastructure"],
     answer:
       "KOGNIX is on-premises first — deployed inside your data centre, your private cloud, or fully air-gapped. Reference architectures exist for both Docker and Kubernetes.",
   },
   {
-    keywords: ["sovereignty", "security", "data", "compliance", "privacy", "gdpr"],
+    keywords: ["sovereignty", "security", "secure", "data", "compliance", "privacy", "gdpr", "audit", "access control"],
     answer:
       "100% data sovereignty: your data, embeddings, prompts and outputs never leave your perimeter, with role-based access and audit trails built in.",
   },
   {
-    keywords: ["demo", "contact", "talk", "price", "pricing", "sales"],
+    keywords: ["demo", "contact", "talk to", "price", "pricing", "sales", "trial", "quote"],
     answer:
       "Happy to help — request a walkthrough on our Book a Demo page and our team will map the right setup for you.",
   },
 ];
 
 const answerFor = (q: string) => {
-  const text = q.toLowerCase();
+  const text = q.toLowerCase().trim();
+  if (GREETING_PATTERN.test(text)) return GREETING_REPLY;
+  if (/^(thanks|thank you|thx|ok|okay|cool|great)\b/.test(text))
+    return "Anytime. Ask me about KOGNIX products, deployment, or security whenever you're ready.";
   const hit = KNOWLEDGE.find((k) => k.keywords.some((kw) => text.includes(kw)));
   return hit ? hit.answer : FALLBACK;
 };

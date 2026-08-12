@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { KognixWordmark } from "@/components/KognixWordmark";
+import { useSpeechRecognition } from "@/hooks/use-speech-recognition";
 
 const GREETING =
   "Hi, I'm KOGNIX. I’m the AI behind VAI LABS’ on-premises platform. Ask me about our products or air-gapped deployment.";

@@ -151,7 +151,9 @@ export const HeroOrb = () => {
     setMessages((m) => [...m, { role: "user", text: q }]);
     setActive(true);
     window.setTimeout(() => {
-      setMessages((m) => [...m, { role: "ai", text: answerFor(q) }]);
+      const res = answerFor(q, lastTopicRef.current);
+      lastTopicRef.current = res.topic;
+      setMessages((m) => [...m, { role: "ai", text: res.text }]);
       setActive(false);
     }, 600);
   };

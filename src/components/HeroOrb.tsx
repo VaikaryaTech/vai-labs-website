@@ -144,8 +144,8 @@ export const HeroOrb = () => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, chatOpen]);
 
-  const send = () => {
-    const q = input.trim();
+  const send = (textOverride?: string) => {
+    const q = (textOverride ?? input).trim();
     if (!q) return;
     setInput("");
     setMessages((m) => [...m, { role: "user", text: q }]);
@@ -158,14 +158,32 @@ export const HeroOrb = () => {
     }, 600);
   };
 
-  const onMic = () => {
-    setNotice("Voice input coming soon — listening simulation active.");
-    setActive(true);
-    window.setTimeout(() => {
-      setActive(false);
-      setNotice(null);
-    }, 3200);
+  const speech = useSpeechRecognition({
+    onResult: (transcript) => {
+      setInput(transcript);
+      send(transcript);
+    },
+  });
+
+  const openChat = () => {
+    setChatOpen(true);
+    setMenuOpen(false);
+    setShowBubble(false);
+    if (messages.length === 0) {
+      setMessages([{ role: "ai", text: "Ask about products or deployment." }]);
+    }
   };
+
+  const onMic = () => {
+    if (!speech.supported) {
+      setNotice("Voice input not supported in this browser.");
+      window.setTimeout(() => setNotice(null), 3200);
+      return;
+    }
+    openChat();
+    speech.toggle();
+  };
+
 
   return (
     <div

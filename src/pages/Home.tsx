@@ -41,12 +41,14 @@ const Home = () => {
 
     // 2. Custom Lagging Luxury Cursor
     const handleMouseMove = (e: MouseEvent) => {
-      gsap.to(cursorRef.current, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.1,
-        ease: "power2.out",
-      });
+      if (cursorRef.current) {
+        gsap.to(cursorRef.current, {
+          x: e.clientX,
+          y: e.clientY,
+          duration: 0.1,
+          ease: "power2.out",
+        });
+      }
     };
     window.addEventListener("mousemove", handleMouseMove);
 
@@ -72,35 +74,35 @@ const Home = () => {
     });
 
     // 4. Center-Stage HeroOrb & Particle Morph Timelines
-    // Triggers rotation and scale warp as user leaves the top hero zone
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: "#features-section",
-        start: "top bottom",
-        end: "top top",
-        scrub: true,
-      },
-    }).to(coreVisualRef.current, {
-      scale: 1.2,
-      rotation: 90,
-      opacity: 0.8,
-    });
+    if (coreVisualRef.current) {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: "#features-section",
+          start: "top bottom",
+          end: "top top",
+          scrub: true,
+        },
+      }).to(coreVisualRef.current, {
+        scale: 1.2,
+        rotation: 90,
+        opacity: 0.8,
+      });
 
-    // Triggers tight scaling and bright glow overlay through the stats counter
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: "#stats-section",
-        start: "top bottom",
-        end: "bottom bottom",
-        scrub: true,
-      },
-    }).to(coreVisualRef.current, {
-      scale: 0.7,
-      rotation: 180,
-      opacity: 0.3,
-    });
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: "#stats-section",
+          start: "top bottom",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      }).to(coreVisualRef.current, {
+        scale: 0.7,
+        rotation: 180,
+        opacity: 0.3,
+      });
+    }
 
-    // Clean up animation ticker loops on component change
+    // Clean up animation ticker loops on component destruction
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       lenis.destroy();
@@ -209,3 +211,5 @@ const Home = () => {
               Organizations should not have to choose between AI innovation and data sovereignty. VAI Labs brings the power of Generative AI into the environments where your most critical work happens—securely, privately, and under your complete control. Welcome to AI on your terms.
             </p>
 
+            <div className="pt-4">
+              <Link to="/book-demo">

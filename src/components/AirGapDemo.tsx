@@ -13,7 +13,8 @@ const DATA = { x: 100, y: 305 };
 const PERIMETER_X = 400;
 
 const prefersReducedMotion = () =>
-  typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  typeof window !== "undefined" &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const Node = ({
   x,
@@ -87,7 +88,10 @@ export const AirGapDemo = () => {
         <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
           Try it
         </p>
-        <h2 data-split className="mt-6 text-balance text-3xl font-medium leading-tight tracking-[-0.02em] md:text-5xl">
+        <h2
+          data-split
+          className="mt-6 text-balance text-3xl font-medium leading-tight tracking-[-0.02em] md:text-5xl"
+        >
           Pull the plug. It keeps working.
         </h2>
         <p data-reveal className="mt-6 max-w-md text-muted-foreground">
@@ -102,93 +106,171 @@ export const AirGapDemo = () => {
         >
           <span className="font-mono text-xs uppercase tracking-[0.12em]">
             Internet:{" "}
-            <span className={online ? "text-foreground" : "text-primary"}>{online ? "On" : "Off"}</span>
+            <span className={online ? "text-foreground" : "text-primary"}>
+              {online ? "On" : "Off"}
+            </span>
           </span>
-          <Switch checked={online} onCheckedChange={setOnline} aria-label="Toggle internet connection" />
+          <Switch
+            checked={online}
+            onCheckedChange={setOnline}
+            aria-label="Toggle internet connection"
+          />
         </label>
       </div>
 
-      <div data-reveal className="lg:col-span-8">
-        <div className="rounded-2xl border border-border bg-muted/30 p-4 md:p-6">
-          <svg viewBox="0 0 620 400" className="h-auto w-full" role="img" aria-label="Diagram of KOGNIX running inside your perimeter">
-            {/* Perimeter */}
-            <rect
-              x={16}
-              y={16}
-              width={PERIMETER_X - 16}
-              height={368}
-              rx={16}
-              className="fill-background/60 stroke-foreground/30"
-              strokeDasharray="4 6"
-            />
-            <text x={34} y={42} className="fill-muted-foreground font-mono text-[10px] uppercase tracking-widest">
-              Your perimeter
-            </text>
-            <text x={PERIMETER_X + 24} y={42} className="fill-muted-foreground font-mono text-[10px] uppercase tracking-widest">
-              Public internet
-            </text>
+      <div data-reveal className="min-w-0 lg:col-span-8">
+        <div className="-mx-6 overflow-x-auto px-6 [scrollbar-width:none] sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden">
+          <div className="min-w-[540px] rounded-2xl border border-border bg-muted/30 p-4 sm:min-w-0 md:p-6">
+            <svg
+              viewBox="0 0 620 400"
+              className="h-auto w-full"
+              role="img"
+              aria-label="Diagram of KOGNIX running inside your perimeter"
+            >
+              {/* Perimeter */}
+              <rect
+                x={16}
+                y={16}
+                width={PERIMETER_X - 16}
+                height={368}
+                rx={16}
+                className="fill-background/60 stroke-foreground/30"
+                strokeDasharray="4 6"
+              />
+              <text
+                x={34}
+                y={42}
+                className="fill-muted-foreground font-mono text-[10px] uppercase tracking-widest"
+              >
+                Your perimeter
+              </text>
+              <text
+                x={PERIMETER_X + 24}
+                y={42}
+                className="fill-muted-foreground font-mono text-[10px] uppercase tracking-widest"
+              >
+                Public internet
+              </text>
 
-            {/* External links */}
-            {EXTERNAL.map((ext) => {
-              const path = `M ${KOGNIX.x + 70} ${KOGNIX.y} C ${KOGNIX.x + 130} ${KOGNIX.y}, ${PERIMETER_X + 20} ${ext.y}, ${505 - 70} ${ext.y}`;
-              return (
-                <g key={ext.label}>
-                  <path
-                    d={path}
-                    fill="none"
-                    className="stroke-muted-foreground/40 transition-opacity duration-500"
-                    strokeWidth={1}
-                    strokeDasharray="2 5"
-                    style={{ opacity: online ? 1 : 0 }}
-                  />
-                  <g
-                    className="transition-all duration-500"
-                    style={{ opacity: online ? 0 : 1, transform: online ? "scale(0.6)" : "scale(1)", transformOrigin: `${PERIMETER_X}px ${ext.y}px`, transformBox: "view-box" }}
-                  >
-                    <circle cx={PERIMETER_X} cy={ext.y} r={9} className="fill-background stroke-primary" strokeWidth={1.5} />
+              {/* External links */}
+              {EXTERNAL.map((ext) => {
+                const path = `M ${KOGNIX.x + 70} ${KOGNIX.y} C ${KOGNIX.x + 130} ${KOGNIX.y}, ${PERIMETER_X + 20} ${ext.y}, ${505 - 70} ${ext.y}`;
+                return (
+                  <g key={ext.label}>
                     <path
-                      d={`M ${PERIMETER_X - 4} ${ext.y - 4} L ${PERIMETER_X + 4} ${ext.y + 4} M ${PERIMETER_X + 4} ${ext.y - 4} L ${PERIMETER_X - 4} ${ext.y + 4}`}
-                      className="stroke-primary"
-                      strokeWidth={1.5}
+                      d={path}
+                      fill="none"
+                      className="stroke-muted-foreground/40 transition-opacity duration-500"
+                      strokeWidth={1}
+                      strokeDasharray="2 5"
+                      style={{ opacity: online ? 1 : 0 }}
+                    />
+                    <g
+                      className="transition-all duration-500"
+                      style={{
+                        opacity: online ? 0 : 1,
+                        transform: online ? "scale(0.6)" : "scale(1)",
+                        transformOrigin: `${PERIMETER_X}px ${ext.y}px`,
+                        transformBox: "view-box",
+                      }}
+                    >
+                      <circle
+                        cx={PERIMETER_X}
+                        cy={ext.y}
+                        r={9}
+                        className="fill-background stroke-primary"
+                        strokeWidth={1.5}
+                      />
+                      <path
+                        d={`M ${PERIMETER_X - 4} ${ext.y - 4} L ${PERIMETER_X + 4} ${ext.y + 4} M ${PERIMETER_X + 4} ${ext.y - 4} L ${PERIMETER_X - 4} ${ext.y + 4}`}
+                        className="stroke-primary"
+                        strokeWidth={1.5}
+                      />
+                    </g>
+                    <Node
+                      x={505}
+                      y={ext.y}
+                      label={ext.label}
+                      sub={online ? "Not used" : "Unreachable"}
+                      dim={!online}
                     />
                   </g>
-                  <Node x={505} y={ext.y} label={ext.label} sub={online ? "Not used" : "Unreachable"} dim={!online} />
-                </g>
-              );
-            })}
+                );
+              })}
 
-            {/* Internal flows */}
-            {[teamPath, dataPath].map((d, i) => (
-              <g key={d}>
-                <path d={d} fill="none" className="stroke-primary/60" strokeWidth={1.5} strokeDasharray="4 6">
+              {/* Internal flows */}
+              {[teamPath, dataPath].map((d, i) => (
+                <g key={d}>
+                  <path
+                    d={d}
+                    fill="none"
+                    className="stroke-primary/60"
+                    strokeWidth={1.5}
+                    strokeDasharray="4 6"
+                  >
+                    {!reduced && (
+                      <animate
+                        attributeName="stroke-dashoffset"
+                        from="0"
+                        to="-20"
+                        dur="1s"
+                        repeatCount="indefinite"
+                      />
+                    )}
+                  </path>
                   {!reduced && (
-                    <animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1s" repeatCount="indefinite" />
+                    <circle r={3.5} className="fill-primary">
+                      <animateMotion
+                        dur="1.6s"
+                        repeatCount="indefinite"
+                        path={d}
+                        begin={`${i * 0.8}s`}
+                      />
+                    </circle>
                   )}
-                </path>
-                {!reduced && (
-                  <circle r={3.5} className="fill-primary">
-                    <animateMotion dur="1.6s" repeatCount="indefinite" path={d} begin={`${i * 0.8}s`} />
-                  </circle>
-                )}
-              </g>
-            ))}
+                </g>
+              ))}
 
-            <Node x={TEAM.x} y={TEAM.y} label="Your team" sub="Questions" />
-            <Node x={DATA.x} y={DATA.y} label="Your data" sub="Docs · DBs · Apps" />
-            <Node x={KOGNIX.x} y={KOGNIX.y} label="KOGNIX" sub="Your servers" strong />
-          </svg>
+              <Node x={TEAM.x} y={TEAM.y} label="Your team" sub="Questions" />
+              <Node
+                x={DATA.x}
+                y={DATA.y}
+                label="Your data"
+                sub="Docs · DBs · Apps"
+              />
+              <Node
+                x={KOGNIX.x}
+                y={KOGNIX.y}
+                label="KOGNIX"
+                sub="Your servers"
+                strong
+              />
+            </svg>
+          </div>
         </div>
+        <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground sm:hidden">
+          Swipe to see the full diagram →
+        </p>
 
         <dl className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border md:grid-cols-4">
           {[
             ["Answers served", answers.toLocaleString("en-IN")],
             ["Outbound requests", "0"],
             ["Data egress", "0 B"],
-            ["Status", online ? "Online · not required" : "Air-gapped · running"],
+            [
+              "Status",
+              online ? "Online · not required" : "Air-gapped · running",
+            ],
           ].map(([k, v]) => (
             <div key={k} className="bg-background px-4 py-3">
-              <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">{k}</dt>
-              <dd className={`mt-1 font-mono text-sm tabular-nums ${k === "Status" && !online ? "text-primary" : ""}`}>{v}</dd>
+              <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                {k}
+              </dt>
+              <dd
+                className={`mt-1 font-mono text-sm tabular-nums ${k === "Status" && !online ? "text-primary" : ""}`}
+              >
+                {v}
+              </dd>
             </div>
           ))}
         </dl>

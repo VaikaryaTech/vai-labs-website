@@ -262,7 +262,7 @@ const Assessment = () => {
         <section className="border-t border-border">
           <div ref={top} className="container mx-auto grid scroll-mt-20 gap-12 px-6 py-16 lg:grid-cols-12 lg:py-24">
             {/* Sidebar */}
-            <aside className="lg:col-span-4">
+            <aside className="min-w-0 lg:col-span-4">
               <div className="lg:sticky lg:top-28">
                 <div className="flex items-baseline justify-between">
                   <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">Progress</p>
@@ -328,7 +328,7 @@ const Assessment = () => {
             </aside>
 
             {/* Main panel */}
-            <div className="lg:col-span-8">
+            <div className="min-w-0 lg:col-span-8">
               {showReport ? (
                 <ReadinessReport
                   sections={sections}
@@ -419,7 +419,9 @@ const Assessment = () => {
                       </Button>
                     ) : (
                       <Button size="lg" onClick={() => goTo(current + 1)}>
-                        Next: {sections[current + 1].title} <ArrowRight className="h-4 w-4" />
+                        <span className="hidden sm:inline">Next: {sections[current + 1].title}</span>
+                        <span className="sm:hidden">Next dimension</span>
+                        <ArrowRight className="h-4 w-4" />
                       </Button>
                     )}
                   </div>

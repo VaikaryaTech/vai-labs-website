@@ -19,10 +19,8 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import observabilityBg from "@/assets/observability-hero-background.webp";
-import deployCloud from "@/assets/deploy-cloud.webp";
-import deployKubernetes from "@/assets/deploy-kubernetes.webp";
-import deployAirgapped from "@/assets/deploy-airgapped.webp";
 import { KognixWordmark } from "@/components/KognixWordmark";
+import { DeploymentDiagram } from "@/components/DeploymentDiagram";
 
 const Observability = () => {
   const coreCapabilities = [
@@ -61,21 +59,21 @@ const Observability = () => {
   const deploymentOptions = [
     {
       icon: Cloud,
-      image: deployCloud,
+      kind: "cloud" as const,
       title: "Cloud Managed",
       description: "Zero infrastructure management with enterprise-grade reliability",
       tag: "Fastest Setup"
     },
     {
       icon: Layers,
-      image: deployKubernetes,
+      kind: "kubernetes" as const,
       title: "Docker / Kubernetes",
       description: "Self-host with Docker Compose or Helm charts for full control",
       tag: "Most Popular"
     },
     {
       icon: Shield,
-      image: deployAirgapped,
+      kind: "airgapped" as const,
       title: "Air-Gapped",
       description: "Complete isolation for regulated industries and sensitive data",
       tag: "Maximum Security"
@@ -222,13 +220,8 @@ const Observability = () => {
           <div className="mt-16 grid gap-x-10 gap-y-14 md:grid-cols-3">
             {deploymentOptions.map((option) => (
               <div key={option.title} className="group">
-                <div className="aspect-[4/3] overflow-hidden rounded-xl bg-background">
-                  <img
-                    src={option.image}
-                    alt=""
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                  />
+                <div className="aspect-[352/250] overflow-hidden rounded-xl transition-transform duration-500 group-hover:-translate-y-1">
+                  <DeploymentDiagram kind={option.kind} title={option.title} />
                 </div>
                 <div className="mt-6 h-px bg-foreground/80" />
                 <div className="mt-5 flex items-center justify-between gap-4">

@@ -23,7 +23,7 @@ export const IntegrationsMarquee = () => {
           <Badge className="mb-4 px-4 py-2" variant="secondary">
             Ecosystem
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">
+          <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-3">
             Supported AI Providers & Models
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -39,7 +39,7 @@ export const IntegrationsMarquee = () => {
           {doubled.map((name, i) => (
             <div
               key={`r1-${i}`}
-              className="flex-shrink-0 px-5 py-3 rounded-xl border border-border bg-card/50 backdrop-blur-sm hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(34,211,238,0.1)] transition-all duration-300"
+              className="flex-shrink-0 px-5 py-3 rounded-xl border border-border bg-card hover:border-foreground/25 transition-all duration-300"
             >
               <span className="text-sm font-medium text-foreground whitespace-nowrap">{name}</span>
             </div>
@@ -53,7 +53,7 @@ export const IntegrationsMarquee = () => {
           {[...doubled].reverse().map((name, i) => (
             <div
               key={`r2-${i}`}
-              className="flex-shrink-0 px-5 py-3 rounded-xl border border-border bg-card/50 backdrop-blur-sm hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(34,211,238,0.1)] transition-all duration-300"
+              className="flex-shrink-0 px-5 py-3 rounded-xl border border-border bg-card hover:border-foreground/25 transition-all duration-300"
             >
               <span className="text-sm font-medium text-foreground whitespace-nowrap">{name}</span>
             </div>

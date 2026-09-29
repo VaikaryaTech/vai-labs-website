@@ -1,18 +1,16 @@
-import heroImage from "@/assets/hero-workflow.png";
+import heroImage from "@/assets/hero-workflow.webp";
 import showcaseAsset from "@/assets/regulatory-shield-showcase.png.asset.json";
 
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
       {/* Background gradient effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(260_60%_25%/0.3),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,hsl(12_100%_50%/0.2),transparent_50%)]" />
 
       <div className="container mx-auto px-6 py-32 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div className="space-y-8 animate-slide-in">
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+            <h1 className="text-5xl lg:text-7xl font-medium tracking-tight leading-tight">
               Forge Your Future:{" "}
               <span className="bg-gradient-accent bg-clip-text text-transparent">
                 What You'll Engineer

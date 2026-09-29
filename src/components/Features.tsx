@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Layers, Box, Zap, Users, Brain, MessageSquare, Mail, FileText, Calendar, Github } from "lucide-react";
-import integrationsImg from "@/assets/platform-integrations.jpg";
+import integrationsImg from "@/assets/platform-integrations.webp";
 import { KognixWordmark } from "@/components/KognixWordmark";
 
 const platformFeatures = [
@@ -26,7 +26,7 @@ const platformFeatures = [
     icon: Users,
     title: "Real-Time Foundry",
     description: "Treat your workflows as living architecture. Our Team Collaboration features allow simultaneous editing, real-time feedback loops, and granular permission controls for unified development.",
-    color: "text-cyan-500"
+    color: "text-foreground/80"
   }
 ];
 
@@ -47,7 +47,7 @@ const integrationCategories = [
     category: "Productivity Platforms",
     items: "Notion, Google Sheets, Airtable, Monday.com",
     icon: FileText,
-    color: "text-cyan-500"
+    color: "text-foreground/80"
   },
   {
     category: "Development & DevOps",
@@ -76,7 +76,7 @@ export const Features = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
+            <h2 className="text-4xl font-medium tracking-tight mb-4">
               Platform{" "}
               <span className="bg-gradient-accent bg-clip-text text-transparent">Capabilities</span>
             </h2>
@@ -89,10 +89,10 @@ export const Features = () => {
             {platformFeatures.map((feature, index) => (
               <Card 
                 key={index}
-                className="p-8 bg-gradient-card backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-glow-primary group"
+                className="p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 group"
               >
-                <feature.icon className={`h-12 w-12 ${feature.color} mb-4 group-hover:scale-110 transition-transform`} />
-                <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
+                <feature.icon className={`h-12 w-12 ${feature.color} mb-4 transition-transform`} />
+                <h3 className="text-2xl font-medium tracking-tight mb-3">{feature.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   {feature.description}
                 </p>
@@ -104,7 +104,6 @@ export const Features = () => {
 
       {/* Integrations Section */}
       <section className="py-24 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(260_60%_25%/0.2),transparent_70%)]" />
         
         <div className="container mx-auto px-6 relative z-10">
           {/* Image Header */}
@@ -112,11 +111,11 @@ export const Features = () => {
             <img 
               src={integrationsImg} 
               alt="Platform integrations hub connecting multiple services"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8">
-              <h2 className="text-4xl font-bold mb-4 text-foreground">
+              <h2 className="text-4xl font-medium tracking-tight mb-4 text-foreground">
                 Connect Everything:{" "}
                 <span className="bg-gradient-accent bg-clip-text text-transparent">Built-in Integrations</span>
               </h2>
@@ -130,12 +129,12 @@ export const Features = () => {
             {integrationCategories.map((category, index) => (
               <Card 
                 key={index}
-                className="p-6 bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-glow-primary group"
+                className="p-6 bg-card border-border hover:border-primary/50 transition-all duration-300 group"
               >
                 <div className="flex items-start gap-4">
-                  <category.icon className={`h-8 w-8 ${category.color} flex-shrink-0 mt-1 group-hover:scale-110 transition-transform`} />
+                  <category.icon className={`h-8 w-8 ${category.color} flex-shrink-0 mt-1 transition-transform`} />
                   <div>
-                    <h3 className="text-lg font-bold mb-2">{category.category}</h3>
+                    <h3 className="text-lg font-medium tracking-tight mb-2">{category.category}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       {category.items}
                     </p>

@@ -1,139 +1,166 @@
+import { useRef } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Briefcase, MapPin, Clock } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useScrollMotion } from "@/hooks/use-scroll-motion";
+
+const openings = [
+  {
+    title: "Senior AI/ML Engineer",
+    location: "Remote",
+    type: "Full-time",
+    description: "Work on cutting-edge GenAI systems and help build the next generation of intelligent applications.",
+  },
+  {
+    title: "Backend Engineer",
+    location: "Remote",
+    type: "Full-time",
+    description: "Design and develop scalable backend systems to support our enterprise AI platform.",
+  },
+  {
+    title: "Product Manager",
+    location: "Remote",
+    type: "Full-time",
+    description: "Drive product strategy and roadmap for KOGNIX, working closely with customers and engineering teams.",
+  },
+  {
+    title: "Customer Success Manager",
+    location: "Remote",
+    type: "Full-time",
+    description: "Help enterprise customers succeed with KOGNIX and drive adoption across their organizations.",
+  },
+];
+
+const benefits = [
+  "Competitive salary and equity",
+  "Flexible work arrangements",
+  "Health insurance",
+  "Learning & development budget",
+  "Latest tech equipment",
+  "Team events and outings",
+];
+
+const applyLink = (role?: string) =>
+  `/contact?topic=Careers&subject=${encodeURIComponent(role ? `Application: ${role}` : "General application")}`;
 
 const Careers = () => {
-  const openings = [
-    {
-      title: "Senior AI/ML Engineer",
-      location: "Bangalore, India",
-      type: "Full-time",
-      description: "Work on cutting-edge GenAI systems and help build the next generation of intelligent applications."
-    },
-    {
-      title: "Backend Engineer",
-      location: "Remote",
-      type: "Full-time",
-      description: "Design and develop scalable backend systems to support our enterprise AI platform."
-    },
-    {
-      title: "Product Manager",
-      location: "Bangalore, India",
-      type: "Full-time",
-      description: "Drive product strategy and roadmap for KOGNIX, working closely with customers and engineering teams."
-    },
-    {
-      title: "Customer Success Manager",
-      location: "Bangalore, India / Remote",
-      type: "Full-time",
-      description: "Help enterprise customers succeed with KOGNIX and drive adoption across their organizations."
-    }
-  ];
-
-  const benefits = [
-    "Competitive salary and equity",
-    "Flexible work arrangements",
-    "Health insurance",
-    "Learning & development budget",
-    "Latest tech equipment",
-    "Team events and outings"
-  ];
+  const root = useRef<HTMLDivElement>(null);
+  useScrollMotion(root);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div ref={root} data-motion className="min-h-screen bg-background text-foreground">
       <Navbar />
-      
-      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-hero">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(260_60%_25%/0.2),transparent_70%)]" />
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-6 animate-slide-in">
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-              <span className="bg-gradient-accent bg-clip-text text-transparent">
-                Join Our Team
-              </span>
-            </h1>
-            
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              Build the future of enterprise AI with a team of passionate innovators and problem solvers.
-            </p>
-          </div>
-        </div>
-      </section>
 
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-6">Why VAI LABS?</h2>
-            <p className="text-muted-foreground mb-8">
-              At VAI LABS, you'll work on challenging problems that matter. We're building AI solutions that 
-              transform how businesses operate, and we need talented people who share our vision.
-            </p>
-            
-            <Card className="p-8 border-border">
-              <h3 className="text-xl font-bold mb-4">Benefits & Perks</h3>
-              <ul className="grid md:grid-cols-2 gap-3">
-                {benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-center gap-2 text-muted-foreground">
-                    <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                    {benefit}
-                  </li>
-                ))}
-              </ul>
-            </Card>
+      <main>
+        <section className="container mx-auto px-6 pt-40 pb-16 lg:pt-48">
+          <p data-scramble className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
+            Company · Careers · {openings.length} open roles
+          </p>
+          <h1
+            data-split="load"
+            className="mt-8 max-w-5xl text-balance text-5xl font-medium leading-[1.02] tracking-[-0.03em] md:text-7xl"
+          >
+            Build the future of private, enterprise AI.
+          </h1>
+          <p data-reveal="0.4" className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+            At VAI Labs you'll work on challenging problems that matter. We're building AI that transforms how
+            businesses operate — and we need talented people who share our vision.
+          </p>
+          <div data-reveal="0.6" className="mt-10">
+            <Button asChild size="lg">
+              <a href="#roles">
+                See open roles <ArrowRight className="h-4 w-4" />
+              </a>
+            </Button>
           </div>
+        </section>
 
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8">Open Positions</h2>
-            
-            <div className="space-y-6">
-              {openings.map((job, index) => (
-                <Card key={index} className="p-6 border-border hover:border-primary/50 transition-all">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2">{job.title}</h3>
-                      <p className="text-muted-foreground mb-4">{job.description}</p>
-                      
-                      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-2">
-                          <MapPin className="h-4 w-4" />
-                          {job.location}
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Clock className="h-4 w-4" />
-                          {job.type}
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <Link to="/contact">
-                      <Button variant="outline">
-                        Apply Now
-                      </Button>
-                    </Link>
-                  </div>
-                </Card>
-              ))}
+        {/* Open roles */}
+        <section id="roles" className="scroll-mt-20 border-t border-border">
+          <div className="container mx-auto px-6 py-24 lg:py-32">
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <div>
+                <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">Open positions</p>
+                <h2 data-split className="mt-6 text-3xl font-medium tracking-[-0.02em] md:text-5xl">
+                  Find your role.
+                </h2>
+              </div>
             </div>
 
-            <Card className="p-8 border-border mt-12 text-center">
-              <Briefcase className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">Don't see a role that fits?</h3>
-              <p className="text-muted-foreground mb-6">
-                We're always looking for talented people. Send us your resume and let's chat!
-              </p>
-              <Link to="/contact">
-                <Button variant="hero">
-                  Get in Touch
-                </Button>
-              </Link>
-            </Card>
+            <ul className="mt-14 border-t border-border">
+              {openings.map((job, i) => (
+                <li key={job.title} data-reveal className="border-b border-border">
+                  <Link
+                    to={applyLink(job.title)}
+                    className="group grid items-baseline gap-3 py-8 transition-[padding] duration-300 md:grid-cols-12 md:gap-6 md:hover:pl-4"
+                  >
+                    <span className="font-mono text-xs text-muted-foreground md:col-span-1">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="md:col-span-6">
+                      <span className="block text-2xl font-medium tracking-tight transition-colors group-hover:text-primary">
+                        {job.title}
+                      </span>
+                      <span className="mt-2 block max-w-lg text-muted-foreground">{job.description}</span>
+                    </span>
+                    <span className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground md:col-span-3">
+                      {job.location}
+                      <span className="block">{job.type}</span>
+                    </span>
+                    <span className="inline-flex items-center gap-2 text-sm font-medium md:col-span-2 md:justify-end">
+                      Apply
+                      <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Benefits */}
+        <section className="border-t border-border bg-muted/40">
+          <div className="container mx-auto grid gap-12 px-6 py-24 lg:grid-cols-12 lg:py-32">
+            <div className="lg:col-span-4">
+              <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">Benefits & perks</p>
+              <h2 data-split className="mt-6 text-balance text-3xl font-medium leading-tight tracking-[-0.02em] md:text-5xl">
+                We take care of our people.
+              </h2>
+            </div>
+            <ul className="grid gap-x-10 sm:grid-cols-2 lg:col-span-7 lg:col-start-6">
+              {benefits.map((b, i) => (
+                <li key={b} data-reveal className="flex items-baseline gap-4 border-t border-border py-5">
+                  <span className="font-mono text-xs text-muted-foreground">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-lg">{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Open application */}
+        <section className="bg-foreground text-background">
+          <div className="container mx-auto grid gap-10 px-6 py-24 lg:grid-cols-12 lg:items-end lg:py-32">
+            <div className="lg:col-span-8">
+              <h2 data-split className="text-balance text-4xl font-medium leading-[1.05] tracking-[-0.03em] md:text-6xl">
+                Don't see a role that fits?
+              </h2>
+              <p data-reveal className="mt-6 max-w-xl text-lg opacity-70">
+                We're always looking for talented people. Tell us about yourself and let's chat.
+              </p>
+            </div>
+            <div data-reveal className="lg:col-span-4 lg:text-right">
+              <Button asChild size="lg" className="bg-background text-foreground hover:bg-background/90">
+                <Link to={applyLink()}>
+                  Get in touch <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </main>
 
       <Footer />
     </div>

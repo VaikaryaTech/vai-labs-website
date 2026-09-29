@@ -1,12 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { GitBranch, Zap, MessageSquare, Database } from "lucide-react";
-import workflowImg from "@/assets/workflow-automation.jpg";
+import workflowImg from "@/assets/workflow-automation.webp";
 import { KognixWordmark } from "@/components/KognixWordmark";
 
 export const WorkflowPreview = () => {
   return (
     <section className="py-24 bg-gradient-hero relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(260_60%_25%/0.2),transparent_70%)]" />
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Image Header */}
@@ -14,11 +13,11 @@ export const WorkflowPreview = () => {
             <img 
               src={workflowImg} 
               alt="Visual workflow orchestration with AI-powered connected nodes"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-500"
             />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-8">
-            <h2 className="text-4xl font-bold mb-4 text-foreground">
+            <h2 className="text-4xl font-medium tracking-tight mb-4 text-foreground">
               The <KognixWordmark size="hero" /> Engine: <span className="text-glow-cyan">How Innovation Takes Form</span>
             </h2>
             <p className="text-xl text-foreground/80">
@@ -28,13 +27,13 @@ export const WorkflowPreview = () => {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <Card className="p-8 bg-card/50 backdrop-blur-sm border-border hover:scale-[1.01] transition-all duration-300 hover:shadow-glow-primary hover:border-primary/50">
+          <Card className="p-8 bg-card border-border transition-all duration-300 hover:border-primary/50">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               {/* Workflow nodes */}
               <div className="flex items-center gap-4 flex-wrap justify-center">
                 <div className="flex items-center gap-4">
                   <div className="flex flex-col items-center gap-2 group">
-                    <div className="p-4 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-700/20 border border-orange-500/30 group-hover:scale-110 transition-transform">
+                    <div className="p-4 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-700/20 border border-orange-500/30 transition-transform">
                       <Zap className="h-8 w-8 text-primary" />
                     </div>
                     <span className="text-sm text-muted-foreground">Trigger</span>
@@ -43,7 +42,7 @@ export const WorkflowPreview = () => {
                   <div className="h-0.5 w-12 bg-gradient-to-r from-primary to-secondary animate-pulse-glow" />
 
                   <div className="flex flex-col items-center gap-2 group">
-                    <div className="p-4 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-700/20 border border-purple-500/30 group-hover:scale-110 transition-transform">
+                    <div className="p-4 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-700/20 border border-purple-500/30 transition-transform">
                       <MessageSquare className="h-8 w-8 text-secondary" />
                     </div>
                     <span className="text-sm text-muted-foreground">AI Agent</span>
@@ -52,8 +51,8 @@ export const WorkflowPreview = () => {
                   <div className="h-0.5 w-12 bg-gradient-to-r from-secondary to-cyan-500 animate-pulse-glow" />
 
                   <div className="flex flex-col items-center gap-2 group">
-                    <div className="p-4 rounded-xl bg-gradient-to-br from-cyan-500/20 to-cyan-700/20 border border-cyan-500/30 group-hover:scale-110 transition-transform">
-                      <GitBranch className="h-8 w-8 text-cyan-500" />
+                    <div className="p-4 rounded-xl bg-gradient-to-br from-cyan-500/20 to-cyan-700/20 border border-border transition-transform">
+                      <GitBranch className="h-6 w-6 text-foreground/80" />
                     </div>
                     <span className="text-sm text-muted-foreground">Logic</span>
                   </div>
@@ -61,7 +60,7 @@ export const WorkflowPreview = () => {
                   <div className="h-0.5 w-12 bg-gradient-to-r from-cyan-500 to-green-500 animate-pulse-glow" />
 
                   <div className="flex flex-col items-center gap-2 group">
-                    <div className="p-4 rounded-xl bg-gradient-to-br from-green-500/20 to-green-700/20 border border-green-500/30 group-hover:scale-110 transition-transform">
+                    <div className="p-4 rounded-xl bg-gradient-to-br from-green-500/20 to-green-700/20 border border-green-500/30 transition-transform">
                       <Database className="h-8 w-8 text-green-500" />
                     </div>
                     <span className="text-sm text-muted-foreground">Action</span>

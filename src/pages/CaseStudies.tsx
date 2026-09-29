@@ -63,11 +63,10 @@ const CaseStudies = () => {
       <Navbar />
       
       <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-hero">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(260_60%_25%/0.2),transparent_70%)]" />
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6 animate-slide-in">
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+            <h1 className="text-5xl lg:text-7xl font-medium tracking-tight leading-tight">
               <span className="bg-gradient-accent bg-clip-text text-transparent">
                 Success Stories
               </span>
@@ -90,7 +89,7 @@ const CaseStudies = () => {
                     <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-3">
                       {study.industry}
                     </div>
-                    <h3 className="text-2xl font-bold mb-2">{study.company}</h3>
+                    <h3 className="text-2xl font-medium tracking-tight mb-2">{study.company}</h3>
                   </div>
                   
                   <div className="md:w-2/3 space-y-6">
@@ -131,8 +130,8 @@ const CaseStudies = () => {
           </div>
 
           <div className="max-w-4xl mx-auto mt-16 text-center">
-            <Card className="p-12 border-border bg-gradient-card">
-              <h2 className="text-3xl font-bold mb-4">Ready to Write Your Success Story?</h2>
+            <Card className="p-12 border-border bg-card">
+              <h2 className="text-3xl font-medium tracking-tight mb-4">Ready to Write Your Success Story?</h2>
               <p className="text-muted-foreground mb-8">
                 Join these industry leaders and transform your business with <KognixWordmark size="hero" />
               </p>

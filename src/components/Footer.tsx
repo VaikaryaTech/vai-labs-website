@@ -1,79 +1,102 @@
 import { Link } from "react-router-dom";
-import logoNetwork from "@/assets/logo.gif";
-import makeInIndia from "@/assets/make-in-india.png";
-import { KognixWordmark } from "@/components/KognixWordmark";
+import logoNetwork from "@/assets/logo.webp";
+import makeInIndia from "@/assets/make-in-india.webp";
+
+type FooterLink = { to: string; label: string; product?: boolean };
+
+const COLUMNS: { title: string; links: FooterLink[] }[] = [
+  {
+    title: "Products",
+    links: [
+      { to: "/kognix-ai-studio", label: "AI Studio", product: true },
+      { to: "/kaie", label: "GenAI Engine", product: true },
+      { to: "/observability", label: "Analytics", product: true },
+      { to: "/kognix-intelligence", label: "Intelligence", product: true },
+    ],
+  },
+  {
+    title: "Industries",
+    links: [
+      { to: "/industries/finance", label: "Finance & Banking" },
+      { to: "/industries/healthcare", label: "Pharma & Life Sciences" },
+      { to: "/industries/legal", label: "Legal & Compliance" },
+      { to: "/industries/retail", label: "Retail & E-commerce" },
+      { to: "/industries/manufacturing", label: "Manufacturing & Engineering" },
+      { to: "/industries/telecom", label: "Telecom & Utilities" },
+      { to: "/industries/education", label: "Education & Academia" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { to: "/services/tech-health-assessment", label: "Tech Health Assessment" },
+      { to: "/assessment", label: "AI Readiness" },
+      { to: "/reference-architecture", label: "Reference Architecture" },
+      { to: "/blog", label: "Blog" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { to: "/about", label: "About" },
+      { to: "/careers", label: "Careers" },
+      { to: "/contact", label: "Contact" },
+      { to: "/book-demo", label: "Book a Demo" },
+    ],
+  },
+];
 
 export const Footer = () => {
   return (
-    <footer className="bg-background border-t border-border">
-      <div className="container mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-5 gap-8">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img src={logoNetwork} alt="VAI LABs" className="h-10 w-10" />
-              <span className="text-xl font-bold text-glow-sun">VAI LABs</span>
-            </div>
-            <p className="text-sm text-muted-foreground">
-              Enterprise-grade Generative AI for secure, on-premises deployment
+    <footer className="border-t border-border bg-background">
+      <div className="container mx-auto px-6 pt-20 pb-10">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-4">
+            <Link to="/" className="inline-flex items-center gap-3">
+              <img src={logoNetwork} alt="" className="h-9 w-9" />
+              <span className="text-lg font-semibold tracking-tight">VAI Labs</span>
+            </Link>
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
+              Enterprise-grade Generative AI for secure, on-premises and
+              air-gapped deployment.
             </p>
           </div>
 
-          <div>
-            <h4 className="font-semibold mb-4">Enterprise Products</h4>
-            <ul className="space-y-2">
-              <li><Link to="/kognix-ai-studio" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><KognixWordmark size="hero" /> <span className="text-cyan-accent">AI Studio</span></Link></li>
-              <li><Link to="/kaie" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><KognixWordmark size="hero" /> <span className="text-cyan-accent">GenAI Engine</span></Link></li>
-              <li><Link to="/observability" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><KognixWordmark size="hero" /> <span className="text-cyan-accent">Analytics</span></Link></li>
-              <li><Link to="/kognix-intelligence" className="text-sm text-muted-foreground hover:text-foreground transition-colors"><KognixWordmark size="hero" /> <span className="text-cyan-accent">Intelligence</span></Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Enterprise Services</h4>
-            <ul className="space-y-2">
-              <li><Link to="/services/tech-health-assessment" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Tech Health Assessments</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Application Areas</h4>
-            <ul className="space-y-2">
-              <li><Link to="/industries/finance" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Finance & Banking</Link></li>
-              <li><Link to="/industries/healthcare" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Pharma & Life Sciences</Link></li>
-              <li><Link to="/industries/legal" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Legal & Compliance</Link></li>
-              <li><Link to="/industries/retail" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Retail & E-commerce</Link></li>
-              <li><Link to="/industries/manufacturing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Manufacturing & Engineering</Link></li>
-              <li><Link to="/industries/telecom" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Telecom & Utilities</Link></li>
-              <li><Link to="/industries/education" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Education & Academia</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Resources</h4>
-            <ul className="space-y-2">
-              <li><Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Blog</Link></li>
-              <li><Link to="/reference-architecture" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Reference Architecture</Link></li>
-
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-2">
-              <li><Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link></li>
-              <li><Link to="/careers" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Careers</Link></li>
-              <li><Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</Link></li>
-              <li><Link to="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Privacy</Link></li>
-            </ul>
-          </div>
+          {COLUMNS.map((col) => (
+            <nav key={col.title} aria-label={col.title} className="lg:col-span-2">
+              <h4 className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                {col.title}
+              </h4>
+              <ul className="mt-5 space-y-3">
+                {col.links.map((l) => (
+                  <li key={l.to}>
+                    <Link
+                      to={l.to}
+                      className="text-sm text-foreground/80 transition-colors hover:text-primary"
+                    >
+                      {l.product && (
+                        <span className="mr-1.5 font-semibold tracking-[0.08em] text-foreground">
+                          KOGNIX
+                        </span>
+                      )}
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-sm text-muted-foreground">
-            © 2026 Vaikarya Technologies (OPC) Pvt Ltd. All rights reserved.
+        <div className="mt-16 flex flex-col gap-6 border-t border-border pt-8 md:flex-row md:items-center md:justify-between">
+          <p className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} Vaikarya Technologies (OPC) Pvt Ltd. All rights reserved.
           </p>
-          <div className="flex items-center gap-2">
-            <img src={makeInIndia} alt="Make in India" className="h-14 w-auto" />
+          <div className="flex items-center gap-6">
+            <Link to="/privacy" className="text-xs text-muted-foreground hover:text-foreground">
+              Privacy
+            </Link>
+            <img src={makeInIndia} alt="Make in India" className="h-10 w-auto" />
           </div>
         </div>
       </div>

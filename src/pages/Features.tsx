@@ -2,12 +2,12 @@ import { Database, FileText, Workflow, Settings, MessageSquare, Network, LayoutD
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import genaiCapabilities from "@/assets/genai-capabilities.jpg";
-import platformIntegrations from "@/assets/platform-integrations.jpg";
-import workflowAutomation from "@/assets/workflow-automation.jpg";
-import bgDataIngestion from "@/assets/bg-data-ingestion.jpg";
-import bgDeployment from "@/assets/bg-deployment.jpg";
-import bgChatExperience from "@/assets/bg-chat-experience.jpg";
+import genaiCapabilities from "@/assets/genai-capabilities.webp";
+import platformIntegrations from "@/assets/platform-integrations.webp";
+import workflowAutomation from "@/assets/workflow-automation.webp";
+import bgDataIngestion from "@/assets/bg-data-ingestion.webp";
+import bgDeployment from "@/assets/bg-deployment.webp";
+import bgChatExperience from "@/assets/bg-chat-experience.webp";
 import { KognixWordmark } from "@/components/KognixWordmark";
 
 export default function Features() {
@@ -229,7 +229,7 @@ export default function Features() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background" />
         <div className="container mx-auto max-w-4xl text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl font-medium tracking-tight mb-6">
             <KognixWordmark size="hero" /> AI Features
           </h1>
           <p className="text-xl text-muted-foreground">
@@ -262,7 +262,7 @@ export default function Features() {
                       <Icon className="h-8 w-8 text-foreground" />
                     </div>
                     <div>
-                      <h2 className="text-3xl md:text-4xl font-bold mb-2">{category.title}</h2>
+                      <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-2">{category.title}</h2>
                       <p className="text-lg text-muted-foreground">
                         {category.description.split('KOGNIX').map((part, i, arr) => (
                           <span key={i}>
@@ -320,7 +320,7 @@ export default function Features() {
               <LayoutDashboard className="h-8 w-8 text-foreground" />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2"><KognixWordmark size="hero" /> Dashboard</h2>
+              <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-2"><KognixWordmark size="hero" /> Dashboard</h2>
               <p className="text-lg text-muted-foreground">Your Command Center for Intelligent AI Operations</p>
             </div>
           </div>
@@ -385,7 +385,7 @@ export default function Features() {
             </div>
 
             <div className="mt-12 p-8 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20">
-              <h3 className="text-2xl font-bold mb-4">Why It Matters</h3>
+              <h3 className="text-2xl font-medium tracking-tight mb-4">Why It Matters</h3>
               <div className="grid md:grid-cols-2 gap-4 text-muted-foreground">
                 <p>• Single-pane observability: No more switching tools to check system or agent health.</p>
                 <p>• Enterprise-ready monitoring: Database, task execution, search, and storage health — all tracked live.</p>
@@ -401,7 +401,7 @@ export default function Features() {
       <section className="py-24 px-6">
         <div className="container mx-auto max-w-4xl text-center">
           <div className="p-12 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-6">
               Ready to Experience These Features?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">

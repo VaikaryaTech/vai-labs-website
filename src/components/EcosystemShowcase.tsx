@@ -65,7 +65,7 @@ export const EcosystemShowcase = ({
       />
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-5xl font-bold mb-3">{title}</h2>
+          <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-3">{title}</h2>
           <p className="text-base md:text-lg text-muted-foreground">{subtitle}</p>
         </div>
 
@@ -125,7 +125,7 @@ export const EcosystemShowcase = ({
           </div>
 
           <div className="text-center mt-6" key={`cap-${active}`}>
-            <h3 className="text-xl md:text-2xl font-bold animate-[ecosystem-fade_300ms_ease-in_both]">{current.title}</h3>
+            <h3 className="text-xl md:text-2xl font-medium tracking-tight animate-[ecosystem-fade_300ms_ease-in_both]">{current.title}</h3>
             <p className="text-sm md:text-base text-muted-foreground mt-1 animate-[ecosystem-fade_300ms_ease-in_both]">{current.caption}</p>
           </div>
         </div>

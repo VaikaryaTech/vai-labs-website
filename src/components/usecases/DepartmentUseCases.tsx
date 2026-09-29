@@ -64,7 +64,7 @@ export const DepartmentUseCases = ({ title, highlightWord, subtitle, departments
 
         <div className="mt-16 grid gap-10 lg:grid-cols-12">
           {/* Department selector */}
-          <div className="lg:col-span-4">
+          <div className="min-w-0 lg:col-span-4">
             <div
               role="tablist"
               aria-label="Departments"
@@ -98,7 +98,7 @@ export const DepartmentUseCases = ({ title, highlightWord, subtitle, departments
           </div>
 
           {/* Use cases */}
-          <div className="lg:col-span-8" role="tabpanel" aria-label={current.department}>
+          <div className="min-w-0 lg:col-span-8" role="tabpanel" aria-label={current.department}>
             <ol key={dept} className="border-t border-border animate-in fade-in slide-in-from-bottom-2 duration-300">
               {current.useCases.map((uc, i) => {
                 const isOpen = open === i;

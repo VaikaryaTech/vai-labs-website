@@ -200,7 +200,7 @@ export const RouteMeta = () => {
         description: meta.description,
         datePublished: meta.article.published,
         author: { "@type": "Organization", name: meta.article.author },
-        publisher: { "@type": "Organization", name: "VAI Labs", logo: { "@type": "ImageObject", url: `${SITE}/vai-logo.png` } },
+        publisher: { "@type": "Organization", name: "VAI Labs", logo: { "@type": "ImageObject", url: `${SITE}/brand/vai-logo-512.png` } },
         mainEntityOfPage: url,
         image: OG_IMAGE,
       });

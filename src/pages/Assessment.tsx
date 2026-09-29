@@ -140,6 +140,7 @@ const Assessment = () => {
   const [current, setCurrent] = useState(0);
   const [openNotes, setOpenNotes] = useState<Record<string, boolean>>({});
   const [showReport, setShowReport] = useState(false);
+  const [downloading, setDownloading] = useState(false);
   useScrollMotion(root);
 
   const totalQuestions = sections.reduce((acc, s) => acc + s.questions.length, 0);
@@ -178,7 +179,7 @@ const Assessment = () => {
     scrollToTop();
   };
 
-  const handleDownloadReport = () => {
+  const handleDownloadReport = async (organization: string) => {
     if (answeredCount === 0) {
       toast({
         title: "No answers yet",
@@ -188,34 +189,36 @@ const Assessment = () => {
       return;
     }
 
-    let reportContent = "GENERATIVE AI READINESS ASSESSMENT REPORT\n\n";
-    reportContent += `Generated on: ${new Date().toLocaleDateString()}\n\n`;
-    reportContent += "=".repeat(80) + "\n\n";
-    sections.forEach((section) => {
-      const yes = section.questions.filter((q) => q.answer === "yes").length;
-      reportContent += `SECTION ${section.id}: ${section.title.toUpperCase()}\n`;
-      reportContent += `Readiness: ${Math.round((yes / section.questions.length) * 100)}% (${answeredIn(section)}/${section.questions.length} answered)\n`;
-      reportContent += "-".repeat(80) + "\n\n";
-      section.questions.forEach((question) => {
-        reportContent += `Q${question.id}: ${question.text}\n`;
-        reportContent += `Answer: ${question.answer?.toUpperCase() || "NOT ANSWERED"}\n`;
-        if (question.details) reportContent += `Details: ${question.details}\n`;
-        reportContent += "\n";
+    setDownloading(true);
+    try {
+      // Loaded on demand so the PDF engine never weighs down the page itself.
+      const [{ pdf }, { ReadinessPdf }] = await Promise.all([
+        import("@react-pdf/renderer"),
+        import("@/components/assessment/ReadinessPdf"),
+      ]);
+      const blob = await pdf(<ReadinessPdf sections={sections} organization={organization} />).toBlob();
+
+      const slug = organization.trim().replace(/[^a-z0-9]+/gi, "-").replace(/(^-|-$)/g, "");
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `AI-Readiness-Report${slug ? `-${slug}` : ""}-${new Date().toISOString().split("T")[0]}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      toast({ title: "Report downloaded", description: "Your PDF readiness report has been saved." });
+    } catch (error) {
+      console.error("PDF generation failed:", error);
+      toast({
+        title: "Couldn't create the PDF",
+        description: "Please try again in a moment.",
+        variant: "destructive",
       });
-      reportContent += "\n";
-    });
-
-    const blob = new Blob([reportContent], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `AI-Readiness-Assessment-${new Date().toISOString().split("T")[0]}.txt`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-
-    toast({ title: "Report downloaded", description: "Your assessment report has been saved." });
+    } finally {
+      setDownloading(false);
+    }
   };
 
   const section = sections[current];
@@ -330,6 +333,7 @@ const Assessment = () => {
                 <ReadinessReport
                   sections={sections}
                   onDownload={handleDownloadReport}
+                  downloading={downloading}
                   onReset={() => {
                     setShowReport(false);
                     scrollToTop();

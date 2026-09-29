@@ -1,6 +1,7 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   Radar,
   RadarChart,
@@ -9,86 +10,28 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
-import { AlertTriangle, ArrowRight, CheckCircle2, CircleDashed, Download, RotateCcw } from "lucide-react";
+import { AlertTriangle, ArrowRight, CheckCircle2, CircleDashed, Download, Loader2, RotateCcw } from "lucide-react";
 
-export interface ReportQuestion {
-  id: number;
-  text: string;
-  answer?: "yes" | "no";
-  details?: string;
-}
+import { buildReport, RECOMMENDATIONS, type ReportSection } from "@/components/assessment/readiness-scoring";
 
-export interface ReportSection {
-  id: number;
-  title: string;
-  description: string;
-  questions: ReportQuestion[];
-}
+export type { ReportQuestion, ReportSection } from "@/components/assessment/readiness-scoring";
 
 interface Props {
   sections: ReportSection[];
-  onDownload: () => void;
+  /** Called with the optional organization name to print on the PDF cover. */
+  onDownload: (organization: string) => void;
   onReset: () => void;
+  downloading?: boolean;
 }
-
-const MATURITY = [
-  { min: 0, label: "Nascent", tone: "Foundational gaps across most dimensions.", color: "0 85% 60%" },
-  { min: 35, label: "Emerging", tone: "Early momentum, but key enablers are missing.", color: "30 95% 55%" },
-  { min: 55, label: "Developing", tone: "Solid base with targeted gaps to close.", color: "45 100% 55%" },
-  { min: 75, label: "Advanced", tone: "Strong readiness; refine governance and scale.", color: "160 84% 45%" },
-  { min: 90, label: "Optimized", tone: "Enterprise-ready for scaled GenAI deployment.", color: "180 90% 55%" },
-];
-
-const RECOMMENDATIONS: Record<string, string> = {
-  "Strategy and Vision":
-    "Run an executive alignment workshop to lock a 12-month GenAI roadmap with named owners and value targets per use case.",
-  "Data Readiness and Infrastructure":
-    "Stand up a governed data foundation: catalog critical sources, define retention and access policy, and provision scalable GPU/MLOps capacity.",
-  "Talent and Capabilities":
-    "Build a small central AI enablement team and pair it with role-based upskilling for product, ops and risk functions.",
-  "Ethical AI and Governance":
-    "Publish responsible-AI principles with a model review board, bias testing and mandatory human-in-the-loop for high-impact outputs.",
-  "Technology & Tools":
-    "Consolidate on a reference architecture with model versioning, evaluation harnesses and production drift monitoring.",
-  "Legal, Compliance, and Risk Management":
-    "Complete an IP, privacy and EU AI Act impact review, and log accepted risks with mitigations for hallucination and misuse.",
-  "Change Management and Adoption":
-    "Launch controlled pilots with clear success criteria, then scale through champions, training and transparent comms.",
-  "Measurement and Optimization":
-    "Define KPI baselines and an ROI model per use case, with feedback loops that feed model and prompt improvements.",
-};
-
-const scoreOf = (s: ReportSection) => {
-  const yes = s.questions.filter((q) => q.answer === "yes").length;
-  return Math.round((yes / s.questions.length) * 100);
-};
-
-const bandFor = (score: number) =>
-  [...MATURITY].reverse().find((m) => score >= m.min) ?? MATURITY[0];
 
 const Label = ({ children }: { children: React.ReactNode }) => (
   <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">{children}</p>
 );
 
-export const ReadinessReport = ({ sections, onDownload, onReset }: Props) => {
-  const scored = useMemo(
-    () => sections.map((s) => ({ ...s, score: scoreOf(s) })).sort((a, b) => a.id - b.id),
-    [sections],
-  );
-
-  const totalQuestions = sections.reduce((a, s) => a + s.questions.length, 0);
-  const yesCount = sections.reduce((a, s) => a + s.questions.filter((q) => q.answer === "yes").length, 0);
-  const noCount = sections.reduce((a, s) => a + s.questions.filter((q) => q.answer === "no").length, 0);
-  const unanswered = totalQuestions - yesCount - noCount;
-  const overall = Math.round((yesCount / totalQuestions) * 100);
-  const band = bandFor(overall);
-
-  const radarData = scored.map((s) => ({ dimension: s.title.split(/[ &,]/)[0], score: s.score }));
-  const strengths = [...scored].sort((a, b) => b.score - a.score).slice(0, 3);
-  const gaps = [...scored].sort((a, b) => a.score - b.score).slice(0, 3);
-  const criticalGaps = scored.flatMap((s) =>
-    s.questions.filter((q) => q.answer === "no").map((q) => ({ section: s.title, text: q.text, details: q.details })),
-  );
+export const ReadinessReport = ({ sections, onDownload, onReset, downloading = false }: Props) => {
+  const { scored, totalQuestions, yesCount, noCount, unanswered, overall, band, radarData, strengths, gaps, roadmap, criticalGaps } =
+    useMemo(() => buildReport(sections), [sections]);
+  const [organization, setOrganization] = useState("");
 
   const ring = `conic-gradient(hsl(${band.color}) ${overall * 3.6}deg, hsl(var(--muted)) ${overall * 3.6}deg)`;
 
@@ -204,15 +147,10 @@ export const ReadinessReport = ({ sections, onDownload, onReset }: Props) => {
         <Label>Recommended remediation roadmap</Label>
         <ol className="relative mt-6">
           <div aria-hidden="true" className="absolute bottom-2 left-[7px] top-2 w-px bg-border" />
-          {scored
-            .filter((s) => s.score < 100)
-            .sort((a, b) => a.score - b.score)
-            .map((s, i) => (
+          {roadmap.map((s) => (
               <li key={s.id} className="relative pb-8 pl-10 last:pb-0">
                 <span className="absolute left-0 top-1 h-3.5 w-3.5 rounded-full border-2 border-primary bg-background" />
-                <p className="font-mono text-xs uppercase tracking-[0.12em] text-primary">
-                  {i < 2 ? "0–3 months" : i < 4 ? "3–6 months" : "6–12 months"}
-                </p>
+                <p className="font-mono text-xs uppercase tracking-[0.12em] text-primary">{s.timeframe}</p>
                 <p className="mt-1 font-medium">
                   {s.title} <span className="font-normal text-muted-foreground">· {s.score}% ready</span>
                 </p>
@@ -282,9 +220,31 @@ export const ReadinessReport = ({ sections, onDownload, onReset }: Props) => {
         </div>
       </details>
 
-      <div className="mt-12 flex flex-wrap gap-3 border-t border-border pt-8">
-        <Button size="lg" onClick={onDownload}>
-          <Download className="h-4 w-4" /> Download report
+      <div className="mt-12 border-t border-border pt-8">
+        <label htmlFor="report-org" className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
+          Organization name <span className="normal-case tracking-normal">(optional — printed on the PDF cover)</span>
+        </label>
+        <Input
+          id="report-org"
+          value={organization}
+          onChange={(e) => setOrganization(e.target.value)}
+          placeholder="e.g. Acme Pharma Ltd"
+          maxLength={80}
+          className="mt-2 h-11 max-w-md"
+        />
+      </div>
+
+      <div className="mt-6 flex flex-wrap gap-3">
+        <Button size="lg" onClick={() => onDownload(organization)} disabled={downloading}>
+          {downloading ? (
+            <>
+              <Loader2 className="h-4 w-4 animate-spin" /> Preparing PDF…
+            </>
+          ) : (
+            <>
+              <Download className="h-4 w-4" /> Download PDF report
+            </>
+          )}
         </Button>
         <Button variant="outline" size="lg" onClick={onReset}>
           <RotateCcw className="h-4 w-4" /> Back to questionnaire

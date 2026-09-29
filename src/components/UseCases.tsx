@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Bot, Workflow, Database, Link2 } from "lucide-react";
-import useCasesImg from "@/assets/home-usecases.jpg";
+import useCasesImg from "@/assets/home-usecases.webp";
 
 const useCases = [
   {
@@ -38,11 +38,11 @@ export const UseCases = () => {
             <img 
               src={useCasesImg} 
               alt="AI-powered business orchestration use cases across industries"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-500"
             />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-8">
-            <h2 className="text-4xl font-bold mb-4 text-foreground">
+            <h2 className="text-4xl font-medium tracking-tight mb-4 text-foreground">
               What You'll Engineer
             </h2>
             <p className="text-xl text-foreground/80">
@@ -55,7 +55,7 @@ export const UseCases = () => {
           {useCases.map((useCase, index) => (
             <Card 
               key={index}
-              className={`p-8 bg-gradient-card backdrop-blur-sm border-border hover:scale-105 transition-all duration-300 hover:shadow-glow-primary group cursor-pointer animate-slide-in`}
+              className={`p-8 bg-card border-border transition-all duration-300 group cursor-pointer animate-slide-in`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="space-y-4">
@@ -64,7 +64,7 @@ export const UseCases = () => {
                 </div>
                 
                 <div>
-                  <h3 className="text-2xl font-bold mb-3">
+                  <h3 className="text-2xl font-medium tracking-tight mb-3">
                     {useCase.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">

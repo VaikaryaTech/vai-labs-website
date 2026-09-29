@@ -24,7 +24,7 @@ export const IndustryGrid = () => {
     <section className="py-24 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold mb-3">
+          <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-3">
             Enterprise <span className="text-glow-cyan">Application Areas</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -37,10 +37,10 @@ export const IndustryGrid = () => {
             <Link
               key={to}
               to={to}
-              className="group relative glass rounded-2xl p-6 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:[transform:perspective(800px)_rotateX(2deg)_rotateY(-2deg)_translateY(-4px)] hover:border-primary/40 hover:shadow-glow-primary"
+              className="group relative glass rounded-2xl p-6 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:[transform:perspective(800px)_rotateX(2deg)_rotateY(-2deg)_translateY(-4px)] hover:border-primary/40"
             >
               <div
-                className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${tint} backdrop-blur-sm transition-all duration-300 group-hover:scale-110`}
+                className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${tint} backdrop-blur-sm transition-all duration-300`}
               >
                 <Icon className="h-7 w-7 text-primary transition-all duration-300 group-hover:text-cyan-accent group-hover:drop-shadow-[0_0_10px_hsl(var(--cyan-accent))]" />
               </div>

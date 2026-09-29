@@ -56,11 +56,10 @@ const Pricing = () => {
       <Navbar />
       
       <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-hero">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(260_60%_25%/0.2),transparent_70%)]" />
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6 animate-slide-in">
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+            <h1 className="text-5xl lg:text-7xl font-medium tracking-tight leading-tight">
               <span className="bg-gradient-accent bg-clip-text text-transparent">
                 Flexible Pricing
               </span>
@@ -79,7 +78,7 @@ const Pricing = () => {
             {plans.map((plan, index) => (
               <Card 
                 key={index}
-                className={`p-8 ${plan.popular ? 'border-primary shadow-glow-primary scale-105' : 'border-border'} transition-all duration-300 hover:scale-105`}
+                className={`p-8 ${plan.popular ? 'border-primary shadow-glow-primary scale-105' : 'border-border'} transition-all duration-300`}
               >
                 {plan.popular && (
                   <div className="bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full inline-block mb-4">
@@ -87,7 +86,7 @@ const Pricing = () => {
                   </div>
                 )}
                 
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                <h3 className="text-2xl font-medium tracking-tight mb-2">{plan.name}</h3>
                 <p className="text-muted-foreground text-sm mb-6">{plan.description}</p>
                 
                 <div className="mb-6">

@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { LiveBackground } from "@/components/LiveBackground";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ShieldOff, WifiOff, Lock, AppWindow, Layers, Cpu, Database, BarChart3, ArrowRight, Download } from "lucide-react";
@@ -40,9 +39,6 @@ const ReferenceArchitecture = () => {
       <Navbar />
 
       <section className="relative overflow-hidden pt-32 pb-24">
-        <LiveBackground variant="grid" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_35%,hsl(174_60%_45%/0.18),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_60%,hsl(12_100%_50%/0.16),transparent_55%)]" />
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
@@ -51,7 +47,7 @@ const ReferenceArchitecture = () => {
               SOVEREIGN BY ARCHITECTURE
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+            <h1 className="text-4xl md:text-6xl font-medium tracking-tight leading-tight">
               <KognixWordmark size="hero" />{" "}
               <span className="text-glow-cyan">Reference Architecture</span>
             </h1>
@@ -109,7 +105,7 @@ const ReferenceArchitecture = () => {
       <section className="py-20 relative">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">
+            <h2 className="text-3xl md:text-4xl font-medium tracking-tight">
               <KognixWordmark size="hero" />{" "}
               <span className="text-glow-cyan">Deployment Blueprints</span>
             </h2>
@@ -138,7 +134,7 @@ const ReferenceArchitecture = () => {
                   <img
                     src={d.image}
                     alt={`KOGNIX ${d.title} diagram`}
-                                        className="w-full rounded-2xl border border-border/60 bg-white transition-transform duration-300 group-hover:scale-[1.01]"
+                                        className="w-full rounded-2xl border border-border/60 bg-white transition-transform duration-300"
                   />
                 </a>
               </div>

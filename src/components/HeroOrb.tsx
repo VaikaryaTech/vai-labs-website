@@ -208,7 +208,7 @@ export const HeroOrb = () => {
             type="button"
             onClick={onMic}
             aria-label="Talk to KOGNIX using your microphone"
-            className="glass flex items-center gap-1.5 rounded-full px-3 py-2 text-xs font-medium hover:scale-105 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            className="glass flex items-center gap-1.5 rounded-full px-3 py-2 text-xs font-medium transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
           >
             <Mic className="h-3.5 w-3.5" aria-hidden="true" /> Talk
           </button>
@@ -222,7 +222,7 @@ export const HeroOrb = () => {
               }
             }}
             aria-label="Type a question for KOGNIX"
-            className="glass flex items-center gap-1.5 rounded-full px-3 py-2 text-xs font-medium hover:scale-105 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            className="glass flex items-center gap-1.5 rounded-full px-3 py-2 text-xs font-medium transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
           >
             <MessageSquare className="h-3.5 w-3.5" aria-hidden="true" /> Type
           </button>

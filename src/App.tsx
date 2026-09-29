@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -5,40 +6,40 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CookieConsent } from "@/components/CookieConsent";
-import { BackgroundMusic } from "@/components/BackgroundMusic";
 import { ScrollToTop } from "@/components/ScrollToTop";
-import { GlowCursor } from "@/components/GlowCursor";
+import { SmoothScroll } from "@/components/SmoothScroll";
+import { RouteMeta } from "@/components/RouteMeta";
 import { SectionReveal } from "@/components/SectionReveal";
 import Home from "./pages/Home";
-import Product from "./pages/KAIE";
-import Features from "./pages/Features";
-import FinanceBanking from "./pages/FinanceBanking";
-import HealthcarePharma from "./pages/HealthcarePharma";
-import LegalCompliance from "./pages/LegalCompliance";
-import RetailEcommerce from "./pages/RetailEcommerce";
-import ManufacturingEngineering from "./pages/ManufacturingEngineering";
-import TelecomUtilities from "./pages/TelecomUtilities";
-import EducationAcademia from "./pages/EducationAcademia";
-import Assessment from "./pages/Assessment";
-import Index from "./pages/Index";
-import BookDemo from "./pages/BookDemo";
-import Pricing from "./pages/Pricing";
+const Product = lazy(() => import("./pages/KAIE"));
+const Features = lazy(() => import("./pages/Features"));
+const FinanceBanking = lazy(() => import("./pages/FinanceBanking"));
+const HealthcarePharma = lazy(() => import("./pages/HealthcarePharma"));
+const LegalCompliance = lazy(() => import("./pages/LegalCompliance"));
+const RetailEcommerce = lazy(() => import("./pages/RetailEcommerce"));
+const ManufacturingEngineering = lazy(() => import("./pages/ManufacturingEngineering"));
+const TelecomUtilities = lazy(() => import("./pages/TelecomUtilities"));
+const EducationAcademia = lazy(() => import("./pages/EducationAcademia"));
+const Assessment = lazy(() => import("./pages/Assessment"));
+const Index = lazy(() => import("./pages/Index"));
+const BookDemo = lazy(() => import("./pages/BookDemo"));
+const Pricing = lazy(() => import("./pages/Pricing"));
 
-import CaseStudies from "./pages/CaseStudies";
-import Blog from "./pages/Blog";
-import BlogEnterpriseAI from "./pages/BlogEnterpriseAI";
-import BlogSecureGenAI from "./pages/BlogSecureGenAI";
-import About from "./pages/About";
-import Careers from "./pages/Careers";
-import Contact from "./pages/Contact";
-import Privacy from "./pages/Privacy";
-import Observability from "./pages/Observability";
-import KognixIntelligence from "./pages/KognixIntelligence";
+const CaseStudies = lazy(() => import("./pages/CaseStudies"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogEnterpriseAI = lazy(() => import("./pages/BlogEnterpriseAI"));
+const BlogSecureGenAI = lazy(() => import("./pages/BlogSecureGenAI"));
+const About = lazy(() => import("./pages/About"));
+const Careers = lazy(() => import("./pages/Careers"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const Observability = lazy(() => import("./pages/Observability"));
+const KognixIntelligence = lazy(() => import("./pages/KognixIntelligence"));
 
-import KognixAIStudio from "./pages/KognixAIStudio";
-import TechHealthAssessment from "./pages/TechHealthAssessment";
-import ReferenceArchitecture from "./pages/ReferenceArchitecture";
-import NotFound from "./pages/NotFound";
+const KognixAIStudio = lazy(() => import("./pages/KognixAIStudio"));
+const TechHealthAssessment = lazy(() => import("./pages/TechHealthAssessment"));
+const ReferenceArchitecture = lazy(() => import("./pages/ReferenceArchitecture"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
@@ -49,9 +50,11 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <SmoothScroll />
           <ScrollToTop />
+          <RouteMeta />
           <SectionReveal />
-          <GlowCursor />
+          <Suspense fallback={<div className="min-h-screen bg-background" />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/kaie" element={<Product />} />
@@ -85,8 +88,8 @@ const App = () => (
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </Suspense>
           <CookieConsent />
-          <BackgroundMusic />
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>

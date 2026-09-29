@@ -2,8 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 /**
- * Reveals every <section> with a smooth upward slide plus a quick neon
- * scan-line sweep as it scrolls into view.
+ * Reveals every <section> with a subtle upward fade
  */
 export const SectionReveal = () => {
   const location = useLocation();
@@ -25,6 +24,7 @@ export const SectionReveal = () => {
 
     const attach = () => {
       document.querySelectorAll<HTMLElement>("main section, section").forEach((el) => {
+        if (el.closest("[data-motion]")) return;
         if (el.dataset.sectionReveal) return;
         el.dataset.sectionReveal = "true";
         el.classList.add("section-reveal");

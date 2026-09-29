@@ -1,8 +1,7 @@
 import { Navbar } from "@/components/Navbar";
-import { LiveBackground } from "@/components/LiveBackground";
 import { Footer } from "@/components/Footer";
-import { ProductShowcase3D } from "@/components/ProductShowcase3D";
-import { Card } from "@/components/ui/card";
+import { ProductShowcase } from "@/components/ProductShowcase";
+import { FeatureSection } from "@/components/FeatureSection";
 import { Button } from "@/components/ui/button";
 import { 
   Search, 
@@ -13,18 +12,16 @@ import {
   Link2, 
   Cloud, 
   ArrowRight,
-  BarChart3,
   Zap,
   Shield,
   Layers,
-  FileText,
-  Download
+  FileText
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import observabilityBg from "@/assets/observability-hero-background.jpg";
-import deployCloud from "@/assets/deploy-cloud.png";
-import deployKubernetes from "@/assets/deploy-kubernetes.png";
-import deployAirgapped from "@/assets/deploy-airgapped.png";
+import observabilityBg from "@/assets/observability-hero-background.webp";
+import deployCloud from "@/assets/deploy-cloud.webp";
+import deployKubernetes from "@/assets/deploy-kubernetes.webp";
+import deployAirgapped from "@/assets/deploy-airgapped.webp";
 import { KognixWordmark } from "@/components/KognixWordmark";
 
 const Observability = () => {
@@ -88,292 +85,189 @@ const Observability = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
-      {/* Hero Section - Brochure Style */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+
+      {/* Hero */}
+      <section className="relative flex min-h-[80vh] items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={observabilityBg} alt="" className="w-full h-full object-cover" />
+          <img src={observabilityBg} alt="" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70" />
         </div>
-        <LiveBackground variant="flow" />
-        
-        <div className="container mx-auto px-6 relative z-10">
+
+        <div className="container relative z-10 mx-auto px-6 pt-24">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-500 text-sm font-medium mb-8">
-              <BarChart3 className="h-4 w-4" />
-              Enterprise LLM Analytics
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              <KognixWordmark size="hero" />{" "}
-              <span className="text-glow-cyan">Analytics</span>
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
+              Enterprise LLM analytics
+            </p>
+            <h1 className="mt-6 text-5xl font-medium leading-[1.02] tracking-[-0.03em] md:text-7xl">
+              <KognixWordmark size="hero" /> <span className="text-glow-cyan">Analytics</span>
             </h1>
-            
-            <p className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-              Complete LLM Observability Platform
+            <p className="mt-6 text-2xl font-medium tracking-tight md:text-3xl">Complete LLM observability.</p>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              Monitor, debug, and optimize your AI applications with enterprise-grade tracing — track latency
+              of LLM calls and full traces, token usage and associated costs, error rates and system performance.
             </p>
-            
-            <p className="text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl">
-              Monitor, debug, and optimize your AI applications with enterprise-grade tracing — 
-              track latency of LLM calls and full traces, token usage and associated costs, 
-              error rates and system performance.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/book-demo">
-                <Button size="lg" className="group w-full sm:w-auto">
-                  Schedule Demo
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                  Contact Sales
-                </Button>
-              </Link>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Button asChild size="lg" className="group">
+                <Link to="/book-demo">
+                  Schedule demo
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link to="/contact">Contact sales</Link>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Impact Metrics Banner */}
-      <section className="py-12 bg-gradient-hero border-y border-border">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { value: "10x", label: "Faster Debugging" },
-              { value: "99.9%", label: "Trace Coverage" },
-              { value: "50%", label: "Reduced Latency" },
-              { value: "24/7", label: "Real-time Monitoring" },
-            ].map((metric, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-glow-cyan mb-2">
-                  {metric.value}
-                </div>
-                <p className="text-sm text-muted-foreground font-medium">{metric.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Core Capabilities */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Core Capabilities
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to build, monitor, and optimize production LLM applications
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {coreCapabilities.map((capability, index) => (
-              <Card 
-                key={index}
-                className="p-8 bg-gradient-card backdrop-blur-sm border-border hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] transition-all duration-300 group"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <capability.icon className="h-7 w-7 text-cyan-500" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">{capability.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {capability.description}
-                </p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works - Visual Flow */}
-      <section className="py-24 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,hsl(185_80%_40%/0.15),transparent_60%)]" />
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              How <KognixWordmark size="hero" />{" "}
-              <span className="text-glow-cyan">Analytics</span> Works
-            </h2>
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-6">
-              {[
-                { step: "01", title: "Instrument", desc: "Add our SDK to your LLM application with a single line of code" },
-                { step: "02", title: "Trace", desc: "Automatically capture every interaction, retrieval, and agent action" },
-                { step: "03", title: "Analyze", desc: "Identify bottlenecks, failures, and optimization opportunities" },
-                { step: "04", title: "Optimize", desc: "Iterate on prompts and configurations with real-time feedback" },
-              ].map((item, index) => (
-                <div key={index} className="relative">
-                  <Card className="p-6 bg-card/50 backdrop-blur-sm border-border h-full">
-                    <div className="text-5xl font-bold text-cyan-500/20 mb-4">{item.step}</div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                  </Card>
-                  {index < 3 && (
-                    <div className="hidden md:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
-                      <ArrowRight className="h-6 w-6 text-cyan-500/50" />
-                    </div>
-                  )}
-                </div>
-              ))}
+      {/* Metrics strip */}
+      <section className="border-t border-border">
+        <dl className="container mx-auto grid grid-cols-2 px-6 md:grid-cols-4">
+          {[
+            { value: "10x", label: "Faster debugging" },
+            { value: "99.9%", label: "Trace coverage" },
+            { value: "50%", label: "Reduced latency" },
+            { value: "24/7", label: "Real-time monitoring" },
+          ].map((metric, i) => (
+            <div
+              key={metric.label}
+              className={`border-border py-10 ${i % 2 === 1 ? "border-l pl-6" : ""} ${i > 1 ? "border-t md:border-t-0" : ""} ${i > 0 ? "md:border-l md:pl-8" : ""}`}
+            >
+              <dd className="text-4xl font-medium tracking-tight md:text-5xl">{metric.value}</dd>
+              <dt className="mt-2 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">{metric.label}</dt>
             </div>
-          </div>
-        </div>
+          ))}
+        </dl>
       </section>
 
-      {/* Integration Ecosystem */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-4xl font-bold mb-6">
-                  Seamless Integration Ecosystem
-                </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  Drop-in replacements and native SDKs for your existing tools. 
-                  Get started in minutes, not days.
-                </p>
-                
-                <div className="space-y-4">
-                  {[
-                    "OpenAI SDK - Direct replacement with zero code changes",
-                    "LangChain & LlamaIndex - Native callbacks and integrations",
-                    "OpenTelemetry - Industry-standard observability protocol",
-                    "LiteLLM - Universal LLM gateway support",
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Zap className="h-3 w-3 text-cyan-500" />
-                      </div>
-                      <p className="text-foreground">{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+      <FeatureSection
+        eyebrow="Capabilities"
+        title="Build, monitor and optimize production LLM apps."
+        subtitle="Everything you need to see what your AI is doing — and make it better."
+        items={coreCapabilities}
+        layout="rows"
+      />
 
-              <div className="grid grid-cols-2 gap-4">
-                {["OpenAI", "LangChain", "LlamaIndex", "OpenTelemetry"].map((name, index) => (
-                  <Card 
-                    key={index}
-                    className="p-6 bg-gradient-card border-border text-center hover:border-cyan-500/30 transition-colors"
-                  >
-                    <div className="text-lg font-semibold text-foreground">{name}</div>
-                    <p className="text-sm text-muted-foreground mt-1">Native Support</p>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Deployment Options */}
-      <section className="py-24 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,hsl(12_100%_50%/0.1),transparent_60%)]" />
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Deploy Your Way
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Cloud-managed or self-hosted — choose the deployment that fits your security and compliance requirements
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {deploymentOptions.map((option, index) => (
-              <Card 
-                key={index}
-                className="p-6 bg-card/50 backdrop-blur-sm border-border text-center hover:scale-105 transition-all duration-300 relative overflow-hidden"
-              >
-                <div className="absolute top-4 right-4">
-                  <span className="text-xs font-medium px-3 py-1 rounded-full bg-primary/10 text-primary">
-                    {option.tag}
-                  </span>
-                </div>
-                <div className="w-48 h-48 rounded-2xl overflow-hidden mx-auto mb-6 mt-4">
-                  <img src={option.image} alt={option.title} className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-2xl font-bold mb-3">{option.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {option.description}
-                </p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Brochure Download CTA */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <Card className="p-8 md:p-12 bg-gradient-to-br from-cyan-500/10 via-background to-primary/5 border-cyan-500/20">
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="w-20 h-20 rounded-2xl bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
-                  <FileText className="h-10 w-10 text-cyan-500" />
-                </div>
-                <div className="flex-1 text-center md:text-left">
-                  <h3 className="text-2xl font-bold mb-2">
-                    <KognixWordmark size="hero" />{" "}
-                    <span className="text-glow-cyan">Analytics</span> Product Brief
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Download our comprehensive product brief with technical specifications, 
-                    architecture diagrams, and implementation guides.
-                  </p>
-                </div>
-                <Button size="lg" className="group flex-shrink-0">
-                  <FileText className="mr-2 h-5 w-5" />
-                  Download Brief
-                  <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
-                </Button>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <ProductShowcase3D
+      <ProductShowcase
         set="analytics"
-        title="See KOGNIX Analytics in Action"
+        title="See KOGNIX Analytics in action"
         subtitle="Full-stack LLM observability — from individual trace inspection to enterprise-wide usage analytics."
       />
 
-      {/* Final CTA */}
-      <section className="py-24 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(185_80%_40%/0.2),transparent_70%)]" />
-        
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Transform Your LLM Operations?
+      <FeatureSection
+        eyebrow="How it works"
+        title={
+          <>
+            How <KognixWordmark size="hero" /> <span className="text-glow-cyan">Analytics</span> works
+          </>
+        }
+        items={[
+          { title: "Instrument", description: "Add our SDK to your LLM application with a single line of code." },
+          { title: "Trace", description: "Automatically capture every interaction, retrieval, and agent action." },
+          { title: "Analyze", description: "Identify bottlenecks, failures, and optimization opportunities." },
+          { title: "Optimize", description: "Iterate on prompts and configurations with real-time feedback." },
+        ]}
+        layout="steps"
+        muted
+      />
+
+      {/* Integrations */}
+      <section className="border-t border-border">
+        <div className="container mx-auto grid gap-12 px-6 py-24 lg:grid-cols-12 lg:py-32">
+          <div className="lg:col-span-5">
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">Integrations</p>
+            <h2 className="mt-6 text-balance text-3xl font-medium leading-tight tracking-[-0.02em] md:text-5xl">
+              Works with the stack you already have.
+            </h2>
+            <p className="mt-5 max-w-md text-lg text-muted-foreground">
+              Drop-in replacements and native SDKs for your existing tools. Get started in minutes, not days.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-2">
+              {["OpenAI", "LangChain", "LlamaIndex", "OpenTelemetry", "LiteLLM"].map((name) => (
+                <span key={name} className="rounded-full border border-border px-3.5 py-1.5 font-mono text-xs">
+                  {name}
+                </span>
+              ))}
+            </div>
+          </div>
+          <ul className="lg:col-span-6 lg:col-start-7">
+            {[
+              ["OpenAI SDK", "Direct replacement with zero code changes"],
+              ["LangChain & LlamaIndex", "Native callbacks and integrations"],
+              ["OpenTelemetry", "Industry-standard observability protocol"],
+              ["LiteLLM", "Universal LLM gateway support"],
+            ].map(([name, desc]) => (
+              <li key={name} className="grid gap-1 border-t border-border py-5 last:border-b md:grid-cols-12 md:gap-6">
+                <span className="flex items-center gap-3 text-lg font-medium tracking-tight md:col-span-5">
+                  <Zap className="h-4 w-4 shrink-0 text-primary" /> {name}
+                </span>
+                <span className="pl-7 text-muted-foreground md:col-span-7 md:pl-0">{desc}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Deployment */}
+      <section className="border-t border-border bg-muted/40">
+        <div className="container mx-auto px-6 py-24 lg:py-32">
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">Deployment</p>
+          <h2 className="mt-6 max-w-3xl text-balance text-3xl font-medium leading-tight tracking-[-0.02em] md:text-5xl">
+            Deploy your way.
           </h2>
-          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Join leading enterprises using{" "}
-            <KognixWordmark size="hero" />{" "}
-            <span className="text-glow-cyan font-semibold">Analytics</span>{" "}
-            to build reliable, high-performance AI applications.
+          <p className="mt-5 max-w-xl text-lg text-muted-foreground">
+            Cloud-managed or self-hosted — choose the deployment that fits your security and compliance requirements.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/book-demo">
-              <Button size="lg" variant="hero" className="group w-full sm:w-auto">
-                Schedule a Demo
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                Contact Sales
-              </Button>
-            </Link>
+          <div className="mt-16 grid gap-x-10 gap-y-14 md:grid-cols-3">
+            {deploymentOptions.map((option) => (
+              <div key={option.title} className="group">
+                <div className="aspect-[4/3] overflow-hidden rounded-xl bg-background">
+                  <img
+                    src={option.image}
+                    alt=""
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                </div>
+                <div className="mt-6 h-px bg-foreground/80" />
+                <div className="mt-5 flex items-center justify-between gap-4">
+                  <h3 className="flex items-center gap-2.5 text-xl font-medium tracking-tight">
+                    <option.icon className="h-4 w-4 text-primary" />
+                    {option.title}
+                  </h3>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-primary">{option.tag}</span>
+                </div>
+                <p className="mt-3 leading-relaxed text-muted-foreground">{option.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Closing CTA */}
+      <section className="bg-foreground text-background">
+        <div className="container mx-auto grid gap-10 px-6 py-24 lg:grid-cols-12 lg:items-end lg:py-32">
+          <div className="lg:col-span-8">
+            <h2 className="text-balance text-4xl font-medium leading-[1.05] tracking-[-0.03em] md:text-6xl">
+              Ready to transform your LLM operations?
+            </h2>
+            <p className="mt-6 max-w-xl text-lg opacity-70">
+              See how enterprises use Analytics to build reliable, high-performance AI applications — and get
+              the product brief with technical specifications and architecture diagrams.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row lg:col-span-4 lg:justify-end">
+            <Button asChild size="lg" className="bg-background text-foreground hover:bg-background/90">
+              <Link to="/book-demo">
+                Schedule a demo <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-background/30 bg-transparent text-background hover:bg-background/10">
+              <Link to="/contact">
+                <FileText className="h-4 w-4" /> Request brief
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

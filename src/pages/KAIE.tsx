@@ -1,36 +1,21 @@
 import { Navbar } from "@/components/Navbar";
-import { LiveBackground } from "@/components/LiveBackground";
 import { Footer } from "@/components/Footer";
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { 
-  Shield, 
-  Link2, 
-  Boxes, 
-  DollarSign, 
-  TrendingDown, 
-  Upload, 
-  Brain, 
-  Sparkles, 
-  Download, 
-  RefreshCw, 
-  ArrowRight, 
-  FileText,
-  Cloud,
-  Server,
-  Lock
-} from "lucide-react";
+import { FeatureSection } from "@/components/FeatureSection";
+import { SectionNav } from "@/components/SectionNav";
+import { Shield, Link2, Boxes, DollarSign, TrendingDown, Download, ArrowRight, FileText, Cloud, Server, Lock } from "lucide-react";
 import { Link } from "react-router-dom";
-import securityImg from "@/assets/genai-security.jpg";
+import securityImg from "@/assets/genai-security.webp";
 import { KognixWordmark } from "@/components/KognixWordmark";
- import { CoreIntelligenceSection } from "@/components/kaie/CoreIntelligenceSection";
- import { DataIngestionSection } from "@/components/kaie/DataIngestionSection";
- import { AgenticAISection } from "@/components/kaie/AgenticAISection";
- import { ModelEcosystemSection } from "@/components/kaie/ModelEcosystemSection";
- import { ChatExperienceSection } from "@/components/kaie/ChatExperienceSection";
- import { DashboardSection } from "@/components/kaie/DashboardSection";
- import { IntegrationsMarquee } from "@/components/kaie/IntegrationsMarquee";
+import { CoreIntelligenceSection } from "@/components/kaie/CoreIntelligenceSection";
+import { DataIngestionSection } from "@/components/kaie/DataIngestionSection";
+import { AgenticAISection } from "@/components/kaie/AgenticAISection";
+import { ModelEcosystemSection } from "@/components/kaie/ModelEcosystemSection";
+import { ChatExperienceSection } from "@/components/kaie/ChatExperienceSection";
+import { DashboardSection } from "@/components/kaie/DashboardSection";
+import { IntegrationsMarquee } from "@/components/kaie/IntegrationsMarquee";
+
+const HANDBOOK = "/brochures/KOGNIX_GenAI_Engine_Handbook.pdf";
 
 const Product = () => {
   const coreCapabilities = [
@@ -91,286 +76,145 @@ const Product = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
-      {/* Hero Section - Brochure Style */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+
+      {/* Hero */}
+      <section className="relative flex min-h-[80vh] items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={securityImg} alt="" className="w-full h-full object-cover" />
+          <img src={securityImg} alt="" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70" />
         </div>
-        <LiveBackground variant="neural" />
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl">
-            <Badge className="mb-6 px-4 py-2" variant="secondary">
-              Core Platform
-            </Badge>
-            
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              <KognixWordmark size="hero" />{" "}
-              <span className="text-glow-cyan">GenAI Engine</span>
-            </h1>
-            
-            <p className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-              Your Secure and Flexible Generative AI Framework
-            </p>
-            
-            <p className="text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl">
-              Engineered with paramount focus on data security and flexibility. 
-              A versatile solution for seamless integration across diverse business domains 
-              while retaining absolute control over your data.
-            </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/book-demo">
-                <Button size="lg" className="group w-full sm:w-auto">
-                  Schedule Demo
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                  Contact Sales
-                </Button>
-              </Link>
+        <div className="container relative z-10 mx-auto px-6 pt-24">
+          <div className="max-w-3xl">
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">Core platform</p>
+            <h1 className="mt-6 text-5xl font-medium leading-[1.02] tracking-[-0.03em] md:text-7xl">
+              <KognixWordmark size="hero" /> <span className="text-glow-cyan">GenAI Engine</span>
+            </h1>
+            <p className="mt-6 text-2xl font-medium tracking-tight md:text-3xl">
+              Your secure and flexible Generative AI framework.
+            </p>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              Engineered with paramount focus on data security and flexibility — a versatile solution for
+              seamless integration across diverse business domains while retaining absolute control over your data.
+            </p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Button asChild size="lg" className="group">
+                <Link to="/book-demo">
+                  Schedule demo
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <a href={HANDBOOK} download target="_blank" rel="noopener noreferrer">
+                  <Download className="h-4 w-4" /> Download handbook
+                </a>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Impact Metrics Banner */}
-      <section className="py-12 bg-gradient-hero border-y border-border">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { value: "100%", label: "Data Sovereignty" },
-              { value: "Zero", label: "Internet Dependency" },
-              { value: "50%", label: "Cost Reduction" },
-              { value: "10x", label: "Faster Deployment" },
-            ].map((metric, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-glow-cyan mb-2">
-                  {metric.value}
-                </div>
-                <p className="text-sm text-muted-foreground font-medium">{metric.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* Metrics strip */}
+      <section className="border-t border-border">
+        <dl className="container mx-auto grid grid-cols-2 px-6 md:grid-cols-4">
+          {[
+            { value: "100%", label: "Data sovereignty" },
+            { value: "Zero", label: "Internet dependency" },
+            { value: "50%", label: "Cost reduction" },
+            { value: "10x", label: "Faster deployment" },
+          ].map((metric, i) => (
+            <div
+              key={metric.label}
+              className={`border-border py-10 ${i % 2 === 1 ? "border-l pl-6" : ""} ${i > 1 ? "border-t md:border-t-0" : ""} ${i > 0 ? "md:border-l md:pl-8" : ""}`}
+            >
+              <dd className="text-4xl font-medium tracking-tight md:text-5xl">{metric.value}</dd>
+              <dt className="mt-2 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">{metric.label}</dt>
+            </div>
+          ))}
+        </dl>
       </section>
 
-      {/* Core Capabilities */}
-      <section className="py-24 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(260_60%_25%/0.1),transparent_70%)]" />
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Core Capabilities
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Unmatched security, integration, and cost-effectiveness for enterprise AI
-            </p>
-          </div>
+      <SectionNav
+        items={[
+          { id: "why", label: "Why KOGNIX" },
+          { id: "retrieval", label: "Retrieval" },
+          { id: "ingestion", label: "Ingestion" },
+          { id: "agents", label: "Agents" },
+          { id: "models", label: "Models" },
+          { id: "chat", label: "Chat" },
+          { id: "dashboard", label: "Dashboard" },
+          { id: "how", label: "How it works" },
+          { id: "deploy", label: "Deploy" },
+        ]}
+      />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {coreCapabilities.map((capability, index) => (
-              <Card 
-                key={index}
-                className="p-8 bg-gradient-card backdrop-blur-sm border-border hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] transition-all duration-300 group"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <capability.icon className="h-7 w-7 text-cyan-500" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">{capability.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {capability.description}
-                </p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeatureSection
+        id="why"
+        eyebrow="Why KOGNIX"
+        title="Enterprise AI without giving up your data."
+        subtitle="Security, control and cost built into the foundation — not bolted on."
+        items={coreCapabilities}
+        layout="rows"
+      />
 
-      {/* Core Intelligence & Retrieval Engine */}
       <CoreIntelligenceSection />
-
-      {/* Advanced Data Ingestion & Processing */}
       <DataIngestionSection />
-
-      {/* Agentic AI & Workflow Automation */}
       <AgenticAISection />
-
-      {/* Model Ecosystem & Integrations */}
       <ModelEcosystemSection />
-
-      {/* Supported AI Providers Marquee */}
       <IntegrationsMarquee />
-
-      {/* Chat Experience & User Interaction */}
       <ChatExperienceSection />
-
-      {/* KOGNIX Dashboard */}
       <DashboardSection />
 
-      {/* How It Works - Visual Flow */}
-      <section className="py-24 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,hsl(185_80%_40%/0.15),transparent_60%)]" />
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              How <KognixWordmark size="hero" />{" "}
-              <span className="text-glow-cyan">GenAI Engine</span> Works
+      <FeatureSection
+        id="how"
+        eyebrow="How it works"
+        title={
+          <>
+            How <KognixWordmark size="hero" /> <span className="text-glow-cyan">GenAI Engine</span> works
+          </>
+        }
+        items={[
+          { title: "Data input", description: "Your data stays secure within your infrastructure." },
+          { title: "AI processing", description: "Advanced LLMs analyze and understand context." },
+          { title: "Generation", description: "Create novel outputs and intelligent insights." },
+          { title: "Output & learning", description: "Deliver actionable results, with continuous refinement and improvement." },
+        ]}
+        layout="steps"
+      />
+
+      <FeatureSection
+        id="deploy"
+        eyebrow="Deployment"
+        title="Deploy your way."
+        subtitle="Cloud-managed or self-hosted — choose the deployment that fits your security requirements."
+        items={deploymentOptions}
+        layout="columns"
+        muted
+      />
+
+      {/* Closing CTA */}
+      <section className="bg-foreground text-background">
+        <div className="container mx-auto grid gap-10 px-6 py-24 lg:grid-cols-12 lg:items-end lg:py-32">
+          <div className="lg:col-span-8">
+            <h2 className="text-balance text-4xl font-medium leading-[1.05] tracking-[-0.03em] md:text-6xl">
+              Ready to transform your business with AI?
             </h2>
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-5 gap-4">
-              {[
-                { step: "01", title: "Data Input", desc: "Your data stays secure within your infrastructure", icon: Upload },
-                { step: "02", title: "AI Processing", desc: "Advanced LLMs analyze and understand context", icon: Brain },
-                { step: "03", title: "Generation", desc: "Create novel outputs and intelligent insights", icon: Sparkles },
-                { step: "04", title: "Output", desc: "Deliver actionable results and solutions", icon: Download },
-                { step: "05", title: "Learning", desc: "Continuous refinement and improvement", icon: RefreshCw },
-              ].map((item, index) => (
-                <div key={index} className="relative">
-                  <Card className="p-4 bg-card/50 backdrop-blur-sm border-border h-full">
-                    <div className="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-3 mx-auto">
-                      <item.icon className="h-6 w-6 text-cyan-500" />
-                    </div>
-                    <div className="text-3xl font-bold text-cyan-500/20 mb-2 text-center">{item.step}</div>
-                    <h3 className="text-lg font-bold mb-1 text-center">{item.title}</h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed text-center">{item.desc}</p>
-                  </Card>
-                  {index < 4 && (
-                    <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2 z-10">
-                      <ArrowRight className="h-5 w-5 text-cyan-500/50" />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* Deployment Options */}
-      <section className="py-24 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,hsl(12_100%_50%/0.1),transparent_60%)]" />
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Deploy Your Way
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Cloud-managed or self-hosted — choose the deployment that fits your security requirements
+            <p className="mt-6 max-w-xl text-lg opacity-70">
+              See how enterprises use the GenAI Engine to unlock AI with complete data sovereignty — or grab the
+              handbook for technical specifications, deployment options, and implementation guides.
             </p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {deploymentOptions.map((option, index) => (
-              <Card 
-                key={index}
-                className="p-8 bg-card/50 backdrop-blur-sm border-border text-center hover:scale-105 transition-all duration-300 relative overflow-hidden"
-              >
-                <div className="absolute top-4 right-4">
-                  <span className="text-xs font-medium px-3 py-1 rounded-full bg-primary/10 text-primary">
-                    {option.tag}
-                  </span>
-                </div>
-                <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center mx-auto mb-6">
-                  <option.icon className="h-8 w-8 text-cyan-500" />
-                </div>
-                <h3 className="text-2xl font-bold mb-3">{option.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {option.description}
-                </p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Brochure Download CTA */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <Card className="p-8 md:p-12 bg-gradient-to-br from-cyan-500/10 via-background to-primary/5 border-cyan-500/20">
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="w-20 h-20 rounded-2xl bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
-                  <FileText className="h-10 w-10 text-cyan-500" />
-                </div>
-                <div className="flex-1 text-center md:text-left">
-                  <h3 className="text-2xl font-bold mb-2">
-                    <KognixWordmark size="hero" />{" "}
-                    <span className="text-glow-cyan">GenAI Engine</span> Product Brief
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Download our comprehensive product brief with technical specifications, 
-                    deployment options, and implementation guides.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-3 flex-shrink-0">
-                  <a 
-                    href="/brochures/KOGNIX_GenAI_Engine_Brochure.pdf" 
-                    download="KOGNIX_GenAI_Engine_Brochure.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button size="lg" className="group w-full">
-                      <FileText className="mr-2 h-5 w-5" />
-                      Download Brochure
-                      <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
-                    </Button>
-                  </a>
-                  <a 
-                    href="/brochures/KOGNIX_GenAI_Engine_Handbook.pdf" 
-                    download="KOGNIX_GenAI_Engine_Handbook.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button size="lg" variant="outline" className="group w-full">
-                      <FileText className="mr-2 h-5 w-5" />
-                      Download Handbook
-                      <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-24 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(185_80%_40%/0.2),transparent_70%)]" />
-        
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Transform Your Business with AI?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Join leading enterprises using{" "}
-            <KognixWordmark size="hero" />{" "}
-            <span className="text-glow-cyan font-semibold">GenAI Engine</span>{" "}
-            to unlock AI with complete data sovereignty.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/book-demo">
-              <Button size="lg" variant="hero" className="group w-full sm:w-auto">
-                Schedule a Demo
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            <Link to="/features">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                Explore Features
-              </Button>
-            </Link>
+          <div className="flex flex-col gap-3 sm:flex-row lg:col-span-4 lg:justify-end">
+            <Button asChild size="lg" className="bg-background text-foreground hover:bg-background/90">
+              <Link to="/book-demo">
+                Schedule a demo <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-background/30 bg-transparent text-background hover:bg-background/10">
+              <a href={HANDBOOK} download target="_blank" rel="noopener noreferrer">
+                <FileText className="h-4 w-4" /> Handbook (PDF)
+              </a>
+            </Button>
           </div>
         </div>
       </section>

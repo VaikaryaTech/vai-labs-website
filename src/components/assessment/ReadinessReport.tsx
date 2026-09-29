@@ -1,6 +1,5 @@
 import { useMemo } from "react";
-import { Card } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Radar,
@@ -10,16 +9,7 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
-import {
-  AlertTriangle,
-  CheckCircle2,
-  CircleDashed,
-  Download,
-  RotateCcw,
-  ShieldCheck,
-  Target,
-  TrendingUp,
-} from "lucide-react";
+import { AlertTriangle, ArrowRight, CheckCircle2, CircleDashed, Download, RotateCcw } from "lucide-react";
 
 export interface ReportQuestion {
   id: number;
@@ -76,6 +66,10 @@ const scoreOf = (s: ReportSection) => {
 const bandFor = (score: number) =>
   [...MATURITY].reverse().find((m) => score >= m.min) ?? MATURITY[0];
 
+const Label = ({ children }: { children: React.ReactNode }) => (
+  <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">{children}</p>
+);
+
 export const ReadinessReport = ({ sections, onDownload, onReset }: Props) => {
   const scored = useMemo(
     () => sections.map((s) => ({ ...s, score: scoreOf(s) })).sort((a, b) => a.id - b.id),
@@ -83,250 +77,201 @@ export const ReadinessReport = ({ sections, onDownload, onReset }: Props) => {
   );
 
   const totalQuestions = sections.reduce((a, s) => a + s.questions.length, 0);
-  const yesCount = sections.reduce(
-    (a, s) => a + s.questions.filter((q) => q.answer === "yes").length,
-    0,
-  );
-  const noCount = sections.reduce(
-    (a, s) => a + s.questions.filter((q) => q.answer === "no").length,
-    0,
-  );
+  const yesCount = sections.reduce((a, s) => a + s.questions.filter((q) => q.answer === "yes").length, 0);
+  const noCount = sections.reduce((a, s) => a + s.questions.filter((q) => q.answer === "no").length, 0);
   const unanswered = totalQuestions - yesCount - noCount;
   const overall = Math.round((yesCount / totalQuestions) * 100);
   const band = bandFor(overall);
 
-  const radarData = scored.map((s) => ({
-    dimension: s.title.split(/[ &,]/)[0],
-    score: s.score,
-  }));
-
+  const radarData = scored.map((s) => ({ dimension: s.title.split(/[ &,]/)[0], score: s.score }));
   const strengths = [...scored].sort((a, b) => b.score - a.score).slice(0, 3);
   const gaps = [...scored].sort((a, b) => a.score - b.score).slice(0, 3);
   const criticalGaps = scored.flatMap((s) =>
-    s.questions
-      .filter((q) => q.answer === "no")
-      .map((q) => ({ section: s.title, text: q.text, details: q.details })),
+    s.questions.filter((q) => q.answer === "no").map((q) => ({ section: s.title, text: q.text, details: q.details })),
   );
 
   const ring = `conic-gradient(hsl(${band.color}) ${overall * 3.6}deg, hsl(var(--muted)) ${overall * 3.6}deg)`;
 
   return (
-    <div className="space-y-10">
+    <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
       {/* Executive summary */}
-      <Card className="p-8">
-        <div className="flex flex-col lg:flex-row gap-10 items-center">
-          <div className="relative shrink-0">
-            <div
-              className="h-44 w-44 rounded-full flex items-center justify-center"
-              style={{ background: ring }}
-            >
-              <div className="h-36 w-36 rounded-full bg-background/90 backdrop-blur-md flex flex-col items-center justify-center">
-                <span
-                  className="text-5xl font-bold"
-                  style={{ color: `hsl(${band.color})` }}
-                >
-                  {overall}
-                </span>
-                <span className="text-xs uppercase tracking-widest text-muted-foreground">
-                  Readiness
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex-1 space-y-4 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-sm font-semibold">
-              <ShieldCheck className="h-4 w-4 text-primary" />
-              Maturity Level: {band.label}
-            </div>
-            <h2 className="text-3xl font-bold">Executive Readiness Summary</h2>
-            <p className="text-muted-foreground leading-relaxed max-w-2xl">
-              {band.tone} Based on {totalQuestions} control points across {sections.length} dimensions,
-              your organization has {yesCount} capabilities in place, {noCount} identified gaps
-              {unanswered > 0 ? `, and ${unanswered} unanswered items` : ""}.
-            </p>
-            <div className="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
-              {[
-                { label: "In place", value: yesCount, icon: CheckCircle2, cls: "text-emerald-700 dark:text-emerald-400" },
-                { label: "Gaps", value: noCount, icon: AlertTriangle, cls: "text-orange-400" },
-                { label: "Open", value: unanswered, icon: CircleDashed, cls: "text-muted-foreground" },
-              ].map((m) => (
-                <div key={m.label} className="rounded-xl border border-border p-4 text-center">
-                  <m.icon className={`h-5 w-5 mx-auto mb-2 ${m.cls}`} />
-                  <div className="text-2xl font-bold">{m.value}</div>
-                  <div className="text-xs text-muted-foreground">{m.label}</div>
-                </div>
-              ))}
-            </div>
+      <Label>Your readiness report</Label>
+      <div className="mt-6 flex flex-col gap-10 md:flex-row md:items-center">
+        <div className="relative h-40 w-40 shrink-0 rounded-full" style={{ background: ring }}>
+          <div className="absolute inset-[10px] flex flex-col items-center justify-center rounded-full bg-background">
+            <span className="text-5xl font-medium tracking-tight">{overall}</span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">of 100</span>
           </div>
         </div>
-      </Card>
+        <div className="flex-1">
+          <p className="font-mono text-xs uppercase tracking-[0.14em]" style={{ color: `hsl(${band.color})` }}>
+            Maturity · {band.label}
+          </p>
+          <h2 className="mt-3 text-3xl font-medium tracking-tight md:text-4xl">Executive readiness summary</h2>
+          <p className="mt-3 max-w-xl leading-relaxed text-muted-foreground">
+            {band.tone} Based on {totalQuestions} control points across {sections.length} dimensions, your
+            organization has {yesCount} capabilities in place, {noCount} identified gaps
+            {unanswered > 0 ? `, and ${unanswered} unanswered items` : ""}.
+          </p>
+        </div>
+      </div>
 
-      {/* Radar + dimension bars */}
-      <div className="grid lg:grid-cols-2 gap-8">
-        <Card className="p-6">
-          <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-            <Target className="h-5 w-5 text-primary" /> Capability Radar
-          </h3>
-          <div className="h-[340px]">
+      <dl className="mt-10 grid grid-cols-3 border-y border-border">
+        {[
+          { label: "In place", value: yesCount, icon: CheckCircle2 },
+          { label: "Gaps", value: noCount, icon: AlertTriangle },
+          { label: "Open", value: unanswered, icon: CircleDashed },
+        ].map((m, i) => (
+          <div key={m.label} className={`py-6 ${i > 0 ? "border-l border-border pl-6" : ""}`}>
+            <dd className="text-3xl font-medium tracking-tight">{m.value}</dd>
+            <dt className="mt-1 flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
+              <m.icon className={`h-3.5 w-3.5 ${m.label === "Gaps" ? "text-primary" : ""}`} /> {m.label}
+            </dt>
+          </div>
+        ))}
+      </dl>
+
+      {/* Radar + dimension scores */}
+      <div className="mt-16 grid gap-12 md:grid-cols-2">
+        <div>
+          <Label>Capability radar</Label>
+          <div className="mt-4 h-[320px]">
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart data={radarData} outerRadius="72%">
                 <PolarGrid stroke="hsl(var(--border))" />
-                <PolarAngleAxis
-                  dataKey="dimension"
-                  tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }}
-                />
+                <PolarAngleAxis dataKey="dimension" tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} />
                 <PolarRadiusAxis domain={[0, 100]} tick={false} axisLine={false} />
-                <Radar
-                  dataKey="score"
-                  stroke="hsl(var(--primary))"
-                  fill="hsl(var(--primary))"
-                  fillOpacity={0.35}
-                />
+                <Radar dataKey="score" stroke="hsl(var(--primary))" fill="hsl(var(--primary))" fillOpacity={0.25} />
               </RadarChart>
             </ResponsiveContainer>
           </div>
-        </Card>
-
-        <Card className="p-6">
-          <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-            <TrendingUp className="h-5 w-5 text-primary" /> Dimension Scores
-          </h3>
-          <div className="space-y-4">
-            {scored.map((s) => {
-              const b = bandFor(s.score);
-              return (
-                <div key={s.id}>
-                  <div className="flex items-center justify-between text-sm mb-1.5">
-                    <span className="font-medium">{s.title}</span>
-                    <span className="font-bold" style={{ color: `hsl(${b.color})` }}>
-                      {s.score}%
-                    </span>
-                  </div>
-                  <div className="h-2 rounded-full bg-muted overflow-hidden">
-                    <div
-                      className="h-full rounded-full transition-all duration-700"
-                      style={{ width: `${s.score}%`, background: `hsl(${b.color})` }}
-                    />
-                  </div>
+        </div>
+        <div>
+          <Label>Dimension scores</Label>
+          <ul className="mt-4 border-t border-border">
+            {scored.map((s) => (
+              <li key={s.id} className="border-b border-border py-3">
+                <div className="flex items-center justify-between text-sm">
+                  <span>{s.title}</span>
+                  <span className="font-mono">{s.score}%</span>
                 </div>
-              );
-            })}
-          </div>
-        </Card>
+                <div className="mt-2 h-1 overflow-hidden rounded-full bg-muted">
+                  <div
+                    className="h-full rounded-full bg-foreground transition-all duration-700"
+                    style={{ width: `${s.score}%` }}
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      {/* Strengths & gaps */}
-      <div className="grid md:grid-cols-2 gap-8">
-        <Card className="p-6">
-          <h3 className="text-xl font-bold mb-4 text-emerald-700 dark:text-emerald-400">Top Strengths</h3>
-          <ul className="space-y-3">
+      {/* Strengths & focus areas */}
+      <div className="mt-16 grid gap-12 md:grid-cols-2">
+        <div>
+          <Label>Top strengths</Label>
+          <ul className="mt-4 border-t border-border">
             {strengths.map((s) => (
-              <li key={s.id} className="flex items-start gap-3">
-                <CheckCircle2 className="h-5 w-5 text-emerald-700 dark:text-emerald-400 shrink-0 mt-0.5" />
+              <li key={s.id} className="flex items-start gap-3 border-b border-border py-4">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
                 <div>
-                  <p className="font-semibold">{s.title}</p>
+                  <p className="font-medium">{s.title}</p>
                   <p className="text-sm text-muted-foreground">{s.score}% of controls in place</p>
                 </div>
               </li>
             ))}
           </ul>
-        </Card>
-        <Card className="p-6">
-          <h3 className="text-xl font-bold mb-4 text-orange-400">Priority Focus Areas</h3>
-          <ul className="space-y-3">
+        </div>
+        <div>
+          <Label>Priority focus areas</Label>
+          <ul className="mt-4 border-t border-border">
             {gaps.map((s) => (
-              <li key={s.id} className="flex items-start gap-3">
-                <AlertTriangle className="h-5 w-5 text-orange-400 shrink-0 mt-0.5" />
+              <li key={s.id} className="flex items-start gap-3 border-b border-border py-4">
+                <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 <div>
-                  <p className="font-semibold">{s.title}</p>
-                  <p className="text-sm text-muted-foreground">{RECOMMENDATIONS[s.title]}</p>
+                  <p className="font-medium">{s.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{RECOMMENDATIONS[s.title]}</p>
                 </div>
               </li>
             ))}
           </ul>
-        </Card>
+        </div>
       </div>
 
-      {/* Remediation roadmap */}
-      <Card className="p-8">
-        <h3 className="text-2xl font-bold mb-6">Recommended Remediation Roadmap</h3>
-        <div className="space-y-6">
+      {/* Roadmap */}
+      <div className="mt-16">
+        <Label>Recommended remediation roadmap</Label>
+        <ol className="relative mt-6">
+          <div aria-hidden="true" className="absolute bottom-2 left-[7px] top-2 w-px bg-border" />
           {scored
             .filter((s) => s.score < 100)
             .sort((a, b) => a.score - b.score)
             .map((s, i) => (
-              <div key={s.id} className="flex gap-4">
-                <div className="flex flex-col items-center">
-                  <div className="h-9 w-9 rounded-full bg-primary/15 border border-primary/40 flex items-center justify-center text-sm font-bold text-primary">
-                    {i + 1}
-                  </div>
-                  <div className="flex-1 w-px bg-border mt-2" />
-                </div>
-                <div className="pb-2">
-                  <p className="font-semibold">
-                    {s.title}{" "}
-                    <span className="text-sm font-normal text-muted-foreground">
-                      · {s.score}% ready · {i < 2 ? "0–3 months" : i < 4 ? "3–6 months" : "6–12 months"}
-                    </span>
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-1">{RECOMMENDATIONS[s.title]}</p>
-                </div>
-              </div>
+              <li key={s.id} className="relative pb-8 pl-10 last:pb-0">
+                <span className="absolute left-0 top-1 h-3.5 w-3.5 rounded-full border-2 border-primary bg-background" />
+                <p className="font-mono text-xs uppercase tracking-[0.12em] text-primary">
+                  {i < 2 ? "0–3 months" : i < 4 ? "3–6 months" : "6–12 months"}
+                </p>
+                <p className="mt-1 font-medium">
+                  {s.title} <span className="font-normal text-muted-foreground">· {s.score}% ready</span>
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{RECOMMENDATIONS[s.title]}</p>
+              </li>
             ))}
           {scored.every((s) => s.score === 100) && (
             <p className="text-muted-foreground">
               All dimensions are fully covered — focus on continuous evaluation and scaling.
             </p>
           )}
-        </div>
-      </Card>
+        </ol>
+      </div>
 
       {/* Gap register */}
       {criticalGaps.length > 0 && (
-        <Card className="p-8">
-          <h3 className="text-2xl font-bold mb-2">Gap Register</h3>
-          <p className="text-muted-foreground mb-6 text-sm">
-            Every control answered “No”, grouped by dimension.
-          </p>
-          <div className="space-y-4">
+        <div className="mt-16">
+          <Label>Gap register · every control answered "No"</Label>
+          <ul className="mt-4 border-t border-border">
             {criticalGaps.map((g, i) => (
-              <div key={i} className="rounded-xl border border-orange-400/30 bg-orange-400/5 p-4">
-                <div className="text-xs uppercase tracking-wider text-orange-400 font-semibold mb-1">
+              <li key={i} className="grid gap-1 border-b border-border py-4 md:grid-cols-12 md:gap-6">
+                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-primary md:col-span-4">
                   {g.section}
+                </span>
+                <div className="md:col-span-8">
+                  <p className="text-sm">{g.text}</p>
+                  {g.details && <p className="mt-1 text-sm italic text-muted-foreground">Note: {g.details}</p>}
                 </div>
-                <p className="text-sm">{g.text}</p>
-                {g.details && (
-                  <p className="text-sm text-muted-foreground mt-2 italic">Note: {g.details}</p>
-                )}
-              </div>
+              </li>
             ))}
-          </div>
-        </Card>
+          </ul>
+        </div>
       )}
 
-      {/* Section detail */}
-      <Card className="p-8">
-        <h3 className="text-2xl font-bold mb-6">Detailed Responses</h3>
-        <div className="space-y-8">
+      {/* Detailed responses */}
+      <details className="group mt-16 border-t border-border pt-6">
+        <summary className="flex cursor-pointer list-none items-center justify-between">
+          <Label>Detailed responses</Label>
+          <span className="text-sm text-muted-foreground group-open:hidden">Show all</span>
+          <span className="hidden text-sm text-muted-foreground group-open:inline">Hide</span>
+        </summary>
+        <div className="mt-6 space-y-8">
           {scored.map((s) => (
             <div key={s.id}>
-              <div className="flex items-center justify-between mb-2">
-                <h4 className="font-semibold">
-                  Section {s.id}: {s.title}
+              <div className="flex items-center justify-between">
+                <h4 className="font-medium">
+                  {String(s.id).padStart(2, "0")} · {s.title}
                 </h4>
-                <span className="text-sm font-bold text-primary">{s.score}%</span>
+                <span className="font-mono text-sm">{s.score}%</span>
               </div>
-              <Progress value={s.score} className="h-1.5 mb-4" />
-              <ul className="space-y-2">
+              <ul className="mt-3 space-y-2">
                 {s.questions.map((q) => (
                   <li key={q.id} className="flex items-start gap-3 text-sm">
                     {q.answer === "yes" ? (
-                      <CheckCircle2 className="h-4 w-4 text-emerald-700 dark:text-emerald-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
                     ) : q.answer === "no" ? (
-                      <AlertTriangle className="h-4 w-4 text-orange-400 shrink-0 mt-0.5" />
+                      <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                     ) : (
-                      <CircleDashed className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
+                      <CircleDashed className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
                     )}
                     <span className="text-muted-foreground">{q.text}</span>
                   </li>
@@ -335,14 +280,19 @@ export const ReadinessReport = ({ sections, onDownload, onReset }: Props) => {
             </div>
           ))}
         </div>
-      </Card>
+      </details>
 
-      <div className="flex flex-wrap gap-4 justify-center">
-        <Button variant="hero" size="lg" onClick={onDownload}>
-          <Download className="mr-2 h-5 w-5" /> Download Report
+      <div className="mt-12 flex flex-wrap gap-3 border-t border-border pt-8">
+        <Button size="lg" onClick={onDownload}>
+          <Download className="h-4 w-4" /> Download report
         </Button>
         <Button variant="outline" size="lg" onClick={onReset}>
-          <RotateCcw className="mr-2 h-5 w-5" /> Back to Questionnaire
+          <RotateCcw className="h-4 w-4" /> Back to questionnaire
+        </Button>
+        <Button asChild variant="ghost" size="lg">
+          <Link to="/book-demo">
+            Discuss results with us <ArrowRight className="h-4 w-4" />
+          </Link>
         </Button>
       </div>
     </div>
